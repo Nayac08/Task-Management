@@ -1,5 +1,8 @@
 package enums;
 
 public enum Priority {
-    LOW,MEDIUM,HIGH,NONE
+    LOW,
+    MEDIUM,
+    HIGH,
+    NONE
 }

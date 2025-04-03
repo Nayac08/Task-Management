@@ -1,8 +1,14 @@
 package models;
 
-import java.time.LocalDate;
-import java.util.List;
 
 public class PersonalCard extends Card{
-	
+	public Label label;
+
+	public Label getLabel() {
+		return label;
+	}
+
+	public void setLabel(Label label) {
+		this.label = label;
+	}
 }

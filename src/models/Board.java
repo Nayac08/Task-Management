@@ -23,6 +23,20 @@ public class Board {
     public void importData(File file) {
 
     }
+    
+    // Id no setter
+  	public int getId() {
+  		return id;
+  	}
+    
+    // Name
+ 	public String getName() {
+ 		return name;
+ 	}
+
+ 	public void setName(String name) {
+ 		this.name = name;
+ 	}
 
     // NodeLists
     public void addNodeList(NodeList List) {
@@ -84,25 +98,5 @@ public class Board {
     
     public void setMembers(List<Member> members) {
 		this.members = members;
-	}
-
-    // Name
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	// Id no setter
-	public int getId() {
-		return id;
-	}
-
-	
-
-	
-    
-    
+	} 
 }

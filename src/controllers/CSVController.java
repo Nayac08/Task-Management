@@ -1,8 +1,8 @@
-package utils;
+package controllers;
 
 import java.io.File;
 
-public class CSVManagerUI {
+public class CSVController {
 	public void importBoardData(File file) {
 		
 	}

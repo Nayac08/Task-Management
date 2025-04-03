@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import enums.SortCriteria;
+import interfaces.Sortable;
 import javafx.scene.paint.Color;
 
-public class NodeList {
+public class NodeList implements Sortable{
     private int id;
     private String title;
     private List<Card> cards;

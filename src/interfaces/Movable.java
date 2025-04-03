@@ -1,7 +1,7 @@
 package interfaces;
 
+import models.NodeList;
+
 public interface Movable {
-    public void dragToList(List list){
-        
-    }
+    public void dragToList(NodeList list);
 }

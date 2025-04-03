@@ -3,14 +3,22 @@ package models;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public abstract class Card {
+import interfaces.Movable;
+
+public abstract class Card implements Movable{
 	private int id;
-	private NodeList listType; // for exporting CSV purpose
+	private NodeList listType; // For exporting CSV purpose
 	private String title;
-	private String description;
-	private LocalDateTime date;
-	private List<ChecklistItem> checklists;
-	private double checklistPercentage;
+	private String description; // Add later
+	private LocalDateTime date; // Add later
+	private List<ChecklistItem> checklists; // Add later
+	private double checklistPercentage; // Add later when checklists is initialized
+	
+	public Card(int id,NodeList listType, String title) {
+		this.id = id;
+		setListType(listType);
+		setTitle(title);
+	}
 	
 	// Feature
 	public void updateCard() {

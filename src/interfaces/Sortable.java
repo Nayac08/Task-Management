@@ -1,7 +1,7 @@
 package interfaces;
 
+import enums.SortCriteria;
+
 public interface  Sortable {
-    public void sortCards(String criteria){
-        
-    }
+    public void sortCards(SortCriteria criteria);
 }

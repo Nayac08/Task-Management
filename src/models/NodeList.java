@@ -9,13 +9,15 @@ import javafx.scene.paint.Color;
 
 public class NodeList implements Sortable{
     private int id;
+    private Board boardOwner;
     private String title;
     private List<Card> cards;
     private Color color = Color.GRAY;
     
-    public NodeList(int id, String title) {
+    public NodeList(int id, Board boardOwner, String title) {
     	this.id = id;
     	setTitle(title);
+    	setBoardOwner(boardOwner);
     	setCards(new ArrayList<Card>());
     }
     
@@ -80,6 +82,15 @@ public class NodeList implements Sortable{
 
 	public void setColor(Color color) {
 		this.color = color;
+	}
+
+	// Board Owner
+	public Board getBoardOwner() {
+		return boardOwner;
+	}
+
+	public void setBoardOwner(Board boardOwner) {
+		this.boardOwner = boardOwner;
 	}
 
 	

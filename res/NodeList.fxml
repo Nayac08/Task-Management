@@ -10,41 +10,55 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: lightyellow;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #ECEFF0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <StackPane alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="180.0">
+      <StackPane alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #A179F2;">
          <children>
-            <Text fx:id="nodeListTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="NodeList Name">
+            <Text fx:id="nodeListTitle" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="NodeList Name">
+               <font>
+                  <Font name="Ekkamai New Bold" size="20.0" />
+               </font>
+            </Text>
+            <Button mnemonicParsing="false" onAction="#handleDeleteNodeList" style="-fx-background-color: none;" text="X" textFill="WHITE" StackPane.alignment="CENTER_RIGHT">
                <font>
                   <Font name="Ekkamai New Bold" size="18.0" />
                </font>
-            </Text>
+            </Button>
          </children>
          <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </StackPane>
-      <VBox fx:id="topContainer" spacing="10.0">
+      <VBox prefHeight="682.0" prefWidth="200.0" style="-fx-background-color: #ECEFF0;">
          <children>
-            <VBox fx:id="cardContainer" maxHeight="580.0" prefWidth="180.0" spacing="5.0">
-            </VBox>
-            <VBox fx:id="addCardDetail" prefHeight="104.0" prefWidth="180.0" spacing="5.0">
+            <VBox fx:id="topContainer" spacing="10.0">
                <children>
-                  <TextArea fx:id="titleArea" prefHeight="66.0" prefWidth="180.0" />
-                  <HBox prefHeight="31.0" prefWidth="180.0">
+                  <VBox fx:id="cardContainer" maxHeight="580.0" prefWidth="180.0" spacing="5.0">
+            </VBox>
+                  <VBox fx:id="addCardDetail" prefHeight="104.0" prefWidth="180.0" spacing="5.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#handleAddCardToNodeList" prefHeight="20.0" prefWidth="80.0" style="-fx-background-color: lightblue;" text="Add card" />
-                        <Button mnemonicParsing="false" onAction="#handleHideAddDetailButton" style="-fx-background-color: none;" text="X" />
+                        <TextArea fx:id="titleArea" prefHeight="66.0" prefWidth="180.0" />
+                        <HBox prefHeight="31.0" prefWidth="180.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#handleAddCardToNodeList" prefHeight="20.0" prefWidth="80.0" style="-fx-background-color: lightblue;" text="Add card">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#handleHideAddDetailButton" style="-fx-background-color: none;" text="X" />
+                           </children>
+                        </HBox>
                      </children>
-                  </HBox>
+                  </VBox>
                </children>
             </VBox>
+            <Region VBox.vgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#handleShowAddDetailButton" style="-fx-background-color: none;" text="+ Add a card" VBox.vgrow="NEVER" />
          </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
       </VBox>
-      <Region VBox.vgrow="ALWAYS" />
-      <Button mnemonicParsing="false" onAction="#handleShowAddDetailButton" style="-fx-background-color: none;" text="+ Add a card" VBox.vgrow="NEVER" />
+      
    </children>
-   <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-   </padding>
 </VBox>

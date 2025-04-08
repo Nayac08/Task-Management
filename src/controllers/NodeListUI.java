@@ -1,19 +1,19 @@
 package controllers;
 
 import java.io.IOException;
+
+import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import models.Board;
 import models.Card;
 import models.NodeList;
 import models.PersonalCard;
 
 public class NodeListUI{
 	private NodeList nodeList;
-	private Board boardOwner;
 	private int idxCard = 0;
 	
 	@FXML private VBox nodeListGUI;
@@ -22,9 +22,8 @@ public class NodeListUI{
 	@FXML private TextArea titleArea;
 	@FXML private VBox addCardDetail;
 	
-	public NodeListUI(NodeList nodeList,Board boardOwner) throws IOException {
+	public NodeListUI(NodeList nodeList) throws IOException {
 		setNodeList(nodeList);
-		setBoardOwner(boardOwner);
 		loadInitialFXML();
 	}
 	
@@ -70,6 +69,17 @@ public class NodeListUI{
 		addCardDetail.setManaged(false);
     }
     
+    @FXML
+    public void handleDeleteNodeList() {
+    	for (NodeList list :nodeList.getBoardOwner().getNodeLists()) {
+    		if (list.getId() == nodeList.getId()) {
+    			nodeList.getBoardOwner().getNodeLists().remove(list);
+    			Main.boardUI.updateGUI();
+    			break;
+    		}
+    	}
+    }
+    
     public void removeCardFromNodeList(Card card){
     
     }
@@ -92,13 +102,5 @@ public class NodeListUI{
 
 	public void setNodeList(NodeList nodeList) {
 		this.nodeList = nodeList;
-	}
-
-	public Board getBoardOwner() {
-		return boardOwner;
-	}
-
-	public void setBoardOwner(Board boardOwner) {
-		this.boardOwner = boardOwner;
 	}
 }

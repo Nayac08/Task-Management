@@ -5,15 +5,9 @@ import java.io.IOException;
 import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import models.Board;
-import models.NodeList;
+import models.Card;
 import models.PersonalCard;
 
 public class PersonalCardUI{
@@ -23,7 +17,7 @@ public class PersonalCardUI{
 	@FXML private Text title;
 	
 	public PersonalCardUI(PersonalCard personalCard) {
-		this.personalCard = personalCard;
+		setPersonalCard(personalCard);
 		loadInitialFXML();
 	}
 	
@@ -40,6 +34,17 @@ public class PersonalCardUI{
     
     public void updateGUI() {
     	loadInitialFXML();
+    }
+    
+    @FXML
+    public void handleDeleteCard() {
+    	for (Card card: personalCard.getNodeListOwner().getCards()) {
+    		if (card.getId() == personalCard.getId()) {
+    			personalCard.getNodeListOwner().getCards().remove(card);
+    			Main.boardUI.updateGUI();
+    			break;
+    		}
+    	}
     }
 	
     public void initializePersonalCard(PersonalCard card){
@@ -72,5 +77,7 @@ public class PersonalCardUI{
 
 	public void setPersonalCardGUI(StackPane personalCardGUI) {
 		this.personalCardGUI = personalCardGUI;
-	}  
+	}
+	
+	
 }

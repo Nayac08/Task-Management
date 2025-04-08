@@ -43,7 +43,7 @@ public class BoardUI{
     	for (NodeList nodeList: board.getNodeLists()) {
     		NodeListUI nodeListUI;
 			try {
-				nodeListUI = new NodeListUI(nodeList,board);
+				nodeListUI = new NodeListUI(nodeList);
 				nodeListUI.updateGUI();
 				boardGUI.getChildren().add(nodeListUI.getNodeListGUI());
 			} catch (IOException e) {
@@ -55,7 +55,7 @@ public class BoardUI{
     
     @FXML
     public void handleAddNodeListToBoard() {
-    	board.addNodeList(new NodeList(idxListNode, titleArea.getText()));
+    	board.addNodeList(new NodeList(idxListNode, board, titleArea.getText()));
     	idxListNode++;
     	titleArea.setText("");
     	handleHideAddListDetailButton();

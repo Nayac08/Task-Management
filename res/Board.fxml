@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefHeight="300.0" prefWidth="200.0">
          <children>
-            <VBox fx:id="addListNodeDetail" prefHeight="104.0" prefWidth="180.0" spacing="5.0" style="-fx-background-color: lightyellow;">
+            <VBox fx:id="addListNodeDetail" prefHeight="104.0" prefWidth="180.0" spacing="5.0" style="-fx-background-color: #ECEFF0;">
                <children>
                   <TextArea fx:id="titleArea" prefHeight="66.0" prefWidth="180.0" />
                   <HBox prefHeight="31.0" prefWidth="180.0">
@@ -25,7 +25,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </VBox>
-            <Button fx:id="addListNodeButton" mnemonicParsing="false" onAction="#handleShowAddListDetailButton" prefWidth="200.0" style="-fx-background-color: lightyellow;" text="+ Add another list">
+            <Button fx:id="addListNodeButton" mnemonicParsing="false" onAction="#handleShowAddListDetailButton" prefWidth="200.0" style="-fx-background-color: #ECEFF0;" text="+ Add another list">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -38,7 +38,4 @@
          </HBox.margin>
       </VBox>
 	</children>
-	<padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
 </HBox>

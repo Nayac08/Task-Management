@@ -38,7 +38,8 @@ public class BoardUI{
     }
     
     public void updateGUI() {
-    	boardGUI.getChildren().removeIf(child -> child != addListZone);
+    	Node firstChild = boardGUI.getChildren().removeLast();
+    	boardGUI.getChildren().clear();
     	for (NodeList nodeList: board.getNodeLists()) {
     		NodeListUI nodeListUI;
 			try {
@@ -49,7 +50,6 @@ public class BoardUI{
 				e.printStackTrace();
 			}
     	}
-    	Node firstChild = boardGUI.getChildren().remove(0);
     	boardGUI.getChildren().add(firstChild);
     }
     

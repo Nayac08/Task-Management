@@ -8,8 +8,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+	public static Stage primaryStage;
+	
     @Override
     public void start(Stage primaryStage){
+    	Main.primaryStage = primaryStage;
         // Load FXML file
     	BoardUI boardUI = new BoardUI();
         Parent root = boardUI.getBoardGUI();

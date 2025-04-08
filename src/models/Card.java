@@ -7,16 +7,16 @@ import interfaces.Movable;
 
 public abstract class Card implements Movable{
 	private int id;
-	private NodeList listType; // For exporting CSV purpose
+	private NodeList nodeListOwner; // For exporting CSV purpose
 	private String title;
 	private String description; // Add later
 	private LocalDateTime date; // Add later
 	private List<ChecklistItem> checklists; // Add later
 	private double checklistPercentage; // Add later when checklists is initialized
 	
-	public Card(int id,NodeList listType, String title) {
+	public Card(int id,NodeList nodeListOwner, String title) {
 		this.id = id;
-		setListType(listType);
+		setNodeListOwner(nodeListOwner);
 		setTitle(title);
 	}
 	
@@ -35,12 +35,12 @@ public abstract class Card implements Movable{
 	}
 	
 	// ListType
-	public NodeList getListType() {
-		return listType;
+	public NodeList getNodeListOwner() {
+		return nodeListOwner;
 	}
 
-	public void setListType(NodeList listType) {
-		this.listType = listType;
+	public void setNodeListOwner(NodeList nodeListOwner) {
+		this.nodeListOwner = nodeListOwner;
 	}
 
 	// Title

@@ -1,20 +1,20 @@
 package controllers;
 
 import java.io.IOException;
-import java.util.Arrays;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
+import models.Board;
 import models.Card;
 import models.NodeList;
 import models.PersonalCard;
 
 public class NodeListUI{
 	private NodeList nodeList;
+	private Board boardOwner;
+	private int idxCard = 0;
 	
 	@FXML private VBox nodeListGUI;
 	@FXML private Text nodeListTitle;
@@ -22,8 +22,9 @@ public class NodeListUI{
 	@FXML private TextArea titleArea;
 	@FXML private VBox addCardDetail;
 	
-	public NodeListUI(NodeList nodeList) throws IOException {
-		this.nodeList = nodeList;
+	public NodeListUI(NodeList nodeList,Board boardOwner) throws IOException {
+		setNodeList(nodeList);
+		setBoardOwner(boardOwner);
 		loadInitialFXML();
 	}
 	
@@ -50,12 +51,11 @@ public class NodeListUI{
 
     @FXML
     public void handleAddCardToNodeList(){
-    	System.out.println("Click add card");
-    	nodeList.addCard(new PersonalCard(0, null, titleArea.getText()));
+    	nodeList.addCard(new PersonalCard(idxCard, nodeList, titleArea.getText()));
+    	idxCard++;
     	titleArea.setText("");
     	handleHideAddDetailButton();
     	updateGUI();
-    	System.out.println(nodeList.getCards().size());
     }
     
     @FXML
@@ -92,5 +92,13 @@ public class NodeListUI{
 
 	public void setNodeList(NodeList nodeList) {
 		this.nodeList = nodeList;
+	}
+
+	public Board getBoardOwner() {
+		return boardOwner;
+	}
+
+	public void setBoardOwner(Board boardOwner) {
+		this.boardOwner = boardOwner;
 	}
 }

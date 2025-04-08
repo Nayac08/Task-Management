@@ -13,6 +13,7 @@ import models.NodeList;
 
 public class BoardUI{
 	private Board board;
+	private int idxListNode = 0;
 	
 	@FXML private HBox boardGUI;
 	@FXML private VBox addListZone;
@@ -41,7 +42,7 @@ public class BoardUI{
     	for (NodeList nodeList: board.getNodeLists()) {
     		NodeListUI nodeListUI;
 			try {
-				nodeListUI = new NodeListUI(nodeList);
+				nodeListUI = new NodeListUI(nodeList,board);
 				nodeListUI.updateGUI();
 				boardGUI.getChildren().add(nodeListUI.getNodeListGUI());
 			} catch (IOException e) {
@@ -54,8 +55,8 @@ public class BoardUI{
     
     @FXML
     public void handleAddNodeListToBoard() {
-    	System.out.println("Click");
-    	board.addNodeList(new NodeList(0, titleArea.getText()));
+    	board.addNodeList(new NodeList(idxListNode, titleArea.getText()));
+    	idxListNode++;
     	titleArea.setText("");
     	handleHideAddListDetailButton();
     	updateGUI();

@@ -8,8 +8,8 @@ public class TeamCard extends Card{
 	private List<Member> members; // Add later , This members is assigned to finish this Card
 	private Priority priority; // Add later
 	
-	public TeamCard(int id,NodeList listType, String title) {
-		super(id, listType, title);
+	public TeamCard(int id,NodeList nodeListOwner, String title) {
+		super(id, nodeListOwner, title);
 	}
 	
 	// Members

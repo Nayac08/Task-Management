@@ -15,18 +15,18 @@ import models.PersonalCard;
 public class NodeListUI{
 	private NodeList nodeList;
 	private int idxCard = 0;
-	
+
 	@FXML private VBox nodeListGUI;
 	@FXML private Text nodeListTitle;
 	@FXML private VBox cardContainer;
 	@FXML private TextArea titleArea;
 	@FXML private VBox addCardDetail;
-	
+
 	public NodeListUI(NodeList nodeList) throws IOException {
 		setNodeList(nodeList);
 		loadInitialFXML();
 	}
-	
+
     public void loadInitialFXML(){
     	try {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/NodeList.fxml"));
@@ -38,7 +38,7 @@ public class NodeListUI{
 			e.printStackTrace();
 		}
     }
-    
+
     public void updateGUI() {
     	cardContainer.getChildren().clear();
     	for (Card card: nodeList.getCards()) {
@@ -56,19 +56,19 @@ public class NodeListUI{
     	handleHideAddDetailButton();
     	updateGUI();
     }
-    
+
     @FXML
     public void handleShowAddDetailButton() {
     	addCardDetail.setVisible(true);
 		addCardDetail.setManaged(true);
     }
-    
-    @FXML 
+
+    @FXML
     public void handleHideAddDetailButton() {
     	addCardDetail.setVisible(false);
 		addCardDetail.setManaged(false);
     }
-    
+
     @FXML
     public void handleDeleteNodeList() {
     	for (NodeList list :nodeList.getBoardOwner().getNodeLists()) {
@@ -79,9 +79,9 @@ public class NodeListUI{
     		}
     	}
     }
-    
+
     public void removeCardFromNodeList(Card card){
-    
+
     }
 
     public void sortCardsInNodeList(String criteria){

@@ -6,7 +6,7 @@ import models.NodeList;
 public class CardController{
     public void initializeCard(Card card){
 
-    }   
+    }
 
     public void displayCardDetails(Card card){
 

@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,18 +15,18 @@ import models.NodeList;
 public class BoardUI{
 	private Board board;
 	private int idxListNode = 0;
-	
+
 	@FXML private HBox boardGUI;
 	@FXML private VBox addListZone;
 	@FXML private VBox addListNodeDetail;
 	@FXML private TextArea titleArea;
 	@FXML private Button addListNodeButton;
-	
+
 	public BoardUI() {
 		this.board = new Board(0, "StarterBoard");
 		loadInitialFXML();
 	}
-	
+
     public void loadInitialFXML(){
     	try {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/Board.fxml"));
@@ -36,7 +37,7 @@ public class BoardUI{
 			e.printStackTrace();
 		}
     }
-    
+
     public void updateGUI() {
     	Node firstChild = boardGUI.getChildren().removeLast();
     	boardGUI.getChildren().clear();
@@ -52,7 +53,7 @@ public class BoardUI{
     	}
     	boardGUI.getChildren().add(firstChild);
     }
-    
+
     @FXML
     public void handleAddNodeListToBoard() {
     	board.addNodeList(new NodeList(idxListNode, board, titleArea.getText()));
@@ -61,7 +62,7 @@ public class BoardUI{
     	handleHideAddListDetailButton();
     	updateGUI();
     }
-    
+
     @FXML
     public void handleShowAddListDetailButton() {
     	addListNodeDetail.setVisible(true);
@@ -69,7 +70,7 @@ public class BoardUI{
     	addListNodeButton.setVisible(false);
     	addListNodeButton.setManaged(false);
     }
-    
+
     @FXML
     public void handleHideAddListDetailButton() {
     	addListNodeDetail.setVisible(false);
@@ -81,7 +82,7 @@ public class BoardUI{
     public void removeListFromBoard(NodeList list){
     	updateGUI();
     }
-    
+
     public void sortBoardLists(){
     	updateGUI();
     }

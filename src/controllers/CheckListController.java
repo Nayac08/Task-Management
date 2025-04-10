@@ -18,6 +18,6 @@ public class CheckListController{
     }
 
     public void toggleChecklistItem(ChecklistItem item){
-        
-    }   
+
+    }
 }

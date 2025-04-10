@@ -13,27 +13,28 @@ public abstract class Card implements Movable{
 	private LocalDateTime date; // Add later
 	private List<ChecklistItem> checklists; // Add later
 	private double checklistPercentage; // Add later when checklists is initialized
-	
+
 	public Card(int id,NodeList nodeListOwner, String title) {
 		this.id = id;
 		setNodeListOwner(nodeListOwner);
 		setTitle(title);
 	}
-	
+
 	// Feature
 	public void updateCard() {
-		
+
 	}
-	
+
+	@Override
 	public void dragToList(NodeList list) {
-		
+
 	}
-	
+
 	// Id
 	public int getId() {
 		return id;
 	}
-	
+
 	// ListType
 	public NodeList getNodeListOwner() {
 		return nodeListOwner;
@@ -69,12 +70,12 @@ public abstract class Card implements Movable{
 	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
-	
+
 	// AllChecklist
 	public void addChecklist(ChecklistItem item) {
 		checklists.add(item);
 	}
-	
+
 	public void removeChecklist(int id) {
 		for (int i=0;i<checklists.size();i++) {
     		if (checklists.get(i).getId() == id) {
@@ -83,7 +84,7 @@ public abstract class Card implements Movable{
     		}
     	}
 	}
-	
+
 	public List<ChecklistItem> getChecklists() {
 		return checklists;
 	}
@@ -91,7 +92,7 @@ public abstract class Card implements Movable{
 	public void setAllChecklist(List<ChecklistItem> allChecklist) {
 		this.checklists = allChecklist;
 	}
-	
+
 	// ChecklistPercentage
 	public double getChecklistPercentage() {
 		return checklistPercentage;

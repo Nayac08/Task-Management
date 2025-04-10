@@ -1,20 +1,21 @@
 package models;
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Board {
     private int id;
     private String name;
     private List<NodeList> nodeLists;
     private List<Member> members; // Member in members can be selected in Card in NodeList
-    
+
     public Board(int id, String name) {
     	this.id = id;
     	setName(name);
-    	setNodeLists(new ArrayList<NodeList>());
-    	setMembers(new ArrayList<Member>());
+    	setNodeLists(new ArrayList<>());
+    	setMembers(new ArrayList<>());
     }
-    
+
     // Data
     public void exportData(File file) {
 
@@ -23,12 +24,12 @@ public class Board {
     public void importData(File file) {
 
     }
-    
+
     // Id no setter
   	public int getId() {
   		return id;
   	}
-    
+
     // Name
  	public String getName() {
  		return name;
@@ -53,9 +54,9 @@ public class Board {
     }
 
     public NodeList getNodeList(int id) {
-    	for (int i=0;i<nodeLists.size();i++) {
-    		if (nodeLists.get(i).getId() == id) {
-    			return nodeLists.get(i);
+    	for (NodeList nodeList : nodeLists) {
+    		if (nodeList.getId() == id) {
+    			return nodeList;
     		}
     	}
     	return null;
@@ -64,11 +65,11 @@ public class Board {
     public List<NodeList> getNodeLists() {
     	return nodeLists;
     }
-    
+
     public void setNodeLists(List<NodeList> nodeLists) {
 		this.nodeLists = nodeLists;
 	}
-    
+
     // Members
     public void addMember(Member member) {
     	members.add(member);
@@ -82,11 +83,11 @@ public class Board {
     		}
     	}
     }
-    
+
     public Member getMember(int id) {
-    	for (int i=0;i<members.size();i++) {
-    		if (members.get(i).getId() == id) {
-    			return members.get(i);
+    	for (Member member : members) {
+    		if (member.getId() == id) {
+    			return member;
     		}
     	}
     	return null;
@@ -95,8 +96,8 @@ public class Board {
     public List<Member> getMembers() {
     	return members;
     }
-    
+
     public void setMembers(List<Member> members) {
 		this.members = members;
-	} 
+	}
 }

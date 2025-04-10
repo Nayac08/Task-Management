@@ -4,18 +4,18 @@ public class ChecklistItem {
     private int id;
     private String descrption;
     private boolean isChecked;
-    
+
     public ChecklistItem(int id,String description) {
     	this.id = id;
     	setDescrption(description);
     	setChecked(false);
     }
-    
+
     // Feature
     public void toggleChecked() {
     	setChecked(!isChecked);
     }
-    
+
     // Id
     public int getId() {
 		return id;
@@ -37,5 +37,5 @@ public class ChecklistItem {
 
 	public void setChecked(boolean isChecked) {
 		this.isChecked = isChecked;
-	}	
+	}
 }

@@ -12,15 +12,15 @@ import models.PersonalCard;
 
 public class PersonalCardUI{
 	private PersonalCard personalCard;
-	
-	@FXML private StackPane personalCardGUI;	
+
+	@FXML private StackPane personalCardGUI;
 	@FXML private Text title;
-	
+
 	public PersonalCardUI(PersonalCard personalCard) {
 		setPersonalCard(personalCard);
 		loadInitialFXML();
 	}
-	
+
     public void loadInitialFXML(){
     	try {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/PersonalCard.fxml"));
@@ -31,11 +31,11 @@ public class PersonalCardUI{
 			e.printStackTrace();
 		}
     }
-    
+
     public void updateGUI() {
     	loadInitialFXML();
     }
-    
+
     @FXML
     public void handleDeleteCard() {
     	for (Card card: personalCard.getNodeListOwner().getCards()) {
@@ -46,7 +46,7 @@ public class PersonalCardUI{
     		}
     	}
     }
-	
+
     public void initializePersonalCard(PersonalCard card){
 
     }
@@ -60,7 +60,7 @@ public class PersonalCardUI{
     }
 
     public void updateChecklistPercentage(PersonalCard card){
-        
+
     }
 
 	public PersonalCard getPersonalCard() {
@@ -78,6 +78,6 @@ public class PersonalCardUI{
 	public void setPersonalCardGUI(StackPane personalCardGUI) {
 		this.personalCardGUI = personalCardGUI;
 	}
-	
-	
+
+
 }

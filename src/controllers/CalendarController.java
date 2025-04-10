@@ -3,7 +3,7 @@ package controllers;
 import models.Calendar;
 import models.CalendarEvent;
 
-public class CalendarController {   
+public class CalendarController {
     public void initializeCalendar(Calendar calendar){
 
     }

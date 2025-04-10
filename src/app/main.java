@@ -22,7 +22,7 @@ public class Main extends Application {
         primaryStage.setTitle("Task Management");
         primaryStage.setResizable(false);
         primaryStage.getIcons().add(new Image("/Logo.png"));
-        primaryStage.setScene(new Scene(root, 1280, 720));
+        primaryStage.setScene(new Scene(root, 1420, 720));
         primaryStage.show();
     }
 

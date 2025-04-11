@@ -41,9 +41,11 @@ public class MainInterfaceUI {
 		if (Main.taskFileIdOpening != -1) {
 			displayContainer.getChildren().clear();
 			TaskFile taskFile = mainInterface.findTaskFile(Main.taskFileIdOpening);
-			BoardUI boardUI = new BoardUI(taskFile.getBoard());
-			boardUI.updateGUI();
-			displayContainer.getChildren().add(boardUI.getBoardGUI());
+			if (taskFile != null) {
+				BoardUI boardUI = new BoardUI(taskFile.getBoard());
+				boardUI.updateGUI();
+				displayContainer.getChildren().add(boardUI.getBoardGUI());
+			}	
 		}
 	}
 	

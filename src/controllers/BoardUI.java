@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 
+import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import models.Board;
 import models.NodeList;
 
@@ -16,7 +18,9 @@ public class BoardUI{
 	private Board board;
 	private int idxListNode = 0;
 
-	@FXML private HBox boardGUI;
+	@FXML private VBox boardGUI;
+	@FXML private Text displayName;
+	@FXML private HBox displayZone;
 	@FXML private VBox addListZone;
 	@FXML private VBox addListNodeDetail;
 	@FXML private TextArea titleArea;
@@ -25,6 +29,7 @@ public class BoardUI{
 	public BoardUI(Board board) {
 		setBoard(board);
 		loadInitialFXML();
+        displayName.setText(board.getName());
 	}
 
     public void loadInitialFXML(){
@@ -40,19 +45,20 @@ public class BoardUI{
     }
 
     public void updateGUI() {
-    	Node firstChild = boardGUI.getChildren().removeLast();
-    	boardGUI.getChildren().clear();
+    	Node firstChild = displayZone.getChildren().removeLast();
+    	displayZone.getChildren().clear();
     	for (NodeList nodeList: board.getNodeLists()) {
     		NodeListUI nodeListUI;
 			try {
 				nodeListUI = new NodeListUI(nodeList);
 				nodeListUI.updateGUI();
-				boardGUI.getChildren().add(nodeListUI.getNodeListGUI());
+				displayZone.getChildren().add(nodeListUI.getNodeListGUI());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
     	}
-    	boardGUI.getChildren().add(firstChild);
+    	displayZone.getChildren().add(firstChild);
+    	handleHideAddListDetailButton();
     }
 
     @FXML
@@ -79,6 +85,11 @@ public class BoardUI{
     	addListNodeButton.setVisible(true);
     	addListNodeButton.setManaged(true);
     }
+    
+    @FXML
+    public void handleClearDisplay() {
+    	Main.mainInterfaceUI.getDisplayContainer().getChildren().clear();
+    }
 
     public void removeListFromBoard(NodeList list){
     	updateGUI();
@@ -100,11 +111,11 @@ public class BoardUI{
 		this.board = board;
 	}
 
-	public HBox getBoardGUI() {
+	public VBox getBoardGUI() {
 		return boardGUI;
 	}
 
-	public void setBoardGUI(HBox boardGUI) {
+	public void setBoardGUI(VBox boardGUI) {
 		this.boardGUI = boardGUI;
 	}
 }

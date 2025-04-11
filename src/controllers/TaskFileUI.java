@@ -2,11 +2,9 @@ package controllers;
 
 import java.io.File;
 import java.io.IOException;
-
 import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Tab;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import models.TaskFile;

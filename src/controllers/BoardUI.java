@@ -37,7 +37,6 @@ public class BoardUI{
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/Board.fxml"));
             loader.setController(this);
             setBoardGUI(loader.load());
-            this.boardGUI = loader.load();
             handleHideAddListDetailButton();
 		} catch (IOException e) {
 			e.printStackTrace();

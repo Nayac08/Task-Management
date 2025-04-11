@@ -1,7 +1,7 @@
 package app;
 
 
-import controllers.BoardUI;
+import controllers.MainInterfaceUI;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,20 +9,21 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-	public static BoardUI boardUI;
+	public static MainInterfaceUI mainInterfaceUI;
+	public static int taskFileIdOpening = -1;
 
     @Override
     public void start(Stage primaryStage){
         // Load FXML file
-    	BoardUI boardUI = new BoardUI();
-        Parent root = boardUI.getBoardGUI();
-        Main.boardUI = boardUI;
+    	MainInterfaceUI mainInterfaceUI = new MainInterfaceUI();
+        Parent root = mainInterfaceUI.getMainInterfaceGUI();
+        Main.mainInterfaceUI = mainInterfaceUI;
 
         // Set up the scene
         primaryStage.setTitle("Task Management");
         primaryStage.setResizable(false);
         primaryStage.getIcons().add(new Image("/Logo.png"));
-        primaryStage.setScene(new Scene(root, 1920, 720));
+        primaryStage.setScene(new Scene(root, 1920, 1080));
         primaryStage.show();
     }
 

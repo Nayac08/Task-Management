@@ -31,7 +31,7 @@ public class NodeListUI{
     	try {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/NodeList.fxml"));
             loader.setController(this);
-            this.nodeListGUI = loader.load();
+            setNodeListGUI(loader.load());
             nodeListTitle.setText(nodeList.getTitle());
     		handleHideAddDetailButton();
 		} catch (IOException e) {
@@ -74,7 +74,7 @@ public class NodeListUI{
     	for (NodeList list :nodeList.getBoardOwner().getNodeLists()) {
     		if (list.getId() == nodeList.getId()) {
     			nodeList.getBoardOwner().getNodeLists().remove(list);
-    			Main.boardUI.updateGUI();
+    			Main.mainInterfaceUI.updateGUI();
     			break;
     		}
     	}

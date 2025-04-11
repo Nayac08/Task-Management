@@ -16,15 +16,6 @@ public class Board {
     	setMembers(new ArrayList<>());
     }
 
-    // Data
-    public void exportData(File file) {
-
-    }
-
-    public void importData(File file) {
-
-    }
-
     // Id no setter
   	public int getId() {
   		return id;

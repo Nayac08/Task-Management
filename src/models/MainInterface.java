@@ -1,0 +1,60 @@
+package models;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class MainInterface {
+	private int idxTaskFile = 0;
+	private List<TaskFile> taskFiles;
+	
+	public MainInterface() {
+		setTaskFiles(new ArrayList<TaskFile>());
+	}
+	
+	public int getIdxTaskFile() {
+		return idxTaskFile;
+	}
+
+	public void setIdxTaskFile(int idxTaskFile) {
+		this.idxTaskFile = idxTaskFile;
+	}
+
+	public List<TaskFile> getTaskFiles() {
+		return taskFiles;
+	}
+
+	public void setTaskFiles(List<TaskFile> taskFile) {
+		this.taskFiles = taskFile;
+	}
+	
+	public void addTaskFile(String title, MainInterface mainInterface) {
+		taskFiles.add(new TaskFile(idxTaskFile, title, mainInterface));
+		idxTaskFile++;
+	}
+	
+	public void addTaskFile(File file, MainInterface mainInterface) {
+		taskFiles.add(new TaskFile(idxTaskFile, file, mainInterface));
+		idxTaskFile++;
+	}
+	
+	public TaskFile findTaskFile(int id) {
+		for (TaskFile taskFile: taskFiles) {
+			if (taskFile.getId() == id) {
+				return taskFile;
+			}
+		}
+		return null;
+	}
+	
+	public void deleteTaskFile(int id) {
+		for (TaskFile taskFile: taskFiles) {
+			if (taskFile.getId() == id) {
+				taskFiles.remove(taskFile);
+				System.out.println("Delete complete");
+				break;
+			}
+		}
+	}
+}

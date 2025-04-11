@@ -7,17 +7,26 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1420.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox prefHeight="300.0" prefWidth="200.0">
+      <VBox prefHeight="450.0" prefWidth="300.0">
          <children>
-            <VBox fx:id="addListNodeDetail" prefHeight="104.0" prefWidth="180.0" spacing="5.0" style="-fx-background-color: #ECEFF0;">
+            <VBox fx:id="addListNodeDetail" prefHeight="150.0" prefWidth="180.0" spacing="5.0" style="-fx-background-color: #ECEFF0;">
                <children>
-                  <TextArea fx:id="titleArea" prefHeight="66.0" prefWidth="180.0" />
-                  <HBox prefHeight="31.0" prefWidth="180.0">
+                  <TextArea fx:id="titleArea" prefHeight="66.0" prefWidth="180.0" promptText="Enter List name" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Ekkamai New Bold" size="18.0" />
+                     </font></TextArea>
+                  <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="180.0" VBox.vgrow="NEVER">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#handleAddNodeListToBoard" prefHeight="20.0" prefWidth="60.0" style="-fx-background-color: lightblue;" text="Add list" />
-                        <Button mnemonicParsing="false" onAction="#handleHideAddListDetailButton" style="-fx-background-color: none;" text="X" />
+                        <Button mnemonicParsing="false" onAction="#handleAddNodeListToBoard" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: lightblue;" text="Add list">
+                           <font>
+                              <Font name="Ekkamai New Bold" size="18.0" />
+                           </font></Button>
+                        <Button mnemonicParsing="false" onAction="#handleHideAddListDetailButton" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: none;" text="X">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
                      </children>
                   </HBox>
                </children>
@@ -25,12 +34,12 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </VBox>
-            <Button fx:id="addListNodeButton" mnemonicParsing="false" onAction="#handleShowAddListDetailButton" prefWidth="200.0" style="-fx-background-color: #ECEFF0;" text="+ Add another list">
+            <Button fx:id="addListNodeButton" mnemonicParsing="false" onAction="#handleShowAddListDetailButton" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #ECEFF0;" text="+ Add another list">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <font>
-                  <Font name="Ekkamai New Bold" size="14.0" />
+                  <Font name="Ekkamai New Bold" size="22.0" />
                </font></Button>
          </children>
          <HBox.margin>

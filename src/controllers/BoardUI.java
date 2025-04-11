@@ -22,8 +22,8 @@ public class BoardUI{
 	@FXML private TextArea titleArea;
 	@FXML private Button addListNodeButton;
 
-	public BoardUI() {
-		this.board = new Board(0, "StarterBoard");
+	public BoardUI(Board board) {
+		setBoard(board);
 		loadInitialFXML();
 	}
 
@@ -31,6 +31,7 @@ public class BoardUI{
     	try {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/Board.fxml"));
             loader.setController(this);
+            setBoardGUI(loader.load());
             this.boardGUI = loader.load();
             handleHideAddListDetailButton();
 		} catch (IOException e) {

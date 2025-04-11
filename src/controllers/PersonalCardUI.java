@@ -25,7 +25,7 @@ public class PersonalCardUI{
     	try {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/PersonalCard.fxml"));
             loader.setController(this);
-            this.personalCardGUI = loader.load();
+            setPersonalCardGUI(loader.load());
             	title.setText(personalCard.getTitle());
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -41,7 +41,7 @@ public class PersonalCardUI{
     	for (Card card: personalCard.getNodeListOwner().getCards()) {
     		if (card.getId() == personalCard.getId()) {
     			personalCard.getNodeListOwner().getCards().remove(card);
-    			Main.boardUI.updateGUI();
+    			Main.mainInterfaceUI.updateGUI();
     			break;
     		}
     	}

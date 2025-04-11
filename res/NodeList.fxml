@@ -10,18 +10,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #ECEFF0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="300.0" style="-fx-background-color: #ECEFF0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #A179F2;">
          <children>
             <Text fx:id="nodeListTitle" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="NodeList Name">
                <font>
-                  <Font name="Ekkamai New Bold" size="20.0" />
+                  <Font name="Ekkamai New Bold" size="28.0" />
                </font>
             </Text>
             <Button mnemonicParsing="false" onAction="#handleDeleteNodeList" style="-fx-background-color: none;" text="X" textFill="WHITE" StackPane.alignment="CENTER_RIGHT">
                <font>
-                  <Font name="Ekkamai New Bold" size="18.0" />
+                  <Font name="Ekkamai New Bold" size="20.0" />
                </font>
             </Button>
          </children>
@@ -29,31 +29,40 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </StackPane>
-      <VBox prefHeight="682.0" prefWidth="200.0" style="-fx-background-color: #ECEFF0;">
+      <VBox prefHeight="1009.0" prefWidth="350.0" style="-fx-background-color: #ECEFF0;">
          <children>
             <VBox fx:id="topContainer" spacing="10.0">
                <children>
                   <VBox fx:id="cardContainer" maxHeight="580.0" prefWidth="180.0" spacing="5.0">
             </VBox>
-                  <VBox fx:id="addCardDetail" prefHeight="104.0" prefWidth="180.0" spacing="5.0">
+                  <VBox fx:id="addCardDetail" prefHeight="127.0" prefWidth="280.0" spacing="5.0">
                      <children>
-                        <TextArea fx:id="titleArea" prefHeight="66.0" prefWidth="180.0" />
+                        <TextArea fx:id="titleArea" prefHeight="66.0" prefWidth="330.0" promptText="Enter card title" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Ekkamai New Bold" size="18.0" />
+                           </font></TextArea>
                         <HBox prefHeight="31.0" prefWidth="180.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#handleAddCardToNodeList" prefHeight="20.0" prefWidth="80.0" style="-fx-background-color: lightblue;" text="Add card">
+                              <Button mnemonicParsing="false" onAction="#handleAddCardToNodeList" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: lightblue;" text="Add card">
                                  <font>
-                                    <Font name="Ekkamai New Bold" size="13.0" />
+                                    <Font name="Ekkamai New Bold" size="18.0" />
                                  </font>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#handleHideAddDetailButton" style="-fx-background-color: none;" text="X" />
+                              <Button mnemonicParsing="false" onAction="#handleHideAddDetailButton" style="-fx-background-color: none;" text="X">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Button>
                            </children>
                         </HBox>
                      </children>
                   </VBox>
                </children>
             </VBox>
-            <Region VBox.vgrow="ALWAYS" />
-            <Button mnemonicParsing="false" onAction="#handleShowAddDetailButton" style="-fx-background-color: none;" text="+ Add a card" VBox.vgrow="NEVER" />
+            <Region prefWidth="330.0" VBox.vgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#handleShowAddDetailButton" prefHeight="38.0" prefWidth="131.0" style="-fx-background-color: none;" text="+ Add a card" VBox.vgrow="NEVER">
+               <font>
+                  <Font name="Ekkamai New Bold" size="18.0" />
+               </font></Button>
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

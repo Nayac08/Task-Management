@@ -20,11 +20,6 @@ public abstract class Card implements Movable{
 		setTitle(title);
 	}
 
-	// Feature
-	public void updateCard() {
-
-	}
-
 	@Override
 	public void dragToList(NodeList list) {
 

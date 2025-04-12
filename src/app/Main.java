@@ -1,6 +1,5 @@
 package app;
 
-
 import controllers.MainInterfaceUI;
 import javafx.application.Application;
 import javafx.scene.Parent;

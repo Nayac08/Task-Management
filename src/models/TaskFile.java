@@ -5,6 +5,7 @@ import java.io.File;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import enums.FileType;
 import interfaces.Displayable;
 import interfaces.Exportable;
 
@@ -13,11 +14,14 @@ public class TaskFile implements Exportable{
 	private MainInterface mainInterface;
 	private Displayable display;
 
-	public TaskFile(int id, String title, MainInterface mainInterface) {
+	public TaskFile(int id, String title, FileType fileType, MainInterface mainInterface) {
 		this.id = id;
 		setMainInterface(mainInterface);
-		// TODO for PersonalDisplay
-		setDisplay(new TeamDisplay(id, title));
+		if (fileType == FileType.Personal) {
+			setDisplay(new PersonalDisplay(id, title));
+		} else if (fileType == FileType.Team) {
+			setDisplay(new TeamDisplay(id, title));
+		}
 	}
 
 	public TaskFile(int id, JSONObject jsonObject, MainInterface mainInterface) {
@@ -67,15 +71,6 @@ public class TaskFile implements Exportable{
 	    }
 
 	    return display;
-	}
-
-
-	public void importFile() {
-
-	}
-
-	public void exportFile() {
-
 	}
 
 	public Displayable getDisplay() {

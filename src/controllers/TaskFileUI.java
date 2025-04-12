@@ -60,16 +60,13 @@ public class TaskFileUI {
 
 	@FXML
 	public void handleExportFile() {
-		System.out.println("Click");
 		FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select a destination");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("JSON Files", "*.json"));
         File selectedFile = fileChooser.showSaveDialog(Main.primaryStage);
         if (selectedFile != null) {
         	try (FileWriter writer = new FileWriter(selectedFile)) {
-        		System.out.println(taskFile.getJsonObject().toString());
                 writer.write(taskFile.getJsonObject().toString(4)); // pretty print with indentation
-                System.out.println("JSON file saved to: " + selectedFile.getAbsolutePath());
             } catch (IOException e) {
                 e.printStackTrace();
             }

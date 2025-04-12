@@ -9,9 +9,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import app.Main;
+import enums.FileType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -28,6 +30,7 @@ public class MainInterfaceUI {
 	@FXML private HBox MainInterfaceGUI;
 	@FXML private VBox fileContainer;
 	@FXML private HBox addFileZone;
+	@FXML private ComboBox<String> fileType;
 	@FXML private TextField newFileName;
 	@FXML private StackPane displayContainer;
 
@@ -35,6 +38,7 @@ public class MainInterfaceUI {
 		setMainInterface(new MainInterface());
 		loadInitialFXML();
 		handleHideAddFileZone();
+		fileType.getItems().addAll("Personal","Team");
 	}
 
 	public void loadInitialFXML(){
@@ -58,7 +62,7 @@ public class MainInterfaceUI {
 			displayContainer.getChildren().clear();
 			TaskFile taskFile = mainInterface.findTaskFile(Main.taskFileIdOpening);
 			if (taskFile != null) {
-				if (taskFile.getDisplay() instanceof TeamDisplayUI) {
+				if (taskFile.getDisplay() instanceof TeamDisplay) {
 					TeamDisplayUI teamDisplayUI = new TeamDisplayUI((TeamDisplay) taskFile.getDisplay());
 					teamDisplayUI.updateGUI();
 					displayContainer.getChildren().add(teamDisplayUI.getTeamDisplayGUI());
@@ -73,7 +77,12 @@ public class MainInterfaceUI {
 
 	@FXML
 	public void handleAddFile() {
-		mainInterface.addTaskFile(newFileName.getText(), mainInterface);
+		if (fileType.getValue().equals("Personal")) {
+			mainInterface.addTaskFile(newFileName.getText(),FileType.Personal, mainInterface);
+		} else if (fileType.getValue().equals("Team")) {
+			mainInterface.addTaskFile(newFileName.getText(),FileType.Team, mainInterface);
+		}
+		fileType.setValue(null);
 		handleHideAddFileZone();
 		updateGUI();
 	}
@@ -93,7 +102,7 @@ public class MainInterfaceUI {
 
 	@FXML
 	public void handleImportFile() {
-		System.out.println("Click");
+		handleHideAddFileZone();
 		FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select a File");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("JSON Files", "*.json"));

@@ -16,7 +16,6 @@ import models.TeamDisplay;
 
 public class TeamDisplayUI{
 	private TeamDisplay teamDisplay;
-	private int idxListNode = 0;
 
 	@FXML private VBox teamDisplayGUI;
 	@FXML private Text displayName;
@@ -62,8 +61,7 @@ public class TeamDisplayUI{
 
     @FXML
     public void handleAddNodeListToBoard() {
-    	teamDisplay.addNodeList(new NodeList(idxListNode, teamDisplay, titleArea.getText()));
-    	idxListNode++;
+    	teamDisplay.addNodeList(new NodeList(teamDisplay.getIdxListNode(), teamDisplay, titleArea.getText()));
     	titleArea.setText("");
     	handleHideAddListDetailButton();
     	updateGUI();
@@ -88,6 +86,7 @@ public class TeamDisplayUI{
 
     @FXML
     public void handleClearDisplay() {
+    	Main.taskFileIdOpening = -1;
     	Main.mainInterfaceUI.getDisplayContainer().getChildren().clear();
     }
 

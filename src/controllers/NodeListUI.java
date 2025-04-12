@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.util.ListResourceBundle;
 
 import app.Main;
 import javafx.fxml.FXML;
@@ -15,7 +16,6 @@ import models.TeamCard;
 
 public class NodeListUI{
 	private NodeList nodeList;
-	private int idxCard = 0;
 
 	@FXML private VBox nodeListGUI;
 	@FXML private Text nodeListTitle;
@@ -58,8 +58,7 @@ public class NodeListUI{
     @FXML
     public void handleAddCardToNodeList(){
     	// TODO for TeamCard
-    	nodeList.addCard(new TeamCard(idxCard, nodeList, titleArea.getText()));
-    	idxCard++;
+    	nodeList.addCard(new TeamCard(nodeList.getIdxCard(), nodeList, titleArea.getText()));
     	titleArea.setText("");
     	handleHideAddDetailButton();
     	updateGUI();
@@ -80,6 +79,10 @@ public class NodeListUI{
 
     @FXML
     public void handleDeleteNodeList() {
+    	System.out.println("run");
+    	for (NodeList list :nodeList.getDisplayOwner().getNodeLists()) {
+    		System.out.println(list.getId());
+    	}
     	for (NodeList list :nodeList.getDisplayOwner().getNodeLists()) {
     		if (list.getId() == nodeList.getId()) {
     			nodeList.getDisplayOwner().getNodeLists().remove(list);

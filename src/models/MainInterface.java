@@ -1,10 +1,10 @@
 package models;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.json.JSONObject;
+
+import enums.FileType;
 
 
 public class MainInterface {
@@ -15,8 +15,8 @@ public class MainInterface {
 		setTaskFiles(new ArrayList<>());
 	}
 
-	public void addTaskFile(String title, MainInterface mainInterface) {
-		taskFiles.add(new TaskFile(idxTaskFile, title, mainInterface));
+	public void addTaskFile(String title,FileType fileType, MainInterface mainInterface) {
+		taskFiles.add(new TaskFile(idxTaskFile, title, fileType, mainInterface));
 		idxTaskFile++;
 	}
 

@@ -1,6 +1,9 @@
 package controllers;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
 import models.PersonalDisplay;
 
@@ -16,6 +19,13 @@ public class PersonalDisplayUI {
 	}
 
     public void loadInitialFXML(){
+    	try {
+    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/PersonalDisplay.fxml"));
+            loader.setController(this);
+            setPersonalDisplayGUI(loader.load());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 
     public void updateGUI() {

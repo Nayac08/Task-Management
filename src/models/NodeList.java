@@ -15,6 +15,7 @@ import javafx.scene.paint.Color;
 public class NodeList implements Sortable,Exportable{
     private int id;
     private Displayable displayOwner;
+    private int idxCard;
     private String title;
     private List<Card> cards;
     private Color color = Color.GRAY;
@@ -22,6 +23,7 @@ public class NodeList implements Sortable,Exportable{
     public NodeList(int id, Displayable displayOwner, String title) {
     	this.id = id;
     	setTitle(title);
+    	setIdxCard(0);
     	setDisplayOwner(displayOwner);
     	setCards(new ArrayList<>());
     }
@@ -58,6 +60,7 @@ public class NodeList implements Sortable,Exportable{
     // Cards
     public void addCard(Card card) {
     	cards.add(card);
+    	setIdxCard(card.getId() + 1);
     }
 
     public void removeCard(int id) {
@@ -97,6 +100,14 @@ public class NodeList implements Sortable,Exportable{
 
 	public void setDisplayOwner(Displayable displayOwner) {
 		this.displayOwner = displayOwner;
+	}
+
+	public int getIdxCard() {
+		return idxCard;
+	}
+
+	public void setIdxCard(int idxCard) {
+		this.idxCard = idxCard;
 	}
 
 	@Override

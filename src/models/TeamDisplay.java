@@ -10,6 +10,7 @@ import interfaces.Exportable;
 
 public class TeamDisplay implements Displayable,Exportable{
     private int id;
+    private int idxListNode;
     private String name;
     private List<NodeList> nodeLists;
     private List<Member> members; // Member in members can be selected in Card in NodeList
@@ -17,6 +18,7 @@ public class TeamDisplay implements Displayable,Exportable{
     public TeamDisplay(int id, String name) {
     	this.id = id;
     	setName(name);
+    	setIdxListNode(0);
     	setNodeLists(new ArrayList<>());
     	setMembers(new ArrayList<>());
     }
@@ -39,6 +41,7 @@ public class TeamDisplay implements Displayable,Exportable{
     // NodeLists
     public void addNodeList(NodeList List) {
     	nodeLists.add(List);
+    	setIdxListNode(List.getId() + 1);
     }
 
     public void removeNodeList(int id) {
@@ -99,6 +102,14 @@ public class TeamDisplay implements Displayable,Exportable{
 		this.members = members;
 	}
 
+	public int getIdxListNode() {
+		return idxListNode;
+	}
+
+	public void setIdxListNode(int idxListNode) {
+		this.idxListNode = idxListNode;
+	}
+	
 	@Override
 	public JSONObject getJsonObject() {
 		JSONObject teamDisplayJsonObject = new JSONObject();

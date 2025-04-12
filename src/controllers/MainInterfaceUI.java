@@ -12,12 +12,19 @@ import app.Main;
 import enums.FileType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import models.MainInterface;
 import models.PersonalDisplay;
@@ -38,7 +45,6 @@ public class MainInterfaceUI {
 		setMainInterface(new MainInterface());
 		loadInitialFXML();
 		handleHideAddFileZone();
-		fileType.getItems().addAll("Personal","Team");
 	}
 
 	public void loadInitialFXML(){
@@ -77,12 +83,12 @@ public class MainInterfaceUI {
 
 	@FXML
 	public void handleAddFile() {
+		
 		if (fileType.getValue().equals("Personal")) {
 			mainInterface.addTaskFile(newFileName.getText(),FileType.Personal, mainInterface);
 		} else if (fileType.getValue().equals("Team")) {
 			mainInterface.addTaskFile(newFileName.getText(),FileType.Team, mainInterface);
 		}
-		fileType.setValue(null);
 		handleHideAddFileZone();
 		updateGUI();
 	}
@@ -96,6 +102,7 @@ public class MainInterfaceUI {
 	@FXML
 	public void handleHideAddFileZone() {
 		newFileName.setText("");
+		fileType.getSelectionModel().clearSelection();
 		addFileZone.setManaged(false);
 		addFileZone.setVisible(false);
 	}

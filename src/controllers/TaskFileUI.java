@@ -60,6 +60,7 @@ public class TaskFileUI {
 
 	@FXML
 	public void handleExportFile() {
+		Main.mainInterfaceUI.handleHideAddFileZone();
 		FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select a destination");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("JSON Files", "*.json"));

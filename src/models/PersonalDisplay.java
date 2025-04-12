@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -13,9 +14,10 @@ public class PersonalDisplay implements Displayable,Exportable{
 	private String name;
 	private List<NodeList> nodeLists;
 
-    public PersonalDisplay(int id) {
+    public PersonalDisplay(int id, String name) {
     	this.id = id;
-    	syncEvents();
+    	setName(name);
+    	setNodeLists(new ArrayList<NodeList>());
     }
 
     // Feature

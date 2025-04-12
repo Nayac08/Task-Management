@@ -2,6 +2,7 @@ package models;
 
 import java.io.File;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import interfaces.Displayable;
@@ -11,30 +12,63 @@ public class TaskFile implements Exportable{
 	private int id;
 	private MainInterface mainInterface;
 	private Displayable display;
-	private File file;
 
 	public TaskFile(int id, String title, MainInterface mainInterface) {
 		this.id = id;
-		setFile(null);
 		setMainInterface(mainInterface);
 		// TODO for PersonalDisplay
 		setDisplay(new TeamDisplay(id, title));
 	}
 
-	public TaskFile(int id, File file, MainInterface mainInterface) {
+	public TaskFile(int id, JSONObject jsonObject, MainInterface mainInterface) {
 		this.id = id;
-		setFile(file);
 		setMainInterface(mainInterface);
-		setDisplay(CSVToBoard());
+		setDisplay(jsonToDisplay(jsonObject));
 	}
 
-	public Displayable CSVToBoard() {
-		return null;
+	public Displayable jsonToDisplay(JSONObject jsonTaskFileObject) {
+	    String displayType = jsonTaskFileObject.getString("displayType");
+	    JSONObject displayObject = jsonTaskFileObject.getJSONObject("display");
+	    JSONArray nodeListsArray = displayObject.getJSONArray("nodeLists");
+
+	    Displayable display;
+	    boolean isTeam = displayType.equals("TeamDisplay");
+
+	    if (isTeam) {
+	        display = new TeamDisplay(id, displayObject.getString("name"));
+	    } else if (displayType.equals("PersonalDisplay")) {
+	        display = new PersonalDisplay(id, displayObject.getString("name"));
+	    } else {
+	        return null;
+	    }
+
+	    for (int i = 0; i < nodeListsArray.length(); i++) {
+	        JSONObject nodeListObject = nodeListsArray.getJSONObject(i);
+	        JSONArray cardsArray = nodeListObject.getJSONArray("cards");
+
+	        NodeList nodeList = new NodeList(nodeListObject.getInt("id"), display, nodeListObject.getString("title"));
+
+	        for (int j = 0; j < cardsArray.length(); j++) {
+	            JSONObject cardObject = cardsArray.getJSONObject(j);
+	            Card card;
+	            if (isTeam) {
+	                card = new TeamCard(cardObject.getInt("id"), nodeList, cardObject.getString("title"));
+	            } else {
+	                card = new PersonalCard(cardObject.getInt("id"), nodeList, cardObject.getString("title"));
+	            }
+	            nodeList.addCard(card);
+	        }
+
+	        if (isTeam) {
+	            ((TeamDisplay) display).addNodeList(nodeList);
+	        } else {
+	            ((PersonalDisplay) display).addNodeList(nodeList);
+	        }
+	    }
+
+	    return display;
 	}
 
-	public File BoardToCSV() {
-		return null;
-	}
 
 	public void importFile() {
 
@@ -50,14 +84,6 @@ public class TaskFile implements Exportable{
 
 	public void setDisplay(Displayable display) {
 		this.display = display;
-	}
-
-	public File getFile() {
-		return file;
-	}
-
-	public void setFile(File file) {
-		this.file = file;
 	}
 
 	public int getId() {

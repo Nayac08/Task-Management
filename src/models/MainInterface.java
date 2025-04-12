@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONObject;
+
 
 public class MainInterface {
 	private int idxTaskFile = 0;
@@ -13,29 +15,13 @@ public class MainInterface {
 		setTaskFiles(new ArrayList<>());
 	}
 
-	public int getIdxTaskFile() {
-		return idxTaskFile;
-	}
-
-	public void setIdxTaskFile(int idxTaskFile) {
-		this.idxTaskFile = idxTaskFile;
-	}
-
-	public List<TaskFile> getTaskFiles() {
-		return taskFiles;
-	}
-
-	public void setTaskFiles(List<TaskFile> taskFile) {
-		this.taskFiles = taskFile;
-	}
-
 	public void addTaskFile(String title, MainInterface mainInterface) {
 		taskFiles.add(new TaskFile(idxTaskFile, title, mainInterface));
 		idxTaskFile++;
 	}
 
-	public void addTaskFile(File file, MainInterface mainInterface) {
-		taskFiles.add(new TaskFile(idxTaskFile, file, mainInterface));
+	public void addTaskFile(JSONObject jsonObject, MainInterface mainInterface) {
+		taskFiles.add(new TaskFile(idxTaskFile, jsonObject, mainInterface));
 		idxTaskFile++;
 	}
 
@@ -52,9 +38,24 @@ public class MainInterface {
 		for (TaskFile taskFile: taskFiles) {
 			if (taskFile.getId() == id) {
 				taskFiles.remove(taskFile);
-				System.out.println("Delete complete");
 				break;
 			}
 		}
+	}
+	
+	public int getIdxTaskFile() {
+		return idxTaskFile;
+	}
+
+	public void setIdxTaskFile(int idxTaskFile) {
+		this.idxTaskFile = idxTaskFile;
+	}
+
+	public List<TaskFile> getTaskFiles() {
+		return taskFiles;
+	}
+
+	public void setTaskFiles(List<TaskFile> taskFile) {
+		this.taskFiles = taskFile;
 	}
 }

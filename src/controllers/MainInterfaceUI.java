@@ -2,6 +2,11 @@ package controllers;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import app.Main;
 import javafx.fxml.FXML;
@@ -91,7 +96,21 @@ public class MainInterfaceUI {
 		System.out.println("Click");
 		FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select a File");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("JSON Files", "*.json"));
         File selectedFile = fileChooser.showOpenDialog(Main.primaryStage);
+        if (selectedFile != null) {
+            try {
+                String content = new String(Files.readAllBytes(selectedFile.toPath()), StandardCharsets.UTF_8);
+                JSONObject importedJson = new JSONObject(content);
+                	mainInterface.addTaskFile(importedJson, mainInterface);
+                	updateGUI();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                System.err.println("Invalid JSON format.");
+                e.printStackTrace();
+            }
+        }
 	}
 
 	public HBox getMainInterfaceGUI() {

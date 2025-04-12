@@ -79,6 +79,7 @@ public class BoardUI{
 
     @FXML
     public void handleHideAddListDetailButton() {
+    	titleArea.setText("");
     	addListNodeDetail.setVisible(false);
     	addListNodeDetail.setManaged(false);
     	addListNodeButton.setVisible(true);

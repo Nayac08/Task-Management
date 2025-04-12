@@ -13,7 +13,7 @@ public class Main extends Application {
 	public static int taskFileIdOpening = -1;
 
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
         // Load FXML file
     	MainInterfaceUI mainInterfaceUI = new MainInterfaceUI();
         Parent root = mainInterfaceUI.getMainInterfaceGUI();

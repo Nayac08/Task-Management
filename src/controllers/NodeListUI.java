@@ -65,6 +65,7 @@ public class NodeListUI{
 
     @FXML
     public void handleHideAddDetailButton() {
+    	titleArea.setText("");
     	addCardDetail.setVisible(false);
 		addCardDetail.setManaged(false);
     }

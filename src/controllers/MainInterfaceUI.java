@@ -1,5 +1,6 @@
 package controllers;
 
+import java.io.File;
 import java.io.IOException;
 
 import app.Main;
@@ -10,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import models.MainInterface;
 import models.PersonalDisplay;
 import models.TaskFile;
@@ -77,10 +79,19 @@ public class MainInterfaceUI {
 		addFileZone.setVisible(true);
 	}
 
+	@FXML
 	public void handleHideAddFileZone() {
 		newFileName.setText("");
 		addFileZone.setManaged(false);
 		addFileZone.setVisible(false);
+	}
+
+	@FXML
+	public void handleImportFile() {
+		System.out.println("Click");
+		FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select a File");
+        File selectedFile = fileChooser.showOpenDialog(Main.primaryStage);
 	}
 
 	public HBox getMainInterfaceGUI() {

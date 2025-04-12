@@ -1,7 +1,10 @@
 package models;
 
+import org.json.JSONObject;
 
-public class PersonalCard extends Card{
+import interfaces.Exportable;
+
+public class PersonalCard extends Card implements Exportable{
 	public Label label; // Add later
 
 	public PersonalCard(int id,NodeList nodeListOwner, String title) {
@@ -14,5 +17,14 @@ public class PersonalCard extends Card{
 
 	public void setLabel(Label label) {
 		this.label = label;
+	}
+
+	@Override
+	public JSONObject getJsonObject() {
+		JSONObject personalCardJsonObject = new JSONObject();
+		personalCardJsonObject.put("id", id);
+		personalCardJsonObject.put("title", title);
+		// Add later
+		return personalCardJsonObject;
 	}
 }

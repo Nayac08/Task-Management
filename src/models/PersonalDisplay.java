@@ -2,9 +2,13 @@ package models;
 
 import java.util.List;
 
-import interfaces.Displayable;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-public class PersonalDisplay implements Displayable{
+import interfaces.Displayable;
+import interfaces.Exportable;
+
+public class PersonalDisplay implements Displayable,Exportable{
 	private int id;
 	private String name;
 	private List<NodeList> nodeLists;
@@ -68,5 +72,18 @@ public class PersonalDisplay implements Displayable{
 
     public void setNodeLists(List<NodeList> nodeLists) {
 		this.nodeLists = nodeLists;
+	}
+
+    @Override
+	public JSONObject getJsonObject() {
+		JSONObject personalDisplayJsonObject = new JSONObject();
+		personalDisplayJsonObject.put("name", name);
+		JSONArray nodeListJsonArray = new JSONArray();
+		for (NodeList nodeList: nodeLists) {
+			nodeListJsonArray.put(nodeList.getJsonObject());
+		}
+		personalDisplayJsonObject.put("nodeLists", nodeListJsonArray);
+		// TODO add members later
+		return personalDisplayJsonObject;
 	}
 }

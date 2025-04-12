@@ -2,9 +2,12 @@ package models;
 
 import java.util.List;
 
-import enums.Priority;
+import org.json.JSONObject;
 
-public class TeamCard extends Card{
+import enums.Priority;
+import interfaces.Exportable;
+
+public class TeamCard extends Card implements Exportable{
 	private List<Member> members; // Add later , This members is assigned to finish this Card
 	private Priority priority; // Add later
 
@@ -46,5 +49,14 @@ public class TeamCard extends Card{
 
 	public Priority getPriority() {
 		return priority;
+	}
+
+	@Override
+	public JSONObject getJsonObject() {
+		JSONObject teamCardJsonObject = new JSONObject();
+		teamCardJsonObject.put("id", id);
+		teamCardJsonObject.put("title", title);
+		// Add later
+		return teamCardJsonObject;
 	}
 }

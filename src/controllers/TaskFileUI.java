@@ -1,5 +1,7 @@
 package controllers;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import app.Main;
@@ -7,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import models.PersonalDisplay;
 import models.TaskFile;
 import models.TeamDisplay;
@@ -53,6 +56,24 @@ public class TaskFileUI {
 		}
 		Main.taskFileIdOpening = taskFile.getId();
 		Main.mainInterfaceUI.handleHideAddFileZone();
+	}
+
+	@FXML
+	public void handleExportFile() {
+		System.out.println("Click");
+		FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select a destination");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("JSON Files", "*.json"));
+        File selectedFile = fileChooser.showSaveDialog(Main.primaryStage);
+        if (selectedFile != null) {
+        	try (FileWriter writer = new FileWriter(selectedFile)) {
+        		System.out.println(taskFile.getJsonObject().toString());
+                writer.write(taskFile.getJsonObject().toString(4)); // pretty print with indentation
+                System.out.println("JSON file saved to: " + selectedFile.getAbsolutePath());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 	}
 
 	public void updateGUI() {

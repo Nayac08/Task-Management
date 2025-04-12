@@ -2,9 +2,12 @@ package models;
 
 import java.io.File;
 
-import interfaces.Displayable;
+import org.json.JSONObject;
 
-public class TaskFile {
+import interfaces.Displayable;
+import interfaces.Exportable;
+
+public class TaskFile implements Exportable{
 	private int id;
 	private MainInterface mainInterface;
 	private Displayable display;
@@ -14,6 +17,7 @@ public class TaskFile {
 		this.id = id;
 		setFile(null);
 		setMainInterface(mainInterface);
+		// TODO for PersonalDisplay
 		setDisplay(new TeamDisplay(id, title));
 	}
 
@@ -66,5 +70,20 @@ public class TaskFile {
 
 	public void setMainInterface(MainInterface mainInterface) {
 		this.mainInterface = mainInterface;
+	}
+
+	@Override
+	public JSONObject getJsonObject() {
+		JSONObject taskFileJsonObject = new JSONObject();
+		//
+		if (display instanceof TeamDisplay) {
+			taskFileJsonObject.put("displayType", "TeamDisplay");
+			taskFileJsonObject.put("display",((TeamDisplay) display).getJsonObject());
+		} else if (display instanceof PersonalDisplay) {
+			taskFileJsonObject.put("displayType", "PersonalDisplay");
+			taskFileJsonObject.put("display", ((PersonalDisplay) display).getJsonObject());
+		}
+		return taskFileJsonObject;
+
 	}
 }

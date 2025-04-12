@@ -57,7 +57,8 @@ public class NodeListUI{
 
     @FXML
     public void handleAddCardToNodeList(){
-    	nodeList.addCard(new PersonalCard(idxCard, nodeList, titleArea.getText()));
+    	// TODO for TeamCard
+    	nodeList.addCard(new TeamCard(idxCard, nodeList, titleArea.getText()));
     	idxCard++;
     	titleArea.setText("");
     	handleHideAddDetailButton();

@@ -10,10 +10,12 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	public static MainInterfaceUI mainInterfaceUI;
+	public static Stage primaryStage;
 	public static int taskFileIdOpening = -1;
 
     @Override
     public void start(Stage primaryStage) {
+    	Main.primaryStage = primaryStage;
         // Load FXML file
     	MainInterfaceUI mainInterfaceUI = new MainInterfaceUI();
         Parent root = mainInterfaceUI.getMainInterfaceGUI();

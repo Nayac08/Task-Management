@@ -3,12 +3,16 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import enums.SortCriteria;
 import interfaces.Displayable;
+import interfaces.Exportable;
 import interfaces.Sortable;
 import javafx.scene.paint.Color;
 
-public class NodeList implements Sortable{
+public class NodeList implements Sortable,Exportable{
     private int id;
     private Displayable displayOwner;
     private String title;
@@ -93,6 +97,25 @@ public class NodeList implements Sortable{
 
 	public void setDisplayOwner(Displayable displayOwner) {
 		this.displayOwner = displayOwner;
+	}
+
+	@Override
+	public JSONObject getJsonObject() {
+		JSONObject nodeListJsonObject = new JSONObject();
+		nodeListJsonObject.put("id", id);
+		nodeListJsonObject.put("title", title);
+		JSONArray cardsJsonArray = new JSONArray();
+		if (!cards.isEmpty() && cards.get(0) instanceof TeamCard) {
+			for (Card card: cards) {
+				cardsJsonArray.put(((TeamCard)card).getJsonObject());
+			}
+		} else if (!cards.isEmpty() && cards.get(0) instanceof PersonalCard) {
+			for (Card card: cards) {
+				cardsJsonArray.put(((PersonalCard)card).getJsonObject());
+			}
+		}
+		nodeListJsonObject.put("cards", cardsJsonArray);
+		return nodeListJsonObject;
 	}
 
 

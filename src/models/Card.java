@@ -6,13 +6,13 @@ import java.util.List;
 import interfaces.Movable;
 
 public abstract class Card implements Movable{
-	private int id;
-	private NodeList nodeListOwner; // For exporting CSV purpose
-	private String title;
-	private String description; // Add later
-	private LocalDateTime date; // Add later
-	private List<ChecklistItem> checklists; // Add later
-	private double checklistPercentage; // Add later when checklists is initialized
+	protected int id;
+	protected NodeList nodeListOwner; // For exporting CSV purpose
+	protected String title;
+	protected String description; // Add later
+	protected LocalDateTime date; // Add later
+	protected List<ChecklistItem> checklists; // Add later
+	protected double checklistPercentage; // Add later when checklists is initialized
 
 	public Card(int id,NodeList nodeListOwner, String title) {
 		this.id = id;

@@ -2,9 +2,13 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
-import interfaces.Displayable;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-public class TeamDisplay implements Displayable{
+import interfaces.Displayable;
+import interfaces.Exportable;
+
+public class TeamDisplay implements Displayable,Exportable{
     private int id;
     private String name;
     private List<NodeList> nodeLists;
@@ -93,5 +97,18 @@ public class TeamDisplay implements Displayable{
 
     public void setMembers(List<Member> members) {
 		this.members = members;
+	}
+
+	@Override
+	public JSONObject getJsonObject() {
+		JSONObject teamDisplayJsonObject = new JSONObject();
+		teamDisplayJsonObject.put("name", name);
+		JSONArray nodeListJsonArray = new JSONArray();
+		for (NodeList nodeList: nodeLists) {
+			nodeListJsonArray.put(nodeList.getJsonObject());
+		}
+		teamDisplayJsonObject.put("nodeLists", nodeListJsonArray);
+		// TODO add members later
+		return teamDisplayJsonObject;
 	}
 }

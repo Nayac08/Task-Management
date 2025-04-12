@@ -8,11 +8,11 @@ import java.util.List;
 public class MainInterface {
 	private int idxTaskFile = 0;
 	private List<TaskFile> taskFiles;
-	
+
 	public MainInterface() {
-		setTaskFiles(new ArrayList<TaskFile>());
+		setTaskFiles(new ArrayList<>());
 	}
-	
+
 	public int getIdxTaskFile() {
 		return idxTaskFile;
 	}
@@ -28,17 +28,17 @@ public class MainInterface {
 	public void setTaskFiles(List<TaskFile> taskFile) {
 		this.taskFiles = taskFile;
 	}
-	
+
 	public void addTaskFile(String title, MainInterface mainInterface) {
 		taskFiles.add(new TaskFile(idxTaskFile, title, mainInterface));
 		idxTaskFile++;
 	}
-	
+
 	public void addTaskFile(File file, MainInterface mainInterface) {
 		taskFiles.add(new TaskFile(idxTaskFile, file, mainInterface));
 		idxTaskFile++;
 	}
-	
+
 	public TaskFile findTaskFile(int id) {
 		for (TaskFile taskFile: taskFiles) {
 			if (taskFile.getId() == id) {
@@ -47,7 +47,7 @@ public class MainInterface {
 		}
 		return null;
 	}
-	
+
 	public void deleteTaskFile(int id) {
 		for (TaskFile taskFile: taskFiles) {
 			if (taskFile.getId() == id) {

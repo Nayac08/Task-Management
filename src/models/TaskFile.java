@@ -2,48 +2,50 @@ package models;
 
 import java.io.File;
 
+import interfaces.Displayable;
+
 public class TaskFile {
 	private int id;
 	private MainInterface mainInterface;
-	private Board board;
+	private Displayable display;
 	private File file;
-	
+
 	public TaskFile(int id, String title, MainInterface mainInterface) {
 		this.id = id;
 		setFile(null);
 		setMainInterface(mainInterface);
-		setBoard(new Board(id, title));
+		setDisplay(new TeamDisplay(id, title));
 	}
-	
+
 	public TaskFile(int id, File file, MainInterface mainInterface) {
 		this.id = id;
 		setFile(file);
 		setMainInterface(mainInterface);
-		setBoard(CSVToBoard());
+		setDisplay(CSVToBoard());
 	}
-	
-	public Board CSVToBoard() {
+
+	public Displayable CSVToBoard() {
 		return null;
 	}
-	
+
 	public File BoardToCSV() {
 		return null;
 	}
-	
+
 	public void importFile() {
-		
+
 	}
-	
+
 	public void exportFile() {
-		
+
 	}
 
-	public Board getBoard() {
-		return board;
+	public Displayable getDisplay() {
+		return display;
 	}
 
-	public void setBoard(Board board) {
-		this.board = board;
+	public void setDisplay(Displayable display) {
+		this.display = display;
 	}
 
 	public File getFile() {

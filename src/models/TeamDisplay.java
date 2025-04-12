@@ -1,15 +1,16 @@
 package models;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Board {
+import interfaces.Displayable;
+
+public class TeamDisplay implements Displayable{
     private int id;
     private String name;
     private List<NodeList> nodeLists;
     private List<Member> members; // Member in members can be selected in Card in NodeList
 
-    public Board(int id, String name) {
+    public TeamDisplay(int id, String name) {
     	this.id = id;
     	setName(name);
     	setNodeLists(new ArrayList<>());
@@ -22,7 +23,8 @@ public class Board {
   	}
 
     // Name
- 	public String getName() {
+ 	@Override
+	public String getName() {
  		return name;
  	}
 
@@ -53,7 +55,8 @@ public class Board {
     	return null;
     }
 
-    public List<NodeList> getNodeLists() {
+    @Override
+	public List<NodeList> getNodeLists() {
     	return nodeLists;
     }
 

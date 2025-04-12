@@ -11,6 +11,7 @@ import javafx.scene.text.Text;
 import models.Card;
 import models.NodeList;
 import models.PersonalCard;
+import models.TeamCard;
 
 public class NodeListUI{
 	private NodeList nodeList;
@@ -42,9 +43,15 @@ public class NodeListUI{
     public void updateGUI() {
     	cardContainer.getChildren().clear();
     	for (Card card: nodeList.getCards()) {
-    		PersonalCardUI personalCardUI = new PersonalCardUI((PersonalCard) card);
-    		personalCardUI.updateGUI();
-    		cardContainer.getChildren().add(personalCardUI.getPersonalCardGUI());
+    		if (card instanceof TeamCard) {
+    			TeamCardUI teamCardUI = new TeamCardUI((TeamCard) card);
+        		teamCardUI.updateGUI();
+        		cardContainer.getChildren().add(teamCardUI.getTeamCardGUI());
+    		} else if (card instanceof PersonalCard) {
+    			PersonalCardUI personalCardUI = new PersonalCardUI((PersonalCard) card);
+        		personalCardUI.updateGUI();
+        		cardContainer.getChildren().add(personalCardUI.getPersonalCardGUI());
+    		}
     	}
     }
 
@@ -72,9 +79,9 @@ public class NodeListUI{
 
     @FXML
     public void handleDeleteNodeList() {
-    	for (NodeList list :nodeList.getBoardOwner().getNodeLists()) {
+    	for (NodeList list :nodeList.getDisplayOwner().getNodeLists()) {
     		if (list.getId() == nodeList.getId()) {
-    			nodeList.getBoardOwner().getNodeLists().remove(list);
+    			nodeList.getDisplayOwner().getNodeLists().remove(list);
     			Main.mainInterfaceUI.updateGUI();
     			break;
     		}

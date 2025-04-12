@@ -2,11 +2,11 @@ package utils;
 
 import java.io.File;
 
-import models.Board;
 import models.Card;
+import models.TeamDisplay;
 
 public class CSVManager {
-	public void saveBoardToCSV(Board board, File file) {
+	public void saveBoardToCSV(TeamDisplay board, File file) {
 
 	}
 

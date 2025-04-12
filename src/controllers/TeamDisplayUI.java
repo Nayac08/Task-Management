@@ -11,14 +11,14 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import models.Board;
 import models.NodeList;
+import models.TeamDisplay;
 
-public class BoardUI{
-	private Board board;
+public class TeamDisplayUI{
+	private TeamDisplay teamDisplay;
 	private int idxListNode = 0;
 
-	@FXML private VBox boardGUI;
+	@FXML private VBox teamDisplayGUI;
 	@FXML private Text displayName;
 	@FXML private HBox displayZone;
 	@FXML private VBox addListZone;
@@ -26,17 +26,17 @@ public class BoardUI{
 	@FXML private TextArea titleArea;
 	@FXML private Button addListNodeButton;
 
-	public BoardUI(Board board) {
-		setBoard(board);
+	public TeamDisplayUI(TeamDisplay teamDisplay) {
+		setTeamDisplay(teamDisplay);
 		loadInitialFXML();
-        displayName.setText(board.getName());
+        displayName.setText(teamDisplay.getName());
 	}
 
     public void loadInitialFXML(){
     	try {
-    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/Board.fxml"));
+    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/TeamDisplay.fxml"));
             loader.setController(this);
-            setBoardGUI(loader.load());
+            setTeamDisplayGUI(loader.load());
             handleHideAddListDetailButton();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -46,7 +46,7 @@ public class BoardUI{
     public void updateGUI() {
     	Node addListNode = displayZone.getChildren().removeLast();
     	displayZone.getChildren().clear();
-    	for (NodeList nodeList: board.getNodeLists()) {
+    	for (NodeList nodeList: teamDisplay.getNodeLists()) {
     		NodeListUI nodeListUI;
 			try {
 				nodeListUI = new NodeListUI(nodeList);
@@ -62,7 +62,7 @@ public class BoardUI{
 
     @FXML
     public void handleAddNodeListToBoard() {
-    	board.addNodeList(new NodeList(idxListNode, board, titleArea.getText()));
+    	teamDisplay.addNodeList(new NodeList(idxListNode, teamDisplay, titleArea.getText()));
     	idxListNode++;
     	titleArea.setText("");
     	handleHideAddListDetailButton();
@@ -85,37 +85,25 @@ public class BoardUI{
     	addListNodeButton.setVisible(true);
     	addListNodeButton.setManaged(true);
     }
-    
+
     @FXML
     public void handleClearDisplay() {
     	Main.mainInterfaceUI.getDisplayContainer().getChildren().clear();
     }
 
-    public void removeListFromBoard(NodeList list){
-    	updateGUI();
-    }
-
-    public void sortBoardLists(){
-    	updateGUI();
-    }
-
-    public void loadBoardData(){
-    	updateGUI();
-    }
-
-	public Board getBoard() {
-		return board;
+	public TeamDisplay getTeamDisplay() {
+		return teamDisplay;
 	}
 
-	public void setBoard(Board board) {
-		this.board = board;
+	public void setTeamDisplay(TeamDisplay teamDisplay) {
+		this.teamDisplay = teamDisplay;
 	}
 
-	public VBox getBoardGUI() {
-		return boardGUI;
+	public VBox getTeamDisplayGUI() {
+		return teamDisplayGUI;
 	}
 
-	public void setBoardGUI(VBox boardGUI) {
-		this.boardGUI = boardGUI;
+	public void setTeamDisplayGUI(VBox teamDisplayGUI) {
+		this.teamDisplayGUI = teamDisplayGUI;
 	}
 }

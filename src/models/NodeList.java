@@ -4,20 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import enums.SortCriteria;
+import interfaces.Displayable;
 import interfaces.Sortable;
 import javafx.scene.paint.Color;
 
 public class NodeList implements Sortable{
     private int id;
-    private Board boardOwner;
+    private Displayable displayOwner;
     private String title;
     private List<Card> cards;
     private Color color = Color.GRAY;
 
-    public NodeList(int id, Board boardOwner, String title) {
+    public NodeList(int id, Displayable displayOwner, String title) {
     	this.id = id;
     	setTitle(title);
-    	setBoardOwner(boardOwner);
+    	setDisplayOwner(displayOwner);
     	setCards(new ArrayList<>());
     }
 
@@ -85,13 +86,13 @@ public class NodeList implements Sortable{
 		this.color = color;
 	}
 
-	// Board Owner
-	public Board getBoardOwner() {
-		return boardOwner;
+	// Display Owner
+	public Displayable getDisplayOwner() {
+		return displayOwner;
 	}
 
-	public void setBoardOwner(Board boardOwner) {
-		this.boardOwner = boardOwner;
+	public void setDisplayOwner(Displayable displayOwner) {
+		this.displayOwner = displayOwner;
 	}
 
 

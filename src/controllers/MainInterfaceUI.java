@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+
 import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,23 +11,25 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import models.MainInterface;
+import models.PersonalDisplay;
 import models.TaskFile;
+import models.TeamDisplay;
 
 public class MainInterfaceUI {
 	private MainInterface mainInterface;
-	
+
 	@FXML private HBox MainInterfaceGUI;
 	@FXML private VBox fileContainer;
 	@FXML private HBox addFileZone;
 	@FXML private TextField newFileName;
 	@FXML private StackPane displayContainer;
-	
+
 	public MainInterfaceUI() {
 		setMainInterface(new MainInterface());
 		loadInitialFXML();
 		handleHideAddFileZone();
 	}
-	
+
 	public void loadInitialFXML(){
     	try {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainInterface.fxml"));
@@ -36,7 +39,7 @@ public class MainInterfaceUI {
 			e.printStackTrace();
 		}
     }
-	
+
 	public void updateGUI() {
 		Node addFileNode = fileContainer.getChildren().removeLast();
 		fileContainer.getChildren().clear();
@@ -48,28 +51,34 @@ public class MainInterfaceUI {
 			displayContainer.getChildren().clear();
 			TaskFile taskFile = mainInterface.findTaskFile(Main.taskFileIdOpening);
 			if (taskFile != null) {
-				BoardUI boardUI = new BoardUI(taskFile.getBoard());
-				boardUI.updateGUI();
-				displayContainer.getChildren().add(boardUI.getBoardGUI());
-			}	
+				if (taskFile.getDisplay() instanceof TeamDisplayUI) {
+					TeamDisplayUI teamDisplayUI = new TeamDisplayUI((TeamDisplay) taskFile.getDisplay());
+					teamDisplayUI.updateGUI();
+					displayContainer.getChildren().add(teamDisplayUI.getTeamDisplayGUI());
+				} else if (taskFile.getDisplay() instanceof PersonalDisplay) {
+					PersonalDisplayUI personalDisplayUI = new PersonalDisplayUI((PersonalDisplay) taskFile.getDisplay());
+					personalDisplayUI.updateGUI();
+					displayContainer.getChildren().add(personalDisplayUI.getPersonalDisplayGUI());
+				}
+			}
 		}
 	}
-	
+
 	@FXML
 	public void handleAddFile() {
 		mainInterface.addTaskFile(newFileName.getText(), mainInterface);
-		newFileName.setText("");
 		handleHideAddFileZone();
 		updateGUI();
 	}
-	
+
 	@FXML
 	public void handleShowAddFileZone() {
 		addFileZone.setManaged(true);
 		addFileZone.setVisible(true);
 	}
-	
+
 	public void handleHideAddFileZone() {
+		newFileName.setText("");
 		addFileZone.setManaged(false);
 		addFileZone.setVisible(false);
 	}

@@ -44,7 +44,7 @@ public class BoardUI{
     }
 
     public void updateGUI() {
-    	Node firstChild = displayZone.getChildren().removeLast();
+    	Node addListNode = displayZone.getChildren().removeLast();
     	displayZone.getChildren().clear();
     	for (NodeList nodeList: board.getNodeLists()) {
     		NodeListUI nodeListUI;
@@ -56,7 +56,7 @@ public class BoardUI{
 				e.printStackTrace();
 			}
     	}
-    	displayZone.getChildren().add(firstChild);
+    	displayZone.getChildren().add(addListNode);
     	handleHideAddListDetailButton();
     }
 

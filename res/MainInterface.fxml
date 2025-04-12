@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -30,7 +31,7 @@
                   </Text>
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="224.0" spacing="10.0" StackPane.alignment="CENTER_RIGHT">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#handleNewFile" style="-fx-background-color: lightblue;" text="New File">
+                        <Button mnemonicParsing="false" onAction="#handleShowAddFileZone" style="-fx-background-color: lightblue;" text="New File">
                            <font>
                               <Font name="Ekkamai New Bold" size="18.0" />
                            </font>
@@ -47,10 +48,38 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </StackPane>
-            <VBox fx:id="fileContainer" prefHeight="932.0" prefWidth="500.0" spacing="10.0">
+            <VBox fx:id="fileContainer" maxHeight="940.0" prefHeight="735.0" prefWidth="500.0" spacing="10.0">
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
+               <children>
+                  <HBox fx:id="addFileZone" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="460.0" spacing="10.0" style="-fx-background-color: #BFDCFE;">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <TextField fx:id="newFileName" prefHeight="39.0" prefWidth="306.0">
+                           <font>
+                              <Font name="Ekkamai New Bold" size="22.0" />
+                           </font>
+                        </TextField>
+                        <HBox alignment="CENTER" prefHeight="39.0" prefWidth="138.0" spacing="10.0">
+                           <children>
+                              <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleAddFile" prefHeight="37.0" prefWidth="81.0" style="-fx-background-color: lightblue;" text="Create" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleHideAddFileZone" prefHeight="37.0" prefWidth="39.0" style="-fx-background-color: lightblue;" text="X" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
             </VBox>
          </children>
       </VBox>

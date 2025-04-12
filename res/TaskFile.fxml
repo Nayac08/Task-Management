@@ -17,9 +17,9 @@
             <Font name="Ekkamai New Bold" size="22.0" />
          </font>
       </Text>
-      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" StackPane.alignment="CENTER_RIGHT">
+      <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="10.0" StackPane.alignment="CENTER_RIGHT">
          <children>
-            <Button mnemonicParsing="false" onAction="#handleOpenFile" style="-fx-background-color: lightblue;" text="Open">
+            <Button mnemonicParsing="false" onAction="#handleOpenFile" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Open">
                <font>
                   <Font name="Ekkamai New Bold" size="18.0" />
                </font>

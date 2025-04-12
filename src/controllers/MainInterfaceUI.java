@@ -4,6 +4,8 @@ import java.io.IOException;
 import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -12,15 +14,17 @@ import models.TaskFile;
 
 public class MainInterfaceUI {
 	private MainInterface mainInterface;
-	private int idxTest = 0;
 	
 	@FXML private HBox MainInterfaceGUI;
 	@FXML private VBox fileContainer;
+	@FXML private HBox addFileZone;
+	@FXML private TextField newFileName;
 	@FXML private StackPane displayContainer;
 	
 	public MainInterfaceUI() {
 		setMainInterface(new MainInterface());
 		loadInitialFXML();
+		handleHideAddFileZone();
 	}
 	
 	public void loadInitialFXML(){
@@ -34,10 +38,12 @@ public class MainInterfaceUI {
     }
 	
 	public void updateGUI() {
+		Node addFileNode = fileContainer.getChildren().removeLast();
 		fileContainer.getChildren().clear();
 		for (TaskFile taskFile: mainInterface.getTaskFiles()) {
 			fileContainer.getChildren().add((new TaskFileUI(taskFile)).getTaskFileGUI());
 		}
+		fileContainer.getChildren().add(addFileNode);
 		if (Main.taskFileIdOpening != -1) {
 			displayContainer.getChildren().clear();
 			TaskFile taskFile = mainInterface.findTaskFile(Main.taskFileIdOpening);
@@ -50,10 +56,22 @@ public class MainInterfaceUI {
 	}
 	
 	@FXML
-	public void handleNewFile() {
-		mainInterface.addTaskFile("New file" + Integer.toString(idxTest), mainInterface);
-		idxTest++;
+	public void handleAddFile() {
+		mainInterface.addTaskFile(newFileName.getText(), mainInterface);
+		newFileName.setText("");
+		handleHideAddFileZone();
 		updateGUI();
+	}
+	
+	@FXML
+	public void handleShowAddFileZone() {
+		addFileZone.setManaged(true);
+		addFileZone.setVisible(true);
+	}
+	
+	public void handleHideAddFileZone() {
+		addFileZone.setManaged(false);
+		addFileZone.setVisible(false);
 	}
 
 	public HBox getMainInterfaceGUI() {

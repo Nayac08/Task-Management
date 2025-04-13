@@ -7,31 +7,34 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="445.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="445.0" spacing="10.0" style="-fx-background-color: #BFDCFE;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="365.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="285.0" spacing="5.0" style="-fx-background-color: #BFDCFE;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 	<padding>
-		<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
 	</padding>
 	<children>
-		<Text fx:id="fileName" strokeType="OUTSIDE" strokeWidth="0.0" text="File Name" wrappingWidth="212.65799713134766" StackPane.alignment="CENTER_LEFT">
+		<Text fx:id="fileName" strokeType="OUTSIDE" strokeWidth="0.0" text="File Name" wrappingWidth="133.26100158691406" StackPane.alignment="CENTER_LEFT">
 			<font>
-				<Font name="Ekkamai New Bold" size="22.0" />
+				<Font name="Ekkamai New Bold" size="14.0" />
 			</font>
+         <HBox.margin>
+            <Insets left="2.5" />
+         </HBox.margin>
 		</Text>
-		<HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="201.0" spacing="10.0" StackPane.alignment="CENTER_RIGHT">
+		<HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="134.0" spacing="5.0" StackPane.alignment="CENTER_RIGHT">
 			<children>
-				<Button mnemonicParsing="false" onAction="#handleOpenFile" prefHeight="32.0" prefWidth="71.0" style="-fx-background-color: lightblue;" text="Open">
+				<Button mnemonicParsing="false" onAction="#handleOpenFile" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: lightblue;" text="Open">
 					<font>
-						<Font name="Ekkamai New Bold" size="18.0" />
+						<Font name="Ekkamai New Bold" size="12.0" />
 					</font>
 				</Button>
-				<Button mnemonicParsing="false" onAction="#handleExportFile" prefHeight="32.0" prefWidth="83.0" style="-fx-background-color: lightblue;" text="Export">
+				<Button mnemonicParsing="false" onAction="#handleExportFile" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: lightblue;" text="Export">
 					<font>
-						<Font name="Ekkamai New Bold" size="18.0" />
+						<Font name="Ekkamai New Bold" size="12.0" />
 					</font>
 				</Button>
-				<Button mnemonicParsing="false" onAction="#handleDeleteFile" style="-fx-background-color: lightblue;" text="X">
+				<Button mnemonicParsing="false" onAction="#handleDeleteFile" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: lightblue;" text="X">
 					<font>
-						<Font size="18.0" />
+						<Font name="Ekkamai New Bold" size="12.0" />
 					</font>
 				</Button>
 			</children>

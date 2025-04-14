@@ -83,14 +83,15 @@ public class MainInterfaceUI {
 
 	@FXML
 	public void handleAddFile() {
-		
-		if (fileType.getValue().equals("Personal")) {
-			mainInterface.addTaskFile(newFileName.getText(),FileType.Personal, mainInterface);
-		} else if (fileType.getValue().equals("Team")) {
-			mainInterface.addTaskFile(newFileName.getText(),FileType.Team, mainInterface);
+		if (fileType.getValue() != null) {
+			if (fileType.getValue().equals("Personal")) {
+				mainInterface.addTaskFile(newFileName.getText(),FileType.Personal, mainInterface);
+			} else if (fileType.getValue().equals("Team")) {
+				mainInterface.addTaskFile(newFileName.getText(),FileType.Team, mainInterface);
+			}
+			handleHideAddFileZone();
+			updateGUI();
 		}
-		handleHideAddFileZone();
-		updateGUI();
 	}
 
 	@FXML

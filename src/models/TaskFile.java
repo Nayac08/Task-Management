@@ -53,10 +53,18 @@ public class TaskFile implements Exportable{
 	        for (int j = 0; j < cardsArray.length(); j++) {
 	            JSONObject cardObject = cardsArray.getJSONObject(j);
 	            Card card;
+	            
 	            if (isTeam) {
 	                card = new TeamCard(cardObject.getInt("id"), nodeList, cardObject.getString("title"));
 	            } else {
 	                card = new PersonalCard(cardObject.getInt("id"), nodeList, cardObject.getString("title"));
+	            }
+	            card.setDescription(cardObject.getString("description"));
+	            for (Object o : cardObject.getJSONArray("checklists")) {
+	            		JSONObject checklistJSONObject = (JSONObject) o;
+	            		ChecklistItem checklistItem = new ChecklistItem(checklistJSONObject.getInt("id"), checklistJSONObject.getString("title"));
+	            		checklistItem.setChecked(checklistJSONObject.getBoolean("isChecked"));
+	            		card.addChecklist(checklistItem);
 	            }
 	            nodeList.addCard(card);
 	        }

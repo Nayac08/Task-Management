@@ -78,10 +78,6 @@ public class NodeListUI{
 
     @FXML
     public void handleDeleteNodeList() {
-    	System.out.println("run");
-    	for (NodeList list :nodeList.getDisplayOwner().getNodeLists()) {
-    		System.out.println(list.getId());
-    	}
     	for (NodeList list :nodeList.getDisplayOwner().getNodeLists()) {
     		if (list.getId() == nodeList.getId()) {
     			nodeList.getDisplayOwner().getNodeLists().remove(list);

@@ -118,7 +118,6 @@ public abstract class Card implements Movable{
 				numberOfCheckedChecklist++;
 			}
 		}
-		System.out.println(numberOfCheckedChecklist);
 		if (numberOfCheckedChecklist == 0) {
 			return 0.;
 		} else {

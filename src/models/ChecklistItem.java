@@ -26,16 +26,16 @@ public class ChecklistItem {
 		this.title = title;
 	}
 
-	public void setChecked(boolean isChecked) {
-		this.isChecked = isChecked;
+    public String getTitle() {
+		return title;
 	}
 
 	// IsChecked
 	public boolean isChecked() {
 		return isChecked;
 	}
-
-	public String getTitle() {
-		return title;
-	}	
+	
+	public void setChecked(boolean isChecked) {
+		this.isChecked = isChecked;
+	}		
 }

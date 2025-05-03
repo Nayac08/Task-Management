@@ -97,7 +97,6 @@ public class ModalPopupCardUI {
     	}
     	
     	double checkListPercentage = cardOwner.getChecklistPercentage();
-    	System.out.println(cardOwner.getChecklists().size() + " " +  checkListPercentage);
     	progressCheckListBar.setProgress(checkListPercentage);
     	progressCheckListPercentage.setText((int)(checkListPercentage * 100) + " %");
 	}

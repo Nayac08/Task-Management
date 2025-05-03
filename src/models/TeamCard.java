@@ -2,6 +2,7 @@ package models;
 
 import java.util.List;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import enums.Priority;
@@ -56,6 +57,18 @@ public class TeamCard extends Card implements Exportable{
 		JSONObject teamCardJsonObject = new JSONObject();
 		teamCardJsonObject.put("id", id);
 		teamCardJsonObject.put("title", title);
+		teamCardJsonObject.put("description", description);
+		
+		JSONArray checklistJsonArray = new JSONArray();
+		for (ChecklistItem checklistItem: checklists) {
+			JSONObject checkListJsonObject = new JSONObject();
+			checkListJsonObject.put("id",checklistItem.getId());
+			checkListJsonObject.put("title", checklistItem.getTitle());
+			checkListJsonObject.put("isChecked", checklistItem.isChecked());
+			checklistJsonArray.put(checkListJsonObject);
+		}
+		teamCardJsonObject.put("checklists", checklistJsonArray);
+		
 		// Add later
 		return teamCardJsonObject;
 	}

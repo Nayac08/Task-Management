@@ -2,12 +2,12 @@ package models;
 
 public class ChecklistItem {
     private int id;
-    private String descrption;
+    private String title;
     private boolean isChecked;
 
-    public ChecklistItem(int id,String description) {
+    public ChecklistItem(int id,String title) {
     	this.id = id;
-    	setDescrption(description);
+    	setTitle(title);
     	setChecked(false);
     }
 
@@ -21,13 +21,13 @@ public class ChecklistItem {
 		return id;
 	}
 
-    // Description
-	public String getDescrption() {
-		return descrption;
+    // Title
+    public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public void setDescrption(String descrption) {
-		this.descrption = descrption;
+	public void setChecked(boolean isChecked) {
+		this.isChecked = isChecked;
 	}
 
 	// IsChecked
@@ -35,7 +35,7 @@ public class ChecklistItem {
 		return isChecked;
 	}
 
-	public void setChecked(boolean isChecked) {
-		this.isChecked = isChecked;
-	}
+	public String getTitle() {
+		return title;
+	}	
 }

@@ -2,7 +2,10 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
@@ -14,7 +17,7 @@
    <children>
       <VBox prefHeight="601.0" prefWidth="499.0">
          <children>
-            <StackPane alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="500.0">
+            <StackPane alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="499.0">
                <children>
                   <Text fx:id="cardTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Title">
                      <font>
@@ -68,7 +71,7 @@
                                           <Font name="Ekkamai New Bold" size="12.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="cancelDescriptionButton" mnemonicParsing="false" onAction="#handleCancelEditMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Cancel">
+                                    <Button fx:id="cancelDescriptionButton" mnemonicParsing="false" onAction="#handleCancelEditDescriptionMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Cancel">
                                        <font>
                                           <Font name="Ekkamai New Bold" size="12.0" />
                                        </font>
@@ -76,6 +79,65 @@
                                  </children>
                               </VBox>
                            </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="155.0" prefWidth="459.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="24.0" prefWidth="459.0" spacing="10.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CheckList" wrappingWidth="105.54481506347656">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="20.0" />
+                                 </font>
+                              </Text>
+                              <ProgressBar fx:id="progressCheckListBar" prefWidth="200.0" progress="0.0" />
+                              <Text fx:id="progressCheckListPercentage" strokeType="OUTSIDE" strokeWidth="0.0" text="0 %">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="97.0" prefWidth="459.0">
+                           <children>
+                              <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" prefHeight="96.0" prefWidth="367.0" style="-fx-background-color: #ECEFF0;" vbarPolicy="NEVER">
+                                 <content>
+                                    <VBox fx:id="checkListContainer" prefHeight="104.0" prefWidth="400.0" style="-fx-background-color: #ECEFF0;" />
+                                 </content>
+                              </ScrollPane>
+                              <VBox alignment="TOP_CENTER" prefHeight="97.0" prefWidth="94.0" spacing="5.0">
+                                 <children>
+                                    <Button fx:id="editCheckListButton" mnemonicParsing="false" onAction="#handleEditCheckListMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Edit">
+                                       <font>
+                                          <Font name="Ekkamai New Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="addCheckListArea" prefHeight="28.0" prefWidth="459.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="textFieldNewCheckList" promptText="Enter new CheckList title">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="addCheckListButton" mnemonicParsing="false" onAction="#handleAddCheckList" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Add">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="cancelCheckListButton" mnemonicParsing="false" onAction="#handleCancelEditCheckListMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Cancel">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
                         </HBox>
                      </children>
                   </VBox>

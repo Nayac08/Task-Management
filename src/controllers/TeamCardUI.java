@@ -63,6 +63,7 @@ public class TeamCardUI{
     	Stage popupStage = new Stage();
         popupStage.setScene(new Scene(modalPopupCardUI.getModalPopupCardGUI()));
         popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setResizable(false);
         popupStage.show();
     }
 

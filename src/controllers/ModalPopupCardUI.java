@@ -7,13 +7,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import models.Card;
+import models.ChecklistItem;
 import models.TaskFile;
 
 public class ModalPopupCardUI {
@@ -21,11 +27,19 @@ public class ModalPopupCardUI {
 	
 	// Card detail component
 	@FXML private Text cardTitle;
-	@FXML private TextArea descriptionDetail;
 	
+	@FXML private TextArea descriptionDetail;
 	@FXML private Button saveDescriptionButton;
 	@FXML private Button editDescriptionButton;
 	@FXML private Button cancelDescriptionButton;
+	
+	@FXML private ProgressBar progressCheckListBar;
+	@FXML private Text progressCheckListPercentage;
+	@FXML private VBox checkListContainer;
+	@FXML private HBox addCheckListArea;
+	@FXML private TextField textFieldNewCheckList;
+	
+	
 	@FXML private Button closePopupButton;
 	@FXML private Pane modalPopupCardGUI;
 	
@@ -54,6 +68,8 @@ public class ModalPopupCardUI {
             	saveDescriptionButton.setManaged(false);
             	cancelDescriptionButton.setVisible(false);
             	cancelDescriptionButton.setManaged(false);
+            	addCheckListArea.setVisible(false);
+            	addCheckListArea.setManaged(false);
             	updateGUI();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -63,7 +79,29 @@ public class ModalPopupCardUI {
 	public void updateGUI() {
 		cardTitle.setText(cardOwner.getTitle());
     	descriptionDetail.setText(cardOwner.getDescription());
+    	
+        checkListContainer.getChildren().clear();
+    	for (ChecklistItem checklistItem: cardOwner.getChecklists()) {
+    		CheckBox checkBox = new CheckBox(checklistItem.getTitle());
+    		checkBox.setUserData(checklistItem.getId());
+    		checkBox.setMnemonicParsing(false);
+    		checkBox.setFont(Font.font("Ekkamai New Bold", 14.0));
+    		checkBox.setOnAction((e) -> {
+    			cardOwner.getChecklist((int) checkBox.getUserData()).toggleChecked();
+    			updateGUI();
+    		});
+    		if (checklistItem.isChecked()) {
+    			checkBox.setSelected(true);
+    		}
+    		checkListContainer.getChildren().add(checkBox);
+    	}
+    	
+    	double checkListPercentage = cardOwner.getChecklistPercentage();
+    	System.out.println(cardOwner.getChecklists().size() + " " +  checkListPercentage);
+    	progressCheckListBar.setProgress(checkListPercentage);
+    	progressCheckListPercentage.setText((int)(checkListPercentage * 100) + " %");
 	}
+	
 	
 	@FXML
 	public void handleEditDescriptionMode() {
@@ -94,7 +132,7 @@ public class ModalPopupCardUI {
 	}
 	
 	@FXML
-	public void handleCancelEditMode() {
+	public void handleCancelEditDescriptionMode() {
 		descriptionDetail.setEditable(false);
 		updateGUI();
 		
@@ -105,6 +143,29 @@ public class ModalPopupCardUI {
     	
     	editDescriptionButton.setVisible(true);
 		editDescriptionButton.setManaged(true);
+	}
+	
+	@FXML
+	public void handleEditCheckListMode() {
+		addCheckListArea.setVisible(true);
+		addCheckListArea.setManaged(true);
+	}
+	
+	@FXML
+	public void handleCancelEditCheckListMode() {
+		addCheckListArea.setVisible(false);
+		addCheckListArea.setManaged(false);
+	}
+	
+	@FXML 
+	public void handleAddCheckList() {
+		ChecklistItem checklistItem = new ChecklistItem(cardOwner.getIdxChecklists(), textFieldNewCheckList.getText());
+		textFieldNewCheckList.setText("");
+		cardOwner.addChecklist(checklistItem);
+		updateGUI();
+		
+		addCheckListArea.setVisible(false);
+		addCheckListArea.setManaged(false);
 	}
 	
 	public Card getCardOwner() {

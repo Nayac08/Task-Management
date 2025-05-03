@@ -109,7 +109,7 @@ public class TeamDisplay implements Displayable,Exportable{
 	public void setIdxListNode(int idxListNode) {
 		this.idxListNode = idxListNode;
 	}
-	
+
 	@Override
 	public JSONObject getJsonObject() {
 		JSONObject teamDisplayJsonObject = new JSONObject();

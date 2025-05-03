@@ -1,7 +1,5 @@
 package models;
 
-import java.io.File;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 

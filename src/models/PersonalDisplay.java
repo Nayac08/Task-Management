@@ -17,7 +17,7 @@ public class PersonalDisplay implements Displayable,Exportable{
     public PersonalDisplay(int id, String name) {
     	this.id = id;
     	setName(name);
-    	setNodeLists(new ArrayList<NodeList>());
+    	setNodeLists(new ArrayList<>());
     }
 
     // Feature

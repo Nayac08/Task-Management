@@ -2,6 +2,7 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.json.JSONObject;
 
 import enums.FileType;
@@ -42,7 +43,7 @@ public class MainInterface {
 			}
 		}
 	}
-	
+
 	public int getIdxTaskFile() {
 		return idxTaskFile;
 	}

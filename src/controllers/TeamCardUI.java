@@ -1,12 +1,20 @@
 package controllers;
 
 import java.io.IOException;
+import java.util.Optional;
 
 import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.DialogPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import models.Card;
 import models.PersonalCard;
 import models.TeamCard;
@@ -46,6 +54,16 @@ public class TeamCardUI{
     			break;
     		}
     	}
+    }
+    
+    @FXML
+    public void handleModalPopupCard() {
+    	ModalPopupCardUI modalPopupCardUI = new ModalPopupCardUI(teamCard);
+    	
+    	Stage popupStage = new Stage();
+        popupStage.setScene(new Scene(modalPopupCardUI.getModalPopupCardGUI()));
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.show();
     }
 
     public void initializePersonalCard(PersonalCard card){

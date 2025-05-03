@@ -59,7 +59,7 @@ public class TeamCard extends Card implements Exportable{
 		teamCardJsonObject.put("title", title);
 		teamCardJsonObject.put("date", date != null ? date.toString() : JSONObject.NULL);
 		teamCardJsonObject.put("description", description);
-		
+
 		JSONArray checklistJsonArray = new JSONArray();
 		for (ChecklistItem checklistItem: checklists) {
 			JSONObject checkListJsonObject = new JSONObject();
@@ -69,7 +69,7 @@ public class TeamCard extends Card implements Exportable{
 			checklistJsonArray.put(checkListJsonObject);
 		}
 		teamCardJsonObject.put("checklists", checklistJsonArray);
-		
+
 		// Add later
 		return teamCardJsonObject;
 	}

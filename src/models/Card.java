@@ -1,7 +1,6 @@
 package models;
 
 import java.time.LocalDate;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +22,7 @@ public abstract class Card implements Movable{
 		setTitle(title);
 		setDescription("");
 		setDate(null);
-		setChecklists(new ArrayList<ChecklistItem>());
+		setChecklists(new ArrayList<>());
 	}
 
 	@Override
@@ -71,7 +70,7 @@ public abstract class Card implements Movable{
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	
+
 	// idxCheckList
 	public int getIdxChecklists() {
 		return idxChecklists;
@@ -95,11 +94,11 @@ public abstract class Card implements Movable{
     		}
     	}
 	}
-	
+
 	public ChecklistItem getChecklist(int id) {
-		for (int i=0;i<checklists.size();i++) {
-    		if (checklists.get(i).getId() == id) {
-    			return checklists.get(i);
+		for (ChecklistItem checklist : checklists) {
+    		if (checklist.getId() == id) {
+    			return checklist;
     		}
     	}
 		return null;
@@ -123,13 +122,13 @@ public abstract class Card implements Movable{
 		}
 		return numberOfCheckedChecklist;
 	}
-	
+
 	public double getChecklistPercentage() {
-		double numberOfCheckedChecklist = (double) getNumberOfCheckedChecklist();
+		double numberOfCheckedChecklist = getNumberOfCheckedChecklist();
 		if (numberOfCheckedChecklist == 0) {
 			return 0.;
 		} else {
-			return numberOfCheckedChecklist/(double) checklists.size();
+			return numberOfCheckedChecklist/checklists.size();
 		}
 	}
 }

@@ -34,8 +34,8 @@ public class ChecklistItem {
 	public boolean isChecked() {
 		return isChecked;
 	}
-	
+
 	public void setChecked(boolean isChecked) {
 		this.isChecked = isChecked;
-	}		
+	}
 }

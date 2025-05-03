@@ -55,7 +55,7 @@ public class TaskFile implements Exportable{
 	        for (int j = 0; j < cardsArray.length(); j++) {
 	            JSONObject cardObject = cardsArray.getJSONObject(j);
 	            Card card;
-	            
+
 	            if (isTeam) {
 	                card = new TeamCard(cardObject.getInt("id"), nodeList, cardObject.getString("title"));
 	            } else {

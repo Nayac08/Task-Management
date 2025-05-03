@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -8,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -27,6 +29,11 @@ public class ModalPopupCardUI {
 	
 	// Card detail component
 	@FXML private Text cardTitle;
+	
+	@FXML private DatePicker datePicker;
+	@FXML private Button saveDateButton;
+	@FXML private Button cancelDateButton;
+	@FXML private Button editDateButton;
 	
 	@FXML private TextArea descriptionDetail;
 	@FXML private Button saveDescriptionButton;
@@ -53,23 +60,27 @@ public class ModalPopupCardUI {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModalPopupCard.fxml"));
             loader.setController(this);
             setModalPopupCardGUI(loader.load());
-            	
-            	descriptionDetail.setOnMouseClicked((e) -> {
-            		descriptionDetail.setFocusTraversable(false);
-            	});
             
             closePopupButton.setOnAction(e -> {
                 Stage stage = (Stage) closePopupButton.getScene().getWindow();
                 stage.close();
             });
             	
+            	datePicker.setFocusTraversable(false);
+            	saveDateButton.setVisible(false);
+            	saveDateButton.setManaged(false);
+            	cancelDateButton.setManaged(false);
+            	cancelDateButton.setManaged(false);
+            	
             	descriptionDetail.setFocusTraversable(false);
             	saveDescriptionButton.setVisible(false);
             	saveDescriptionButton.setManaged(false);
             	cancelDescriptionButton.setVisible(false);
             	cancelDescriptionButton.setManaged(false);
+            	
             	addCheckListArea.setVisible(false);
             	addCheckListArea.setManaged(false);
+            	
             	updateGUI();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -78,6 +89,9 @@ public class ModalPopupCardUI {
 	
 	public void updateGUI() {
 		cardTitle.setText(cardOwner.getTitle());
+		
+		datePicker.setValue(cardOwner.getDate());
+		
     	descriptionDetail.setText(cardOwner.getDescription());
     	
         checkListContainer.getChildren().clear();
@@ -101,6 +115,47 @@ public class ModalPopupCardUI {
     	progressCheckListPercentage.setText((int)(checkListPercentage * 100) + " %");
 	}
 	
+	@FXML
+	public void handleSaveDate() {
+		LocalDate date = datePicker.getValue();
+		cardOwner.setDate(date);
+		updateGUI();
+		
+		editDateButton.setVisible(true);
+		editDateButton.setManaged(true);
+		
+		datePicker.setEditable(false);
+		saveDateButton.setVisible(false);
+    	saveDateButton.setManaged(false);
+    	cancelDateButton.setVisible(false);
+    	cancelDateButton.setManaged(false);
+	}
+	
+	@FXML
+	public void handleCancelEditDateMode() {
+		updateGUI();
+		
+		editDateButton.setVisible(true);
+		editDateButton.setManaged(true);
+		
+		datePicker.setEditable(false);
+		saveDateButton.setVisible(false);
+    	saveDateButton.setManaged(false);
+    	cancelDateButton.setVisible(false);
+    	cancelDateButton.setManaged(false);
+	}
+	
+	@FXML
+	public void handleEditDate() {
+		editDateButton.setVisible(false);
+		editDateButton.setManaged(false);
+		
+		datePicker.setEditable(true);
+		saveDateButton.setVisible(true);
+    	saveDateButton.setManaged(true);
+    	cancelDateButton.setVisible(true);
+    	cancelDateButton.setManaged(true);
+	}
 	
 	@FXML
 	public void handleEditDescriptionMode() {

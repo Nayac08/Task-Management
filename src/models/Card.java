@@ -1,6 +1,7 @@
 package models;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public abstract class Card implements Movable{
 	protected NodeList nodeListOwner; // For exporting CSV purpose
 	protected String title;
 	protected String description; // Add later
-	protected LocalDateTime date; // Add later
+	protected LocalDate date; // Add later
 	protected int idxChecklists;
 	protected List<ChecklistItem> checklists; // Add later
 
@@ -20,6 +21,8 @@ public abstract class Card implements Movable{
 		this.idxChecklists = 0;
 		setNodeListOwner(nodeListOwner);
 		setTitle(title);
+		setDescription("");
+		setDate(null);
 		setChecklists(new ArrayList<ChecklistItem>());
 	}
 
@@ -61,11 +64,11 @@ public abstract class Card implements Movable{
 	}
 
 	// Date
-	public LocalDateTime getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDateTime date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 	

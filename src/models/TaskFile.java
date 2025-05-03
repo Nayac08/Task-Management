@@ -1,5 +1,7 @@
 package models;
 
+import java.time.LocalDate;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -58,6 +60,9 @@ public class TaskFile implements Exportable{
 	                card = new TeamCard(cardObject.getInt("id"), nodeList, cardObject.getString("title"));
 	            } else {
 	                card = new PersonalCard(cardObject.getInt("id"), nodeList, cardObject.getString("title"));
+	            }
+	            if (!cardObject.isNull("date")) {
+	            		card.setDate(LocalDate.parse(cardObject.getString("date")));
 	            }
 	            card.setDescription(cardObject.getString("description"));
 	            for (Object o : cardObject.getJSONArray("checklists")) {

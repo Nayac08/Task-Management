@@ -57,6 +57,7 @@ public class TeamCard extends Card implements Exportable{
 		JSONObject teamCardJsonObject = new JSONObject();
 		teamCardJsonObject.put("id", id);
 		teamCardJsonObject.put("title", title);
+		teamCardJsonObject.put("date", date != null ? date.toString() : JSONObject.NULL);
 		teamCardJsonObject.put("description", description);
 		
 		JSONArray checklistJsonArray = new JSONArray();

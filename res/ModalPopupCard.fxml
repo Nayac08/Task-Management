@@ -1,24 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #ECEFF0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <StackPane alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="500.0">
+      <VBox prefHeight="601.0" prefWidth="499.0">
          <children>
-            <Text fx:id="cardTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Title">
-               <font>
-                  <Font name="Ekkamai New Bold" size="28.0" />
-               </font>
-            </Text>
+            <StackPane alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="500.0">
+               <children>
+                  <Text fx:id="cardTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Title">
+                     <font>
+                        <Font name="Ekkamai New Bold" size="28.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </StackPane>
+            <VBox prefHeight="490.0" prefWidth="500.0" spacing="10.0">
+               <children>
+                  <HBox prefHeight="24.0" prefWidth="460.0" spacing="10.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                           <font>
+                              <Font name="Ekkamai New Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="XX/XX/XXXX">
+                           <font>
+                              <Font name="Ekkamai New Bold" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="112.0" prefWidth="459.0" spacing="10.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+                           <font>
+                              <Font name="Ekkamai New Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                           <children>
+                              <TextArea fx:id="descriptionDetail" editable="false" prefHeight="100.0" prefWidth="374.0" styleClass="no-focus-style" text="Description" wrapText="true">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="14.0" />
+                                 </font>
+                              </TextArea>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                                 <children>
+                                    <Button fx:id="editDescriptionButton" mnemonicParsing="false" onAction="#handleEditDescriptionMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Edit">
+                                       <font>
+                                          <Font name="Ekkamai New Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="saveDescriptionButton" mnemonicParsing="false" onAction="#handleSaveDescription" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Save">
+                                       <font>
+                                          <Font name="Ekkamai New Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="cancelDescriptionButton" mnemonicParsing="false" onAction="#handleCancelEditMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Cancel">
+                                       <font>
+                                          <Font name="Ekkamai New Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="500.0" spacing="10.0">
+               <children>
+                  <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: lightblue;" text="Cancel">
+                     <font>
+                        <Font name="Ekkamai New Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" />
+               </padding>
+            </HBox>
          </children>
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding></StackPane>
+      </VBox>
          
    </children>
 </Pane>

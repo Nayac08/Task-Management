@@ -1,0 +1,10 @@
+.text-area.no-focus-style,
+.text-area.no-focus-style:focused {
+    -fx-background-color: -fx-control-inner-background;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-highlight-fill: transparent;
+    -fx-highlight-text-fill: -fx-text-inner-color;
+    -fx-caret-color: transparent; /* Hides blinking caret */
+}

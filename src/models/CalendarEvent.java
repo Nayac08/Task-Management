@@ -1,11 +1,11 @@
 package models;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class CalendarEvent {
     private int id;
     private Card card;
-    private LocalDateTime dateTime;
+    private LocalDate dateTime;
 
     public CalendarEvent(int id,Card card) {
     	this.id = id;
@@ -25,11 +25,11 @@ public class CalendarEvent {
 		this.card = card;
 	}
 
-	public LocalDateTime getDateTime() {
+	public LocalDate getDateTime() {
 		return dateTime;
 	}
 
-	public void setDateTime(LocalDateTime dateTime) {
+	public void setDateTime(LocalDate dateTime) {
 		this.dateTime = dateTime;
 	}
 }

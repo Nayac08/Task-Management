@@ -114,13 +114,18 @@ public abstract class Card implements Movable{
 	}
 
 	// ChecklistPercentage
-	public double getChecklistPercentage() {
+	public int getNumberOfCheckedChecklist() {
 		int numberOfCheckedChecklist = 0;
 		for (ChecklistItem checklistItem: checklists) {
 			if (checklistItem.isChecked()) {
 				numberOfCheckedChecklist++;
 			}
 		}
+		return numberOfCheckedChecklist;
+	}
+	
+	public double getChecklistPercentage() {
+		double numberOfCheckedChecklist = (double) getNumberOfCheckedChecklist();
 		if (numberOfCheckedChecklist == 0) {
 			return 0.;
 		} else {

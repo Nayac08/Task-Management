@@ -3,6 +3,7 @@ package controllers;
 import java.io.IOException;
 import java.time.LocalDate;
 
+import app.Main;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -67,6 +68,7 @@ public class ModalPopupCardUI {
             });
             	
             	datePicker.setFocusTraversable(false);
+        	datePicker.setDisable(true);
             	saveDateButton.setVisible(false);
             	saveDateButton.setManaged(false);
             	cancelDateButton.setManaged(false);
@@ -103,6 +105,7 @@ public class ModalPopupCardUI {
     		checkBox.setOnAction((e) -> {
     			cardOwner.getChecklist((int) checkBox.getUserData()).toggleChecked();
     			updateGUI();
+    			Main.mainInterfaceUI.updateGUI();
     		});
     		if (checklistItem.isChecked()) {
     			checkBox.setSelected(true);
@@ -120,11 +123,12 @@ public class ModalPopupCardUI {
 		LocalDate date = datePicker.getValue();
 		cardOwner.setDate(date);
 		updateGUI();
+		Main.mainInterfaceUI.updateGUI();
 		
 		editDateButton.setVisible(true);
 		editDateButton.setManaged(true);
 		
-		datePicker.setEditable(false);
+		datePicker.setDisable(true);
 		saveDateButton.setVisible(false);
     	saveDateButton.setManaged(false);
     	cancelDateButton.setVisible(false);
@@ -138,7 +142,7 @@ public class ModalPopupCardUI {
 		editDateButton.setVisible(true);
 		editDateButton.setManaged(true);
 		
-		datePicker.setEditable(false);
+		datePicker.setDisable(true);
 		saveDateButton.setVisible(false);
     	saveDateButton.setManaged(false);
     	cancelDateButton.setVisible(false);
@@ -150,7 +154,7 @@ public class ModalPopupCardUI {
 		editDateButton.setVisible(false);
 		editDateButton.setManaged(false);
 		
-		datePicker.setEditable(true);
+		datePicker.setDisable(false);
 		saveDateButton.setVisible(true);
     	saveDateButton.setManaged(true);
     	cancelDateButton.setVisible(true);
@@ -175,6 +179,7 @@ public class ModalPopupCardUI {
 		cardOwner.setDescription(descriptionDetail.getText());
 		descriptionDetail.setEditable(false);
 		updateGUI();
+		Main.mainInterfaceUI.updateGUI();
 		
 		saveDescriptionButton.setVisible(false);
     	saveDescriptionButton.setManaged(false);
@@ -216,6 +221,7 @@ public class ModalPopupCardUI {
 		ChecklistItem checklistItem = new ChecklistItem(cardOwner.getIdxChecklists(), textFieldNewCheckList.getText());
 		textFieldNewCheckList.setText("");
 		cardOwner.addChecklist(checklistItem);
+		Main.mainInterfaceUI.updateGUI();
 		updateGUI();
 		
 		addCheckListArea.setVisible(false);

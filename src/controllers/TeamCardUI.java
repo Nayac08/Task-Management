@@ -7,6 +7,7 @@ import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
 import javafx.scene.layout.Pane;
@@ -24,6 +25,9 @@ public class TeamCardUI{
 
 	@FXML private StackPane teamCardGUI;
 	@FXML private Text title;
+	@FXML private Text dateText;
+	@FXML private Text checklistStat;
+	@FXML private CheckBox checkBox;
 
 	public TeamCardUI(TeamCard personalCard) {
 		setTeamCard(personalCard);
@@ -36,6 +40,12 @@ public class TeamCardUI{
             loader.setController(this);
             setTeamCardGUI(loader.load());
             	title.setText(teamCard.getTitle());
+            	if (teamCard.getDate() != null) {
+                	dateText.setText("Date " + teamCard.getDate().toString());
+            	} else {
+            		dateText.setText("");
+            	}
+            	checklistStat.setText(teamCard.getNumberOfCheckedChecklist() + "/" + teamCard.getChecklists().size());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

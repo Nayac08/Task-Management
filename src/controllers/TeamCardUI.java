@@ -13,7 +13,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.Card;
-import models.PersonalCard;
 import models.TeamCard;
 
 public class TeamCardUI{

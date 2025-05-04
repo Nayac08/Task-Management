@@ -6,11 +6,7 @@ import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import models.NodeList;
 import models.PersonalDisplay;
 
@@ -37,7 +33,7 @@ public class PersonalDisplayUI {
                 	personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Work"));
                 	personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Health"));
             	}
-        	
+
         	updateGUI();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -65,7 +61,7 @@ public class PersonalDisplayUI {
     	Main.taskFileIdOpening = -1;
     	Main.mainInterfaceUI.getDisplayContainer().getChildren().clear();
     }
-    
+
 	public PersonalDisplay getPersonalDisplay() {
 		return personalDisplay;
 	}

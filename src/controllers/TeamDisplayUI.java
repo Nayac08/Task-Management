@@ -9,12 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import models.NodeList;
 import models.TeamDisplay;
 
@@ -63,7 +61,7 @@ public class TeamDisplayUI{
 
     @FXML
     public void handleAddNodeListToBoard() {
-    	if (titleArea.getText().equals("")) {
+    	if (titleArea.getText().trim().equals("")) {
     		new Thread(() -> {
 				Platform.runLater(() -> {
 					handleShowWarningNewListName();
@@ -79,11 +77,11 @@ public class TeamDisplayUI{
 			}).start();
     	} else {
     		handleHideWarningNewListName();
-    		teamDisplay.addNodeList(new NodeList(teamDisplay.getIdxListNode(), teamDisplay, titleArea.getText()));
+    		teamDisplay.addNodeList(new NodeList(teamDisplay.getIdxListNode(), teamDisplay, titleArea.getText().trim()));
         	titleArea.setText("");
         	handleHideAddListDetailButton();
         	updateGUI();
-    	}	
+    	}
     }
 
     @FXML
@@ -108,12 +106,12 @@ public class TeamDisplayUI{
     	Main.taskFileIdOpening = -1;
     	Main.mainInterfaceUI.getDisplayContainer().getChildren().clear();
     }
-    
+
     public void handleHideWarningNewListName() {
     	warningNewListName.setVisible(false);
     	warningNewListName.setManaged(false);
     }
-    
+
     public void handleShowWarningNewListName() {
     	warningNewListName.setVisible(true);
     	warningNewListName.setManaged(true);

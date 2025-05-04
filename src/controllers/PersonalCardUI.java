@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -50,7 +49,7 @@ public class PersonalCardUI{
     public void updateGUI() {
     	loadInitialFXML();
     }
-    
+
     @FXML
     public void handleDeleteCard() {
     	for (Card card: personalCard.getNodeListOwner().getCards()) {
@@ -61,7 +60,7 @@ public class PersonalCardUI{
     		}
     	}
     }
-    
+
     @FXML
     public void handleModalPopupCard() {
     	ModalPopupCardUI modalPopupCardUI = new ModalPopupCardUI(personalCard);

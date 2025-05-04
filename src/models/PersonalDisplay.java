@@ -45,7 +45,7 @@ public class PersonalDisplay implements Displayable,Exportable{
  	public void setName(String name) {
  		this.name = name;
  	}
- 	
+
  	// IdxListNode
  	public int getIdxListNode() {
 		return idxListNode;

@@ -7,21 +7,16 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import models.Card;
 import models.NodeList;
-import models.PersonalCard;
-import models.PersonalDisplay;
 import models.TeamCard;
-import models.TeamDisplay;
 
 public class TeamNodeListUI{
 	private NodeList nodeList;
-	
+
 	@FXML private VBox nodeListGUI;
 	@FXML private Label nodeListTitle;
 	@FXML private VBox cardContainer;
@@ -59,7 +54,7 @@ public class TeamNodeListUI{
 
     @FXML
     public void handleAddCardToNodeList(){
-    	if (titleArea.getText().equals("")) {
+    	if (titleArea.getText().trim().equals("")) {
     		new Thread(() -> {
 				Platform.runLater(() -> {
 					handleShowWarningCardName();
@@ -75,12 +70,12 @@ public class TeamNodeListUI{
 			}).start();
     	} else {
     		handleHideWarningCardName();
-    		nodeList.addCard(new TeamCard(nodeList.getIdxCard(), nodeList, titleArea.getText()));
+    		nodeList.addCard(new TeamCard(nodeList.getIdxCard(), nodeList, titleArea.getText().trim()));
         	titleArea.setText("");
         	handleHideAddDetailButton();
         	updateGUI();
     	}
-    	
+
     }
 
     @FXML
@@ -106,12 +101,12 @@ public class TeamNodeListUI{
     		}
     	}
     }
-    
+
     public void handleHideWarningCardName() {
     	warningCardName.setVisible(false);
     	warningCardName.setManaged(false);
     }
-    
+
     public void handleShowWarningCardName() {
     	warningCardName.setVisible(true);
     	warningCardName.setManaged(true);

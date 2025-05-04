@@ -34,7 +34,7 @@ public class MainInterfaceUI {
 	@FXML private ComboBox<String> fileType;
 	@FXML private TextField newFileName;
 	@FXML private StackPane displayContainer;
-	
+
 	@FXML private StackPane warningNewFileName;
 	@FXML private StackPane warningFileType;
 
@@ -86,7 +86,7 @@ public class MainInterfaceUI {
 
 	@FXML
 	public void handleAddFile() {
-		if (newFileName.getText().equals("")) {
+		if (newFileName.getText().trim().equals("")) {
 			new Thread(() -> {
 				Platform.runLater(() -> {
 					handleHideWarningFileType();
@@ -120,9 +120,9 @@ public class MainInterfaceUI {
 			handleHideWarningNewFileName();
 			handleHideWarningFileType();
 			if (fileType.getValue().equals("Personal")) {
-				mainInterface.addTaskFile(newFileName.getText(),FileType.Personal, mainInterface);
+				mainInterface.addTaskFile(newFileName.getText().trim(),FileType.Personal, mainInterface);
 			} else if (fileType.getValue().equals("Team")) {
-				mainInterface.addTaskFile(newFileName.getText(),FileType.Team, mainInterface);
+				mainInterface.addTaskFile(newFileName.getText().trim(),FileType.Team, mainInterface);
 			}
 			handleHideAddFileZone();
 			updateGUI();
@@ -142,22 +142,22 @@ public class MainInterfaceUI {
 		addFileZone.setManaged(false);
 		addFileZone.setVisible(false);
 	}
-	
+
 	public void handleHideWarningNewFileName() {
 		warningNewFileName.setVisible(false);
 		warningNewFileName.setManaged(false);
 	}
-	
+
 	public void handleShowWarningNewFileName() {
 		warningNewFileName.setVisible(true);
 		warningNewFileName.setManaged(true);
 	}
-	
+
 	public void handleHideWarningFileType() {
 		warningFileType.setVisible(false);
 		warningFileType.setManaged(false);
 	}
-	
+
 	public void handleShowWarningFileType() {
 		warningFileType.setVisible(true);
 		warningFileType.setManaged(true);

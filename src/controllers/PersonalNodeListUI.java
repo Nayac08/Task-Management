@@ -6,30 +6,34 @@ import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import models.Card;
 import models.NodeList;
 import models.PersonalCard;
+import models.PersonalDisplay;
 import models.TeamCard;
+import models.TeamDisplay;
 
-public class NodeListUI{
+public class PersonalNodeListUI{
 	private NodeList nodeList;
-
-	@FXML private VBox nodeListGUI;
+	
+	@FXML private HBox nodeListGUI;
 	@FXML private Text nodeListTitle;
-	@FXML private VBox cardContainer;
+	@FXML private HBox cardContainer;
 	@FXML private TextArea titleArea;
 	@FXML private VBox addCardDetail;
 
-	public NodeListUI(NodeList nodeList) throws IOException {
+	public PersonalNodeListUI(NodeList nodeList){
 		setNodeList(nodeList);
 		loadInitialFXML();
 	}
 
     public void loadInitialFXML(){
+    	FXMLLoader loader = null;
     	try {
-    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/NodeList.fxml"));
+    		loader = new FXMLLoader(getClass().getResource("/PersonalNodeList.fxml"));
             loader.setController(this);
             setNodeListGUI(loader.load());
             nodeListTitle.setText(nodeList.getTitle());
@@ -42,22 +46,15 @@ public class NodeListUI{
     public void updateGUI() {
     	cardContainer.getChildren().clear();
     	for (Card card: nodeList.getCards()) {
-    		if (card instanceof TeamCard) {
-    			TeamCardUI teamCardUI = new TeamCardUI((TeamCard) card);
-        		teamCardUI.updateGUI();
-        		cardContainer.getChildren().add(teamCardUI.getTeamCardGUI());
-    		} else if (card instanceof PersonalCard) {
-    			PersonalCardUI personalCardUI = new PersonalCardUI((PersonalCard) card);
-        		personalCardUI.updateGUI();
-        		cardContainer.getChildren().add(personalCardUI.getPersonalCardGUI());
-    		}
+    		PersonalCardUI personalCardUI = new PersonalCardUI((PersonalCard) card);
+    		personalCardUI.updateGUI();
+    		cardContainer.getChildren().add(personalCardUI.getPersonalCardGUI());
     	}
     }
 
     @FXML
     public void handleAddCardToNodeList(){
-    	// TODO for TeamCard
-    	nodeList.addCard(new TeamCard(nodeList.getIdxCard(), nodeList, titleArea.getText()));
+    	nodeList.addCard(new PersonalCard(nodeList.getIdxCard(), nodeList, titleArea.getText()));
     	titleArea.setText("");
     	handleHideAddDetailButton();
     	updateGUI();
@@ -87,19 +84,11 @@ public class NodeListUI{
     	}
     }
 
-    public void removeCardFromNodeList(Card card){
-
-    }
-
-    public void sortCardsInNodeList(String criteria){
-
-    }
-
-	public VBox getNodeListGUI() {
+	public HBox getNodeListGUI() {
 		return nodeListGUI;
 	}
 
-	public void setNodeListGUI(VBox nodeListGUI) {
+	public void setNodeListGUI(HBox nodeListGUI) {
 		this.nodeListGUI = nodeListGUI;
 	}
 

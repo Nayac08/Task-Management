@@ -24,8 +24,8 @@ public class TeamCardUI{
 	@FXML private Text checklistStat;
 	@FXML private CheckBox checkBox;
 
-	public TeamCardUI(TeamCard personalCard) {
-		setTeamCard(personalCard);
+	public TeamCardUI(TeamCard teamCard) {
+		setTeamCard(teamCard);
 		loadInitialFXML();
 	}
 
@@ -70,22 +70,6 @@ public class TeamCardUI{
         popupStage.initModality(Modality.APPLICATION_MODAL);
         popupStage.setResizable(false);
         popupStage.show();
-    }
-
-    public void initializePersonalCard(PersonalCard card){
-
-    }
-
-    public void addChecklistToCard(PersonalCard card){
-
-    }
-
-    public void removeChecklistFromCard(PersonalCard card){
-
-    }
-
-    public void updateChecklistPercentage(PersonalCard card){
-
     }
 
 	public TeamCard getTeamCard() {

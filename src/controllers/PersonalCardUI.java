@@ -1,13 +1,23 @@
 package controllers;
 
+import java.io.IOException;
+
+import app.Main;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import models.Card;
 import models.PersonalCard;
 
 public class PersonalCardUI{
 	private PersonalCard personalCard;
 
 	@FXML private StackPane personalCardGUI;
+	@FXML private Text title;
 
 	public PersonalCardUI(PersonalCard personalCard) {
 		setPersonalCard(personalCard);
@@ -15,9 +25,40 @@ public class PersonalCardUI{
 	}
 
     public void loadInitialFXML(){
+    	try {
+    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/PersonalCard.fxml"));
+            loader.setController(this);
+            setPersonalCardGUI(loader.load());
+            	title.setText(personalCard.getTitle());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 
     public void updateGUI() {
+    	loadInitialFXML();
+    }
+    
+    @FXML
+    public void handleDeleteCard() {
+    	for (Card card: personalCard.getNodeListOwner().getCards()) {
+    		if (card.getId() == personalCard.getId()) {
+    			personalCard.getNodeListOwner().getCards().remove(card);
+    			Main.mainInterfaceUI.updateGUI();
+    			break;
+    		}
+    	}
+    }
+    
+    @FXML
+    public void handleModalPopupCard() {
+    	ModalPopupCardUI modalPopupCardUI = new ModalPopupCardUI(personalCard);
+
+    	Stage popupStage = new Stage();
+        popupStage.setScene(new Scene(modalPopupCardUI.getModalPopupCardGUI()));
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setResizable(false);
+        popupStage.show();
     }
 
 	public PersonalCard getPersonalCard() {

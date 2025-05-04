@@ -11,12 +11,14 @@ import interfaces.Exportable;
 
 public class PersonalDisplay implements Displayable,Exportable{
 	private int id;
+	private int idxListNode;
 	private String name;
 	private List<NodeList> nodeLists;
 
     public PersonalDisplay(int id, String name) {
     	this.id = id;
     	setName(name);
+    	setIdxListNode(0);
     	setNodeLists(new ArrayList<>());
     }
 
@@ -43,13 +45,23 @@ public class PersonalDisplay implements Displayable,Exportable{
  	public void setName(String name) {
  		this.name = name;
  	}
+ 	
+ 	// IdxListNode
+ 	public int getIdxListNode() {
+		return idxListNode;
+	}
+
+	public void setIdxListNode(int idxListNode) {
+		this.idxListNode = idxListNode;
+	}
 
     // NodeLists
     public void addNodeList(NodeList List) {
     	nodeLists.add(List);
+    	setIdxListNode(List.getId() + 1);
     }
 
-    public void removeNodeList(int id) {
+	public void removeNodeList(int id) {
     	for (int i=0;i<nodeLists.size();i++) {
     		if (nodeLists.get(i).getId() == id) {
     			nodeLists.remove(i);

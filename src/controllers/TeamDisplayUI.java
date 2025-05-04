@@ -46,14 +46,10 @@ public class TeamDisplayUI{
     	Node addListNode = displayZone.getChildren().removeLast();
     	displayZone.getChildren().clear();
     	for (NodeList nodeList: teamDisplay.getNodeLists()) {
-    		NodeListUI nodeListUI;
-			try {
-				nodeListUI = new NodeListUI(nodeList);
-				nodeListUI.updateGUI();
-				displayZone.getChildren().add(nodeListUI.getNodeListGUI());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+    		TeamNodeListUI teamNodeListUI;
+			teamNodeListUI = new TeamNodeListUI(nodeList);
+			teamNodeListUI.updateGUI();
+			displayZone.getChildren().add(teamNodeListUI.getNodeListGUI());
     	}
     	displayZone.getChildren().add(addListNode);
     	handleHideAddListDetailButton();

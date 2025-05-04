@@ -7,7 +7,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -18,11 +20,11 @@ public class TeamDisplayUI{
 	private TeamDisplay teamDisplay;
 
 	@FXML private VBox teamDisplayGUI;
-	@FXML private Text displayName;
+	@FXML private Label displayName;
 	@FXML private HBox displayZone;
 	@FXML private VBox addListZone;
 	@FXML private VBox addListNodeDetail;
-	@FXML private TextArea titleArea;
+	@FXML private TextField titleArea;
 	@FXML private Button addListNodeButton;
 
 	public TeamDisplayUI(TeamDisplay teamDisplay) {

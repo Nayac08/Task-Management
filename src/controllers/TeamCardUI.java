@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -19,7 +20,7 @@ public class TeamCardUI{
 	private TeamCard teamCard;
 
 	@FXML private StackPane teamCardGUI;
-	@FXML private Text title;
+	@FXML private Label title;
 	@FXML private Text dateText;
 	@FXML private Text checklistStat;
 	@FXML private CheckBox checkBox;

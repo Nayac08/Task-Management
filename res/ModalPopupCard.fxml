@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
@@ -20,11 +21,11 @@
          <children>
             <StackPane alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="499.0">
                <children>
-                  <Text fx:id="cardTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Title">
+                  <Label fx:id="cardTitle" prefHeight="32.0" prefWidth="450.0" text="Card Title">
                      <font>
                         <Font name="Ekkamai New Bold" size="28.0" />
                      </font>
-                  </Text>
+                  </Label>
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

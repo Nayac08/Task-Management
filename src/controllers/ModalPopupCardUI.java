@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -25,7 +26,7 @@ public class ModalPopupCardUI {
 	private Card cardOwner;
 
 	// Card detail component
-	@FXML private Text cardTitle;
+	@FXML private Label cardTitle;
 
 	@FXML private DatePicker datePicker;
 	@FXML private Button saveDateButton;

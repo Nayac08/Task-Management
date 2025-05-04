@@ -7,6 +7,7 @@ import java.io.IOException;
 import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
@@ -18,7 +19,7 @@ public class TaskFileUI {
 	private TaskFile taskFile;
 
 	@FXML private HBox taskFileGUI;
-	@FXML private Text fileName;
+	@FXML private Label fileName;
 
 	public TaskFileUI(TaskFile taskFile) {
 		setTaskFile(taskFile);

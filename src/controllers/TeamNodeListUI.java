@@ -5,7 +5,9 @@ import java.io.IOException;
 import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import models.Card;
@@ -19,9 +21,9 @@ public class TeamNodeListUI{
 	private NodeList nodeList;
 	
 	@FXML private VBox nodeListGUI;
-	@FXML private Text nodeListTitle;
+	@FXML private Label nodeListTitle;
 	@FXML private VBox cardContainer;
-	@FXML private TextArea titleArea;
+	@FXML private TextField titleArea;
 	@FXML private VBox addCardDetail;
 
 	public TeamNodeListUI(NodeList nodeList){

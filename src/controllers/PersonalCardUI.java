@@ -6,6 +6,7 @@ import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -18,7 +19,7 @@ public class PersonalCardUI{
 	private PersonalCard personalCard;
 
 	@FXML private VBox personalCardGUI;
-	@FXML private Text title;
+	@FXML private Label title;
 	@FXML private Text date;
 	@FXML private Text checklistStat;
 	@FXML private Text description;
@@ -40,7 +41,8 @@ public class PersonalCardUI{
             		date.setText("Date ");
             	}
             	checklistStat.setText(personalCard.getNumberOfCheckedChecklist() + "/" + personalCard.getChecklists().size());
-		} catch (IOException e) {
+            	description.setText(personalCard.getDescription());
+    	} catch (IOException e) {
 			e.printStackTrace();
 		}
     }

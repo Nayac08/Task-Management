@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -23,7 +24,7 @@ public class PersonalNodeListUI{
 	@FXML private HBox nodeListGUI;
 	@FXML private Text nodeListTitle;
 	@FXML private HBox cardContainer;
-	@FXML private TextArea titleArea;
+	@FXML private TextField titleArea;
 	@FXML private VBox addCardDetail;
 
 	public PersonalNodeListUI(NodeList nodeList){

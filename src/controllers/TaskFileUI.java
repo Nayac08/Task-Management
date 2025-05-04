@@ -65,6 +65,7 @@ public class TaskFileUI {
 		FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select a destination");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("JSON Files", "*.json"));
+        fileChooser.setInitialFileName(fileName.getText());
         File selectedFile = fileChooser.showSaveDialog(Main.primaryStage);
         if (selectedFile != null) {
         	try (FileWriter writer = new FileWriter(selectedFile)) {

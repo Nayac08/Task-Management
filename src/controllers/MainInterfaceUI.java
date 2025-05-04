@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import app.Main;
 import enums.FileType;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -33,11 +34,16 @@ public class MainInterfaceUI {
 	@FXML private ComboBox<String> fileType;
 	@FXML private TextField newFileName;
 	@FXML private StackPane displayContainer;
+	
+	@FXML private StackPane warningNewFileName;
+	@FXML private StackPane warningFileType;
 
 	public MainInterfaceUI() {
 		setMainInterface(new MainInterface());
 		loadInitialFXML();
 		handleHideAddFileZone();
+		handleHideWarningFileType();
+		handleHideWarningNewFileName();
 	}
 
 	public void loadInitialFXML(){
@@ -51,12 +57,16 @@ public class MainInterfaceUI {
     }
 
 	public void updateGUI() {
+		Node warningFileType = fileContainer.getChildren().removeLast();
+		Node warningFileName = fileContainer.getChildren().removeLast();
 		Node addFileNode = fileContainer.getChildren().removeLast();
 		fileContainer.getChildren().clear();
 		for (TaskFile taskFile: mainInterface.getTaskFiles()) {
 			fileContainer.getChildren().add((new TaskFileUI(taskFile)).getTaskFileGUI());
 		}
 		fileContainer.getChildren().add(addFileNode);
+		fileContainer.getChildren().add(warningFileName);
+		fileContainer.getChildren().add(warningFileType);
 		if (Main.taskFileIdOpening != -1) {
 			displayContainer.getChildren().clear();
 			TaskFile taskFile = mainInterface.findTaskFile(Main.taskFileIdOpening);
@@ -76,7 +86,39 @@ public class MainInterfaceUI {
 
 	@FXML
 	public void handleAddFile() {
-		if (fileType.getValue() != null) {
+		if (newFileName.getText().equals("")) {
+			new Thread(() -> {
+				Platform.runLater(() -> {
+					handleHideWarningFileType();
+					handleShowWarningNewFileName();
+				});
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				Platform.runLater(() -> {
+					handleHideWarningNewFileName();
+				});
+			}).start();
+		} else if (fileType.getValue() == null) {
+			new Thread(() -> {
+				Platform.runLater(() -> {
+					handleHideWarningNewFileName();
+					handleShowWarningFileType();
+				});
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				Platform.runLater(() -> {
+					handleHideWarningFileType();
+				});
+			}).start();
+		} else {
+			handleHideWarningNewFileName();
+			handleHideWarningFileType();
 			if (fileType.getValue().equals("Personal")) {
 				mainInterface.addTaskFile(newFileName.getText(),FileType.Personal, mainInterface);
 			} else if (fileType.getValue().equals("Team")) {
@@ -99,6 +141,26 @@ public class MainInterfaceUI {
 		fileType.getSelectionModel().clearSelection();
 		addFileZone.setManaged(false);
 		addFileZone.setVisible(false);
+	}
+	
+	public void handleHideWarningNewFileName() {
+		warningNewFileName.setVisible(false);
+		warningNewFileName.setManaged(false);
+	}
+	
+	public void handleShowWarningNewFileName() {
+		warningNewFileName.setVisible(true);
+		warningNewFileName.setManaged(true);
+	}
+	
+	public void handleHideWarningFileType() {
+		warningFileType.setVisible(false);
+		warningFileType.setManaged(false);
+	}
+	
+	public void handleShowWarningFileType() {
+		warningFileType.setVisible(true);
+		warningFileType.setManaged(true);
 	}
 
 	@FXML

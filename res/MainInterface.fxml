@@ -93,6 +93,24 @@
 										</HBox>
 									</children>
 								</HBox>
+                        <StackPane fx:id="warningNewFileName" prefHeight="26.0" prefWidth="285.0">
+                           <children>
+                              <Text fill="#b50808" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter new file name">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </StackPane>
+                        <StackPane fx:id="warningFileType" prefHeight="26.0" prefWidth="285.0">
+                           <children>
+                              <Text fill="#b50808" strokeType="OUTSIDE" strokeWidth="0.0" text="Please choose file type">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </StackPane>
 							</children>
 						</VBox>
 					</content>

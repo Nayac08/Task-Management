@@ -49,6 +49,15 @@
 										</Button>
 									</children>
 								</HBox>
+                        <StackPane fx:id="warningCardName" prefHeight="26.0" prefWidth="160.0">
+                           <children>
+                              <Text fill="#b50808" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter card name">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </StackPane>
                      </children>
                   </VBox>
             				<Button mnemonicParsing="false" onAction="#handleShowAddDetailButton" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: none;" text="+ Add a card">

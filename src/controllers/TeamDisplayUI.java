@@ -3,6 +3,7 @@ package controllers;
 import java.io.IOException;
 
 import app.Main;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import models.NodeList;
@@ -26,10 +28,12 @@ public class TeamDisplayUI{
 	@FXML private VBox addListNodeDetail;
 	@FXML private TextField titleArea;
 	@FXML private Button addListNodeButton;
+	@FXML private StackPane warningNewListName;
 
 	public TeamDisplayUI(TeamDisplay teamDisplay) {
 		setTeamDisplay(teamDisplay);
 		loadInitialFXML();
+		handleHideWarningNewListName();
         displayName.setText(teamDisplay.getName());
 	}
 
@@ -59,10 +63,27 @@ public class TeamDisplayUI{
 
     @FXML
     public void handleAddNodeListToBoard() {
-    	teamDisplay.addNodeList(new NodeList(teamDisplay.getIdxListNode(), teamDisplay, titleArea.getText()));
-    	titleArea.setText("");
-    	handleHideAddListDetailButton();
-    	updateGUI();
+    	if (titleArea.getText().equals("")) {
+    		new Thread(() -> {
+				Platform.runLater(() -> {
+					handleShowWarningNewListName();
+				});
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				Platform.runLater(() -> {
+					handleHideWarningNewListName();
+				});
+			}).start();
+    	} else {
+    		handleHideWarningNewListName();
+    		teamDisplay.addNodeList(new NodeList(teamDisplay.getIdxListNode(), teamDisplay, titleArea.getText()));
+        	titleArea.setText("");
+        	handleHideAddListDetailButton();
+        	updateGUI();
+    	}	
     }
 
     @FXML
@@ -86,6 +107,16 @@ public class TeamDisplayUI{
     public void handleClearDisplay() {
     	Main.taskFileIdOpening = -1;
     	Main.mainInterfaceUI.getDisplayContainer().getChildren().clear();
+    }
+    
+    public void handleHideWarningNewListName() {
+    	warningNewListName.setVisible(false);
+    	warningNewListName.setManaged(false);
+    }
+    
+    public void handleShowWarningNewListName() {
+    	warningNewListName.setVisible(true);
+    	warningNewListName.setManaged(true);
     }
 
 	public TeamDisplay getTeamDisplay() {

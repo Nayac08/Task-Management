@@ -3,11 +3,13 @@ package controllers;
 import java.io.IOException;
 
 import app.Main;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import models.Card;
@@ -25,10 +27,12 @@ public class TeamNodeListUI{
 	@FXML private VBox cardContainer;
 	@FXML private TextField titleArea;
 	@FXML private VBox addCardDetail;
+	@FXML private StackPane warningCardName;
 
 	public TeamNodeListUI(NodeList nodeList){
 		setNodeList(nodeList);
 		loadInitialFXML();
+		handleHideWarningCardName();
 	}
 
     public void loadInitialFXML(){
@@ -55,11 +59,28 @@ public class TeamNodeListUI{
 
     @FXML
     public void handleAddCardToNodeList(){
-    	// TODO for TeamCard
-    	nodeList.addCard(new TeamCard(nodeList.getIdxCard(), nodeList, titleArea.getText()));
-    	titleArea.setText("");
-    	handleHideAddDetailButton();
-    	updateGUI();
+    	if (titleArea.getText().equals("")) {
+    		new Thread(() -> {
+				Platform.runLater(() -> {
+					handleShowWarningCardName();
+				});
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				Platform.runLater(() -> {
+					handleHideWarningCardName();
+				});
+			}).start();
+    	} else {
+    		handleHideWarningCardName();
+    		nodeList.addCard(new TeamCard(nodeList.getIdxCard(), nodeList, titleArea.getText()));
+        	titleArea.setText("");
+        	handleHideAddDetailButton();
+        	updateGUI();
+    	}
+    	
     }
 
     @FXML
@@ -84,6 +105,16 @@ public class TeamNodeListUI{
     			break;
     		}
     	}
+    }
+    
+    public void handleHideWarningCardName() {
+    	warningCardName.setVisible(false);
+    	warningCardName.setManaged(false);
+    }
+    
+    public void handleShowWarningCardName() {
+    	warningCardName.setVisible(true);
+    	warningCardName.setManaged(true);
     }
 
 	public VBox getNodeListGUI() {

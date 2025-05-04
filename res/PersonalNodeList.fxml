@@ -24,49 +24,43 @@
 				<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
 			</padding>
 		</StackPane>
-      <ScrollPane prefHeight="218.0" prefWidth="860.0" vbarPolicy="NEVER">
+      <ScrollPane fitToHeight="true" hbarPolicy="ALWAYS" pannable="true" prefHeight="218.0" prefWidth="860.0" vbarPolicy="NEVER">
          <content>
-      		<HBox prefHeight="200.0" prefWidth="860.0" style="-fx-background-color: #ECEFF0;">
-      			<children>
-						<HBox fx:id="cardContainer" maxHeight="580.0" prefHeight="190.0" prefWidth="0.0" spacing="5.0">
-						</HBox>
-      				<HBox fx:id="topContainer" prefHeight="180.0" prefWidth="160.0" spacing="10.0">
-      					<children>
-                        <VBox fx:id="addCardDetail" prefHeight="180.0" prefWidth="160.0" spacing="10.0">
-                           <children>
-      								<TextArea fx:id="titleArea" prefHeight="66.0" prefWidth="160.0" promptText="Enter card title" VBox.vgrow="NEVER">
-      									<font>
-      										<Font name="Ekkamai New Bold" size="14.0" />
-      									</font>
-      								</TextArea>
-      								<HBox prefHeight="24.0" prefWidth="172.0">
-      									<children>
-      										<Button mnemonicParsing="false" onAction="#handleAddCardToNodeList" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: lightblue;" text="Add card">
-      											<font>
-      												<Font name="Ekkamai New Bold" size="14.0" />
-      											</font>
-      										</Button>
-      										<Button mnemonicParsing="false" onAction="#handleHideAddDetailButton" style="-fx-background-color: none;" text="X">
-      											<font>
-      												<Font name="Ekkamai New Bold" size="14.0" />
-      											</font>
-      										</Button>
-      									</children>
-      								</HBox>
-                           </children>
-                        </VBox>
-      					</children>
-      				</HBox>
-      				<Button mnemonicParsing="false" onAction="#handleShowAddDetailButton" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: none;" text="+ Add a card" VBox.vgrow="NEVER">
-      					<font>
-      						<Font name="Ekkamai New Bold" size="16.0" />
-      					</font>
-      				</Button>
-      			</children>
-      			<padding>
-      				<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-      			</padding>
-      		</HBox>
+      						<HBox fx:id="cardContainer" fillHeight="false" maxHeight="580.0" prefHeight="202.0" spacing="5.0">
+               <children>
+                  <VBox fx:id="addCardDetail" prefHeight="180.0" prefWidth="160.0" spacing="10.0">
+                     <children>
+								<TextArea fx:id="titleArea" prefHeight="66.0" prefWidth="160.0" promptText="Enter card title" VBox.vgrow="NEVER">
+									<font>
+										<Font name="Ekkamai New Bold" size="14.0" />
+									</font>
+								</TextArea>
+								<HBox prefHeight="24.0" prefWidth="172.0">
+									<children>
+										<Button mnemonicParsing="false" onAction="#handleAddCardToNodeList" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: lightblue;" text="Add card">
+											<font>
+												<Font name="Ekkamai New Bold" size="14.0" />
+											</font>
+										</Button>
+										<Button mnemonicParsing="false" onAction="#handleHideAddDetailButton" style="-fx-background-color: none;" text="X">
+											<font>
+												<Font name="Ekkamai New Bold" size="14.0" />
+											</font>
+										</Button>
+									</children>
+								</HBox>
+                     </children>
+                  </VBox>
+            				<Button mnemonicParsing="false" onAction="#handleShowAddDetailButton" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: none;" text="+ Add a card">
+            					<font>
+            						<Font name="Ekkamai New Bold" size="16.0" />
+            					</font>
+            				</Button>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
          </content>
       </ScrollPane>
 

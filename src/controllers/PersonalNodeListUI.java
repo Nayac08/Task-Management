@@ -5,6 +5,7 @@ import java.io.IOException;
 import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -44,12 +45,16 @@ public class PersonalNodeListUI{
     }
 
     public void updateGUI() {
+    	Node addCardButton = cardContainer.getChildren().removeLast();
+    	Node addCardZone = cardContainer.getChildren().removeLast();
     	cardContainer.getChildren().clear();
     	for (Card card: nodeList.getCards()) {
     		PersonalCardUI personalCardUI = new PersonalCardUI((PersonalCard) card);
     		personalCardUI.updateGUI();
     		cardContainer.getChildren().add(personalCardUI.getPersonalCardGUI());
     	}
+    	cardContainer.getChildren().add(addCardZone);
+    	cardContainer.getChildren().add(addCardButton);
     }
 
     @FXML

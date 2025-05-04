@@ -1,5 +1,6 @@
 package models;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import interfaces.Exportable;
@@ -24,6 +25,19 @@ public class PersonalCard extends Card implements Exportable{
 		JSONObject personalCardJsonObject = new JSONObject();
 		personalCardJsonObject.put("id", id);
 		personalCardJsonObject.put("title", title);
+		personalCardJsonObject.put("date", date != null ? date.toString() : JSONObject.NULL);
+		personalCardJsonObject.put("description", description);
+
+		JSONArray checklistJsonArray = new JSONArray();
+		for (ChecklistItem checklistItem: checklists) {
+			JSONObject checkListJsonObject = new JSONObject();
+			checkListJsonObject.put("id",checklistItem.getId());
+			checkListJsonObject.put("title", checklistItem.getTitle());
+			checkListJsonObject.put("isChecked", checklistItem.isChecked());
+			checklistJsonArray.put(checkListJsonObject);
+		}
+		personalCardJsonObject.put("checklists", checklistJsonArray);
+
 		// Add later
 		return personalCardJsonObject;
 	}

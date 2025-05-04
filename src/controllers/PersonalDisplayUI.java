@@ -31,11 +31,13 @@ public class PersonalDisplayUI {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/PersonalDisplay.fxml"));
             loader.setController(this);
             setPersonalDisplayGUI(loader.load());
-            
-        	personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Study"));
-        	personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Work"));
-        	personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Health"));
+            	if (personalDisplay.getNodeLists().size() <= 3) {
+            		personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Study"));
+                	personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Work"));
+                	personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Health"));
+            	}
         	
+        	updateGUI();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -45,11 +47,11 @@ public class PersonalDisplayUI {
     	displayZone.getChildren().clear();
     	for (NodeList nodeList: personalDisplay.getNodeLists()) {
     		PersonalNodeListUI personalNodeListUI = new PersonalNodeListUI(nodeList);
-    		if (nodeList.getTitle() == "Study") {
+    		if (nodeList.getTitle().equals("Study")) {
     			personalNodeListUI.getNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #A7C7E7;");
-    		} else if (nodeList.getTitle() == "Work") {
+    		} else if (nodeList.getTitle().equals("Work")) {
    			 	personalNodeListUI.getNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #B7E4C7;");
-    		} else if (nodeList.getTitle() == "Health") {
+    		} else if (nodeList.getTitle().equals("Health")) {
    			 	personalNodeListUI.getNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #FFDAB9;");
     		}
     		personalNodeListUI.updateGUI();

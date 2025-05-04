@@ -97,7 +97,6 @@ public class PersonalDisplay implements Displayable,Exportable{
 			nodeListJsonArray.put(nodeList.getJsonObject());
 		}
 		personalDisplayJsonObject.put("nodeLists", nodeListJsonArray);
-		// TODO add members later
 		return personalDisplayJsonObject;
 	}
 }

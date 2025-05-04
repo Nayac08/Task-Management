@@ -161,7 +161,7 @@
             </VBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="500.0" spacing="10.0">
                <children>
-                  <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: lightblue;" text="Cancel">
+                  <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: lightblue;" text="Close">
                      <font>
                         <Font name="Ekkamai New Bold" size="14.0" />
                      </font>

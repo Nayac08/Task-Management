@@ -54,10 +54,6 @@ public class NodeList implements Exportable{
     	}
     }
 
-    public Card getCard(int index) {
-    	return cards.get(index);
-    }
-
     public List<Card> getCards() {
     	return cards;
     }

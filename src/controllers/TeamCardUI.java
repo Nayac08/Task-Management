@@ -50,7 +50,6 @@ public class TeamCardUI{
     	loadInitialFXML();
     }
 
-    @FXML
     public void handleDeleteCard() {
     	for (Card card: teamCard.getNodeListOwner().getCards()) {
     		if (card.getId() == teamCard.getId()) {
@@ -61,7 +60,6 @@ public class TeamCardUI{
     	}
     }
 
-    @FXML
     public void handleModalPopupCard() {
     	ModalPopupCardUI modalPopupCardUI = new ModalPopupCardUI(teamCard);
 

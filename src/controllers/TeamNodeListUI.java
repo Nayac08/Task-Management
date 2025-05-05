@@ -17,7 +17,7 @@ import models.TeamCard;
 public class TeamNodeListUI{
 	private NodeList nodeList;
 
-	@FXML private VBox nodeListGUI;
+	@FXML private VBox teamNodeListGUI;
 	@FXML private Label nodeListTitle;
 	@FXML private VBox cardContainer;
 	@FXML private TextField titleArea;
@@ -35,7 +35,7 @@ public class TeamNodeListUI{
     	try {
     		loader = new FXMLLoader(getClass().getResource("/TeamNodeList.fxml"));
             loader.setController(this);
-            setNodeListGUI(loader.load());
+            setTeamNodeListGUI(loader.load());
             nodeListTitle.setText(nodeList.getTitle());
     		handleHideAddDetailButton();
 		} catch (IOException e) {
@@ -52,7 +52,6 @@ public class TeamNodeListUI{
     	}
     }
 
-    @FXML
     public void handleAddCardToNodeList(){
     	if (titleArea.getText().trim().equals("")) {
     		new Thread(() -> {
@@ -78,20 +77,17 @@ public class TeamNodeListUI{
 
     }
 
-    @FXML
     public void handleShowAddDetailButton() {
     	addCardDetail.setVisible(true);
 		addCardDetail.setManaged(true);
     }
 
-    @FXML
     public void handleHideAddDetailButton() {
     	titleArea.setText("");
     	addCardDetail.setVisible(false);
 		addCardDetail.setManaged(false);
     }
 
-    @FXML
     public void handleDeleteNodeList() {
     	for (NodeList list :nodeList.getDisplayOwner().getNodeLists()) {
     		if (list.getId() == nodeList.getId()) {
@@ -112,12 +108,12 @@ public class TeamNodeListUI{
     	warningCardName.setManaged(true);
     }
 
-	public VBox getNodeListGUI() {
-		return nodeListGUI;
+	public VBox getTeamNodeListGUI() {
+		return teamNodeListGUI;
 	}
 
-	public void setNodeListGUI(VBox nodeListGUI) {
-		this.nodeListGUI = nodeListGUI;
+	public void setTeamNodeListGUI(VBox teamNodeListGUI) {
+		this.teamNodeListGUI = teamNodeListGUI;
 	}
 
 	public NodeList getNodeList() {

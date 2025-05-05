@@ -115,7 +115,6 @@ public class ModalPopupCardUI {
     	progressCheckListPercentage.setText((int)(checkListPercentage * 100) + " %");
 	}
 
-	@FXML
 	public void handleSaveDate() {
 		LocalDate date = datePicker.getValue();
 		cardOwner.setDate(date);
@@ -132,7 +131,6 @@ public class ModalPopupCardUI {
     	cancelDateButton.setManaged(false);
 	}
 
-	@FXML
 	public void handleCancelEditDateMode() {
 		updateGUI();
 
@@ -146,7 +144,6 @@ public class ModalPopupCardUI {
     	cancelDateButton.setManaged(false);
 	}
 
-	@FXML
 	public void handleEditDate() {
 		editDateButton.setVisible(false);
 		editDateButton.setManaged(false);
@@ -158,7 +155,6 @@ public class ModalPopupCardUI {
     	cancelDateButton.setManaged(true);
 	}
 
-	@FXML
 	public void handleEditDescriptionMode() {
 		descriptionDetail.setEditable(true);
 
@@ -171,7 +167,6 @@ public class ModalPopupCardUI {
     	cancelDescriptionButton.setManaged(true);
 	}
 
-	@FXML
 	public void handleSaveDescription() {
 		cardOwner.setDescription(descriptionDetail.getText());
 		descriptionDetail.setEditable(false);
@@ -187,7 +182,6 @@ public class ModalPopupCardUI {
 		editDescriptionButton.setManaged(true);
 	}
 
-	@FXML
 	public void handleCancelEditDescriptionMode() {
 		descriptionDetail.setEditable(false);
 		updateGUI();
@@ -201,19 +195,16 @@ public class ModalPopupCardUI {
 		editDescriptionButton.setManaged(true);
 	}
 
-	@FXML
 	public void handleEditCheckListMode() {
 		addCheckListArea.setVisible(true);
 		addCheckListArea.setManaged(true);
 	}
 
-	@FXML
 	public void handleCancelEditCheckListMode() {
 		addCheckListArea.setVisible(false);
 		addCheckListArea.setManaged(false);
 	}
 
-	@FXML
 	public void handleAddCheckList() {
 		ChecklistItem checklistItem = new ChecklistItem(cardOwner.getIdxChecklists(), textFieldNewCheckList.getText());
 		textFieldNewCheckList.setText("");

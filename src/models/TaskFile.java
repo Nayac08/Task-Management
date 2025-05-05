@@ -49,7 +49,6 @@ public class TaskFile implements Exportable{
 	    for (int i = 0; i < nodeListsArray.length(); i++) {
 	        JSONObject nodeListObject = nodeListsArray.getJSONObject(i);
 	        JSONArray cardsArray = nodeListObject.getJSONArray("cards");
-
 	        NodeList nodeList = new NodeList(nodeListObject.getInt("id"), display, nodeListObject.getString("title"));
 
 	        for (int j = 0; j < cardsArray.length(); j++) {
@@ -73,14 +72,12 @@ public class TaskFile implements Exportable{
 	            }
 	            nodeList.addCard(card);
 	        }
-
 	        if (isTeam) {
 	            ((TeamDisplay) display).addNodeList(nodeList);
 	        } else {
 	            ((PersonalDisplay) display).addNodeList(nodeList);
 	        }
 	    }
-
 	    return display;
 	}
 

@@ -45,18 +45,17 @@ public class PersonalDisplayUI {
     	for (NodeList nodeList: personalDisplay.getNodeLists()) {
     		PersonalNodeListUI personalNodeListUI = new PersonalNodeListUI(nodeList);
     		if (nodeList.getTitle().equals("Study")) {
-    			personalNodeListUI.getNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #A7C7E7;");
+    			personalNodeListUI.getPersonalNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #A7C7E7;");
     		} else if (nodeList.getTitle().equals("Work")) {
-   			 	personalNodeListUI.getNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #B7E4C7;");
+   			 	personalNodeListUI.getPersonalNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #B7E4C7;");
     		} else if (nodeList.getTitle().equals("Health")) {
-   			 	personalNodeListUI.getNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #FFDAB9;");
+   			 	personalNodeListUI.getPersonalNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #FFDAB9;");
     		}
     		personalNodeListUI.updateGUI();
-    		displayZone.getChildren().add(personalNodeListUI.getNodeListGUI());
+    		displayZone.getChildren().add(personalNodeListUI.getPersonalNodeListGUI());
     	}
     }
-
-    @FXML
+    
     public void handleClearDisplay() {
     	Main.taskFileIdOpening = -1;
     	Main.mainInterfaceUI.getDisplayContainer().getChildren().clear();

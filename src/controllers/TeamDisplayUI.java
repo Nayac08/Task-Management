@@ -53,13 +53,12 @@ public class TeamDisplayUI{
     		TeamNodeListUI teamNodeListUI;
 			teamNodeListUI = new TeamNodeListUI(nodeList);
 			teamNodeListUI.updateGUI();
-			displayZone.getChildren().add(teamNodeListUI.getNodeListGUI());
+			displayZone.getChildren().add(teamNodeListUI.getTeamNodeListGUI());
     	}
     	displayZone.getChildren().add(addListNode);
     	handleHideAddListDetailButton();
     }
 
-    @FXML
     public void handleAddNodeListToBoard() {
     	if (titleArea.getText().trim().equals("")) {
     		new Thread(() -> {
@@ -84,7 +83,6 @@ public class TeamDisplayUI{
     	}
     }
 
-    @FXML
     public void handleShowAddListDetailButton() {
     	addListNodeDetail.setVisible(true);
     	addListNodeDetail.setManaged(true);
@@ -92,7 +90,6 @@ public class TeamDisplayUI{
     	addListNodeButton.setManaged(false);
     }
 
-    @FXML
     public void handleHideAddListDetailButton() {
     	titleArea.setText("");
     	addListNodeDetail.setVisible(false);
@@ -101,7 +98,6 @@ public class TeamDisplayUI{
     	addListNodeButton.setManaged(true);
     }
 
-    @FXML
     public void handleClearDisplay() {
     	Main.taskFileIdOpening = -1;
     	Main.mainInterfaceUI.getDisplayContainer().getChildren().clear();

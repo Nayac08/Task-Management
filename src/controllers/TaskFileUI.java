@@ -35,14 +35,12 @@ public class TaskFileUI {
 			e.printStackTrace();
 		}
     }
-
-	@FXML
+	
 	public void handleDeleteFile() {
 		taskFile.getMainInterface().deleteTaskFile(taskFile.getId());
 		Main.mainInterfaceUI.updateGUI();
 	}
-
-	@FXML
+	
 	public void handleOpenFile() {
 		Main.mainInterfaceUI.getDisplayContainer().getChildren().clear();
 		if (taskFile.getDisplay() instanceof TeamDisplay) {
@@ -57,8 +55,7 @@ public class TaskFileUI {
 		Main.taskFileIdOpening = taskFile.getId();
 		Main.mainInterfaceUI.handleHideAddFileZone();
 	}
-
-	@FXML
+	
 	public void handleExportFile() {
 		Main.mainInterfaceUI.handleHideAddFileZone();
 		FileChooser fileChooser = new FileChooser();
@@ -73,10 +70,6 @@ public class TaskFileUI {
                 e.printStackTrace();
             }
         }
-	}
-
-	public void updateGUI() {
-
 	}
 
 	public TaskFile getTaskFile() {

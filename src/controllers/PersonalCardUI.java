@@ -50,7 +50,6 @@ public class PersonalCardUI{
     	loadInitialFXML();
     }
 
-    @FXML
     public void handleDeleteCard() {
     	for (Card card: personalCard.getNodeListOwner().getCards()) {
     		if (card.getId() == personalCard.getId()) {
@@ -61,7 +60,6 @@ public class PersonalCardUI{
     	}
     }
 
-    @FXML
     public void handleModalPopupCard() {
     	ModalPopupCardUI modalPopupCardUI = new ModalPopupCardUI(personalCard);
 

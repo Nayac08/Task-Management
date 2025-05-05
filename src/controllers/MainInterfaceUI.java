@@ -28,7 +28,7 @@ import models.TeamDisplay;
 public class MainInterfaceUI {
 	private MainInterface mainInterface;
 
-	@FXML private HBox MainInterfaceGUI;
+	@FXML private HBox mainInterfaceGUI;
 	@FXML private VBox fileContainer;
 	@FXML private HBox addFileZone;
 	@FXML private ComboBox<String> fileType;
@@ -84,7 +84,7 @@ public class MainInterfaceUI {
 		}
 	}
 
-	@FXML
+	
 	public void handleAddFile() {
 		if (newFileName.getText().trim().equals("")) {
 			new Thread(() -> {
@@ -129,13 +129,13 @@ public class MainInterfaceUI {
 		}
 	}
 
-	@FXML
+	
 	public void handleShowAddFileZone() {
 		addFileZone.setManaged(true);
 		addFileZone.setVisible(true);
 	}
 
-	@FXML
+	
 	public void handleHideAddFileZone() {
 		newFileName.setText("");
 		fileType.getSelectionModel().clearSelection();
@@ -186,11 +186,11 @@ public class MainInterfaceUI {
 	}
 
 	public HBox getMainInterfaceGUI() {
-		return MainInterfaceGUI;
+		return mainInterfaceGUI;
 	}
 
 	public void setMainInterfaceGUI(HBox mainInterfaceGUI) {
-		MainInterfaceGUI = mainInterfaceGUI;
+		this.mainInterfaceGUI = mainInterfaceGUI;
 	}
 
 	public MainInterface getMainInterface() {

@@ -4,7 +4,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Card {
+import org.json.JSONObject;
+
+import interfaces.Exportable;
+
+public abstract class Card implements Exportable{
 	protected int id;
 	protected NodeList nodeListOwner;
 	protected String title;
@@ -124,4 +128,6 @@ public abstract class Card {
 			return numberOfCheckedChecklist/checklists.size();
 		}
 	}
+	
+	public abstract JSONObject getJsonObject();
 }

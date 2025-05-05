@@ -19,7 +19,7 @@ import models.PersonalCard;
 public class PersonalNodeListUI{
 	private NodeList nodeList;
 
-	@FXML private HBox nodeListGUI;
+	@FXML private HBox personalNodeListGUI;
 	@FXML private Text nodeListTitle;
 	@FXML private HBox cardContainer;
 	@FXML private TextField titleArea;
@@ -37,7 +37,7 @@ public class PersonalNodeListUI{
     	try {
     		loader = new FXMLLoader(getClass().getResource("/PersonalNodeList.fxml"));
             loader.setController(this);
-            setNodeListGUI(loader.load());
+            setPersonalNodeListGUI(loader.load());
             nodeListTitle.setText(nodeList.getTitle());
     		handleHideAddDetailButton();
 		} catch (IOException e) {
@@ -58,7 +58,6 @@ public class PersonalNodeListUI{
     	cardContainer.getChildren().add(addCardButton);
     }
 
-    @FXML
     public void handleAddCardToNodeList(){
     	if (titleArea.getText().trim().equals("")) {
     		new Thread(() -> {
@@ -84,20 +83,17 @@ public class PersonalNodeListUI{
 
     }
 
-    @FXML
     public void handleShowAddDetailButton() {
     	addCardDetail.setVisible(true);
 		addCardDetail.setManaged(true);
     }
 
-    @FXML
     public void handleHideAddDetailButton() {
     	titleArea.setText("");
     	addCardDetail.setVisible(false);
 		addCardDetail.setManaged(false);
     }
 
-    @FXML
     public void handleDeleteNodeList() {
     	for (NodeList list :nodeList.getDisplayOwner().getNodeLists()) {
     		if (list.getId() == nodeList.getId()) {
@@ -118,12 +114,12 @@ public class PersonalNodeListUI{
     	warningCardName.setManaged(true);
     }
 
-	public HBox getNodeListGUI() {
-		return nodeListGUI;
+	public HBox getPersonalNodeListGUI() {
+		return personalNodeListGUI;
 	}
 
-	public void setNodeListGUI(HBox nodeListGUI) {
-		this.nodeListGUI = nodeListGUI;
+	public void setPersonalNodeListGUI(HBox personalNodeListGUI) {
+		this.personalNodeListGUI = personalNodeListGUI;
 	}
 
 	public NodeList getNodeList() {

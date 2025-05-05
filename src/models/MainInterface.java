@@ -9,10 +9,11 @@ import enums.FileType;
 
 
 public class MainInterface {
-	private int idxTaskFile = 0;
+	private int idxTaskFile;
 	private List<TaskFile> taskFiles;
 
 	public MainInterface() {
+		setIdxTaskFile(0);
 		setTaskFiles(new ArrayList<>());
 	}
 

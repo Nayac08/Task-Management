@@ -5,7 +5,7 @@ import org.json.JSONObject;
 
 import interfaces.Exportable;
 
-public class PersonalCard extends Card implements Exportable{
+public class PersonalCard extends Card{
 	public Label label; // Add later
 
 	public PersonalCard(int id,NodeList nodeListOwner, String title) {

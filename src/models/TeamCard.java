@@ -8,7 +8,7 @@ import org.json.JSONObject;
 import enums.Priority;
 import interfaces.Exportable;
 
-public class TeamCard extends Card implements Exportable{
+public class TeamCard extends Card{
 	private List<Member> members; // Add later , This members is assigned to finish this Card
 	private Priority priority; // Add later
 

@@ -1,6 +1,9 @@
 package models;
 
-public class ChecklistItem {
+import org.json.JSONObject;
+import interfaces.Exportable;
+
+public class ChecklistItem implements Exportable{
     private int id;
     private String title;
     private boolean isChecked;
@@ -37,5 +40,14 @@ public class ChecklistItem {
 
 	public void setChecked(boolean isChecked) {
 		this.isChecked = isChecked;
+	}
+	
+	@Override
+	public JSONObject getJsonObject() {
+		JSONObject checkListJsonObject = new JSONObject();
+		checkListJsonObject.put("id",id);
+		checkListJsonObject.put("title", title);
+		checkListJsonObject.put("isChecked", isChecked);
+		return checkListJsonObject;
 	}
 }

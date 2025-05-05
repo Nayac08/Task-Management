@@ -1,6 +1,10 @@
 package models;
 
-public class Member {
+import org.json.JSONObject;
+
+import interfaces.Exportable;
+
+public class Member implements Exportable{
     private int id;
     private String name;
     private String email;
@@ -35,5 +39,11 @@ public class Member {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@Override
+	public JSONObject getJsonObject() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

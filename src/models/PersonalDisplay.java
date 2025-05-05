@@ -22,15 +22,6 @@ public class PersonalDisplay implements Displayable,Exportable{
     	setNodeLists(new ArrayList<>());
     }
 
-    // Feature
-    public void displayCalendar() {
-
-	}
-
-	public void syncEvents() {
-
-	}
-
 	// Id
 	public int getId() {
 		return this.id;

@@ -1,8 +1,0 @@
-package enums;
-
-public enum SortCriteria {
-	ASCENDING_DATE,
-	DESCENDING_DATE,
-	ASCENDING_PRIORITY,
-	DESCENDING_PRIORITY
-}

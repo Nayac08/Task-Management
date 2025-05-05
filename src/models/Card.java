@@ -4,16 +4,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import interfaces.Movable;
-
-public abstract class Card implements Movable{
+public abstract class Card {
 	protected int id;
-	protected NodeList nodeListOwner; // For exporting CSV purpose
+	protected NodeList nodeListOwner;
 	protected String title;
-	protected String description; // Add later
-	protected LocalDate date; // Add later
+	protected String description;
+	protected LocalDate date;
 	protected int idxChecklists;
-	protected List<ChecklistItem> checklists; // Add later
+	protected List<ChecklistItem> checklists;
 
 	public Card(int id,NodeList nodeListOwner, String title) {
 		this.id = id;
@@ -23,11 +21,6 @@ public abstract class Card implements Movable{
 		setDescription("");
 		setDate(null);
 		setChecklists(new ArrayList<>());
-	}
-
-	@Override
-	public void dragToList(NodeList list) {
-
 	}
 
 	// Id

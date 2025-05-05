@@ -30,11 +30,7 @@ public class PersonalCard extends Card implements Exportable{
 
 		JSONArray checklistJsonArray = new JSONArray();
 		for (ChecklistItem checklistItem: checklists) {
-			JSONObject checkListJsonObject = new JSONObject();
-			checkListJsonObject.put("id",checklistItem.getId());
-			checkListJsonObject.put("title", checklistItem.getTitle());
-			checkListJsonObject.put("isChecked", checklistItem.isChecked());
-			checklistJsonArray.put(checkListJsonObject);
+			checklistJsonArray.put(checklistItem.getJsonObject());
 		}
 		personalCardJsonObject.put("checklists", checklistJsonArray);
 

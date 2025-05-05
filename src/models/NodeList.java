@@ -6,19 +6,16 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import enums.SortCriteria;
 import interfaces.Displayable;
 import interfaces.Exportable;
-import interfaces.Sortable;
 import javafx.scene.paint.Color;
 
-public class NodeList implements Sortable,Exportable{
+public class NodeList implements Exportable{
     private int id;
     private Displayable displayOwner;
     private int idxCard;
     private String title;
     private List<Card> cards;
-    private Color color = Color.GRAY;
 
     public NodeList(int id, Displayable displayOwner, String title) {
     	this.id = id;
@@ -26,21 +23,6 @@ public class NodeList implements Sortable,Exportable{
     	setIdxCard(0);
     	setDisplayOwner(displayOwner);
     	setCards(new ArrayList<>());
-    }
-
-    // Feature
-    @Override
-	public void sortCards(SortCriteria criteria) {
-    	// TODO
-    	if (criteria == SortCriteria.ASCENDING_DATE) {
-
-    	} else if (criteria == SortCriteria.DESCENDING_DATE) {
-
-    	} else if (criteria == SortCriteria.ASCENDING_PRIORITY) {
-
-    	} else if (criteria == SortCriteria.DESCENDING_PRIORITY) {
-
-    	}
     }
 
     // Id
@@ -82,15 +64,6 @@ public class NodeList implements Sortable,Exportable{
 
     public void setCards(List<Card> allCards) {
 		this.cards = allCards;
-	}
-
-    // Color
-	public Color getColor() {
-		return color;
-	}
-
-	public void setColor(Color color) {
-		this.color = color;
 	}
 
 	// Display Owner

@@ -71,7 +71,7 @@
 					</children>
 				</VBox>
 				<Region prefWidth="330.0" VBox.vgrow="ALWAYS" />
-				<Button mnemonicParsing="false" onAction="#handleShowAddDetailButton" prefHeight="29.0" prefWidth="117.0" style="-fx-background-color: none;" text="+ Add a card" VBox.vgrow="NEVER">
+				<Button fx:id="addACardButton" mnemonicParsing="false" onAction="#handleShowAddDetailButton" prefHeight="29.0" prefWidth="117.0" style="-fx-background-color: none;" text="+ Add a card" VBox.vgrow="NEVER">
 					<font>
 						<Font name="Ekkamai New Bold" size="16.0" />
 					</font>

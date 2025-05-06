@@ -6,6 +6,7 @@ import app.Main;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
@@ -22,6 +23,7 @@ public class TeamNodeListUI{
 	@FXML private VBox cardContainer;
 	@FXML private TextField titleArea;
 	@FXML private VBox addCardDetail;
+	@FXML private Button addACardButton;
 	@FXML private StackPane warningCardName;
 
 	public TeamNodeListUI(NodeList nodeList){
@@ -49,6 +51,14 @@ public class TeamNodeListUI{
     		TeamCardUI teamCardUI = new TeamCardUI((TeamCard) card);
     		teamCardUI.updateGUI();
     		cardContainer.getChildren().add(teamCardUI.getTeamCardGUI());
+    	}
+    	
+    	if (nodeList.getCards().size() >= 10) {
+    		addACardButton.setVisible(false);
+    		addACardButton.setManaged(false);
+    	} else {
+    		addACardButton.setVisible(true);
+    		addACardButton.setManaged(true);
     	}
     }
 

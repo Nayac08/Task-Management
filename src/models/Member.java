@@ -2,27 +2,32 @@ package models;
 
 import org.json.JSONObject;
 
+import enums.RoleMember;
 import interfaces.Exportable;
 
 public class Member implements Exportable{
     private int id;
+    private TeamDisplay teamDisplayOwner;
     private String name;
-    private String email;
+    private RoleMember role;
 
-    public Member(int id, String name) {
+    public Member(int id, TeamDisplay teamDisplayOwner, String name, RoleMember role) {
     	this.id = id;
+    	setTeamDisplayOwner(teamDisplayOwner);
     	setName(name);
-    	setEmail(null);
-    }
-
-    public Member(int id, String name, String email) {
-    	this.id = id;
-    	setName(name);
-    	setEmail(email);
+    	setRole(role);
     }
 
 	public int getId() {
 		return id;
+	}
+
+	public TeamDisplay getTeamDisplayOwner() {
+		return teamDisplayOwner;
+	}
+
+	public void setTeamDisplayOwner(TeamDisplay teamDisplayOwner) {
+		this.teamDisplayOwner = teamDisplayOwner;
 	}
 
 	public String getName() {
@@ -33,12 +38,12 @@ public class Member implements Exportable{
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public RoleMember getRole() {
+		return role;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setRole(RoleMember role) {
+		this.role = role;
 	}
 
 	@Override

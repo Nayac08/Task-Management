@@ -41,9 +41,6 @@ public class MainInterfaceUI {
 	public MainInterfaceUI() {
 		setMainInterface(new MainInterface());
 		loadInitialFXML();
-		handleHideAddFileZone();
-		handleHideWarningFileType();
-		handleHideWarningNewFileName();
 	}
 
 	public void loadInitialFXML(){
@@ -51,6 +48,10 @@ public class MainInterfaceUI {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainInterface.fxml"));
             loader.setController(this);
             setMainInterfaceGUI(loader.load());
+            
+            handleHideAddFileZone();
+    		handleHideWarningFileType();
+    		handleHideWarningNewFileName();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

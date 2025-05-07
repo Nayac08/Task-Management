@@ -21,7 +21,7 @@
             </Label>
       		<Button mnemonicParsing="false" onAction="#handleDeleteCard" prefWidth="30.0" style="-fx-background-color: white;" text="X" StackPane.alignment="CENTER_RIGHT">
       			<font>
-      				<Font name="Ekkamai New Bold" size="16.0" />
+      				<Font name="Ekkamai New Bold" size="14.0" />
       			</font>
       		</Button>
          </children>

@@ -128,7 +128,11 @@ public class TeamDisplay implements Displayable,Exportable{
 			nodeListJsonArray.put(nodeList.getJsonObject());
 		}
 		teamDisplayJsonObject.put("nodeLists", nodeListJsonArray);
-		// TODO add members later
+		JSONArray memberJsonArray = new JSONArray();
+		for (Member member: members) {
+			memberJsonArray.put(member.getJsonObject());
+		}
+		teamDisplayJsonObject.put("members", memberJsonArray);
 		return teamDisplayJsonObject;
 	}
 }

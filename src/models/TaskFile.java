@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import enums.FileType;
+import enums.RoleMember;
 import interfaces.Displayable;
 import interfaces.Exportable;
 
@@ -77,6 +78,26 @@ public class TaskFile implements Exportable{
 	        } else {
 	            ((PersonalDisplay) display).addNodeList(nodeList);
 	        }
+	    }
+	    
+	    if (isTeam) {
+	    	JSONArray memberJsonArray = displayObject.getJSONArray("members");
+	    	for (int i=0;i<memberJsonArray.length();i++) {
+	    		JSONObject memberJsonObject = memberJsonArray.getJSONObject(i);
+	    		RoleMember roleMember = null;
+	    		if (memberJsonObject.getString("role").equals("Project_Manager")) {
+	    			roleMember = RoleMember.Project_Manager;
+	    		} else if (memberJsonObject.getString("role").equals("Developer")) {
+	    			roleMember = RoleMember.Developer;
+	    		} else if (memberJsonObject.getString("role").equals("Designer")) {
+	    			roleMember = RoleMember.Designer;
+	    		} else if (memberJsonObject.getString("role").equals("QA_Tester")) {
+	    			roleMember = RoleMember.QA_Tester;
+	    		} else if (memberJsonObject.getString("role").equals("Intern")) {
+	    			roleMember = RoleMember.Intern;
+	    		} 
+	    		((TeamDisplay) display).addMember(new Member(memberJsonObject.getInt("id"), ((TeamDisplay) display), memberJsonObject.getString("name"), roleMember));
+	    	}
 	    }
 	    return display;
 	}

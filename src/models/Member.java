@@ -48,7 +48,21 @@ public class Member implements Exportable{
 
 	@Override
 	public JSONObject getJsonObject() {
-		// TODO Auto-generated method stub
-		return null;
+		JSONObject memberJsonObject = new JSONObject();
+		memberJsonObject.put("id", id);
+		memberJsonObject.put("name", name);
+		if (role == RoleMember.Project_Manager) {
+			memberJsonObject.put("role", "Project_Manager");
+		} else if (role == RoleMember.Developer) {
+			memberJsonObject.put("role", "Developer");
+		} else if (role == RoleMember.Designer) {
+			memberJsonObject.put("role", "Designer");
+		} else if (role == RoleMember.QA_Tester) {
+			memberJsonObject.put("role", "QA_Tester");
+		} else if (role == RoleMember.Intern) {
+			memberJsonObject.put("role", "Intern");
+		}
+		
+		return memberJsonObject;
 	}
 }

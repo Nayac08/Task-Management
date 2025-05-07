@@ -243,6 +243,33 @@
           }
         ]
       }
+    ],
+    "members": [
+      {
+        "role": "Project_Manager",
+        "name": "Edward Narumedsr",
+        "id": 0
+      },
+      {
+        "role": "Developer",
+        "name": "Alex Pitayachamrat",
+        "id": 1
+      },
+      {
+        "role": "Designer",
+        "name": "Chloe Bennett",
+        "id": 2
+      },
+      {
+        "role": "QA_Tester",
+        "name": "Daniel Kim",
+        "id": 3
+      },
+      {
+        "role": "Intern",
+        "name": "Emily Tran",
+        "id": 4
+      }
     ]
   }
 }

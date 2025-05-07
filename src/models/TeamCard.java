@@ -62,11 +62,7 @@ public class TeamCard extends Card{
 
 		JSONArray checklistJsonArray = new JSONArray();
 		for (ChecklistItem checklistItem: checklists) {
-			JSONObject checkListJsonObject = new JSONObject();
-			checkListJsonObject.put("id",checklistItem.getId());
-			checkListJsonObject.put("title", checklistItem.getTitle());
-			checkListJsonObject.put("isChecked", checklistItem.isChecked());
-			checklistJsonArray.put(checkListJsonObject);
+			checklistJsonArray.put(checklistItem.getJsonObject());
 		}
 		teamCardJsonObject.put("checklists", checklistJsonArray);
 

@@ -3,6 +3,7 @@ package controllers;
 import java.io.IOException;
 
 import app.Main;
+import enums.MemberPopupMode;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -87,7 +88,7 @@ public class TeamDisplayUI{
     }
     
     public void handleShowModalPopupMember() {
-    	ModalPopupMemberUI modalPopupMemberUI = new ModalPopupMemberUI(teamDisplay);
+    	ModalPopupMemberUI modalPopupMemberUI = new ModalPopupMemberUI(teamDisplay,MemberPopupMode.CRUD);
 
     	Stage popupStage = new Stage();
         popupStage.setScene(new Scene(modalPopupMemberUI.getModalPopupMemberGUI()));

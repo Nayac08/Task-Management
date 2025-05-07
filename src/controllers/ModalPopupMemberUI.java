@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 
+import enums.MemberPopupMode;
 import enums.RoleMember;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -17,7 +18,10 @@ import models.TeamDisplay;
 
 public class ModalPopupMemberUI {
 	private TeamDisplay teamDisplayOwner;
+	private MemberPopupMode memberPopupMode;
 	
+	@FXML private VBox mainVBox;
+	@FXML private Text header;
 	@FXML private TextField textFieldNewMember;
 	@FXML private ComboBox<String> roleNewMemberBox;
 	@FXML private Button closePopupButton;
@@ -26,9 +30,16 @@ public class ModalPopupMemberUI {
 	@FXML private Text warningMemberRole;
 	@FXML private VBox modalPopupMemberGUI;
 
-	public ModalPopupMemberUI(TeamDisplay teamDisplayable) {
+	public ModalPopupMemberUI(TeamDisplay teamDisplayable, MemberPopupMode memberPopupMode) {
 		setTeamDisplayOwner(teamDisplayable);
+		setMemberPopupMode(memberPopupMode);
 		loadInitialFXML();
+		
+		if (memberPopupMode == MemberPopupMode.Select_Member) {
+			header.setText("Select Members");
+			mainVBox.getChildren().removeLast();
+			mainVBox.setPrefHeight(mainVBox.getPrefHeight()-60);
+		}
 	}
 
 	public void loadInitialFXML(){
@@ -54,7 +65,7 @@ public class ModalPopupMemberUI {
 	public void updateGUI() {
 		memberContainer.getChildren().clear();
 		for (Member member: teamDisplayOwner.getMembers()) {
-			MemberUI memberUI = new MemberUI(member, this);
+			MemberUI memberUI = new MemberUI(member , this);
 			memberContainer.getChildren().add(memberUI.getMemberGUI());
 		}
 	}
@@ -148,5 +159,13 @@ public class ModalPopupMemberUI {
 
 	public void setModalPopupMemberGUI(VBox modalPopupMemberGUI) {
 		this.modalPopupMemberGUI = modalPopupMemberGUI;
+	}
+
+	public MemberPopupMode getMemberPopupMode() {
+		return memberPopupMode;
+	}
+
+	public void setMemberPopupMode(MemberPopupMode memberPopupMode) {
+		this.memberPopupMode = memberPopupMode;
 	}
 }

@@ -35,15 +35,20 @@
             </Text>
          </children>
       </StackPane>
-      <StackPane alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="217.0">
+      <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="221.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#handleDeleteMember" style="-fx-background-color: none;" text="X">
+            <Button fx:id="selectButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Select">
+               <font>
+                  <Font name="Ekkamai New Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDeleteMember" style="-fx-background-color: none;" text="X">
                <font>
                   <Font name="Ekkamai New Bold" size="18.0" />
                </font>
             </Button>
          </children>
-      </StackPane>
+      </HBox>
    </children>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

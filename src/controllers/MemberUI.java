@@ -3,9 +3,11 @@ package controllers;
 import java.io.IOException;
 
 import app.Main;
+import enums.MemberPopupMode;
 import enums.RoleMember;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import models.Member;
@@ -16,6 +18,8 @@ public class MemberUI {
 	
 	@FXML private Text memberName;
 	@FXML private Text memberRole;
+	@FXML private Button selectButton;
+	@FXML private Button deleteButton;
 	@FXML private HBox MemberGUI;
 	
 	public MemberUI(Member member, ModalPopupMemberUI modalPopupMemberUI) {
@@ -48,11 +52,39 @@ public class MemberUI {
 		} else if (member.getRole() == RoleMember.Intern) {
 			memberRole.setText("Role Intern");
 		}
+		
+		if (modalPopupMemberUIOwner.getMemberPopupMode() == MemberPopupMode.CRUD) {
+			handleShowDeleteButton();
+			handleHideSelectButton();
+		} else if (modalPopupMemberUIOwner.getMemberPopupMode() == MemberPopupMode.Select_Member) {
+			handleHideDeleteButton();
+			handleShowSelectButton();
+		}
 	}
 	
 	public void handleDeleteMember() {
 		member.getTeamDisplayOwner().removeMember(member.getId());
 		modalPopupMemberUIOwner.updateGUI();
+	}
+	
+	public void handleHideDeleteButton() {
+		deleteButton.setVisible(false);
+		deleteButton.setManaged(false);
+	}
+	
+	public void handleShowDeleteButton() {
+		deleteButton.setVisible(true);
+		deleteButton.setManaged(true);
+	}
+	
+	public void handleHideSelectButton() {
+		selectButton.setVisible(false);
+		selectButton.setManaged(false);
+	}
+	
+	public void handleShowSelectButton() {
+		selectButton.setVisible(true);
+		selectButton.setManaged(true);
 	}
 
 	public Member getMember() {

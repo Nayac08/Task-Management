@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import app.Main;
+import enums.MemberPopupMode;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
@@ -18,9 +20,11 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.Card;
 import models.ChecklistItem;
+import models.TeamDisplay;
 
 public class ModalPopupCardUI {
 	private Card cardOwner;
@@ -43,6 +47,9 @@ public class ModalPopupCardUI {
 	@FXML private VBox checkListContainer;
 	@FXML private HBox addCheckListArea;
 	@FXML private TextField textFieldNewCheckList;
+	
+	// for team
+	@FXML private VBox memberContainer;
 
 
 	@FXML private Button closePopupButton;
@@ -114,6 +121,17 @@ public class ModalPopupCardUI {
     	progressCheckListBar.setProgress(checkListPercentage);
     	progressCheckListPercentage.setText((int)(checkListPercentage * 100) + " %");
 	}
+	
+	// for team
+	public void handleShowEditMemberPopup() {
+    	ModalPopupMemberUI modalPopupMemberUI = new ModalPopupMemberUI((TeamDisplay) cardOwner.getNodeListOwner().getDisplayOwner(),MemberPopupMode.Select_Member);
+
+    	Stage popupStage = new Stage();
+        popupStage.setScene(new Scene(modalPopupMemberUI.getModalPopupMemberGUI()));
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setResizable(false);
+        popupStage.show();
+    }
 
 	public void handleSaveDate() {
 		LocalDate date = datePicker.getValue();

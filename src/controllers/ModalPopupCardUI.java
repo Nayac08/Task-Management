@@ -20,6 +20,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -124,7 +127,21 @@ public class ModalPopupCardUI {
 	}
 	
 	public void updateGUILabel() {
-		
+		if (cardOwner instanceof PersonalCard) {
+			labelContainer.getChildren().clear();
+			int maxWidthContainer = 308;
+			int labelCount = ((PersonalCard) cardOwner).getLabels().size();
+			double widthPerRectangle = (double) maxWidthContainer/labelCount;
+			for (models.Label label: ((PersonalCard) cardOwner).getLabels()) {
+				Rectangle rectangle = new Rectangle(widthPerRectangle, 24.0);
+				rectangle.setArcWidth(5.0);
+				rectangle.setArcHeight(5.0);
+				rectangle.setFill(label.getColor());
+				rectangle.setStroke(Color.BLACK);
+				rectangle.setStrokeType(StrokeType.INSIDE);
+				labelContainer.getChildren().add(rectangle);
+			}	
+		}
 	}
 
 	public void updateGUIChecklist(CheckListViewMode checkListViewMode) {

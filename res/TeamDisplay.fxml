@@ -13,11 +13,11 @@
 
 <VBox prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 	<children>
-      <HBox prefHeight="65.0" prefWidth="960.0" style="-fx-background-color: #60D383;">
+      <HBox prefHeight="75.0" prefWidth="960.0" style="-fx-background-color: #343434;">
          <children>
             <StackPane prefHeight="45.0" prefWidth="700.0">
                <children>
-                  <Label fx:id="displayName" prefHeight="32.0" prefWidth="667.0" text="Team Display Name" StackPane.alignment="CENTER_LEFT">
+                  <Label fx:id="displayName" prefHeight="32.0" prefWidth="667.0" text="Team Display Name" textFill="WHITE" StackPane.alignment="CENTER_LEFT">
                      <font>
                         <Font name="Ekkamai New Bold" size="28.0" />
                      </font>
@@ -31,7 +31,7 @@
                         <Font name="Ekkamai New Bold" size="18.0" />
                      </font>
                   </Button>
-      				<Button mnemonicParsing="false" onAction="#handleClearDisplay" style="-fx-background-color: none;" text="X">
+      				<Button mnemonicParsing="false" onAction="#handleClearDisplay" style="-fx-background-color: none;" text="X" textFill="WHITE">
       					<font>
       						<Font name="Ekkamai New Bold" size="24.0" />
       					</font>
@@ -40,32 +40,32 @@
             </HBox>
          </children>
          <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </padding>
       </HBox>
-		<ScrollPane hbarPolicy="ALWAYS" maxWidth="1420.0" pannable="true" prefHeight="655.0" prefWidth="960.0" vbarPolicy="NEVER">
+		<ScrollPane hbarPolicy="ALWAYS" maxWidth="1420.0" prefHeight="645.0" prefWidth="960.0" vbarPolicy="NEVER">
 			<content>
-				<HBox fx:id="displayZone" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0">
+				<HBox fx:id="displayZone" prefHeight="628.0">
 					<children>
-						<VBox prefHeight="450.0" prefWidth="192.0">
+						<VBox prefHeight="630.0" prefWidth="240.0">
 							<children>
 								<VBox fx:id="addListNodeDetail" prefHeight="120.0" prefWidth="192.0" spacing="5.0" style="-fx-background-color: #ECEFF0;">
 									<children>
                               <TextField fx:id="titleArea" prefHeight="32.0" prefWidth="172.0" promptText="Enter List name">
                                  <font>
-                                    <Font name="Ekkamai New Bold" size="14.0" />
+                                    <Font name="Ekkamai New Bold" size="16.0" />
                                  </font>
                               </TextField>
 										<HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="172.0" VBox.vgrow="NEVER">
 											<children>
-												<Button mnemonicParsing="false" onAction="#handleAddNodeListToBoard" prefHeight="27.0" prefWidth="67.0" style="-fx-background-color: lightblue;" text="Add list">
+												<Button mnemonicParsing="false" onAction="#handleAddNodeListToBoard" prefHeight="29.0" prefWidth="78.0" style="-fx-background-color: lightblue;" text="Add list">
 													<font>
-														<Font name="Ekkamai New Bold" size="14.0" />
+														<Font name="Ekkamai New Bold" size="16.0" />
 													</font>
 												</Button>
 												<Button mnemonicParsing="false" onAction="#handleHideAddListDetailButton" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: none;" text="X">
 													<font>
-														<Font name="Ekkamai New Bold" size="14.0" />
+														<Font name="Ekkamai New Bold" size="16.0" />
 													</font>
 												</Button>
 											</children>
@@ -84,7 +84,7 @@
 										<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
 									</padding>
 								</VBox>
-								<Button fx:id="addListNodeButton" mnemonicParsing="false" onAction="#handleShowAddListDetailButton" prefHeight="32.0" prefWidth="192.0" style="-fx-background-color: #ECEFF0;" text="+ Add another list">
+								<Button fx:id="addListNodeButton" mnemonicParsing="false" onAction="#handleShowAddListDetailButton" prefHeight="32.0" prefWidth="240.0" style="-fx-background-color: #ECEFF0;" text="+ Add another list">
 									<padding>
 										<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
 									</padding>

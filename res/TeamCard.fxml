@@ -12,65 +12,62 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleModalPopupCard" prefHeight="44.0" prefWidth="172.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleModalPopupCard" prefHeight="63.0" prefWidth="219.0" style="-fx-background-color: white; -fx-border-radius: 10; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 	<padding>
 		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
 	</padding>
 	<children>
-      <VBox prefHeight="200.0" prefWidth="100.0">
+      <VBox prefHeight="200.0" prefWidth="199.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="210.0">
                <children>
-                  <Label fx:id="title" prefHeight="19.0" prefWidth="136.0" text="Team title">
+                  <Label fx:id="title" prefHeight="20.0" prefWidth="161.0" text="Team title">
                      <font>
-                        <Font name="Ekkamai New Bold" size="16.0" />
+                        <Font name="Ekkamai New Bold" size="18.0" />
                      </font>
                   </Label>
             		<Button mnemonicParsing="false" onAction="#handleDeleteCard" style="-fx-background-color: white;" text="X">
             			<font>
-            				<Font name="Ekkamai New Bold" size="12.0" />
+            				<Font name="Ekkamai New Bold" size="14.0" />
             			</font>
             		</Button>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="16.0" prefWidth="210.0" spacing="5.0">
                <children>
-                  <HBox alignment="BOTTOM_LEFT" prefHeight="12.0" prefWidth="79.0" spacing="5.0">
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="97.0" spacing="5.0">
                      <children>
-                        <Text fx:id="dateText" strokeType="OUTSIDE" strokeWidth="0.0" text="Date 31/01/2549">
+                        <Text fx:id="dateText" strokeType="OUTSIDE" strokeWidth="0.0" text="Date 2025-06-24">
                            <font>
-                              <Font name="Ekkamai New Bold" size="10.0" />
+                              <Font name="Ekkamai New Bold" size="12.0" />
                            </font>
                         </Text>
                      </children>
                   </HBox>
-                  <HBox alignment="BOTTOM_LEFT" prefHeight="12.0" prefWidth="47.0" spacing="3.0">
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="16.0" prefWidth="30.0" spacing="3.0">
                      <children>
-                        <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="15.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@user.png" />
                            </image>
                         </ImageView>
-                        <Text fx:id="memberCount" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
+                        <Text fx:id="memberCount" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="14.196485042572021">
                            <font>
-                              <Font name="Ekkamai New Bold" size="10.0" />
+                              <Font name="Ekkamai New Bold" size="12.0" />
                            </font>
                         </Text>
                      </children>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
                   </HBox>
                   <HBox alignment="BOTTOM_CENTER" prefHeight="12.0" prefWidth="31.0" spacing="5.0">
                      <children>
                         <CheckBox fx:id="checkBox" disable="true" focusTraversable="false" mnemonicParsing="false" prefWidth="15.0" selected="true" style="-fx-opacity: 1;">
                            <font>
-                              <Font size="8.0" />
+                              <Font size="10.0" />
                            </font>
                         </CheckBox>
                         <Text fx:id="checklistStat" strokeType="OUTSIDE" strokeWidth="0.0" text="3/3">
                            <font>
-                              <Font name="Ekkamai New Bold" size="10.0" />
+                              <Font name="Ekkamai New Bold" size="12.0" />
                            </font>
                         </Text>
                      </children>
@@ -78,6 +75,9 @@
                </children>
             </HBox>
          </children>
+         <padding>
+            <Insets left="13.0" />
+         </padding>
       </VBox>
 	</children>
 </StackPane>

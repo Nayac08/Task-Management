@@ -14,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.NodeList;
@@ -52,9 +53,17 @@ public class TeamDisplayUI{
     public void updateGUI() {
     	Node addListNode = displayZone.getChildren().removeLast();
     	displayZone.getChildren().clear();
+    	int i = 0;
     	for (NodeList nodeList: teamDisplay.getNodeLists()) {
-    		TeamNodeListUI teamNodeListUI;
-			teamNodeListUI = new TeamNodeListUI(nodeList);
+    		TeamNodeListUI teamNodeListUI = null;
+    		if (i % 3 == 0) {
+    			teamNodeListUI = new TeamNodeListUI(nodeList, Color.web("#A179F2"));
+    		} else if (i % 3 == 1) {
+    			teamNodeListUI = new TeamNodeListUI(nodeList, Color.web("#4170FF"));
+    		} else if (i % 3 == 2) {
+    			teamNodeListUI = new TeamNodeListUI(nodeList, Color.web("#01ABFE"));
+    		}
+			i++;
 			teamNodeListUI.updateGUI();
 			displayZone.getChildren().add(teamNodeListUI.getTeamNodeListGUI());
     	}

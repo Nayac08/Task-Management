@@ -6,11 +6,18 @@ import app.Main;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import models.Card;
 import models.NodeList;
 import models.TeamCard;
@@ -19,6 +26,7 @@ public class TeamNodeListUI{
 	private NodeList nodeList;
 
 	@FXML private VBox teamNodeListGUI;
+	@FXML private StackPane header;
 	@FXML private Label nodeListTitle;
 	@FXML private VBox cardContainer;
 	@FXML private TextField titleArea;
@@ -26,19 +34,20 @@ public class TeamNodeListUI{
 	@FXML private Button addACardButton;
 	@FXML private StackPane warningCardName;
 
-	public TeamNodeListUI(NodeList nodeList){
+	public TeamNodeListUI(NodeList nodeList, Color color){
 		setNodeList(nodeList);
-		loadInitialFXML();
+		loadInitialFXML(color);
 		handleHideWarningCardName();
 	}
 
-    public void loadInitialFXML(){
+    public void loadInitialFXML(Color color){
     	FXMLLoader loader = null;
     	try {
     		loader = new FXMLLoader(getClass().getResource("/TeamNodeList.fxml"));
             loader.setController(this);
             setTeamNodeListGUI(loader.load());
             nodeListTitle.setText(nodeList.getTitle());
+            	header.setBackground(new Background(new BackgroundFill(color, null, null)));
     		handleHideAddDetailButton();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -81,6 +90,8 @@ public class TeamNodeListUI{
     		handleHideWarningCardName();
     		nodeList.addCard(new TeamCard(nodeList.getIdxCard(), nodeList, titleArea.getText().trim()));
         	titleArea.setText("");
+        	addACardButton.setVisible(true);
+    		addACardButton.setManaged(true);
         	handleHideAddDetailButton();
         	updateGUI();
     	}
@@ -88,6 +99,8 @@ public class TeamNodeListUI{
     }
 
     public void handleShowAddDetailButton() {
+    	addACardButton.setVisible(false);
+		addACardButton.setManaged(false);
     	addCardDetail.setVisible(true);
 		addCardDetail.setManaged(true);
     }
@@ -96,6 +109,8 @@ public class TeamNodeListUI{
     	titleArea.setText("");
     	addCardDetail.setVisible(false);
 		addCardDetail.setManaged(false);
+		addACardButton.setVisible(true);
+		addACardButton.setManaged(true);
     }
 
     public void handleDeleteNodeList() {

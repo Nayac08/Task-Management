@@ -7,23 +7,18 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="365.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="285.0" spacing="5.0" style="-fx-background-color: #BFDCFE;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="365.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleOpenFile" prefHeight="36.0" prefWidth="285.0" spacing="5.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-radius: 5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 	<padding>
 		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
 	</padding>
 	<children>
-      <Label fx:id="fileName" prefHeight="17.0" prefWidth="136.0" text="Label">
+      <Label fx:id="fileName" prefHeight="17.0" prefWidth="183.0" text="Dev Company Workload">
          <font>
             <Font name="Ekkamai New Bold" size="14.0" />
          </font>
       </Label>
-		<HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="134.0" spacing="5.0" StackPane.alignment="CENTER_RIGHT">
+		<HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="88.0" spacing="5.0" StackPane.alignment="CENTER_RIGHT">
 			<children>
-				<Button mnemonicParsing="false" onAction="#handleOpenFile" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: lightblue;" text="Open">
-					<font>
-						<Font name="Ekkamai New Bold" size="12.0" />
-					</font>
-				</Button>
 				<Button mnemonicParsing="false" onAction="#handleExportFile" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: lightblue;" text="Export">
 					<font>
 						<Font name="Ekkamai New Bold" size="12.0" />

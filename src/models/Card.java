@@ -128,6 +128,7 @@ public abstract class Card implements Exportable{
 			return numberOfCheckedChecklist/checklists.size();
 		}
 	}
-	
+
+	@Override
 	public abstract JSONObject getJsonObject();
 }

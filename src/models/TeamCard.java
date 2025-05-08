@@ -6,9 +6,6 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import enums.Priority;
-import interfaces.Exportable;
-
 public class TeamCard extends Card{
 	private int idxMember;
 	private List<Member> members;
@@ -16,7 +13,7 @@ public class TeamCard extends Card{
 	public TeamCard(int id,NodeList nodeListOwner, String title) {
 		super(id, nodeListOwner, title);
 		setIdxMember(0);
-		setMembers(new ArrayList<Member>());
+		setMembers(new ArrayList<>());
 	}
 
 	// Members
@@ -33,7 +30,7 @@ public class TeamCard extends Card{
     		}
     	}
 	}
-	
+
 	public boolean isContainMember(int id) {
 		for (Member member : members) {
     		if (member.getId() == id) {
@@ -55,7 +52,7 @@ public class TeamCard extends Card{
 	public List<Member> getMembers() {
 		return members;
 	}
-	
+
 	public void setMembers(List<Member> members) {
 		this.members = members;
 	}
@@ -81,7 +78,7 @@ public class TeamCard extends Card{
 			checklistJsonArray.put(checklistItem.getJsonObject());
 		}
 		teamCardJsonObject.put("checklists", checklistJsonArray);
-		
+
 		JSONArray memberJsonArray = new JSONArray();
 		for (Member member: members) {
 			memberJsonArray.put(member.getJsonObject());

@@ -72,7 +72,7 @@ public class TaskFile implements Exportable{
 	            		checklistItem.setChecked(checklistJSONObject.getBoolean("isChecked"));
 	            		card.addChecklist(checklistItem);
 	            }
-	            
+
 	            // Members in card
 	            if (display instanceof TeamDisplay) {
 		            	for (Object o : cardObject.getJSONArray("members")) {
@@ -94,7 +94,7 @@ public class TaskFile implements Exportable{
 		            		((TeamCard) card).addMember(member);
 		            }
 	            }
-	            
+
 	            	nodeList.addCard(card);
 	        }
 	        if (isTeam) {
@@ -103,7 +103,7 @@ public class TaskFile implements Exportable{
 	            ((PersonalDisplay) display).addNodeList(nodeList);
 	        }
 	    }
-	    
+
 	    if (isTeam) {
 	    	JSONArray memberJsonArray = displayObject.getJSONArray("members");
 	    	for (int i=0;i<memberJsonArray.length();i++) {
@@ -119,7 +119,7 @@ public class TaskFile implements Exportable{
 	    			roleMember = RoleMember.QA_Tester;
 	    		} else if (memberJsonObject.getString("role").equals("Intern")) {
 	    			roleMember = RoleMember.Intern;
-	    		} 
+	    		}
 	    		((TeamDisplay) display).addMember(new Member(memberJsonObject.getInt("id"), ((TeamDisplay) display), memberJsonObject.getString("name"), roleMember));
 	    	}
 	    }

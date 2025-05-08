@@ -19,21 +19,21 @@ public class MemberUI {
 	private ModalPopupCardUI modalPopupCardUIOwner = null;
 	private PopupMode memberPopupMode;
 	private Member member;
-	
+
 	@FXML private Text memberName;
 	@FXML private Text memberRole;
 	@FXML private Button selectButton;
 	@FXML private Button deselectedButton;
 	@FXML private Button deleteButton;
 	@FXML private HBox MemberGUI;
-	
+
 	public MemberUI(Member member, ModalPopupMemberUI modalPopupMemberUI) {
 		setMember(member);
 		setMemberPopupMode(PopupMode.CRUD);
 		setModalPopupMemberUIOwner(modalPopupMemberUI);
 		loadInitialFXML();
 	}
-	
+
 	public MemberUI(Member member, ModalPopupCardUI modalPopupCardUI, ModalPopupSelectMemberUI modalPopupSelectMemberUI) {
 		setMember(member);
 		setMemberPopupMode(PopupMode.Select);
@@ -66,7 +66,7 @@ public class MemberUI {
 		} else if (member.getRole() == RoleMember.Intern) {
 			memberRole.setText("Role Intern");
 		}
-		
+
 		if (memberPopupMode == PopupMode.CRUD) {
 			handleShowDeleteButton();
 			handleHideSelectButton();
@@ -81,10 +81,10 @@ public class MemberUI {
 				handleHideDeselectedButton();
 				handleShowSelectButton();
 			}
-			
+
 		}
 	}
-	
+
 	// Select Member mode
 	public void handleSelectMember() {
 		((TeamCard)modalPopupCardUIOwner.getCardOwner()).addMember(member);
@@ -92,45 +92,45 @@ public class MemberUI {
 		Main.mainInterfaceUI.updateGUI();
 		updateGUI();
 	}
-	
+
 	public void handleDeselectMember() {
 		((TeamCard)modalPopupCardUIOwner.getCardOwner()).removeMember(member.getId());
 		modalPopupCardUIOwner.updateGUI();
 		Main.mainInterfaceUI.updateGUI();
 		updateGUI();
 	}
-	
+
 	// CRUD Member
 	public void handleDeleteMember() {
 		member.getTeamDisplayOwner().removeMember(member.getId());
 		modalPopupMemberUIOwner.updateGUI();
 	}
-	
+
 	public void handleHideDeleteButton() {
 		deleteButton.setVisible(false);
 		deleteButton.setManaged(false);
 	}
-	
+
 	public void handleShowDeleteButton() {
 		deleteButton.setVisible(true);
 		deleteButton.setManaged(true);
 	}
-	
+
 	public void handleHideSelectButton() {
 		selectButton.setVisible(false);
 		selectButton.setManaged(false);
 	}
-	
+
 	public void handleShowSelectButton() {
 		selectButton.setVisible(true);
 		selectButton.setManaged(true);
 	}
-	
+
 	public void handleHideDeselectedButton() {
 		deselectedButton.setVisible(false);
 		deselectedButton.setManaged(false);
 	}
-	
+
 	public void handleShowDeselectedButton() {
 		deselectedButton.setVisible(true);
 		deselectedButton.setManaged(true);
@@ -167,7 +167,7 @@ public class MemberUI {
 	public void setModalPopupCardUIOwner(ModalPopupCardUI modalPopupCardUIOwner) {
 		this.modalPopupCardUIOwner = modalPopupCardUIOwner;
 	}
-	
+
 	public ModalPopupSelectMemberUI getModalPopupSelectMemberUI() {
 		return modalPopupSelectMemberUI;
 	}

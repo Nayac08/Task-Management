@@ -26,7 +26,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.Card;
 import models.ChecklistItem;
-import models.Member;
 import models.PersonalCard;
 import models.PersonalDisplay;
 import models.TeamCard;
@@ -54,11 +53,11 @@ public class ModalPopupCardUI {
 	@FXML private VBox checkListContainer;
 	@FXML private HBox addCheckListArea;
 	@FXML private TextField textFieldNewCheckList;
-	
+
 	// for personal
 	@FXML private HBox labelZone;
 	@FXML private Button editLabelButton;
-	
+
 	// for team
 	@FXML private VBox memberZone;
 	@FXML private Label memberCount;
@@ -93,15 +92,15 @@ public class ModalPopupCardUI {
             	handleHideSaveDescriptionButton();
             	handleHideCancelDescriptionButton();
             	handleHideAddCheckListArea();
-            	
+
             	if (cardOwner instanceof TeamCard) {
             		memberZone.setVisible(true);
-            		memberZone.setManaged(true); 
+            		memberZone.setManaged(true);
             		labelZone.setVisible(false);
             		labelZone.setManaged(false);
             	} else if (cardOwner instanceof PersonalCard) {
             		memberZone.setVisible(false);
-            		memberZone.setManaged(false); 
+            		memberZone.setManaged(false);
             		labelZone.setVisible(true);
             		labelZone.setManaged(true);
             	}
@@ -120,7 +119,7 @@ public class ModalPopupCardUI {
     	// for team
     	updateGUIMember();
 	}
-	
+
 	public void updateGUIChecklist(CheckListViewMode checkListViewMode) {
 		checkListContainer.getChildren().clear();
     	for (ChecklistItem checklistItem: cardOwner.getChecklists()) {
@@ -151,7 +150,7 @@ public class ModalPopupCardUI {
             hBox.setPrefSize(364, 22);
             hBox.setSpacing(5);
             checkListContainer.getChildren().add(hBox);
-    		
+
     		if (checkListViewMode == CheckListViewMode.Edit) {
         		closeButton.setVisible(true);
         		closeButton.setManaged(true);
@@ -159,21 +158,21 @@ public class ModalPopupCardUI {
     			closeButton.setVisible(false);
     			closeButton.setManaged(false);
     		}
-            
+
     	}
 
     	double checkListPercentage = cardOwner.getChecklistPercentage();
     	progressCheckListBar.setProgress(checkListPercentage);
     	progressCheckListPercentage.setText((int)(checkListPercentage * 100) + " %");
-    	
+
 	}
-	
+
 	// for team
 	public void updateGUIMember() {
 		if (cardOwner instanceof TeamCard) {
     		memberContainer.getChildren().clear();
     		for (int i=0; i<((TeamCard)cardOwner).getMembers().size();i++) {
-    			
+
     			Label memberOrder = new Label((i+1) + ".");
     	        memberOrder.setPrefSize(339, 17);
     	        memberOrder.setFont(Font.font("Ekkamai New Bold", 14));
@@ -197,20 +196,20 @@ public class ModalPopupCardUI {
 
     	        HBox hBox = new HBox(orderPane, namePane, rolePane);
     	        hBox.setPrefSize(364, 17);
-    	        
+
     	        memberContainer.getChildren().add(hBox);
     		}
-    		
+
     		if (((TeamCard) cardOwner).getMembers().size() <= 1) {
     			memberCount.setText(((TeamCard) cardOwner).getMembers().size() + " member");
     		} else {
     			memberCount.setText(((TeamCard) cardOwner).getMembers().size() + " members");
 
     		}
-    		
+
     	}
 	}
-	
+
 	// for team
 	public void handleShowEditMemberPopup() {
 		if (cardOwner instanceof TeamCard) {
@@ -221,9 +220,9 @@ public class ModalPopupCardUI {
 	        popupStage.initModality(Modality.APPLICATION_MODAL);
 	        popupStage.setResizable(false);
 	        popupStage.show();
-		}  	
+		}
     }
-	
+
 	// for personal
 	public void handleShowEditLabelPopup() {
 		if (cardOwner instanceof PersonalCard) {
@@ -234,7 +233,7 @@ public class ModalPopupCardUI {
 	        popupStage.initModality(Modality.APPLICATION_MODAL);
 	        popupStage.setResizable(false);
 	        popupStage.show();
-		}  
+		}
 	}
 
 	public void handleSaveDate() {
@@ -312,82 +311,82 @@ public class ModalPopupCardUI {
 		handleShowEditCheckListButton();
 		handleHideAddCheckListArea();
 	}
-	
+
 	public void handleHideSaveDateButton() {
 		saveDateButton.setVisible(false);
 		saveDateButton.setManaged(false);
 	}
-	
+
 	public void handleShowSaveDateButton() {
 		saveDateButton.setVisible(true);
 		saveDateButton.setManaged(true);
 	}
-	
+
 	public void handleHideEditDateButton() {
 		editDateButton.setVisible(false);
 		editDateButton.setManaged(false);
 	}
-	
+
 	public void handleShowEditDateButton() {
 		editDateButton.setVisible(true);
 		editDateButton.setManaged(true);
 	}
-	
+
 	public void handleHideCancelDateButton() {
 		cancelDateButton.setVisible(false);
 		cancelDateButton.setManaged(false);
 	}
-	
+
 	public void handleShowCancelDateButton() {
 		cancelDateButton.setVisible(true);
 		cancelDateButton.setManaged(true);
 	}
-	
+
 	public void handleHideSaveDescriptionButton() {
 		saveDescriptionButton.setVisible(false);
 		saveDescriptionButton.setManaged(false);
 	}
-	
+
 	public void handleShowSaveDescriptionButton() {
 		saveDescriptionButton.setVisible(true);
 		saveDescriptionButton.setManaged(true);
 	}
-	
+
 	public void handleHideEditDescriptionButton() {
 		editDescriptionButton.setVisible(false);
 		editDescriptionButton.setManaged(false);
 	}
-	
+
 	public void handleShowEditDescriptionButton() {
 		editDescriptionButton.setVisible(true);
 		editDescriptionButton.setManaged(true);
 	}
-	
+
 	public void handleHideCancelDescriptionButton() {
 		cancelDescriptionButton.setVisible(false);
 		cancelDescriptionButton.setManaged(false);
 	}
-	
+
 	public void handleShowCancelDescriptionButton() {
 		cancelDescriptionButton.setVisible(true);
 		cancelDescriptionButton.setManaged(true);
 	}
-	
+
 	public void handleHideEditCheckListButton() {
 		editCheckListButton.setVisible(false);
 		editCheckListButton.setManaged(false);
 	}
-	
+
 	public void handleShowEditCheckListButton() {
 		editCheckListButton.setVisible(true);
 		editCheckListButton.setManaged(true);
 	}
-	
+
 	public void handleHideAddCheckListArea() {
 		addCheckListArea.setVisible(false);
 		addCheckListArea.setManaged(false);
 	}
-	
+
 	public void handleShowAddCheckListArea() {
 		addCheckListArea.setVisible(true);
 		addCheckListArea.setManaged(true);

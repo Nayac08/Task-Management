@@ -4,18 +4,14 @@ import java.io.IOException;
 
 import app.Main;
 import enums.PopupMode;
-import enums.RoleMember;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import models.Label;
-import models.Member;
 import models.PersonalCard;
-import models.TeamCard;
 
 public class LabelUI {
 	private ModalPopupLabelUI modalPopupLabelUIOwner = null;
@@ -23,7 +19,7 @@ public class LabelUI {
 	private ModalPopupCardUI modalPopupCardUIOwner = null;
 	private PopupMode labelPopupMode;
 	private Label label;
-	
+
 	@FXML private Text labelName;
 	@FXML private Rectangle labelColor;
 	@FXML private Button selectButton;
@@ -31,14 +27,14 @@ public class LabelUI {
 	@FXML private Button deleteButton;
 	@FXML private HBox labelBox;
 	@FXML private HBox labelGUI;
-	
+
 	public LabelUI(Label label, ModalPopupLabelUI modalPopupLabelUI) {
 		setLabel(label);
 		setLabelPopupMode(PopupMode.CRUD);
 		setModalPopupLabelUIOwner(modalPopupLabelUI);
 		loadInitialFXML();
 	}
-	
+
 	public LabelUI(Label label, ModalPopupCardUI modalPopupCardUI, ModalPopupSelectLabelUI modalPopupSelectLabelUI) {
 		setLabel(label);
 		setLabelPopupMode(PopupMode.Select);
@@ -61,7 +57,7 @@ public class LabelUI {
 	public void updateGUI() {
 		labelName.setText(label.getTitle());
 		labelColor.setFill(label.getColor());
-		
+
 		if (labelPopupMode == PopupMode.CRUD) {
 			handleShowDeleteButton();
 			handleHideSelectButton();
@@ -76,10 +72,10 @@ public class LabelUI {
 				handleHideDeselectedButton();
 				handleShowSelectButton();
 			}
-			
+
 		}
 	}
-	
+
 	// Select Label mode
 	public void handleSelectLabel() {
 		((PersonalCard)modalPopupCardUIOwner.getCardOwner()).addLabel(label);
@@ -87,45 +83,45 @@ public class LabelUI {
 		Main.mainInterfaceUI.updateGUI();
 		updateGUI();
 	}
-	
+
 	public void handleDeselectLabel() {
 		((PersonalCard)modalPopupCardUIOwner.getCardOwner()).removeLabel(label.getId());
 		modalPopupCardUIOwner.updateGUI();
 		Main.mainInterfaceUI.updateGUI();
 		updateGUI();
 	}
-	
+
 	// CRUD Label
 	public void handleDeleteLabel() {
 		label.getPersonalDisplay().removeLabel(label.getId());
 		modalPopupLabelUIOwner.updateGUI();
 	}
-	
+
 	public void handleHideDeleteButton() {
 		deleteButton.setVisible(false);
 		deleteButton.setManaged(false);
 	}
-	
+
 	public void handleShowDeleteButton() {
 		deleteButton.setVisible(true);
 		deleteButton.setManaged(true);
 	}
-	
+
 	public void handleHideSelectButton() {
 		selectButton.setVisible(false);
 		selectButton.setManaged(false);
 	}
-	
+
 	public void handleShowSelectButton() {
 		selectButton.setVisible(true);
 		selectButton.setManaged(true);
 	}
-	
+
 	public void handleHideDeselectedButton() {
 		deselectedButton.setVisible(false);
 		deselectedButton.setManaged(false);
 	}
-	
+
 	public void handleShowDeselectedButton() {
 		deselectedButton.setVisible(true);
 		deselectedButton.setManaged(true);

@@ -23,7 +23,7 @@ public class PersonalDisplay implements Displayable,Exportable{
     	setIdxListNode(0);
     	setIdxLabel(0);
     	setNodeLists(new ArrayList<>());
-    	setLabels(new ArrayList<Label>());
+    	setLabels(new ArrayList<>());
     }
 
 	// Id
@@ -82,7 +82,7 @@ public class PersonalDisplay implements Displayable,Exportable{
     public void setNodeLists(List<NodeList> nodeLists) {
 		this.nodeLists = nodeLists;
 	}
-    
+
     // IdxLabel
     public int getIdxLabel() {
 		return idxLabel;
@@ -91,7 +91,7 @@ public class PersonalDisplay implements Displayable,Exportable{
 	public void setIdxLabel(int idxLabel) {
 		this.idxLabel = idxLabel;
 	}
-    
+
     // Label
     public void addLabel(Label label) {
     	labels.add(label);
@@ -115,7 +115,7 @@ public class PersonalDisplay implements Displayable,Exportable{
     	}
     	return null;
     }
-    
+
     public List<Label> getLabels() {
 		return labels;
 	}

@@ -2,27 +2,21 @@ package controllers;
 
 import java.io.IOException;
 
-import enums.RoleMember;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import models.Label;
-import models.Member;
 import models.PersonalDisplay;
-import models.TeamCard;
-import models.TeamDisplay;
 
 public class ModalPopupLabelUI {
 	private PersonalDisplay personalDisplayOwner;
-	
+
 	@FXML private VBox mainVBox;
 	@FXML private Text header;
 	@FXML private TextField textFieldNewLabel;
@@ -48,7 +42,7 @@ public class ModalPopupLabelUI {
                 Stage stage = (Stage) closePopupButton.getScene().getWindow();
                 stage.close();
             });
-            
+
             	handleHideWarningLabelName();
             	handleHideWarningLabelColor();
             	colorPicker.setValue(null);
@@ -65,7 +59,7 @@ public class ModalPopupLabelUI {
 			labelContainer.getChildren().add(labelUI.getLabelGUI());
 		}
 	}
-	
+
 	public void handleAddNewLabel() {
 		if (textFieldNewLabel.getText().trim().equals("")) {
 			new Thread(() -> {
@@ -105,24 +99,24 @@ public class ModalPopupLabelUI {
 	 		textFieldNewLabel.setText("");
 	 		colorPicker.setValue(null);
 	 		updateGUI();
-		}	
+		}
 	}
-	
+
 	public void handleHideWarningLabelName() {
 		warningLabelName.setVisible(false);
 		warningLabelName.setManaged(false);
 	}
-	
+
 	public void handleShowWarningLabelName() {
 		warningLabelName.setVisible(true);
 		warningLabelName.setManaged(true);
 	}
-	
+
 	public void handleHideWarningLabelColor() {
 		warningLabelColor.setVisible(false);
 		warningLabelColor.setManaged(false);
 	}
-	
+
 	public void handleShowWarningLabelColor() {
 		warningLabelColor.setVisible(true);
 		warningLabelColor.setManaged(true);

@@ -45,7 +45,7 @@ public class Member implements Exportable{
 	public void setRole(RoleMember role) {
 		this.role = role;
 	}
-	
+
 	public String getStringRole() {
 		if (role == RoleMember.Project_Manager) {
 			return "Project Manager";
@@ -77,7 +77,7 @@ public class Member implements Exportable{
 		} else if (role == RoleMember.Intern) {
 			memberJsonObject.put("role", "Intern");
 		}
-		
+
 		return memberJsonObject;
 	}
 }

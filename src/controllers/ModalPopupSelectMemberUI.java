@@ -2,24 +2,18 @@ package controllers;
 
 import java.io.IOException;
 
-import enums.RoleMember;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import models.Member;
-import models.TeamCard;
 import models.TeamDisplay;
 
 public class ModalPopupSelectMemberUI {
 	private ModalPopupCardUI modalPopupCardUIOwner;
 	private TeamDisplay teamDisplayOwner;
-	
+
 	@FXML private Button closePopupButton;
 	@FXML private VBox memberContainer;
 	@FXML private VBox modalPopupMemberGUI;
@@ -51,7 +45,7 @@ public class ModalPopupSelectMemberUI {
 		memberContainer.getChildren().clear();
 		for (Member member: teamDisplayOwner.getMembers()) {
 			MemberUI memberUI = new MemberUI(member, modalPopupCardUIOwner, this);
-			
+
 			memberContainer.getChildren().add(memberUI.getMemberGUI());
 		}
 	}

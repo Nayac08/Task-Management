@@ -13,12 +13,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import models.Member;
-import models.TeamCard;
 import models.TeamDisplay;
 
 public class ModalPopupMemberUI {
 	private TeamDisplay teamDisplayOwner;
-	
+
 	@FXML private VBox mainVBox;
 	@FXML private Text header;
 	@FXML private TextField textFieldNewMember;
@@ -44,10 +43,10 @@ public class ModalPopupMemberUI {
                 Stage stage = (Stage) closePopupButton.getScene().getWindow();
                 stage.close();
             });
-            
+
             	handleHideWarningMemberName();
             	handleHideWarningMemberRole();
-            	
+
             	updateGUI();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -61,7 +60,7 @@ public class ModalPopupMemberUI {
 			memberContainer.getChildren().add(memberUI.getMemberGUI());
 		}
 	}
-	
+
 	public void handleAddNewMember() {
 		if (textFieldNewMember.getText().trim().equals("")) {
 			new Thread(() -> {
@@ -114,24 +113,24 @@ public class ModalPopupMemberUI {
 	 		textFieldNewMember.setText("");
 	 		roleNewMemberBox.setValue(null);
 	 		updateGUI();
-		}	
+		}
 	}
-	
+
 	public void handleHideWarningMemberName() {
 		warningMemberName.setVisible(false);
 		warningMemberName.setManaged(false);
 	}
-	
+
 	public void handleShowWarningMemberName() {
 		warningMemberName.setVisible(true);
 		warningMemberName.setManaged(true);
 	}
-	
+
 	public void handleHideWarningMemberRole() {
 		warningMemberRole.setVisible(false);
 		warningMemberRole.setManaged(false);
 	}
-	
+
 	public void handleShowWarningMemberRole() {
 		warningMemberRole.setVisible(true);
 		warningMemberRole.setManaged(true);

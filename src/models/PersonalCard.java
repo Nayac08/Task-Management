@@ -6,8 +6,6 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import interfaces.Exportable;
-
 public class PersonalCard extends Card{
 	public int idxLabel;
 	public List<Label> labels;
@@ -15,9 +13,9 @@ public class PersonalCard extends Card{
 	public PersonalCard(int id,NodeList nodeListOwner, String title) {
 		super(id, nodeListOwner, title);
 		setIdxLabel(0);
-		setLabels(new ArrayList<Label>());
+		setLabels(new ArrayList<>());
 	}
-	
+
 	// Label
 	public void addLabel(Label label) {
 		labels.add(label);
@@ -32,7 +30,7 @@ public class PersonalCard extends Card{
     		}
     	}
 	}
-	
+
 	public boolean isContainLabel(int id) {
 		for (Label label : labels) {
     		if (label.getId() == id) {

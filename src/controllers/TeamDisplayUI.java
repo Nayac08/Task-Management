@@ -85,7 +85,7 @@ public class TeamDisplayUI{
         	updateGUI();
     	}
     }
-    
+
     public void handleShowModalPopupMember() {
     	ModalPopupMemberUI modalPopupMemberUI = new ModalPopupMemberUI(teamDisplay);
 

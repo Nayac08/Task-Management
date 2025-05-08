@@ -19,7 +19,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import models.MainInterface;
 import models.PersonalDisplay;
@@ -28,7 +27,7 @@ import models.TeamDisplay;
 
 public class MainInterfaceUI {
 	private MainInterface mainInterface;
-	
+
 	@FXML private HBox mainInterfaceGUI;
 	@FXML private VBox fileContainer;
 	@FXML private HBox addFileZone;
@@ -49,7 +48,7 @@ public class MainInterfaceUI {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainInterface.fxml"));
             loader.setController(this);
             setMainInterfaceGUI(loader.load());
-            
+
             handleHideAddFileZone();
     		handleHideWarningFileType();
     		handleHideWarningNewFileName();
@@ -86,7 +85,7 @@ public class MainInterfaceUI {
 		}
 	}
 
-	
+
 	public void handleAddFile() {
 		if (newFileName.getText().trim().equals("")) {
 			new Thread(() -> {
@@ -131,13 +130,13 @@ public class MainInterfaceUI {
 		}
 	}
 
-	
+
 	public void handleShowAddFileZone() {
 		addFileZone.setManaged(true);
 		addFileZone.setVisible(true);
 	}
 
-	
+
 	public void handleHideAddFileZone() {
 		newFileName.setText("");
 		fileType.getSelectionModel().clearSelection();

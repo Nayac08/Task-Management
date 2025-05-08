@@ -52,7 +52,7 @@ public class TeamNodeListUI{
     		teamCardUI.updateGUI();
     		cardContainer.getChildren().add(teamCardUI.getTeamCardGUI());
     	}
-    	
+
     	if (nodeList.getCards().size() >= 10) {
     		addACardButton.setVisible(false);
     		addACardButton.setManaged(false);

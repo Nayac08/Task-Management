@@ -1,6 +1,7 @@
 package models;
 
 import org.json.JSONObject;
+
 import interfaces.Exportable;
 
 public class ChecklistItem implements Exportable{
@@ -41,7 +42,7 @@ public class ChecklistItem implements Exportable{
 	public void setChecked(boolean isChecked) {
 		this.isChecked = isChecked;
 	}
-	
+
 	@Override
 	public JSONObject getJsonObject() {
 		JSONObject checkListJsonObject = new JSONObject();

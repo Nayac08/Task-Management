@@ -120,6 +120,7 @@ public class TeamDisplay implements Displayable,Exportable{
 		this.idxMember = idxMember;
 	}
 
+	@Override
 	public JSONObject getJsonObject() {
 		JSONObject teamDisplayJsonObject = new JSONObject();
 		teamDisplayJsonObject.put("name", name);

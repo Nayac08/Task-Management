@@ -8,7 +8,6 @@ import org.json.JSONObject;
 
 import interfaces.Displayable;
 import interfaces.Exportable;
-import javafx.scene.paint.Color;
 
 public class NodeList implements Exportable{
     private int id;

@@ -22,7 +22,7 @@ public class PersonalDisplayUI {
 
 	public PersonalDisplayUI(PersonalDisplay personalDisplay) {
 		setPersonalDisplay(personalDisplay);
-		loadInitialFXML();	
+		loadInitialFXML();
 	}
 
     public void loadInitialFXML(){
@@ -57,7 +57,7 @@ public class PersonalDisplayUI {
     		displayZone.getChildren().add(personalNodeListUI.getPersonalNodeListGUI());
     	}
     }
-    
+
     public void handleShowModalPopupLabel() {
     	ModalPopupLabelUI modalPopupLabelUI = new ModalPopupLabelUI(personalDisplay);
 
@@ -67,7 +67,7 @@ public class PersonalDisplayUI {
         popupStage.setResizable(false);
         popupStage.show();
     }
-    
+
     public void handleClearDisplay() {
     	Main.taskFileIdOpening = -1;
     	Main.mainInterfaceUI.getDisplayContainer().getChildren().clear();

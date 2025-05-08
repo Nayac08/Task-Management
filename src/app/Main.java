@@ -16,15 +16,15 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
     	Main.primaryStage = primaryStage;
-    	
+
     	Font font = Font.loadFont(getClass().getResourceAsStream("/EkkamaiNew-Bold.ttf"), 12);
-    	
+
         // Load FXML file
     	MainInterfaceUI mainInterfaceUI = new MainInterfaceUI();
         Parent root = mainInterfaceUI.getMainInterfaceGUI();
         Main.mainInterfaceUI = mainInterfaceUI;
 
-        
+
         // Set up the scene
         primaryStage.setTitle("Task Management");
         primaryStage.setResizable(false);

@@ -13,8 +13,28 @@
             "description": "Summarize key concepts from Week 1 lectures",
             "date": "2025-05-01",
             "checklists": [
-              { "id": 0, "title": "Read lecture slides", "isChecked": true },
-              { "id": 1, "title": "Summarize in notebook", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Read lecture slides",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Summarize in notebook",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              },
+              {
+                "role": "Designer",
+                "name": "Chloe Bennett",
+                "id": 2
+              }
             ]
           },
           {
@@ -23,8 +43,28 @@
             "description": "Summarize key concepts from Week 2 lectures",
             "date": "2025-05-02",
             "checklists": [
-              { "id": 0, "title": "Review slides", "isChecked": true },
-              { "id": 1, "title": "Take notes", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Review slides",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Take notes",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Project_Manager",
+                "name": "Edward Narumedsr",
+                "id": 0
+              },
+              {
+                "role": "Intern",
+                "name": "Emily Tran",
+                "id": 4
+              }
             ]
           },
           {
@@ -33,11 +73,27 @@
             "description": "Summarize key concepts from Week 3 lectures",
             "date": "2025-05-03",
             "checklists": [
-              { "id": 0, "title": "Highlight key terms", "isChecked": false },
+              {
+                "id": 0,
+                "title": "Highlight key terms",
+                "isChecked": false
+              },
               {
                 "id": 1,
                 "title": "Rewatch recorded lecture",
                 "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              },
+              {
+                "role": "Project_Manager",
+                "name": "Edward Narumedsr",
+                "id": 0
               }
             ]
           },
@@ -47,8 +103,28 @@
             "description": "Visualize main topics in a mind map",
             "date": "2025-05-04",
             "checklists": [
-              { "id": 0, "title": "Identify topics", "isChecked": true },
-              { "id": 1, "title": "Draw mind maps", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Identify topics",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Draw mind maps",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Developer",
+                "name": "Alex Pitayachamrat",
+                "id": 1
+              },
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              }
             ]
           },
           {
@@ -57,8 +133,28 @@
             "description": "Watch YouTube recap videos on major topics",
             "date": "2025-05-05",
             "checklists": [
-              { "id": 0, "title": "Search videos", "isChecked": true },
-              { "id": 1, "title": "Take notes", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Search videos",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Take notes",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Designer",
+                "name": "Chloe Bennett",
+                "id": 2
+              },
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              }
             ]
           }
         ]
@@ -73,8 +169,28 @@
             "description": "Complete first past paper and review answers",
             "date": "2025-05-06",
             "checklists": [
-              { "id": 0, "title": "Solve questions", "isChecked": true },
-              { "id": 1, "title": "Review solutions", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Solve questions",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Review solutions",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Developer",
+                "name": "Alex Pitayachamrat",
+                "id": 1
+              },
+              {
+                "role": "Intern",
+                "name": "Emily Tran",
+                "id": 4
+              }
             ]
           },
           {
@@ -83,8 +199,28 @@
             "description": "Complete second past paper and review answers",
             "date": "2025-05-07",
             "checklists": [
-              { "id": 0, "title": "Attempt all questions", "isChecked": false },
-              { "id": 1, "title": "Mark answers", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Attempt all questions",
+                "isChecked": false
+              },
+              {
+                "id": 1,
+                "title": "Mark answers",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              },
+              {
+                "role": "Project_Manager",
+                "name": "Edward Narumedsr",
+                "id": 0
+              }
             ]
           },
           {
@@ -93,8 +229,28 @@
             "description": "Do MCQs from textbook and online sources",
             "date": "2025-05-08",
             "checklists": [
-              { "id": 0, "title": "Do 20 textbook MCQs", "isChecked": true },
-              { "id": 1, "title": "Do 20 online MCQs", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Do 20 textbook MCQs",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Do 20 online MCQs",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Designer",
+                "name": "Chloe Bennett",
+                "id": 2
+              },
+              {
+                "role": "Intern",
+                "name": "Emily Tran",
+                "id": 4
+              }
             ]
           },
           {
@@ -103,8 +259,28 @@
             "description": "Simulate exam conditions with timer",
             "date": "2025-05-09",
             "checklists": [
-              { "id": 0, "title": "Set up timer", "isChecked": true },
-              { "id": 1, "title": "Solve under pressure", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Set up timer",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Solve under pressure",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Developer",
+                "name": "Alex Pitayachamrat",
+                "id": 1
+              },
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              }
             ]
           },
           {
@@ -118,7 +294,23 @@
                 "title": "Identify repeated errors",
                 "isChecked": false
               },
-              { "id": 1, "title": "Write corrections", "isChecked": false }
+              {
+                "id": 1,
+                "title": "Write corrections",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              },
+              {
+                "role": "Intern",
+                "name": "Emily Tran",
+                "id": 4
+              }
             ]
           }
         ]
@@ -133,8 +325,28 @@
             "description": "Coordinate with peers for review sessions",
             "date": "2025-05-11",
             "checklists": [
-              { "id": 0, "title": "Find 3 classmates", "isChecked": true },
-              { "id": 1, "title": "Pick meeting time", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Find 3 classmates",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Pick meeting time",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              },
+              {
+                "role": "Developer",
+                "name": "Alex Pitayachamrat",
+                "id": 1
+              }
             ]
           },
           {
@@ -143,8 +355,28 @@
             "description": "Reinforce your understanding by teaching others",
             "date": "2025-05-12",
             "checklists": [
-              { "id": 0, "title": "Pick a topic", "isChecked": true },
-              { "id": 1, "title": "Explain with clarity", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Pick a topic",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Explain with clarity",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Intern",
+                "name": "Emily Tran",
+                "id": 4
+              },
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              }
             ]
           },
           {
@@ -153,8 +385,28 @@
             "description": "Create questions and test one another",
             "date": "2025-05-13",
             "checklists": [
-              { "id": 0, "title": "Write 10 questions", "isChecked": false },
-              { "id": 1, "title": "Host a quiz session", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Write 10 questions",
+                "isChecked": false
+              },
+              {
+                "id": 1,
+                "title": "Host a quiz session",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Intern",
+                "name": "Emily Tran",
+                "id": 4
+              },
+              {
+                "role": "Designer",
+                "name": "Chloe Bennett",
+                "id": 2
+              }
             ]
           },
           {
@@ -163,11 +415,27 @@
             "description": "Discuss unclear topics as a team",
             "date": "2025-05-14",
             "checklists": [
-              { "id": 0, "title": "List 3 hard concepts", "isChecked": false },
+              {
+                "id": 0,
+                "title": "List 3 hard concepts",
+                "isChecked": false
+              },
               {
                 "id": 1,
                 "title": "Find clear explanations",
                 "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              },
+              {
+                "role": "Developer",
+                "name": "Alex Pitayachamrat",
+                "id": 1
               }
             ]
           },
@@ -177,8 +445,28 @@
             "description": "Check and compare answers from graded assignments",
             "date": "2025-05-15",
             "checklists": [
-              { "id": 0, "title": "Bring past assignments", "isChecked": true },
-              { "id": 1, "title": "Review mistakes", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Bring past assignments",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Review mistakes",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Intern",
+                "name": "Emily Tran",
+                "id": 4
+              },
+              {
+                "role": "Developer",
+                "name": "Alex Pitayachamrat",
+                "id": 1
+              }
             ]
           }
         ]
@@ -193,11 +481,27 @@
             "description": "Go through your short notes for last-minute recall",
             "date": "2025-05-16",
             "checklists": [
-              { "id": 0, "title": "Skim all pages", "isChecked": true },
+              {
+                "id": 0,
+                "title": "Skim all pages",
+                "isChecked": true
+              },
               {
                 "id": 1,
                 "title": "Focus on red-highlighted areas",
                 "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Designer",
+                "name": "Chloe Bennett",
+                "id": 2
+              },
+              {
+                "role": "Intern",
+                "name": "Emily Tran",
+                "id": 4
               }
             ]
           },
@@ -207,8 +511,28 @@
             "description": "Practice spaced repetition with flashcards",
             "date": "2025-05-17",
             "checklists": [
-              { "id": 0, "title": "Morning session", "isChecked": true },
-              { "id": 1, "title": "Evening session", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Morning session",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Evening session",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Intern",
+                "name": "Emily Tran",
+                "id": 4
+              },
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              }
             ]
           },
           {
@@ -217,8 +541,28 @@
             "description": "Get pencils, erasers, ID, and water ready",
             "date": "2025-05-18",
             "checklists": [
-              { "id": 0, "title": "Pack stationery", "isChecked": true },
-              { "id": 1, "title": "Print admission slip", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Pack stationery",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Print admission slip",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              },
+              {
+                "role": "Designer",
+                "name": "Chloe Bennett",
+                "id": 2
+              }
             ]
           },
           {
@@ -227,8 +571,28 @@
             "description": "Get 8 hours of sleep before the exam day",
             "date": "2025-05-19",
             "checklists": [
-              { "id": 0, "title": "No screens after 9pm", "isChecked": false },
-              { "id": 1, "title": "In bed by 10pm", "isChecked": false }
+              {
+                "id": 0,
+                "title": "No screens after 9pm",
+                "isChecked": false
+              },
+              {
+                "id": 1,
+                "title": "In bed by 10pm",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Project_Manager",
+                "name": "Edward Narumedsr",
+                "id": 0
+              },
+              {
+                "role": "Developer",
+                "name": "Alex Pitayachamrat",
+                "id": 1
+              }
             ]
           },
           {
@@ -237,8 +601,28 @@
             "description": "Stay calm and do your best!",
             "date": "2025-05-20",
             "checklists": [
-              { "id": 0, "title": "Arrive early", "isChecked": false },
-              { "id": 1, "title": "Stay confident", "isChecked": false }
+              {
+                "id": 0,
+                "title": "Arrive early",
+                "isChecked": false
+              },
+              {
+                "id": 1,
+                "title": "Stay confident",
+                "isChecked": false
+              }
+            ],
+            "members": [
+              {
+                "role": "Intern",
+                "name": "Emily Tran",
+                "id": 4
+              },
+              {
+                "role": "QA_Tester",
+                "name": "Daniel Kim",
+                "id": 3
+              }
             ]
           }
         ]

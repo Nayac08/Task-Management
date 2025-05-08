@@ -88,7 +88,7 @@ public class TeamDisplayUI{
     }
     
     public void handleShowModalPopupMember() {
-    	ModalPopupMemberUI modalPopupMemberUI = new ModalPopupMemberUI(teamDisplay,MemberPopupMode.CRUD);
+    	ModalPopupMemberUI modalPopupMemberUI = new ModalPopupMemberUI(teamDisplay);
 
     	Stage popupStage = new Stage();
         popupStage.setScene(new Scene(modalPopupMemberUI.getModalPopupMemberGUI()));

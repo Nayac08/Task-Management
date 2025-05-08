@@ -14,11 +14,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import models.Member;
+import models.TeamCard;
 import models.TeamDisplay;
 
 public class ModalPopupMemberUI {
 	private TeamDisplay teamDisplayOwner;
-	private MemberPopupMode memberPopupMode;
 	
 	@FXML private VBox mainVBox;
 	@FXML private Text header;
@@ -30,16 +30,9 @@ public class ModalPopupMemberUI {
 	@FXML private Text warningMemberRole;
 	@FXML private VBox modalPopupMemberGUI;
 
-	public ModalPopupMemberUI(TeamDisplay teamDisplayable, MemberPopupMode memberPopupMode) {
+	public ModalPopupMemberUI(TeamDisplay teamDisplayable) {
 		setTeamDisplayOwner(teamDisplayable);
-		setMemberPopupMode(memberPopupMode);
 		loadInitialFXML();
-		
-		if (memberPopupMode == MemberPopupMode.Select_Member) {
-			header.setText("Select Members");
-			mainVBox.getChildren().removeLast();
-			mainVBox.setPrefHeight(mainVBox.getPrefHeight()-60);
-		}
 	}
 
 	public void loadInitialFXML(){
@@ -159,13 +152,5 @@ public class ModalPopupMemberUI {
 
 	public void setModalPopupMemberGUI(VBox modalPopupMemberGUI) {
 		this.modalPopupMemberGUI = modalPopupMemberGUI;
-	}
-
-	public MemberPopupMode getMemberPopupMode() {
-		return memberPopupMode;
-	}
-
-	public void setMemberPopupMode(MemberPopupMode memberPopupMode) {
-		this.memberPopupMode = memberPopupMode;
 	}
 }

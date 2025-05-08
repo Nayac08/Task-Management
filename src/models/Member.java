@@ -45,6 +45,21 @@ public class Member implements Exportable{
 	public void setRole(RoleMember role) {
 		this.role = role;
 	}
+	
+	public String getStringRole() {
+		if (role == RoleMember.Project_Manager) {
+			return "Project Manager";
+		} else if (role == RoleMember.Developer) {
+			return "Developer";
+		} else if (role == RoleMember.Designer) {
+			return "Designer";
+		} else if (role == RoleMember.QA_Tester) {
+			return "QA Tester";
+		} else if (role == RoleMember.Intern) {
+			return "Intern";
+		}
+		return null;
+	}
 
 	@Override
 	public JSONObject getJsonObject() {

@@ -65,13 +65,37 @@ public class TaskFile implements Exportable{
 	            		card.setDate(LocalDate.parse(cardObject.getString("date")));
 	            }
 	            card.setDescription(cardObject.getString("description"));
+	            // Checklists
 	            for (Object o : cardObject.getJSONArray("checklists")) {
 	            		JSONObject checklistJSONObject = (JSONObject) o;
 	            		ChecklistItem checklistItem = new ChecklistItem(checklistJSONObject.getInt("id"), checklistJSONObject.getString("title"));
 	            		checklistItem.setChecked(checklistJSONObject.getBoolean("isChecked"));
 	            		card.addChecklist(checklistItem);
 	            }
-	            nodeList.addCard(card);
+	            
+	            // Members in card
+	            if (display instanceof TeamDisplay) {
+		            	for (Object o : cardObject.getJSONArray("members")) {
+		            		JSONObject memberJsonObject = (JSONObject) o;
+		            		String roleString = memberJsonObject.getString("role");
+		            		RoleMember roleEnum = null;
+		            		if (roleString.equals("Project_Manager")) {
+		            			roleEnum = RoleMember.Project_Manager;
+		            		} else if (roleString.equals("Developer")) {
+		            			roleEnum = RoleMember.Developer;
+		            		} else if (roleString.equals("Designer")) {
+		            			roleEnum = RoleMember.Designer;
+		            		} else if (roleString.equals("QA_Tester")) {
+		            			roleEnum = RoleMember.QA_Tester;
+		            		} else if (roleString.equals("Intern")) {
+		            			roleEnum = RoleMember.Intern;
+		            		}
+		            		Member member = new Member(memberJsonObject.getInt("id"), (TeamDisplay) display, memberJsonObject.getString("name"), roleEnum);
+		            		((TeamCard) card).addMember(member);
+		            }
+	            }
+	            
+	            	nodeList.addCard(card);
 	        }
 	        if (isTeam) {
 	            ((TeamDisplay) display).addNodeList(nodeList);

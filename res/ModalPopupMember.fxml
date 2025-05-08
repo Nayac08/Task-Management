@@ -17,7 +17,7 @@
    <children>
       <StackPane alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0">
          <children>
-            <Text fx:id="header" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Members">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Team Members">
                <font>
                   <Font name="Ekkamai New Bold" size="28.0" />
                </font>

@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -9,16 +10,19 @@ import enums.Priority;
 import interfaces.Exportable;
 
 public class TeamCard extends Card{
-	private List<Member> members; // Add later , This members is assigned to finish this Card
-	private Priority priority; // Add later
+	private int idxMember;
+	private List<Member> members;
 
 	public TeamCard(int id,NodeList nodeListOwner, String title) {
 		super(id, nodeListOwner, title);
+		setIdxMember(0);
+		setMembers(new ArrayList<Member>());
 	}
 
 	// Members
 	public void addMember(Member member) {
 		members.add(member);
+		setIdxMember(member.getId() + 1);
 	}
 
 	public void removeMember(int id) {
@@ -28,6 +32,15 @@ public class TeamCard extends Card{
     			break;
     		}
     	}
+	}
+	
+	public boolean isContainMember(int id) {
+		for (Member member : members) {
+    		if (member.getId() == id) {
+    			return true;
+    		}
+    	}
+		return false;
 	}
 
 	public Member getMember(int id) {
@@ -42,14 +55,17 @@ public class TeamCard extends Card{
 	public List<Member> getMembers() {
 		return members;
 	}
-
-	// Priority
-	public void setPriority(Priority priority) {
-		this.priority = priority;
+	
+	public void setMembers(List<Member> members) {
+		this.members = members;
 	}
 
-	public Priority getPriority() {
-		return priority;
+	public int getIdxMember() {
+		return idxMember;
+	}
+
+	public void setIdxMember(int idxMember) {
+		this.idxMember = idxMember;
 	}
 
 	@Override
@@ -65,8 +81,13 @@ public class TeamCard extends Card{
 			checklistJsonArray.put(checklistItem.getJsonObject());
 		}
 		teamCardJsonObject.put("checklists", checklistJsonArray);
+		
+		JSONArray memberJsonArray = new JSONArray();
+		for (Member member: members) {
+			memberJsonArray.put(member.getJsonObject());
+		}
+		teamCardJsonObject.put("members", memberJsonArray);
 
-		// Add later
 		return teamCardJsonObject;
 	}
 }

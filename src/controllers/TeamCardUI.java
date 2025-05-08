@@ -22,6 +22,7 @@ public class TeamCardUI{
 	@FXML private Label title;
 	@FXML private Text dateText;
 	@FXML private Text checklistStat;
+	@FXML private Text memberCount;
 	@FXML private CheckBox checkBox;
 
 	public TeamCardUI(TeamCard teamCard) {
@@ -40,6 +41,7 @@ public class TeamCardUI{
             	} else {
             		dateText.setText("");
             	}
+            	memberCount.setText(Integer.toString(teamCard.getMembers().size()));
             	checklistStat.setText(teamCard.getNumberOfCheckedChecklist() + "/" + teamCard.getChecklists().size());
 		} catch (IOException e) {
 			e.printStackTrace();

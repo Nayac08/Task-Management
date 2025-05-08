@@ -56,6 +56,7 @@ public class ModalPopupCardUI {
 	
 	// for team
 	@FXML private VBox memberZone;
+	@FXML private Label memberCount;
 	@FXML private VBox memberContainer;
 
 
@@ -139,6 +140,7 @@ public class ModalPopupCardUI {
             HBox hBox = new HBox(checkBox, closeButton);
             hBox.setAlignment(Pos.CENTER_LEFT);
             hBox.setPrefSize(364, 22);
+            hBox.setSpacing(5);
             checkListContainer.getChildren().add(hBox);
     		
     		if (checkListViewMode == CheckListViewMode.Edit) {
@@ -189,6 +191,14 @@ public class ModalPopupCardUI {
     	        
     	        memberContainer.getChildren().add(hBox);
     		}
+    		
+    		if (((TeamCard) cardOwner).getMembers().size() <= 1) {
+    			memberCount.setText(((TeamCard) cardOwner).getMembers().size() + " member");
+    		} else {
+    			memberCount.setText(((TeamCard) cardOwner).getMembers().size() + " members");
+
+    		}
+    		
     	}
 	}
 	

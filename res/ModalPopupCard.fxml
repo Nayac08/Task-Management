@@ -113,13 +113,13 @@
                               </Text>
                            </children>
                         </HBox>
-                        <HBox prefHeight="91.0" prefWidth="459.0" style="-fx-background-color: #ECEFF0;">
+                        <HBox prefHeight="90.0" prefWidth="459.0" style="-fx-background-color: #ECEFF0;">
                            <children>
-                              <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" prefHeight="96.0" prefWidth="366.0" style="-fx-background-color: #ECEFF0;" vbarPolicy="NEVER">
+                              <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" maxHeight="98.0" pannable="true" prefHeight="98.0" prefWidth="365.0" style="-fx-background-color: #ECEFF0;" vbarPolicy="NEVER">
                                  <content>
-                                    <VBox fx:id="checkListContainer" minHeight="87.0" prefWidth="363.0" style="-fx-background-color: #ECEFF0;">
+                                    <VBox fx:id="checkListContainer" minHeight="87.0" prefHeight="89.0" prefWidth="363.0" style="-fx-background-color: #ECEFF0;">
                                        <children>
-                                          <HBox alignment="BOTTOM_LEFT" prefHeight="20.0" prefWidth="364.0">
+                                          <HBox alignment="BOTTOM_LEFT" prefHeight="22.0" prefWidth="364.0">
                                              <children>
                                                 <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="339.0" text="CheckBox">
                                                    <font>
@@ -192,7 +192,7 @@
                                        </children></VBox>
                                  </content>
                               </ScrollPane>
-                              <VBox alignment="TOP_CENTER" prefHeight="97.0" prefWidth="94.0" spacing="5.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="87.0" prefWidth="94.0" spacing="5.0">
                                  <children>
                                     <Button fx:id="editCheckListButton" mnemonicParsing="false" onAction="#handleEditCheckListMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Edit">
                                        <font>
@@ -236,6 +236,11 @@
                                     <Font name="Ekkamai New Bold" size="20.0" />
                                  </font>
                               </Text>
+                              <Label fx:id="memberCount" prefHeight="17.0" prefWidth="271.0" text="2 members">
+                                 <font>
+                                    <Font name="Ekkamai New Bold" size="14.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </HBox>
                         <HBox prefHeight="110.0" prefWidth="459.0">

@@ -21,7 +21,7 @@ public class Main extends Application {
         Parent root = mainInterfaceUI.getMainInterfaceGUI();
         Main.mainInterfaceUI = mainInterfaceUI;
 
-        Font.loadFont(getClass().getResourceAsStream("EkkamaiNew-Bold.ttf"), 12);
+        Font font = Font.loadFont(getClass().getResourceAsStream("/EkkamaiNew-Bold.ttf"), 12);
         // Set up the scene
         primaryStage.setTitle("Task Management");
         primaryStage.setResizable(false);

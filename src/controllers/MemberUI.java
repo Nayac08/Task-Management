@@ -89,12 +89,14 @@ public class MemberUI {
 	public void handleSelectMember() {
 		((TeamCard)modalPopupCardUIOwner.getCardOwner()).addMember(member);
 		modalPopupCardUIOwner.updateGUI();
+		Main.mainInterfaceUI.updateGUI();
 		updateGUI();
 	}
 	
 	public void handleDeselectMember() {
 		((TeamCard)modalPopupCardUIOwner.getCardOwner()).removeMember(member.getId());
 		modalPopupCardUIOwner.updateGUI();
+		Main.mainInterfaceUI.updateGUI();
 		updateGUI();
 	}
 	

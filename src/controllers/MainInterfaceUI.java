@@ -19,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import models.MainInterface;
 import models.PersonalDisplay;
@@ -28,6 +29,8 @@ import models.TeamDisplay;
 public class MainInterfaceUI {
 	private MainInterface mainInterface;
 
+//	@FXML private Text test;
+	
 	@FXML private HBox mainInterfaceGUI;
 	@FXML private VBox fileContainer;
 	@FXML private HBox addFileZone;
@@ -40,6 +43,7 @@ public class MainInterfaceUI {
 
 	public MainInterfaceUI() {
 		setMainInterface(new MainInterface());
+//		System.out.println(test.getFont());
 		loadInitialFXML();
 	}
 

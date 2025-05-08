@@ -20,7 +20,7 @@
 			<children>
 				<StackPane prefHeight="70.0" prefWidth="320.0">
 					<children>
-						<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Task Management" StackPane.alignment="CENTER">
+						<Text fx:id="test" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Management" StackPane.alignment="CENTER">
 							<font>
 								<Font name="Ekkamai New Bold" size="24.0" />
 							</font>

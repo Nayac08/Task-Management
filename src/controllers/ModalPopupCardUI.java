@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import app.Main;
-import enums.MemberPopupMode;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import enums.CheckListViewMode;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -51,6 +49,7 @@ public class ModalPopupCardUI {
 
 	@FXML private ProgressBar progressCheckListBar;
 	@FXML private Text progressCheckListPercentage;
+	@FXML private Button editCheckListButton;
 	@FXML private VBox checkListContainer;
 	@FXML private HBox addCheckListArea;
 	@FXML private TextField textFieldNewCheckList;
@@ -81,19 +80,13 @@ public class ModalPopupCardUI {
 
             	datePicker.setFocusTraversable(false);
         	datePicker.setDisable(true);
-            	saveDateButton.setVisible(false);
-            	saveDateButton.setManaged(false);
-            	cancelDateButton.setManaged(false);
-            	cancelDateButton.setManaged(false);
+        	handleHideSaveDateButton();
+        	handleHideCancelDateButton();
 
             	descriptionDetail.setFocusTraversable(false);
-            	saveDescriptionButton.setVisible(false);
-            	saveDescriptionButton.setManaged(false);
-            	cancelDescriptionButton.setVisible(false);
-            	cancelDescriptionButton.setManaged(false);
-
-            	addCheckListArea.setVisible(false);
-            	addCheckListArea.setManaged(false);
+            	handleHideSaveDescriptionButton();
+            	handleHideCancelDescriptionButton();
+            	handleHideAddCheckListArea();
             	
             	if (cardOwner instanceof TeamCard) {
             		memberZone.setVisible(true);
@@ -111,26 +104,30 @@ public class ModalPopupCardUI {
 
 	public void updateGUI() {
 		cardTitle.setText(cardOwner.getTitle());
-
 		datePicker.setValue(cardOwner.getDate());
-
     	descriptionDetail.setText(cardOwner.getDescription());
-
-        updateGUIChecklist();
+        updateGUIChecklist(CheckListViewMode.View);
     	// for team
     	updateGUIMember();
 	}
 	
-	public void updateGUIChecklist() {
+	public void updateGUIChecklist(CheckListViewMode checkListViewMode) {
 		checkListContainer.getChildren().clear();
     	for (ChecklistItem checklistItem: cardOwner.getChecklists()) {
-            CheckBox checkBox = new CheckBox("CheckBox");
+            CheckBox checkBox = new CheckBox(checklistItem.getTitle());
             checkBox.setUserData(checklistItem.getId());
             checkBox.setMnemonicParsing(false);
             checkBox.setFont(Font.font("Ekkamai New Bold", 14));
             checkBox.setPrefWidth(330);
-
-            Button closeButton = new Button("X");
+            checkBox.setOnAction((e) -> {
+    			cardOwner.getChecklist((int) checkBox.getUserData()).toggleChecked();
+    			updateGUI();
+    			Main.mainInterfaceUI.updateGUI();
+    		});
+    		if (checklistItem.isChecked()) {
+    			checkBox.setSelected(true);
+    		}
+    		Button closeButton = new Button("X");
             closeButton.setFont(Font.font("Ekkamai New Bold", 12));
             closeButton.setStyle("-fx-background-color: none;");
             	closeButton.setOnAction((e) -> {
@@ -142,17 +139,16 @@ public class ModalPopupCardUI {
             HBox hBox = new HBox(checkBox, closeButton);
             hBox.setAlignment(Pos.CENTER_LEFT);
             hBox.setPrefSize(364, 22);
-            hBox.setSpacing(5);
+            checkListContainer.getChildren().add(hBox);
     		
-    		checkBox.setOnAction((e) -> {
-    			cardOwner.getChecklist((int) checkBox.getUserData()).toggleChecked();
-    			updateGUI();
-    			Main.mainInterfaceUI.updateGUI();
-    		});
-    		if (checklistItem.isChecked()) {
-    			checkBox.setSelected(true);
+    		if (checkListViewMode == CheckListViewMode.Edit) {
+        		closeButton.setVisible(true);
+        		closeButton.setManaged(true);
+    		} else if (checkListViewMode == CheckListViewMode.View) {
+    			closeButton.setVisible(false);
+    			closeButton.setManaged(false);
     		}
-    		checkListContainer.getChildren().add(hBox);
+            
     	}
 
     	double checkListPercentage = cardOwner.getChecklistPercentage();
@@ -215,50 +211,32 @@ public class ModalPopupCardUI {
 		updateGUI();
 		Main.mainInterfaceUI.updateGUI();
 
-		editDateButton.setVisible(true);
-		editDateButton.setManaged(true);
-
+		handleShowEditDateButton();
 		datePicker.setDisable(true);
-		saveDateButton.setVisible(false);
-    	saveDateButton.setManaged(false);
-    	cancelDateButton.setVisible(false);
-    	cancelDateButton.setManaged(false);
+		handleHideSaveDateButton();
+		handleHideCancelDateButton();
 	}
 
 	public void handleCancelEditDateMode() {
 		updateGUI();
-
-		editDateButton.setVisible(true);
-		editDateButton.setManaged(true);
-
+		handleShowEditDateButton();
 		datePicker.setDisable(true);
-		saveDateButton.setVisible(false);
-    	saveDateButton.setManaged(false);
-    	cancelDateButton.setVisible(false);
-    	cancelDateButton.setManaged(false);
+		handleHideSaveDateButton();
+		handleHideCancelDateButton();
 	}
 
 	public void handleEditDate() {
-		editDateButton.setVisible(false);
-		editDateButton.setManaged(false);
-
+		handleHideEditDateButton();
 		datePicker.setDisable(false);
-		saveDateButton.setVisible(true);
-    	saveDateButton.setManaged(true);
-    	cancelDateButton.setVisible(true);
-    	cancelDateButton.setManaged(true);
+		handleShowSaveDateButton();
+		handleShowCancelDateButton();
 	}
 
 	public void handleEditDescriptionMode() {
 		descriptionDetail.setEditable(true);
-
-		editDescriptionButton.setVisible(false);
-		editDescriptionButton.setManaged(false);
-
-		saveDescriptionButton.setVisible(true);
-    	saveDescriptionButton.setManaged(true);
-    	cancelDescriptionButton.setVisible(true);
-    	cancelDescriptionButton.setManaged(true);
+		handleHideEditDescriptionButton();
+		handleShowSaveDescriptionButton();
+		handleShowCancelDescriptionButton();
 	}
 
 	public void handleSaveDescription() {
@@ -267,36 +245,30 @@ public class ModalPopupCardUI {
 		updateGUI();
 		Main.mainInterfaceUI.updateGUI();
 
-		saveDescriptionButton.setVisible(false);
-    	saveDescriptionButton.setManaged(false);
-    	cancelDescriptionButton.setVisible(false);
-    	cancelDescriptionButton.setManaged(false);
-
-    	editDescriptionButton.setVisible(true);
-		editDescriptionButton.setManaged(true);
+		handleHideSaveDescriptionButton();
+		handleHideCancelDescriptionButton();
+		handleShowEditDescriptionButton();
 	}
 
 	public void handleCancelEditDescriptionMode() {
 		descriptionDetail.setEditable(false);
 		updateGUI();
 
-		saveDescriptionButton.setVisible(false);
-    	saveDescriptionButton.setManaged(false);
-    	cancelDescriptionButton.setVisible(false);
-    	cancelDescriptionButton.setManaged(false);
-
-    	editDescriptionButton.setVisible(true);
-		editDescriptionButton.setManaged(true);
+		handleHideSaveDescriptionButton();
+		handleHideCancelDescriptionButton();
+		handleShowEditDescriptionButton();
 	}
 
 	public void handleEditCheckListMode() {
-		addCheckListArea.setVisible(true);
-		addCheckListArea.setManaged(true);
+		updateGUIChecklist(CheckListViewMode.Edit);
+		handleHideEditCheckListButton();
+		handleShowAddCheckListArea();
 	}
 
 	public void handleCancelEditCheckListMode() {
-		addCheckListArea.setVisible(false);
-		addCheckListArea.setManaged(false);
+		updateGUIChecklist(CheckListViewMode.View);
+		handleShowEditCheckListButton();
+		handleHideAddCheckListArea();
 	}
 
 	public void handleAddCheckList() {
@@ -305,9 +277,88 @@ public class ModalPopupCardUI {
 		cardOwner.addChecklist(checklistItem);
 		Main.mainInterfaceUI.updateGUI();
 		updateGUI();
-
+		handleShowEditCheckListButton();
+		handleHideAddCheckListArea();
+	}
+	
+	public void handleHideSaveDateButton() {
+		saveDateButton.setVisible(false);
+		saveDateButton.setManaged(false);
+	}
+	
+	public void handleShowSaveDateButton() {
+		saveDateButton.setVisible(true);
+		saveDateButton.setManaged(true);
+	}
+	
+	public void handleHideEditDateButton() {
+		editDateButton.setVisible(false);
+		editDateButton.setManaged(false);
+	}
+	
+	public void handleShowEditDateButton() {
+		editDateButton.setVisible(true);
+		editDateButton.setManaged(true);
+	}
+	
+	public void handleHideCancelDateButton() {
+		cancelDateButton.setVisible(false);
+		cancelDateButton.setManaged(false);
+	}
+	
+	public void handleShowCancelDateButton() {
+		cancelDateButton.setVisible(true);
+		cancelDateButton.setManaged(true);
+	}
+	
+	public void handleHideSaveDescriptionButton() {
+		saveDescriptionButton.setVisible(false);
+		saveDescriptionButton.setManaged(false);
+	}
+	
+	public void handleShowSaveDescriptionButton() {
+		saveDescriptionButton.setVisible(true);
+		saveDescriptionButton.setManaged(true);
+	}
+	
+	public void handleHideEditDescriptionButton() {
+		editDescriptionButton.setVisible(false);
+		editDescriptionButton.setManaged(false);
+	}
+	
+	public void handleShowEditDescriptionButton() {
+		editDescriptionButton.setVisible(true);
+		editDescriptionButton.setManaged(true);
+	}
+	
+	public void handleHideCancelDescriptionButton() {
+		cancelDescriptionButton.setVisible(false);
+		cancelDescriptionButton.setManaged(false);
+	}
+	
+	public void handleShowCancelDescriptionButton() {
+		cancelDescriptionButton.setVisible(true);
+		cancelDescriptionButton.setManaged(true);
+	}
+	
+	public void handleHideEditCheckListButton() {
+		editCheckListButton.setVisible(false);
+		editCheckListButton.setManaged(false);
+	}
+	
+	public void handleShowEditCheckListButton() {
+		editCheckListButton.setVisible(true);
+		editCheckListButton.setManaged(true);
+	}
+	
+	public void handleHideAddCheckListArea() {
 		addCheckListArea.setVisible(false);
 		addCheckListArea.setManaged(false);
+	}
+	
+	public void handleShowAddCheckListArea() {
+		addCheckListArea.setVisible(true);
+		addCheckListArea.setManaged(true);
 	}
 
 	public Card getCardOwner() {

@@ -1,659 +1,627 @@
 {
   "displayType": "TeamDisplay",
   "display": {
-    "name": "Exam Preparation Plan",
+    "name": "Dev Company Workflow",
     "nodeLists": [
       {
         "id": 0,
-        "title": "Preparation",
+        "title": "Planning",
         "cards": [
           {
             "id": 0,
-            "title": "Review Week 1 Notes",
-            "description": "Summarize key concepts from Week 1 lectures",
-            "date": "2025-05-01",
+            "title": "Sprint Kickoff",
+            "description": "Align team on sprint goals, scope, and timelines",
+            "date": "2025-06-01",
             "checklists": [
-              {
-                "id": 0,
-                "title": "Read lecture slides",
-                "isChecked": true
-              },
-              {
-                "id": 1,
-                "title": "Summarize in notebook",
-                "isChecked": false
-              }
+              { "id": 0, "title": "Draft agenda", "isChecked": true },
+              { "id": 1, "title": "Book conference room", "isChecked": true },
+              { "id": 2, "title": "Invite stakeholders", "isChecked": false },
+              { "id": 3, "title": "Share pre-reads", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              },
-              {
-                "role": "Designer",
-                "name": "Chloe Bennett",
-                "id": 2
-              }
+              { "role": "Project_Manager", "name": "Alice Johnson", "id": 0 },
+              { "role": "Intern", "name": "Grace Kim", "id": 6 },
+              { "role": "Developer", "name": "Bob Smith", "id": 1 }
             ]
           },
           {
             "id": 1,
-            "title": "Review Week 2 Notes",
-            "description": "Summarize key concepts from Week 2 lectures",
-            "date": "2025-05-02",
+            "title": "Requirements Gathering",
+            "description": "Collect and document functional requirements from client",
+            "date": "2025-06-02",
             "checklists": [
               {
                 "id": 0,
-                "title": "Review slides",
+                "title": "Interview key stakeholders",
                 "isChecked": true
               },
-              {
-                "id": 1,
-                "title": "Take notes",
-                "isChecked": false
-              }
+              { "id": 1, "title": "Draft requirement doc", "isChecked": false },
+              { "id": 2, "title": "Review with PM", "isChecked": false },
+              { "id": 3, "title": "Obtain sign-off", "isChecked": false },
+              { "id": 4, "title": "Upload to repo", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "Project_Manager",
-                "name": "Edward Narumedsr",
-                "id": 0
-              },
-              {
-                "role": "Intern",
-                "name": "Emily Tran",
-                "id": 4
-              }
+              { "role": "Intern", "name": "Grace Kim", "id": 6 },
+              { "role": "Project_Manager", "name": "Alice Johnson", "id": 0 },
+              { "role": "Developer", "name": "Carol Nguyen", "id": 2 }
             ]
           },
           {
             "id": 2,
-            "title": "Review Week 3 Notes",
-            "description": "Summarize key concepts from Week 3 lectures",
-            "date": "2025-05-03",
+            "title": "Architecture Design",
+            "description": "Define high-level system components and interactions",
+            "date": "2025-06-03",
             "checklists": [
-              {
-                "id": 0,
-                "title": "Highlight key terms",
-                "isChecked": false
-              },
-              {
-                "id": 1,
-                "title": "Rewatch recorded lecture",
-                "isChecked": false
-              }
+              { "id": 0, "title": "Draw component diagram", "isChecked": true },
+              { "id": 1, "title": "Choose frameworks", "isChecked": false },
+              { "id": 2, "title": "Review scalability", "isChecked": false },
+              { "id": 3, "title": "Validate with DevOps", "isChecked": false },
+              { "id": 4, "title": "Document decisions", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              },
-              {
-                "role": "Project_Manager",
-                "name": "Edward Narumedsr",
-                "id": 0
-              }
+              { "role": "Developer", "name": "Irene Lopez", "id": 8 },
+              { "role": "Developer", "name": "Emma Zhang", "id": 4 },
+              { "role": "Developer", "name": "Samir Khan", "id": 18 }
             ]
           },
           {
             "id": 3,
-            "title": "Create Mind Maps",
-            "description": "Visualize main topics in a mind map",
-            "date": "2025-05-04",
+            "title": "Tech Stack Selection",
+            "description": "Evaluate and select languages, frameworks, and tools",
+            "date": "2025-06-04",
             "checklists": [
               {
                 "id": 0,
-                "title": "Identify topics",
+                "title": "Research front-end options",
                 "isChecked": true
               },
               {
                 "id": 1,
-                "title": "Draw mind maps",
+                "title": "Research back-end options",
                 "isChecked": false
-              }
-            ],
-            "members": [
-              {
-                "role": "Developer",
-                "name": "Alex Pitayachamrat",
-                "id": 1
               },
               {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              }
+                "id": 2,
+                "title": "Compare database solutions",
+                "isChecked": false
+              },
+              { "id": 3, "title": "Evaluate CI/CD tools", "isChecked": false },
+              { "id": 4, "title": "Finalize stack", "isChecked": false }
+            ],
+            "members": [
+              { "role": "Developer", "name": "Bob Smith", "id": 1 },
+              { "role": "Developer", "name": "Emma Zhang", "id": 4 },
+              { "role": "Designer", "name": "Henry Zhao", "id": 7 }
             ]
           },
           {
             "id": 4,
-            "title": "Watch Recap Videos",
-            "description": "Watch YouTube recap videos on major topics",
-            "date": "2025-05-05",
+            "title": "Sprint Backlog Creation",
+            "description": "Break requirements into user stories and tasks",
+            "date": "2025-06-05",
             "checklists": [
-              {
-                "id": 0,
-                "title": "Search videos",
-                "isChecked": true
-              },
+              { "id": 0, "title": "Write user stories", "isChecked": true },
+              { "id": 1, "title": "Estimate story points", "isChecked": true },
+              { "id": 2, "title": "Assign priorities", "isChecked": false }
+            ],
+            "members": [
+              { "role": "Project_Manager", "name": "Alice Johnson", "id": 0 },
+              { "role": "Developer", "name": "Carol Nguyen", "id": 2 }
+            ]
+          },
+          {
+            "id": 5,
+            "title": "Task Estimation",
+            "description": "Assign estimates to each backlog item",
+            "date": "2025-06-06",
+            "checklists": [
+              { "id": 0, "title": "Review backlog", "isChecked": true },
+              { "id": 1, "title": "Discuss with team", "isChecked": false },
+              { "id": 2, "title": "Finalize estimates", "isChecked": false }
+            ],
+            "members": [
+              { "role": "Developer", "name": "Irene Lopez", "id": 8 },
+              { "role": "QA_Tester", "name": "Dave Patel", "id": 3 }
+            ]
+          },
+          {
+            "id": 6,
+            "title": "Risk Assessment",
+            "description": "Identify potential blockers and mitigation plans",
+            "date": "2025-06-07",
+            "checklists": [
+              { "id": 0, "title": "List risks", "isChecked": true },
               {
                 "id": 1,
-                "title": "Take notes",
+                "title": "Rate impact & likelihood",
+                "isChecked": false
+              },
+              { "id": 2, "title": "Propose mitigations", "isChecked": false },
+              {
+                "id": 3,
+                "title": "Review with stakeholders",
                 "isChecked": false
               }
             ],
             "members": [
-              {
-                "role": "Designer",
-                "name": "Chloe Bennett",
-                "id": 2
-              },
-              {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              }
+              { "role": "Project_Manager", "name": "Alice Johnson", "id": 0 },
+              { "role": "Intern", "name": "Grace Kim", "id": 6 }
+            ]
+          },
+          {
+            "id": 7,
+            "title": "Stakeholder Review",
+            "description": "Present plan to client and incorporate feedback",
+            "date": "2025-06-08",
+            "checklists": [
+              { "id": 0, "title": "Prepare slides", "isChecked": true },
+              { "id": 1, "title": "Conduct presentation", "isChecked": false },
+              { "id": 2, "title": "Gather feedback", "isChecked": false },
+              { "id": 3, "title": "Update plan", "isChecked": false }
+            ],
+            "members": [
+              { "role": "Project_Manager", "name": "Alice Johnson", "id": 0 },
+              { "role": "Intern", "name": "Grace Kim", "id": 6 },
+              { "role": "Designer", "name": "Mia Davis", "id": 12 }
             ]
           }
         ]
       },
       {
         "id": 1,
-        "title": "Practice",
+        "title": "Development",
         "cards": [
           {
-            "id": 5,
-            "title": "Solve Past Exam 1",
-            "description": "Complete first past paper and review answers",
-            "date": "2025-05-06",
+            "id": 0,
+            "title": "Auth Module",
+            "description": "Implement signup, login, and JWT authentication",
+            "date": "2025-06-09",
+            "checklists": [
+              { "id": 0, "title": "Design models", "isChecked": true },
+              { "id": 1, "title": "Implement APIs", "isChecked": false },
+              { "id": 2, "title": "Integrate JWT", "isChecked": false },
+              { "id": 3, "title": "Write unit tests", "isChecked": false },
+              { "id": 4, "title": "Peer review", "isChecked": false },
+              { "id": 5, "title": "Merge to develop", "isChecked": false }
+            ],
+            "members": [
+              { "role": "Developer", "name": "Bob Smith", "id": 1 },
+              { "role": "Developer", "name": "Irene Lopez", "id": 8 },
+              { "role": "QA_Tester", "name": "Dave Patel", "id": 3 }
+            ]
+          },
+          {
+            "id": 1,
+            "title": "User Profile UI",
+            "description": "Build profile view/edit pages with responsive design",
+            "date": "2025-06-10",
+            "checklists": [
+              { "id": 0, "title": "Design mockups", "isChecked": true },
+              {
+                "id": 1,
+                "title": "Implement React components",
+                "isChecked": false
+              },
+              { "id": 2, "title": "Connect to API", "isChecked": false },
+              { "id": 3, "title": "Unit tests", "isChecked": false }
+            ],
+            "members": [
+              { "role": "Designer", "name": "Henry Zhao", "id": 7 },
+              { "role": "Developer", "name": "Carol Nguyen", "id": 2 },
+              { "role": "Intern", "name": "Frank Liu", "id": 5 }
+            ]
+          },
+          {
+            "id": 2,
+            "title": "Payment Integration",
+            "description": "Integrate Stripe for payment processing",
+            "date": "2025-06-11",
+            "checklists": [
+              { "id": 0, "title": "Create Stripe account", "isChecked": true },
+              { "id": 1, "title": "Configure webhooks", "isChecked": false },
+              { "id": 2, "title": "Implement checkout UI", "isChecked": false },
+              { "id": 3, "title": "Test sandbox charges", "isChecked": false },
+              { "id": 4, "title": "Security review", "isChecked": false },
+              { "id": 5, "title": "Merge to develop", "isChecked": false },
+              { "id": 6, "title": "Perform load test", "isChecked": false }
+            ],
+            "members": [
+              { "role": "Developer", "name": "Paul Singh", "id": 15 },
+              { "role": "Developer", "name": "Olivia Brown", "id": 14 },
+              { "role": "Developer", "name": "Samir Khan", "id": 18 }
+            ]
+          },
+          {
+            "id": 3,
+            "title": "Search Feature",
+            "description": "Implement full-text search with Elasticsearch",
+            "date": "2025-06-12",
+            "checklists": [
+              { "id": 0, "title": "Setup ES cluster", "isChecked": true },
+              { "id": 1, "title": "Define mappings", "isChecked": false },
+              { "id": 2, "title": "Implement client API", "isChecked": false },
+              {
+                "id": 3,
+                "title": "Write integration tests",
+                "isChecked": false
+              },
+              { "id": 4, "title": "Optimize queries", "isChecked": false },
+              { "id": 5, "title": "Document usage", "isChecked": false }
+            ],
+            "members": [
+              { "role": "Developer", "name": "Emma Zhang", "id": 4 },
+              { "role": "Developer", "name": "Irene Lopez", "id": 8 },
+              { "role": "Developer", "name": "Leo Rivera", "id": 11 },
+              { "role": "QA_Tester", "name": "Noah Wilson", "id": 13 }
+            ]
+          },
+          {
+            "id": 4,
+            "title": "Notifications System",
+            "description": "Build email and in-app notifications",
+            "date": "2025-06-13",
             "checklists": [
               {
                 "id": 0,
-                "title": "Solve questions",
+                "title": "Design notification schema",
                 "isChecked": true
               },
               {
                 "id": 1,
-                "title": "Review solutions",
+                "title": "Implement email service",
                 "isChecked": false
-              }
+              },
+              { "id": 2, "title": "Build in-app queue", "isChecked": false },
+              { "id": 3, "title": "Write unit tests", "isChecked": false },
+              { "id": 4, "title": "End-to-end test", "isChecked": false },
+              { "id": 5, "title": "Document API", "isChecked": false }
             ],
             "members": [
+              { "role": "Developer", "name": "Karen Chen", "id": 10 },
+              { "role": "Intern", "name": "Rachel Green", "id": 17 },
+              { "role": "QA_Tester", "name": "Jack O'Neill", "id": 9 }
+            ]
+          },
+          {
+            "id": 5,
+            "title": "Data Export",
+            "description": "Allow users to export reports in CSV and PDF",
+            "date": "2025-06-14",
+            "checklists": [
               {
-                "role": "Developer",
-                "name": "Alex Pitayachamrat",
-                "id": 1
+                "id": 0,
+                "title": "Design export endpoints",
+                "isChecked": true
               },
-              {
-                "role": "Intern",
-                "name": "Emily Tran",
-                "id": 4
-              }
+              { "id": 1, "title": "Generate CSV", "isChecked": false },
+              { "id": 2, "title": "Generate PDF", "isChecked": false },
+              { "id": 3, "title": "Add pagination", "isChecked": false },
+              { "id": 4, "title": "Write tests", "isChecked": false },
+              { "id": 5, "title": "Performance test", "isChecked": false }
+            ],
+            "members": [
+              { "role": "Developer", "name": "Leo Rivera", "id": 11 },
+              { "role": "Designer", "name": "Mia Davis", "id": 12 },
+              { "role": "Project_Manager", "name": "Alice Johnson", "id": 0 }
             ]
           },
           {
             "id": 6,
-            "title": "Solve Past Exam 2",
-            "description": "Complete second past paper and review answers",
-            "date": "2025-05-07",
+            "title": "Performance Optimization",
+            "description": "Profile application and resolve bottlenecks",
+            "date": "2025-06-15",
             "checklists": [
               {
                 "id": 0,
-                "title": "Attempt all questions",
-                "isChecked": false
+                "title": "Benchmark current performance",
+                "isChecked": true
               },
               {
                 "id": 1,
-                "title": "Mark answers",
+                "title": "Identify slow endpoints",
                 "isChecked": false
-              }
+              },
+              { "id": 2, "title": "Optimize queries", "isChecked": false },
+              {
+                "id": 3,
+                "title": "Refactor hot code paths",
+                "isChecked": false
+              },
+              { "id": 4, "title": "Load test", "isChecked": false },
+              { "id": 5, "title": "Review improvements", "isChecked": false },
+              { "id": 6, "title": "Document changes", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              },
-              {
-                "role": "Project_Manager",
-                "name": "Edward Narumedsr",
-                "id": 0
-              }
+              { "role": "Developer", "name": "Paul Singh", "id": 15 },
+              { "role": "Developer", "name": "Olivia Brown", "id": 14 },
+              { "role": "QA_Tester", "name": "Samir Khan", "id": 18 }
             ]
           },
           {
             "id": 7,
-            "title": "Practice Multiple Choice",
-            "description": "Do MCQs from textbook and online sources",
-            "date": "2025-05-08",
+            "title": "Code Review",
+            "description": "Review all merged pull requests for quality and style",
+            "date": "2025-06-16",
             "checklists": [
+              { "id": 0, "title": "Enforce linting rules", "isChecked": true },
+              { "id": 1, "title": "Verify tests pass", "isChecked": false },
+              { "id": 2, "title": "Check documentation", "isChecked": false },
               {
-                "id": 0,
-                "title": "Do 20 textbook MCQs",
-                "isChecked": true
-              },
-              {
-                "id": 1,
-                "title": "Do 20 online MCQs",
+                "id": 3,
+                "title": "Approve or request changes",
                 "isChecked": false
               }
             ],
             "members": [
-              {
-                "role": "Designer",
-                "name": "Chloe Bennett",
-                "id": 2
-              },
-              {
-                "role": "Intern",
-                "name": "Emily Tran",
-                "id": 4
-              }
-            ]
-          },
-          {
-            "id": 8,
-            "title": "Timed Practice Test",
-            "description": "Simulate exam conditions with timer",
-            "date": "2025-05-09",
-            "checklists": [
-              {
-                "id": 0,
-                "title": "Set up timer",
-                "isChecked": true
-              },
-              {
-                "id": 1,
-                "title": "Solve under pressure",
-                "isChecked": false
-              }
-            ],
-            "members": [
-              {
-                "role": "Developer",
-                "name": "Alex Pitayachamrat",
-                "id": 1
-              },
-              {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              }
-            ]
-          },
-          {
-            "id": 9,
-            "title": "Error Log Review",
-            "description": "Go over common mistakes and misunderstandings",
-            "date": "2025-05-10",
-            "checklists": [
-              {
-                "id": 0,
-                "title": "Identify repeated errors",
-                "isChecked": false
-              },
-              {
-                "id": 1,
-                "title": "Write corrections",
-                "isChecked": false
-              }
-            ],
-            "members": [
-              {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              },
-              {
-                "role": "Intern",
-                "name": "Emily Tran",
-                "id": 4
-              }
+              { "role": "Developer", "name": "Bob Smith", "id": 1 },
+              { "role": "Developer", "name": "Irene Lopez", "id": 8 },
+              { "role": "QA_Tester", "name": "Dave Patel", "id": 3 }
             ]
           }
         ]
       },
       {
         "id": 2,
-        "title": "Collaboration",
+        "title": "Testing",
         "cards": [
           {
-            "id": 10,
-            "title": "Join Study Group",
-            "description": "Coordinate with peers for review sessions",
-            "date": "2025-05-11",
+            "id": 0,
+            "title": "Unit Testing",
+            "description": "Write and run unit tests for all new modules",
+            "date": "2025-06-17",
+            "checklists": [
+              { "id": 0, "title": "List test cases", "isChecked": true },
+              { "id": 1, "title": "Write test code", "isChecked": false },
+              { "id": 2, "title": "Run coverage report", "isChecked": false }
+            ],
+            "members": [
+              { "role": "QA_Tester", "name": "Noah Wilson", "id": 13 },
+              { "role": "Developer", "name": "Leo Rivera", "id": 11 }
+            ]
+          },
+          {
+            "id": 1,
+            "title": "Integration Testing",
+            "description": "Verify interactions between system components",
+            "date": "2025-06-18",
             "checklists": [
               {
                 "id": 0,
-                "title": "Find 3 classmates",
+                "title": "Deploy test environment",
                 "isChecked": true
               },
-              {
-                "id": 1,
-                "title": "Pick meeting time",
-                "isChecked": false
-              }
+              { "id": 1, "title": "Run end-to-end tests", "isChecked": false },
+              { "id": 2, "title": "Log failures", "isChecked": false },
+              { "id": 3, "title": "Retest fixes", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              },
-              {
-                "role": "Developer",
-                "name": "Alex Pitayachamrat",
-                "id": 1
-              }
+              { "role": "QA_Tester", "name": "Jack O'Neill", "id": 9 },
+              { "role": "Developer", "name": "Olivia Brown", "id": 14 },
+              { "role": "Developer", "name": "Carol Nguyen", "id": 2 }
             ]
           },
           {
-            "id": 11,
-            "title": "Teach a Friend",
-            "description": "Reinforce your understanding by teaching others",
-            "date": "2025-05-12",
+            "id": 2,
+            "title": "Load Testing",
+            "description": "Simulate high traffic and measure performance",
+            "date": "2025-06-19",
             "checklists": [
-              {
-                "id": 0,
-                "title": "Pick a topic",
-                "isChecked": true
-              },
-              {
-                "id": 1,
-                "title": "Explain with clarity",
-                "isChecked": false
-              }
+              { "id": 0, "title": "Define load scenarios", "isChecked": true },
+              { "id": 1, "title": "Configure JMeter", "isChecked": false },
+              { "id": 2, "title": "Run tests", "isChecked": false },
+              { "id": 3, "title": "Analyze results", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "Intern",
-                "name": "Emily Tran",
-                "id": 4
-              },
-              {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              }
+              { "role": "Developer", "name": "Emma Zhang", "id": 4 },
+              { "role": "QA_Tester", "name": "Mia Davis", "id": 12 }
             ]
           },
           {
-            "id": 12,
-            "title": "Quiz Each Other",
-            "description": "Create questions and test one another",
-            "date": "2025-05-13",
+            "id": 3,
+            "title": "Security Testing",
+            "description": "Perform vulnerability scans and penetration tests",
+            "date": "2025-06-20",
             "checklists": [
-              {
-                "id": 0,
-                "title": "Write 10 questions",
-                "isChecked": false
-              },
-              {
-                "id": 1,
-                "title": "Host a quiz session",
-                "isChecked": false
-              }
+              { "id": 0, "title": "Run OWASP ZAP scan", "isChecked": false },
+              { "id": 1, "title": "Penetration test", "isChecked": false },
+              { "id": 2, "title": "Fix critical issues", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "Intern",
-                "name": "Emily Tran",
-                "id": 4
-              },
-              {
-                "role": "Designer",
-                "name": "Chloe Bennett",
-                "id": 2
-              }
+              { "role": "QA_Tester", "name": "Noah Wilson", "id": 13 },
+              { "role": "Developer", "name": "Samir Khan", "id": 18 },
+              { "role": "Developer", "name": "Paul Singh", "id": 15 }
             ]
           },
           {
-            "id": 13,
-            "title": "Clarify Doubts Together",
-            "description": "Discuss unclear topics as a team",
-            "date": "2025-05-14",
+            "id": 4,
+            "title": "Usability Testing",
+            "description": "Gather user feedback on UI/UX flows",
+            "date": "2025-06-21",
             "checklists": [
-              {
-                "id": 0,
-                "title": "List 3 hard concepts",
-                "isChecked": false
-              },
-              {
-                "id": 1,
-                "title": "Find clear explanations",
-                "isChecked": false
-              }
+              { "id": 0, "title": "Recruit test users", "isChecked": false },
+              { "id": 1, "title": "Prepare scenarios", "isChecked": false },
+              { "id": 2, "title": "Facilitate sessions", "isChecked": false },
+              { "id": 3, "title": "Collect feedback", "isChecked": false },
+              { "id": 4, "title": "Compile report", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              },
-              {
-                "role": "Developer",
-                "name": "Alex Pitayachamrat",
-                "id": 1
-              }
+              { "role": "Intern", "name": "Frank Liu", "id": 5 },
+              { "role": "Designer", "name": "Mia Davis", "id": 12 }
             ]
           },
           {
-            "id": 14,
-            "title": "Review Assignment Together",
-            "description": "Check and compare answers from graded assignments",
-            "date": "2025-05-15",
+            "id": 5,
+            "title": "Bug Triage",
+            "description": "Prioritize defects and assign fixes",
+            "date": "2025-06-22",
             "checklists": [
-              {
-                "id": 0,
-                "title": "Bring past assignments",
-                "isChecked": true
-              },
-              {
-                "id": 1,
-                "title": "Review mistakes",
-                "isChecked": false
-              }
+              { "id": 0, "title": "List new bugs", "isChecked": true },
+              { "id": 1, "title": "Assign severity", "isChecked": false },
+              { "id": 2, "title": "Delegate to owners", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "Intern",
-                "name": "Emily Tran",
-                "id": 4
-              },
-              {
-                "role": "Developer",
-                "name": "Alex Pitayachamrat",
-                "id": 1
-              }
+              { "role": "Project_Manager", "name": "Alice Johnson", "id": 0 },
+              { "role": "QA_Tester", "name": "Dave Patel", "id": 3 },
+              { "role": "Developer", "name": "Bob Smith", "id": 1 }
+            ]
+          },
+          {
+            "id": 6,
+            "title": "Regression Testing",
+            "description": "Verify that new changes haven’t broken existing features",
+            "date": "2025-06-23",
+            "checklists": [
+              { "id": 0, "title": "Select test suite", "isChecked": false },
+              { "id": 1, "title": "Run full regression", "isChecked": false },
+              { "id": 2, "title": "Log deviations", "isChecked": false },
+              { "id": 3, "title": "Approve release", "isChecked": false }
+            ],
+            "members": [
+              { "role": "QA_Tester", "name": "Jack O'Neill", "id": 9 },
+              { "role": "Developer", "name": "Irene Lopez", "id": 8 }
             ]
           }
         ]
       },
       {
         "id": 3,
-        "title": "Final Touch",
+        "title": "Deployment",
         "cards": [
           {
-            "id": 15,
-            "title": "Review Summary Sheets",
-            "description": "Go through your short notes for last-minute recall",
-            "date": "2025-05-16",
+            "id": 0,
+            "title": "CI/CD Pipeline Setup",
+            "description": "Implement automated build, test, and deploy workflows",
+            "date": "2025-06-24",
+            "checklists": [
+              { "id": 0, "title": "Write pipeline scripts", "isChecked": true },
+              { "id": 1, "title": "Integrate tests", "isChecked": false },
+              { "id": 2, "title": "Configure secrets", "isChecked": false },
+              { "id": 3, "title": "Validate deployments", "isChecked": false }
+            ],
+            "members": [
+              { "role": "Developer", "name": "Emma Zhang", "id": 4 },
+              { "role": "QA_Tester", "name": "Samir Khan", "id": 18 },
+              { "role": "Developer", "name": "Paul Singh", "id": 15 }
+            ]
+          },
+          {
+            "id": 1,
+            "title": "Staging Deployment",
+            "description": "Deploy latest build to staging environment",
+            "date": "2025-06-25",
             "checklists": [
               {
                 "id": 0,
-                "title": "Skim all pages",
+                "title": "Merge develop to staging",
                 "isChecked": true
               },
-              {
-                "id": 1,
-                "title": "Focus on red-highlighted areas",
-                "isChecked": false
-              }
+              { "id": 1, "title": "Run smoke tests", "isChecked": false },
+              { "id": 2, "title": "Collect logs", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "Designer",
-                "name": "Chloe Bennett",
-                "id": 2
-              },
-              {
-                "role": "Intern",
-                "name": "Emily Tran",
-                "id": 4
-              }
+              { "role": "Developer", "name": "Olivia Brown", "id": 14 },
+              { "role": "QA_Tester", "name": "Mia Davis", "id": 12 },
+              { "role": "Developer", "name": "Leo Rivera", "id": 11 }
             ]
           },
           {
-            "id": 16,
-            "title": "Flashcard Review",
-            "description": "Practice spaced repetition with flashcards",
-            "date": "2025-05-17",
+            "id": 2,
+            "title": "User Acceptance Testing",
+            "description": "Have client test features in staging before go-live",
+            "date": "2025-06-26",
             "checklists": [
-              {
-                "id": 0,
-                "title": "Morning session",
-                "isChecked": true
-              },
+              { "id": 0, "title": "Invite client testers", "isChecked": false },
               {
                 "id": 1,
-                "title": "Evening session",
+                "title": "Provide test scenarios",
+                "isChecked": false
+              },
+              { "id": 2, "title": "Log UAT feedback", "isChecked": false },
+              {
+                "id": 3,
+                "title": "Implement critical fixes",
                 "isChecked": false
               }
             ],
             "members": [
-              {
-                "role": "Intern",
-                "name": "Emily Tran",
-                "id": 4
-              },
-              {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              }
+              { "role": "Project_Manager", "name": "Alice Johnson", "id": 0 },
+              { "role": "Intern", "name": "Grace Kim", "id": 6 },
+              { "role": "QA_Tester", "name": "Jack O'Neill", "id": 9 }
             ]
           },
           {
-            "id": 17,
-            "title": "Prepare Exam Kit",
-            "description": "Get pencils, erasers, ID, and water ready",
-            "date": "2025-05-18",
+            "id": 3,
+            "title": "Hotfixes in Staging",
+            "description": "Fix critical bugs found during UAT",
+            "date": "2025-06-27",
             "checklists": [
-              {
-                "id": 0,
-                "title": "Pack stationery",
-                "isChecked": true
-              },
-              {
-                "id": 1,
-                "title": "Print admission slip",
-                "isChecked": false
-              }
+              { "id": 0, "title": "Prioritize defects", "isChecked": false },
+              { "id": 1, "title": "Implement fixes", "isChecked": false },
+              { "id": 2, "title": "Deploy fixes", "isChecked": false },
+              { "id": 3, "title": "Retest", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              },
-              {
-                "role": "Designer",
-                "name": "Chloe Bennett",
-                "id": 2
-              }
+              { "role": "Developer", "name": "Carol Nguyen", "id": 2 },
+              { "role": "QA_Tester", "name": "Dave Patel", "id": 3 },
+              { "role": "Developer", "name": "Samir Khan", "id": 18 }
             ]
           },
           {
-            "id": 18,
-            "title": "Rest and Sleep Well",
-            "description": "Get 8 hours of sleep before the exam day",
-            "date": "2025-05-19",
+            "id": 4,
+            "title": "Final Approval",
+            "description": "Obtain sign-off from stakeholders for production release",
+            "date": "2025-06-28",
             "checklists": [
-              {
-                "id": 0,
-                "title": "No screens after 9pm",
-                "isChecked": false
-              },
-              {
-                "id": 1,
-                "title": "In bed by 10pm",
-                "isChecked": false
-              }
+              { "id": 0, "title": "Compile release notes", "isChecked": false },
+              { "id": 1, "title": "Present changes", "isChecked": false },
+              { "id": 2, "title": "Get e-signatures", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "Project_Manager",
-                "name": "Edward Narumedsr",
-                "id": 0
-              },
-              {
-                "role": "Developer",
-                "name": "Alex Pitayachamrat",
-                "id": 1
-              }
+              { "role": "Project_Manager", "name": "Alice Johnson", "id": 0 },
+              { "role": "Intern", "name": "Grace Kim", "id": 6 }
             ]
           },
           {
-            "id": 19,
-            "title": "Exam Day!",
-            "description": "Stay calm and do your best!",
-            "date": "2025-05-20",
+            "id": 5,
+            "title": "Production Release",
+            "description": "Deploy approved build to production environment",
+            "date": "2025-06-29",
             "checklists": [
-              {
-                "id": 0,
-                "title": "Arrive early",
-                "isChecked": false
-              },
-              {
-                "id": 1,
-                "title": "Stay confident",
-                "isChecked": false
-              }
+              { "id": 0, "title": "Merge staging to main", "isChecked": false },
+              { "id": 1, "title": "Run smoke tests", "isChecked": false },
+              { "id": 2, "title": "Monitor logs", "isChecked": false },
+              { "id": 3, "title": "Announce release", "isChecked": false }
             ],
             "members": [
-              {
-                "role": "Intern",
-                "name": "Emily Tran",
-                "id": 4
-              },
-              {
-                "role": "QA_Tester",
-                "name": "Daniel Kim",
-                "id": 3
-              }
+              { "role": "Developer", "name": "Olivia Brown", "id": 14 },
+              { "role": "Developer", "name": "Leo Rivera", "id": 11 },
+              { "role": "QA_Tester", "name": "Samir Khan", "id": 18 }
             ]
           }
         ]
       }
     ],
     "members": [
-      {
-        "role": "Project_Manager",
-        "name": "Edward Narumedsr",
-        "id": 0
-      },
-      {
-        "role": "Developer",
-        "name": "Alex Pitayachamrat",
-        "id": 1
-      },
-      {
-        "role": "Designer",
-        "name": "Chloe Bennett",
-        "id": 2
-      },
-      {
-        "role": "QA_Tester",
-        "name": "Daniel Kim",
-        "id": 3
-      },
-      {
-        "role": "Intern",
-        "name": "Emily Tran",
-        "id": 4
-      }
+      { "role": "Project_Manager", "name": "Alice Johnson", "id": 0 },
+      { "role": "Developer", "name": "Bob Smith", "id": 1 },
+      { "role": "Designer", "name": "Henry Zhao", "id": 7 },
+      { "role": "Developer", "name": "Carol Nguyen", "id": 2 },
+      { "role": "QA_Tester", "name": "Dave Patel", "id": 3 },
+      { "role": "Developer", "name": "Emma Zhang", "id": 4 },
+      { "role": "Intern", "name": "Frank Liu", "id": 5 },
+      { "role": "Intern", "name": "Grace Kim", "id": 6 },
+      { "role": "Developer", "name": "Irene Lopez", "id": 8 },
+      { "role": "QA_Tester", "name": "Jack O'Neill", "id": 9 },
+      { "role": "Developer", "name": "Karen Chen", "id": 10 },
+      { "role": "Developer", "name": "Leo Rivera", "id": 11 },
+      { "role": "Designer", "name": "Mia Davis", "id": 12 },
+      { "role": "QA_Tester", "name": "Noah Wilson", "id": 13 },
+      { "role": "Developer", "name": "Olivia Brown", "id": 14 },
+      { "role": "Developer", "name": "Paul Singh", "id": 15 },
+      { "role": "Intern", "name": "Quinn Taylor", "id": 16 },
+      { "role": "Intern", "name": "Rachel Green", "id": 17 },
+      { "role": "Developer", "name": "Samir Khan", "id": 18 },
+      { "role": "Developer", "name": "Tina Ahmed", "id": 19 }
     ]
   }
 }

@@ -96,7 +96,7 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <VBox prefHeight="155.0" prefWidth="459.0">
+                  <VBox prefWidth="459.0">
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="24.0" prefWidth="459.0" spacing="10.0">
                            <children>
@@ -113,15 +113,71 @@
                               </Text>
                            </children>
                         </HBox>
-                        <HBox prefHeight="97.0" prefWidth="459.0">
+                        <HBox prefHeight="91.0" prefWidth="459.0" style="-fx-background-color: #ECEFF0;">
                            <children>
-                              <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" prefHeight="96.0" prefWidth="367.0" style="-fx-background-color: #ECEFF0;" vbarPolicy="NEVER">
+                              <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" prefHeight="96.0" prefWidth="366.0" style="-fx-background-color: #ECEFF0;" vbarPolicy="NEVER">
                                  <content>
-                                    <VBox fx:id="checkListContainer" prefHeight="104.0" prefWidth="400.0" style="-fx-background-color: #ECEFF0;">
+                                    <VBox fx:id="checkListContainer" minHeight="87.0" prefWidth="363.0" style="-fx-background-color: #ECEFF0;">
                                        <children>
-                                          <HBox alignment="CENTER_LEFT" prefHeight="22.0" prefWidth="364.0">
+                                          <HBox alignment="BOTTOM_LEFT" prefHeight="20.0" prefWidth="364.0">
                                              <children>
-                                                <CheckBox mnemonicParsing="false" prefHeight="19.0" prefWidth="339.0" text="CheckBox">
+                                                <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="339.0" text="CheckBox">
+                                                   <font>
+                                                      <Font name="Ekkamai New Bold" size="14.0" />
+                                                   </font>
+                                                </CheckBox>
+                                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: none;" text="X">
+                                                   <font>
+                                                      <Font name="Ekkamai New Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="BOTTOM_LEFT" prefHeight="20.0" prefWidth="364.0">
+                                             <children>
+                                                <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="339.0" text="CheckBox">
+                                                   <font>
+                                                      <Font name="Ekkamai New Bold" size="14.0" />
+                                                   </font>
+                                                </CheckBox>
+                                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: none;" text="X">
+                                                   <font>
+                                                      <Font name="Ekkamai New Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="BOTTOM_LEFT" prefHeight="20.0" prefWidth="364.0">
+                                             <children>
+                                                <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="339.0" text="CheckBox">
+                                                   <font>
+                                                      <Font name="Ekkamai New Bold" size="14.0" />
+                                                   </font>
+                                                </CheckBox>
+                                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: none;" text="X">
+                                                   <font>
+                                                      <Font name="Ekkamai New Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="BOTTOM_LEFT" prefHeight="20.0" prefWidth="364.0">
+                                             <children>
+                                                <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="339.0" text="CheckBox">
+                                                   <font>
+                                                      <Font name="Ekkamai New Bold" size="14.0" />
+                                                   </font>
+                                                </CheckBox>
+                                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: none;" text="X">
+                                                   <font>
+                                                      <Font name="Ekkamai New Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="BOTTOM_LEFT" prefHeight="20.0" prefWidth="364.0">
+                                             <children>
+                                                <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="339.0" text="CheckBox">
                                                    <font>
                                                       <Font name="Ekkamai New Bold" size="14.0" />
                                                    </font>

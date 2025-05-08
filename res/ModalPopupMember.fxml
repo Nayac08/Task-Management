@@ -13,13 +13,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="mainVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ECEFF0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="mainVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="685.0" style="-fx-background-color: #ECEFF0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <StackPane alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0">
+      <StackPane alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="685.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Team Members">
                <font>
-                  <Font name="Ekkamai New Bold" size="28.0" />
+                  <Font name="Ekkamai New Bold" size="24.0" />
                </font>
             </Text>
          </children>
@@ -30,80 +30,39 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </padding>
       </StackPane>
-      <ScrollPane hbarPolicy="NEVER" prefHeight="480.0" prefWidth="800.0" vbarPolicy="ALWAYS">
+      <ScrollPane hbarPolicy="NEVER" prefHeight="300.0" prefWidth="685.0" vbarPolicy="ALWAYS">
          <content>
-            <VBox fx:id="memberContainer" prefHeight="449.0" prefWidth="785.0" spacing="10.0">
-               <children>
-                  <HBox prefHeight="45.0" prefWidth="765.0" spacing="10.0" style="-fx-background-color: lightyellow;">
-                     <children>
-                        <StackPane alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="276.0">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Narumedsr Pitayachamrat">
-                                 <font>
-                                    <Font name="Ekkamai New Bold" size="18.0" />
-                                 </font>
-                              </Text>
-                           </children>
-                        </StackPane>
-                        <StackPane alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="235.0">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Role">
-                                 <font>
-                                    <Font name="Ekkamai New Bold" size="18.0" />
-                                 </font>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Role Admin">
-                                 <font>
-                                    <Font name="Ekkamai New Bold" size="18.0" />
-                                 </font>
-                              </Text>
-                           </children>
-                        </StackPane>
-                        <StackPane alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="217.0">
-                           <children>
-                              <Button mnemonicParsing="false" style="-fx-background-color: none;" text="X">
-                                 <font>
-                                    <Font name="Ekkamai New Bold" size="18.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </StackPane>
-                     </children>
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                  </HBox>
-               </children>
+            <VBox fx:id="memberContainer" prefHeight="449.0" prefWidth="670.0" spacing="10.0">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </VBox>
          </content>
       </ScrollPane>
-      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0" spacing="10.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="685.0" spacing="10.0">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="238.0" spacing="10.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="205.0" spacing="10.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
                      <font>
-                        <Font name="Ekkamai New Bold" size="18.0" />
+                        <Font name="Ekkamai New Bold" size="14.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="textFieldNewMember" prefHeight="32.0" prefWidth="182.0" promptText="Enter member name">
+                  <TextField fx:id="textFieldNewMember" prefHeight="27.0" prefWidth="157.0" promptText="Enter member name">
                      <font>
-                        <Font name="Ekkamai New Bold" size="16.0" />
+                        <Font name="Ekkamai New Bold" size="12.0" />
                      </font>
                   </TextField>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="180.0" spacing="10.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="174.0" spacing="10.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Role">
                      <font>
-                        <Font name="Ekkamai New Bold" size="18.0" />
+                        <Font name="Ekkamai New Bold" size="14.0" />
                      </font>
                   </Text>
-                  <ComboBox fx:id="roleNewMemberBox" prefHeight="29.0" prefWidth="132.0" style="-fx-background-color: lightblue; -fx-font-size: 12px; -fx-font-family: 'Ekkamai New'; -fx-font-weight: bold; -fx-padding: 0;">
+                  <ComboBox fx:id="roleNewMemberBox" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: lightblue; -fx-font-size: 12px; -fx-font-family: 'Ekkamai New'; -fx-font-weight: bold; -fx-padding: 0;">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
                            <String fx:value="Project Manager" />
@@ -116,26 +75,26 @@
                   </ComboBox>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#handleAddNewMember" prefHeight="29.0" prefWidth="51.0" style="-fx-background-color: lightblue;" text="Add">
+            <Button mnemonicParsing="false" onAction="#handleAddNewMember" prefHeight="27.0" prefWidth="43.0" style="-fx-background-color: lightblue;" text="Add">
                <font>
-                  <Font name="Ekkamai New Bold" size="16.0" />
+                  <Font name="Ekkamai New Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" style="-fx-background-color: lightblue;" text="Close">
+            <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="50.0" style="-fx-background-color: lightblue;" text="Close">
                <font>
-                  <Font name="Ekkamai New Bold" size="16.0" />
+                  <Font name="Ekkamai New Bold" size="12.0" />
                </font>
             </Button>
-            <StackPane prefHeight="150.0" prefWidth="200.0">
+            <StackPane prefHeight="27.0" prefWidth="173.0">
                <children>
                   <Text fx:id="warningMemberName" fill="#b50808" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter member name">
                      <font>
-                        <Font name="Ekkamai New Bold" size="16.0" />
+                        <Font name="Ekkamai New Bold" size="14.0" />
                      </font>
                   </Text>
                   <Text fx:id="warningMemberRole" fill="#b50808" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select member role">
                      <font>
-                        <Font name="Ekkamai New Bold" size="16.0" />
+                        <Font name="Ekkamai New Bold" size="14.0" />
                      </font>
                   </Text>
                </children>

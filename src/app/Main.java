@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -20,6 +21,7 @@ public class Main extends Application {
         Parent root = mainInterfaceUI.getMainInterfaceGUI();
         Main.mainInterfaceUI = mainInterfaceUI;
 
+        Font.loadFont(getClass().getResourceAsStream("EkkamaiNew-Bold.ttf"), 12);
         // Set up the scene
         primaryStage.setTitle("Task Management");
         primaryStage.setResizable(false);

@@ -7,19 +7,16 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class TeamCard extends Card{
-	private int idxMember;
 	private List<Member> members;
 
 	public TeamCard(int id,NodeList nodeListOwner, String title) {
 		super(id, nodeListOwner, title);
-		setIdxMember(0);
 		setMembers(new ArrayList<>());
 	}
 
 	// Members
 	public void addMember(Member member) {
 		members.add(member);
-		setIdxMember(member.getId() + 1);
 	}
 
 	public void removeMember(int id) {
@@ -55,14 +52,6 @@ public class TeamCard extends Card{
 
 	public void setMembers(List<Member> members) {
 		this.members = members;
-	}
-
-	public int getIdxMember() {
-		return idxMember;
-	}
-
-	public void setIdxMember(int idxMember) {
-		this.idxMember = idxMember;
 	}
 
 	@Override

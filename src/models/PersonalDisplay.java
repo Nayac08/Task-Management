@@ -133,6 +133,11 @@ public class PersonalDisplay implements Displayable,Exportable{
 			nodeListJsonArray.put(nodeList.getJsonObject());
 		}
 		personalDisplayJsonObject.put("nodeLists", nodeListJsonArray);
+		JSONArray labelJsonArray = new JSONArray();
+		for (Label label: labels) {
+			labelJsonArray.put(label.getJsonObject());
+		}
+		personalDisplayJsonObject.put("labels", labelJsonArray);
 		return personalDisplayJsonObject;
 	}
 }

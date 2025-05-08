@@ -7,19 +7,16 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class PersonalCard extends Card{
-	public int idxLabel;
 	public List<Label> labels;
 
 	public PersonalCard(int id,NodeList nodeListOwner, String title) {
 		super(id, nodeListOwner, title);
-		setIdxLabel(0);
 		setLabels(new ArrayList<>());
 	}
 
 	// Label
 	public void addLabel(Label label) {
 		labels.add(label);
-		setIdxLabel(label.getId() + 1);
 	}
 
 	public void removeLabel(int id) {
@@ -57,14 +54,6 @@ public class PersonalCard extends Card{
 		this.labels = labels;
 	}
 
-	public int getIdxLabel() {
-		return idxLabel;
-	}
-
-	public void setIdxLabel(int idxLabel) {
-		this.idxLabel = idxLabel;
-	}
-
 	@Override
 	public JSONObject getJsonObject() {
 		JSONObject personalCardJsonObject = new JSONObject();
@@ -79,6 +68,11 @@ public class PersonalCard extends Card{
 		}
 		personalCardJsonObject.put("checklists", checklistJsonArray);
 
+		JSONArray labelJsonArray = new JSONArray();
+		for (Label label: labels) {
+			labelJsonArray.put(label.getJsonObject());
+		}
+		personalCardJsonObject.put("labels", labelJsonArray);
 		// Add later
 		return personalCardJsonObject;
 	}

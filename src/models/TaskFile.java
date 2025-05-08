@@ -9,6 +9,7 @@ import enums.FileType;
 import enums.RoleMember;
 import interfaces.Displayable;
 import interfaces.Exportable;
+import javafx.scene.paint.Color;
 
 public class TaskFile implements Exportable{
 	private int id;
@@ -93,6 +94,13 @@ public class TaskFile implements Exportable{
 		            		Member member = new Member(memberJsonObject.getInt("id"), (TeamDisplay) display, memberJsonObject.getString("name"), roleEnum);
 		            		((TeamCard) card).addMember(member);
 		            }
+	            } else {
+	            		// Labels in card
+		            	for (Object o : cardObject.getJSONArray("labels")) {
+		            		JSONObject labelJsonObject = (JSONObject) o;
+		            		Label label = new Label(labelJsonObject.getInt("id"), (PersonalDisplay) display, labelJsonObject.getString("title"), Color.valueOf(labelJsonObject.getString("color")));
+		            		((PersonalCard) card).addLabel(label);
+		            }
 	            }
 
 	            	nodeList.addCard(card);
@@ -121,6 +129,12 @@ public class TaskFile implements Exportable{
 	    			roleMember = RoleMember.Intern;
 	    		}
 	    		((TeamDisplay) display).addMember(new Member(memberJsonObject.getInt("id"), ((TeamDisplay) display), memberJsonObject.getString("name"), roleMember));
+	    	}
+	    } else {
+	    	JSONArray labelJsonArray = displayObject.getJSONArray("labels");
+	    	for (int i=0;i<labelJsonArray.length();i++) {
+	    		JSONObject labelJsonObject = labelJsonArray.getJSONObject(i);
+	    		((PersonalDisplay) display).addLabel(new Label(labelJsonObject.getInt("id"), ((PersonalDisplay) display), labelJsonObject.getString("title"), Color.valueOf(labelJsonObject.getString("color"))));
 	    	}
 	    }
 	    return display;

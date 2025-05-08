@@ -48,7 +48,10 @@ public class Label implements Exportable{
 
 	@Override
 	public JSONObject getJsonObject() {
-		// TODO Auto-generated method stub
-		return null;
+		JSONObject labelJsonObject = new JSONObject();
+		labelJsonObject.put("id", id);
+		labelJsonObject.put("title", title);
+		labelJsonObject.put("color", color.toString());
+		return labelJsonObject;
 	}
 }

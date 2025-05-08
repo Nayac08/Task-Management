@@ -56,6 +56,7 @@ public class ModalPopupCardUI {
 
 	// for personal
 	@FXML private HBox labelZone;
+	@FXML private HBox labelContainer;
 	@FXML private Button editLabelButton;
 
 	// for team
@@ -118,6 +119,12 @@ public class ModalPopupCardUI {
         updateGUIChecklist(CheckListViewMode.View);
     	// for team
     	updateGUIMember();
+    	// for personal
+    	updateGUILabel();
+	}
+	
+	public void updateGUILabel() {
+		
 	}
 
 	public void updateGUIChecklist(CheckListViewMode checkListViewMode) {

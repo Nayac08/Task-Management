@@ -3,7 +3,7 @@ package controllers;
 import java.io.IOException;
 
 import app.Main;
-import enums.MemberPopupMode;
+import enums.PopupMode;
 import enums.RoleMember;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +17,7 @@ public class MemberUI {
 	private ModalPopupMemberUI modalPopupMemberUIOwner = null;
 	private ModalPopupSelectMemberUI modalPopupSelectMemberUI = null;
 	private ModalPopupCardUI modalPopupCardUIOwner = null;
-	private MemberPopupMode memberPopupMode;
+	private PopupMode memberPopupMode;
 	private Member member;
 	
 	@FXML private Text memberName;
@@ -29,14 +29,14 @@ public class MemberUI {
 	
 	public MemberUI(Member member, ModalPopupMemberUI modalPopupMemberUI) {
 		setMember(member);
-		setMemberPopupMode(MemberPopupMode.CRUD);
+		setMemberPopupMode(PopupMode.CRUD);
 		setModalPopupMemberUIOwner(modalPopupMemberUI);
 		loadInitialFXML();
 	}
 	
 	public MemberUI(Member member, ModalPopupCardUI modalPopupCardUI, ModalPopupSelectMemberUI modalPopupSelectMemberUI) {
 		setMember(member);
-		setMemberPopupMode(MemberPopupMode.Select_Member);
+		setMemberPopupMode(PopupMode.Select);
 		setModalPopupSelectMemberUI(modalPopupSelectMemberUI);
 		setModalPopupCardUIOwner(modalPopupCardUI);
 		loadInitialFXML();
@@ -67,11 +67,11 @@ public class MemberUI {
 			memberRole.setText("Role Intern");
 		}
 		
-		if (memberPopupMode == MemberPopupMode.CRUD) {
+		if (memberPopupMode == PopupMode.CRUD) {
 			handleShowDeleteButton();
 			handleHideSelectButton();
 			handleHideDeselectedButton();
-		} else if (memberPopupMode == MemberPopupMode.Select_Member) {
+		} else if (memberPopupMode == PopupMode.Select) {
 			if (((TeamCard)modalPopupCardUIOwner.getCardOwner()).isContainMember(member.getId())) {
 				handleHideDeleteButton();
 				handleHideSelectButton();
@@ -176,11 +176,11 @@ public class MemberUI {
 		this.modalPopupSelectMemberUI = modalPopupSelectMemberUI;
 	}
 
-	public MemberPopupMode getMemberPopupMode() {
+	public PopupMode getMemberPopupMode() {
 		return memberPopupMode;
 	}
 
-	public void setMemberPopupMode(MemberPopupMode memberPopupMode) {
+	public void setMemberPopupMode(PopupMode memberPopupMode) {
 		this.memberPopupMode = memberPopupMode;
 	}
 }

@@ -28,8 +28,6 @@ import models.TeamDisplay;
 
 public class MainInterfaceUI {
 	private MainInterface mainInterface;
-
-//	@FXML private Text test;
 	
 	@FXML private HBox mainInterfaceGUI;
 	@FXML private VBox fileContainer;
@@ -43,7 +41,6 @@ public class MainInterfaceUI {
 
 	public MainInterfaceUI() {
 		setMainInterface(new MainInterface());
-//		System.out.println(test.getFont());
 		loadInitialFXML();
 	}
 

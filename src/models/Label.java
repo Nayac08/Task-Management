@@ -7,11 +7,13 @@ import javafx.scene.paint.Color;
 
 public class Label implements Exportable{
 	private int id;
+	PersonalDisplay personalDisplay;
 	private String title;
 	private Color color;
 
-	public Label(int id,String title,Color color) {
+	public Label(int id, PersonalDisplay personalDisplay,String title,Color color) {
 		this.id = id;
+		setPersonalDisplay(personalDisplay);
 		setTitle(title);
 		setColor(color);
 	}
@@ -34,6 +36,14 @@ public class Label implements Exportable{
 
 	public void setColor(Color color) {
 		this.color = color;
+	}
+
+	public PersonalDisplay getPersonalDisplay() {
+		return personalDisplay;
+	}
+
+	public void setPersonalDisplay(PersonalDisplay personalDisplay) {
+		this.personalDisplay = personalDisplay;
 	}
 
 	@Override

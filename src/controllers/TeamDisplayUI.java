@@ -3,7 +3,6 @@ package controllers;
 import java.io.IOException;
 
 import app.Main;
-import enums.MemberPopupMode;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -12,29 +12,31 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import models.Label;
 import models.Member;
+import models.PersonalDisplay;
 import models.TeamCard;
 import models.TeamDisplay;
 
-public class ModalPopupSelectMemberUI {
+public class ModalPopupSelectLabelUI {
 	private ModalPopupCardUI modalPopupCardUIOwner;
-	private TeamDisplay teamDisplayOwner;
+	private PersonalDisplay personalDisplayOwner;
 	
 	@FXML private Button closePopupButton;
-	@FXML private VBox memberContainer;
-	@FXML private VBox modalPopupMemberGUI;
+	@FXML private VBox labelContainer;
+	@FXML private VBox modalPopupLabelGUI;
 
-	public ModalPopupSelectMemberUI(ModalPopupCardUI modalPopupCardUI, TeamDisplay teamDisplayOwner) {
+	public ModalPopupSelectLabelUI(ModalPopupCardUI modalPopupCardUI, PersonalDisplay personalDisplayOwner) {
 		setModalPopupCardUIOwner(modalPopupCardUI);
-		setTeamDisplayOwner(teamDisplayOwner);
+		setPersonalDisplayOwner(personalDisplayOwner);
 		loadInitialFXML();
 	}
 
 	public void loadInitialFXML(){
     	try {
-    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModalPopupSelectMember.fxml"));
+    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModalPopupSelectLabel.fxml"));
             loader.setController(this);
-            setModalPopupMemberGUI(loader.load());
+            setModalPopupLabelGUI(loader.load());
 
             closePopupButton.setOnAction(e -> {
                 Stage stage = (Stage) closePopupButton.getScene().getWindow();
@@ -48,11 +50,10 @@ public class ModalPopupSelectMemberUI {
     }
 
 	public void updateGUI() {
-		memberContainer.getChildren().clear();
-		for (Member member: teamDisplayOwner.getMembers()) {
-			MemberUI memberUI = new MemberUI(member, modalPopupCardUIOwner, this);
-			
-			memberContainer.getChildren().add(memberUI.getMemberGUI());
+		labelContainer.getChildren().clear();
+		for (Label label: personalDisplayOwner.getLabels()) {
+			LabelUI labelUI = new LabelUI(label, modalPopupCardUIOwner, this);
+			labelContainer.getChildren().add(labelUI.getLabelGUI());
 		}
 	}
 
@@ -64,19 +65,19 @@ public class ModalPopupSelectMemberUI {
 		this.modalPopupCardUIOwner = modalPopupCardUIOwner;
 	}
 
-	public VBox getModalPopupMemberGUI() {
-		return modalPopupMemberGUI;
+	public VBox getModalPopupLabelGUI() {
+		return modalPopupLabelGUI;
 	}
 
-	public void setModalPopupMemberGUI(VBox modalPopupMemberGUI) {
-		this.modalPopupMemberGUI = modalPopupMemberGUI;
+	public void setModalPopupLabelGUI(VBox modalPopupLabelGUI) {
+		this.modalPopupLabelGUI = modalPopupLabelGUI;
 	}
 
-	public TeamDisplay getTeamDisplayOwner() {
-		return teamDisplayOwner;
+	public PersonalDisplay getPersonalDisplayOwner() {
+		return personalDisplayOwner;
 	}
 
-	public void setTeamDisplayOwner(TeamDisplay teamDisplayOwner) {
-		this.teamDisplayOwner = teamDisplayOwner;
+	public void setPersonalDisplayOwner(PersonalDisplay personalDisplayOwner) {
+		this.personalDisplayOwner = personalDisplayOwner;
 	}
 }

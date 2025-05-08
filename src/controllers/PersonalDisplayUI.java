@@ -5,8 +5,11 @@ import java.io.IOException;
 import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import models.NodeList;
 import models.PersonalDisplay;
 
@@ -19,8 +22,7 @@ public class PersonalDisplayUI {
 
 	public PersonalDisplayUI(PersonalDisplay personalDisplay) {
 		setPersonalDisplay(personalDisplay);
-		loadInitialFXML();
-		displayName.setText(personalDisplay.getName());
+		loadInitialFXML();	
 	}
 
     public void loadInitialFXML(){
@@ -33,7 +35,7 @@ public class PersonalDisplayUI {
                 	personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Work"));
                 	personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Health"));
             	}
-
+            	displayName.setText(personalDisplay.getName());
         	updateGUI();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -54,6 +56,16 @@ public class PersonalDisplayUI {
     		personalNodeListUI.updateGUI();
     		displayZone.getChildren().add(personalNodeListUI.getPersonalNodeListGUI());
     	}
+    }
+    
+    public void handleShowModalPopupLabel() {
+    	ModalPopupLabelUI modalPopupLabelUI = new ModalPopupLabelUI(personalDisplay);
+
+    	Stage popupStage = new Stage();
+        popupStage.setScene(new Scene(modalPopupLabelUI.getModalPopupLabelGUI()));
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setResizable(false);
+        popupStage.show();
     }
     
     public void handleClearDisplay() {

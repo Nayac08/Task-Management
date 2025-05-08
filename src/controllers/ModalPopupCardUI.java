@@ -28,6 +28,7 @@ import models.Card;
 import models.ChecklistItem;
 import models.Member;
 import models.PersonalCard;
+import models.PersonalDisplay;
 import models.TeamCard;
 import models.TeamDisplay;
 
@@ -53,6 +54,10 @@ public class ModalPopupCardUI {
 	@FXML private VBox checkListContainer;
 	@FXML private HBox addCheckListArea;
 	@FXML private TextField textFieldNewCheckList;
+	
+	// for personal
+	@FXML private HBox labelZone;
+	@FXML private Button editLabelButton;
 	
 	// for team
 	@FXML private VBox memberZone;
@@ -92,9 +97,13 @@ public class ModalPopupCardUI {
             	if (cardOwner instanceof TeamCard) {
             		memberZone.setVisible(true);
             		memberZone.setManaged(true); 
+            		labelZone.setVisible(false);
+            		labelZone.setManaged(false);
             	} else if (cardOwner instanceof PersonalCard) {
             		memberZone.setVisible(false);
             		memberZone.setManaged(false); 
+            		labelZone.setVisible(true);
+            		labelZone.setManaged(true);
             	}
 
             	updateGUI();
@@ -214,6 +223,19 @@ public class ModalPopupCardUI {
 	        popupStage.show();
 		}  	
     }
+	
+	// for personal
+	public void handleShowEditLabelPopup() {
+		if (cardOwner instanceof PersonalCard) {
+			ModalPopupSelectLabelUI modalPopupSelectLabelUI = new ModalPopupSelectLabelUI(this, (PersonalDisplay) cardOwner.getNodeListOwner().getDisplayOwner());
+
+	    	Stage popupStage = new Stage();
+	        popupStage.setScene(new Scene(modalPopupSelectLabelUI.getModalPopupLabelGUI()));
+	        popupStage.initModality(Modality.APPLICATION_MODAL);
+	        popupStage.setResizable(false);
+	        popupStage.show();
+		}  
+	}
 
 	public void handleSaveDate() {
 		LocalDate date = datePicker.getValue();

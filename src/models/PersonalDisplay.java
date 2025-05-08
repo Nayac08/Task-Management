@@ -12,14 +12,18 @@ import interfaces.Exportable;
 public class PersonalDisplay implements Displayable,Exportable{
 	private int id;
 	private int idxListNode;
+	private int idxLabel;
 	private String name;
 	private List<NodeList> nodeLists;
+	private List<Label> labels;
 
     public PersonalDisplay(int id, String name) {
     	this.id = id;
     	setName(name);
     	setIdxListNode(0);
+    	setIdxLabel(0);
     	setNodeLists(new ArrayList<>());
+    	setLabels(new ArrayList<Label>());
     }
 
 	// Id
@@ -78,8 +82,49 @@ public class PersonalDisplay implements Displayable,Exportable{
     public void setNodeLists(List<NodeList> nodeLists) {
 		this.nodeLists = nodeLists;
 	}
+    
+    // IdxLabel
+    public int getIdxLabel() {
+		return idxLabel;
+	}
 
-    @Override
+	public void setIdxLabel(int idxLabel) {
+		this.idxLabel = idxLabel;
+	}
+    
+    // Label
+    public void addLabel(Label label) {
+    	labels.add(label);
+    	setIdxLabel(label.getId() + 1);
+    }
+
+	public void removeLabel(int id) {
+    	for (int i=0;i<labels.size();i++) {
+    		if (labels.get(i).getId() == id) {
+    			labels.remove(i);
+    			break;
+    		}
+    	}
+    }
+
+    public Label getLabel(int id) {
+    	for (Label label : labels) {
+    		if (label.getId() == id) {
+    			return label;
+    		}
+    	}
+    	return null;
+    }
+    
+    public List<Label> getLabels() {
+		return labels;
+	}
+
+	public void setLabels(List<Label> labels) {
+		this.labels = labels;
+	}
+
+	@Override
 	public JSONObject getJsonObject() {
 		JSONObject personalDisplayJsonObject = new JSONObject();
 		personalDisplayJsonObject.put("name", name);

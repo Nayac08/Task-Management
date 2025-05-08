@@ -2,7 +2,6 @@ package controllers;
 
 import java.io.IOException;
 
-import enums.MemberPopupMode;
 import enums.RoleMember;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -30,8 +29,8 @@ public class ModalPopupMemberUI {
 	@FXML private Text warningMemberRole;
 	@FXML private VBox modalPopupMemberGUI;
 
-	public ModalPopupMemberUI(TeamDisplay teamDisplayable) {
-		setTeamDisplayOwner(teamDisplayable);
+	public ModalPopupMemberUI(TeamDisplay teamDisplay) {
+		setTeamDisplayOwner(teamDisplay);
 		loadInitialFXML();
 	}
 
@@ -48,7 +47,7 @@ public class ModalPopupMemberUI {
             
             	handleHideWarningMemberName();
             	handleHideWarningMemberRole();
-
+            	
             	updateGUI();
 		} catch (IOException e) {
 			e.printStackTrace();

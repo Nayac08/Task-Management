@@ -7,7 +7,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -21,7 +25,8 @@ public class PersonalCardUI{
 	@FXML private Label title;
 	@FXML private Text date;
 	@FXML private Text checklistStat;
-	@FXML private Text description;
+	@FXML private HBox labelContainer;
+	@FXML private Label description;
 
 	public PersonalCardUI(PersonalCard personalCard) {
 		setPersonalCard(personalCard);
@@ -41,6 +46,19 @@ public class PersonalCardUI{
             	}
             	checklistStat.setText(personalCard.getNumberOfCheckedChecklist() + "/" + personalCard.getChecklists().size());
             	description.setText(personalCard.getDescription());
+            	
+            	labelContainer.getChildren().clear();
+    			int maxWidthContainer = 140;
+    			int labelCount = personalCard.getLabels().size();
+    			double widthPerRectangle = (double) maxWidthContainer/labelCount;
+    			for (models.Label label: personalCard.getLabels()) {
+    				Rectangle rectangle = new Rectangle(widthPerRectangle, 10);
+    				rectangle.setArcWidth(5.0);
+    				rectangle.setArcHeight(5.0);
+    				rectangle.setFill(label.getColor());
+    				rectangle.setStrokeWidth(0);
+    				labelContainer.getChildren().add(rectangle);
+    			}	
     	} catch (IOException e) {
 			e.printStackTrace();
 		}

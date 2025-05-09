@@ -19,14 +19,14 @@
       </Label>
 		<HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="88.0" spacing="5.0" StackPane.alignment="CENTER_RIGHT">
 			<children>
-				<Button mnemonicParsing="false" onAction="#handleExportFile" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: lightblue;" text="Export">
+				<Button mnemonicParsing="false" onAction="#handleExportFile" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-background-radius: 3; -fx-border-radius: 3;" text="Export">
 					<font>
 						<Font name="Ekkamai New Bold" size="12.0" />
 					</font>
 				</Button>
-				<Button mnemonicParsing="false" onAction="#handleDeleteFile" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: lightblue;" text="X">
+				<Button mnemonicParsing="false" onAction="#handleDeleteFile" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-radius: 3; -fx-border-color: lightgray;" text="X">
 					<font>
-						<Font name="Ekkamai New Bold" size="12.0" />
+						<Font name="Ekkamai New Bold" size="10.0" />
 					</font>
 				</Button>
 			</children>

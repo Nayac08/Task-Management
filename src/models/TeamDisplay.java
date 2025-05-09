@@ -95,6 +95,24 @@ public class TeamDisplay implements Displayable,Exportable{
     	}
     	return null;
     }
+    
+    public boolean isContainMember(int id) {
+    	for (Member member : members) {
+    		if (member.getId() == id) {
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+    
+    public void syncMemberDisplayToCard() {
+    	for (NodeList nodeList: nodeLists) {
+			for (Card card: nodeList.getCards()) {
+				TeamCard teamCard = (TeamCard) card;
+				teamCard.syncMemberDisplay();
+			}
+		}
+    }
 
     public List<Member> getMembers() {
     	return members;

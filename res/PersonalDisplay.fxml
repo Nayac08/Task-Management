@@ -11,11 +11,11 @@
 
 <VBox prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 	<children>
-      <HBox prefHeight="65.0" prefWidth="960.0" style="-fx-background-color: #60D383;">
+      <HBox prefHeight="65.0" prefWidth="960.0" style="-fx-background-color: #343434;">
          <children>
             <StackPane prefHeight="45.0" prefWidth="700.0">
                <children>
-                  <Label fx:id="displayName" prefHeight="32.0" prefWidth="667.0" text="Personal Display Name" StackPane.alignment="CENTER_LEFT">
+                  <Label fx:id="displayName" prefHeight="32.0" prefWidth="667.0" text="Personal Display Name" textFill="WHITE" StackPane.alignment="CENTER_LEFT">
                      <font>
                         <Font name="Ekkamai New Bold" size="28.0" />
                      </font>
@@ -24,12 +24,12 @@
             </StackPane>
             <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="300.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#handleShowModalPopupLabel" prefHeight="32.0" prefWidth="140.0" style="-fx-background-color: lightblue;" text="Manage Label">
+                  <Button mnemonicParsing="false" onAction="#handleShowModalPopupLabel" prefHeight="32.0" prefWidth="140.0" style="-fx-background-color: white;" text="Manage Label">
                      <font>
                         <Font name="Ekkamai New Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#handleClearDisplay" style="-fx-background-color: none;" text="X">
+                  <Button mnemonicParsing="false" onAction="#handleClearDisplay" style="-fx-background-color: none;" text="X" textFill="WHITE">
                      <font>
                         <Font name="Ekkamai New Bold" size="24.0" />
                      </font>
@@ -38,18 +38,18 @@
             </HBox>
          </children>
          <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </padding>
       </HBox>
       <VBox fx:id="displayZone" prefHeight="655.0" prefWidth="960.0">
          <children>
             <HBox prefHeight="218.0" prefWidth="960.0">
                <children>
-                  <StackPane prefHeight="218.0" prefWidth="100.0" style="-fx-background-color: #A7C7E7;">
+                  <StackPane prefHeight="218.0" prefWidth="85.0" style="-fx-background-color: #A179F2;">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Study">
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Study">
                            <font>
-                              <Font name="Ekkamai New Bold" size="24.0" />
+                              <Font name="Ekkamai New Bold" size="22.0" />
                            </font>
                         </Text>
                      </children>
@@ -58,11 +58,11 @@
             </HBox>
             <HBox prefHeight="218.0" prefWidth="960.0">
                <children>
-                  <StackPane prefHeight="218.0" prefWidth="100.0" style="-fx-background-color: #B7E4C7;">
+                  <StackPane prefHeight="218.0" prefWidth="85.0" style="-fx-background-color: #4170FF;">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Work">
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Work">
                            <font>
-                              <Font name="Ekkamai New Bold" size="24.0" />
+                              <Font name="Ekkamai New Bold" size="22.0" />
                            </font>
                         </Text>
                      </children>
@@ -71,11 +71,11 @@
             </HBox>
             <HBox prefHeight="218.0" prefWidth="960.0">
                <children>
-                  <StackPane prefHeight="218.0" prefWidth="100.0" style="-fx-background-color: #FFDAB9;">
+                  <StackPane prefHeight="218.0" prefWidth="85.0" style="-fx-background-color: #01ABFE;">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Health">
                            <font>
-                              <Font name="Ekkamai New Bold" size="24.0" />
+                              <Font name="Ekkamai New Bold" size="22.0" />
                            </font>
                         </Text>
                      </children>

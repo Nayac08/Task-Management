@@ -94,6 +94,8 @@ public class LabelUI {
 	// CRUD Label
 	public void handleDeleteLabel() {
 		label.getPersonalDisplay().removeLabel(label.getId());
+		modalPopupLabelUIOwner.getPersonalDisplayOwner().syncLabelDisplayToCard();
+		Main.mainInterfaceUI.updateGUI();
 		modalPopupLabelUIOwner.updateGUI();
 	}
 

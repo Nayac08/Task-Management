@@ -30,7 +30,7 @@ public class PersonalDisplayUI {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/PersonalDisplay.fxml"));
             loader.setController(this);
             setPersonalDisplayGUI(loader.load());
-            	if (personalDisplay.getNodeLists().size() <= 3) {
+            	if (personalDisplay.getNodeLists().size() < 3) {
             		personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Study"));
                 	personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Work"));
                 	personalDisplay.addNodeList(new NodeList(personalDisplay.getIdxListNode(), personalDisplay, "Health"));
@@ -47,11 +47,11 @@ public class PersonalDisplayUI {
     	for (NodeList nodeList: personalDisplay.getNodeLists()) {
     		PersonalNodeListUI personalNodeListUI = new PersonalNodeListUI(nodeList);
     		if (nodeList.getTitle().equals("Study")) {
-    			personalNodeListUI.getPersonalNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #A7C7E7;");
+    			personalNodeListUI.getPersonalNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #A179F2;");
     		} else if (nodeList.getTitle().equals("Work")) {
-   			 	personalNodeListUI.getPersonalNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #B7E4C7;");
+   			 	personalNodeListUI.getPersonalNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #4170FF;");
     		} else if (nodeList.getTitle().equals("Health")) {
-   			 	personalNodeListUI.getPersonalNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #FFDAB9;");
+   			 	personalNodeListUI.getPersonalNodeListGUI().getChildren().getFirst().setStyle("-fx-background-color: #01ABFE;");
     		}
     		personalNodeListUI.updateGUI();
     		displayZone.getChildren().add(personalNodeListUI.getPersonalNodeListGUI());

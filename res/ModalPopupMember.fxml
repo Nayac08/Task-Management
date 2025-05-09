@@ -15,9 +15,9 @@
 
 <VBox fx:id="mainVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="685.0" style="-fx-background-color: #ECEFF0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <StackPane alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="685.0">
+      <StackPane alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="685.0" style="-fx-background-color: #484D5B;">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Team Members">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Members">
                <font>
                   <Font name="Ekkamai New Bold" size="24.0" />
                </font>
@@ -30,9 +30,9 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </padding>
       </StackPane>
-      <ScrollPane hbarPolicy="NEVER" prefHeight="300.0" prefWidth="685.0" vbarPolicy="ALWAYS">
+      <ScrollPane hbarPolicy="NEVER" prefHeight="300.0" prefWidth="685.0" style="-fx-background-color: #ECEFF0; -fx-border-width: 0;" vbarPolicy="ALWAYS">
          <content>
-            <VBox fx:id="memberContainer" prefHeight="449.0" prefWidth="670.0" spacing="10.0">
+            <VBox fx:id="memberContainer" prefHeight="449.0" prefWidth="670.0" spacing="10.0" style="-fx-background-color: #ECEFF0;">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -62,7 +62,7 @@
                         <Font name="Ekkamai New Bold" size="14.0" />
                      </font>
                   </Text>
-                  <ComboBox fx:id="roleNewMemberBox" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: lightblue; -fx-font-size: 12px; -fx-font-family: 'Ekkamai New'; -fx-font-weight: bold; -fx-padding: 0;">
+                  <ComboBox fx:id="roleNewMemberBox" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: white; -fx-font-size: 12px; -fx-font-family: 'Ekkamai New'; -fx-font-weight: bold; -fx-padding: 0;">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
                            <String fx:value="Project Manager" />
@@ -75,12 +75,12 @@
                   </ComboBox>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#handleAddNewMember" prefHeight="27.0" prefWidth="43.0" style="-fx-background-color: lightblue;" text="Add">
+            <Button mnemonicParsing="false" onAction="#handleAddNewMember" prefHeight="27.0" prefWidth="43.0" style="-fx-background-color: white;" text="Add">
                <font>
                   <Font name="Ekkamai New Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="50.0" style="-fx-background-color: lightblue;" text="Close">
+            <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="50.0" style="-fx-background-color: white;" text="Close">
                <font>
                   <Font name="Ekkamai New Bold" size="12.0" />
                </font>

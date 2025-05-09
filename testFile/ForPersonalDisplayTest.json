@@ -1,353 +1,583 @@
 {
-    "displayType": "PersonalDisplay",
-    "display": {
-        "nodeLists": [
-            {
-                "cards": [
-                    {
-                        "date": "2025-05-01",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "Read lecture slides",
-                                "isChecked": false
-                            },
-                            {
-                                "id": 1,
-                                "title": "Do summary sheet",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Focus on calculus and algebra topics",
-                        "id": 0,
-                        "title": "Review Math Notes"
-                    },
-                    {
-                        "date": "2025-05-01",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "Kinematics",
-                                "isChecked": false
-                            },
-                            {
-                                "id": 1,
-                                "title": "Forces",
-                                "isChecked": false
-                            },
-                            {
-                                "id": 2,
-                                "title": "Energy",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Solve 10 physics questions",
-                        "id": 1,
-                        "title": "Physics Practice"
-                    },
-                    {
-                        "date": "2025-05-02",
-                        "checklists": [],
-                        "description": "Review midterm content with classmates",
-                        "id": 2,
-                        "title": "Group Study"
-                    },
-                    {
-                        "date": "2025-05-02",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "Chapter 3",
-                                "isChecked": true
-                            },
-                            {
-                                "id": 1,
-                                "title": "Chapter 4",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Make cards for memorization-heavy subjects",
-                        "id": 3,
-                        "title": "Create Flashcards"
-                    },
-                    {
-                        "date": "2025-05-03",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "WWI",
-                                "isChecked": false
-                            },
-                            {
-                                "id": 1,
-                                "title": "WWII",
-                                "isChecked": false
-                            },
-                            {
-                                "id": 2,
-                                "title": "Cold War",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Create bullet summaries for key events",
-                        "id": 4,
-                        "title": "Summarize History"
-                    },
-                    {
-                        "date": "2025-05-03",
-                        "checklists": [],
-                        "description": "Catch up on missed economics lectures",
-                        "id": 5,
-                        "title": "Watch Lecture Videos"
-                    },
-                    {
-                        "date": "2025-05-04",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "Photosynthesis",
-                                "isChecked": false
-                            },
-                            {
-                                "id": 1,
-                                "title": "Cell structure",
-                                "isChecked": true
-                            }
-                        ],
-                        "description": "Visualize biology chapters",
-                        "id": 6,
-                        "title": "Make Mind Map"
-                    }
-                ],
+  "displayType": "PersonalDisplay",
+  "display": {
+    "nodeLists": [
+      {
+        "cards": [
+          {
+            "date": "2025-05-01",
+            "checklists": [
+              {
                 "id": 0,
-                "title": "Study"
-            },
-            {
-                "cards": [
-                    {
-                        "date": "2025-05-01",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "Sort by subject",
-                                "isChecked": true
-                            },
-                            {
-                                "id": 1,
-                                "title": "Rename files",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Sort and rename digital files",
-                        "id": 0,
-                        "title": "Organize Notes Folder"
-                    },
-                    {
-                        "date": "2025-05-02",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "List topics",
-                                "isChecked": true
-                            },
-                            {
-                                "id": 1,
-                                "title": "Assign days",
-                                "isChecked": true
-                            },
-                            {
-                                "id": 2,
-                                "title": "Block calendar",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Create a daily study plan",
-                        "id": 1,
-                        "title": "Prepare Revision Schedule"
-                    },
-                    {
-                        "date": "2025-05-02",
-                        "checklists": [],
-                        "description": "Print notes, papers, and schedules",
-                        "id": 2,
-                        "title": "Print Study Materials"
-                    },
-                    {
-                        "date": "2025-05-03",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "Use Google Drive",
-                                "isChecked": true
-                            },
-                            {
-                                "id": 1,
-                                "title": "Check sync",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Save all exam material to cloud",
-                        "id": 3,
-                        "title": "Back Up Files"
-                    },
-                    {
-                        "date": "2025-05-03",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "Remove distractions",
-                                "isChecked": true
-                            },
-                            {
-                                "id": 1,
-                                "title": "Wipe desk",
-                                "isChecked": false
-                            },
-                            {
-                                "id": 2,
-                                "title": "Arrange supplies",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Clean and organize workspace",
-                        "id": 4,
-                        "title": "Declutter Study Space"
-                    },
-                    {
-                        "date": "2025-05-04",
-                        "checklists": [],
-                        "description": "Download Pomodoro app for study sessions",
-                        "id": 5,
-                        "title": "Install Exam Timer App"
-                    },
-                    {
-                        "date": "2025-05-04",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "Check uni website",
-                                "isChecked": false
-                            },
-                            {
-                                "id": 1,
-                                "title": "Mark location on map",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Verify exam room and schedule",
-                        "id": 6,
-                        "title": "Check Exam Location"
-                    }
-                ],
+                "title": "Read lecture slides",
+                "isChecked": false
+              },
+              {
                 "id": 1,
-                "title": "Work"
-            },
-            {
-                "cards": [
-                    {
-                        "date": "2025-05-01",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "No phone after 9 PM",
-                                "isChecked": false
-                            },
-                            {
-                                "id": 1,
-                                "title": "Lights off",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Fix bedtime to 10 PM for better focus",
-                        "id": 0,
-                        "title": "Sleep Routine"
-                    },
-                    {
-                        "date": "2025-05-02",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "Eat 3 full meals",
-                                "isChecked": true
-                            },
-                            {
-                                "id": 1,
-                                "title": "Drink 8 glasses of water",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Focus on fruits, veggies, and hydration",
-                        "id": 1,
-                        "title": "Eat Healthy Meals"
-                    },
-                    {
-                        "date": "2025-05-03",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "Neck & shoulders",
-                                "isChecked": true
-                            },
-                            {
-                                "id": 1,
-                                "title": "Back & legs",
-                                "isChecked": false
-                            },
-                            {
-                                "id": 2,
-                                "title": "Arms",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Stretch every morning before studying",
-                        "id": 2,
-                        "title": "Stretching"
-                    },
-                    {
-                        "date": "2025-05-04",
-                        "checklists": [],
-                        "description": "Take a 10-minute walk every hour",
-                        "id": 3,
-                        "title": "Walk Breaks"
-                    },
-                    {
-                        "date": "2025-05-04",
-                        "checklists": [
-                            {
-                                "id": 0,
-                                "title": "Talk to a friend",
-                                "isChecked": false
-                            },
-                            {
-                                "id": 1,
-                                "title": "Do 5 min breathing",
-                                "isChecked": false
-                            }
-                        ],
-                        "description": "Relax and stay balanced during exams",
-                        "id": 4,
-                        "title": "Mental Health Check"
-                    }
-                ],
-                "id": 2,
-                "title": "Health"
-            },
-            {
-                "cards": [],
-                "id": 3,
-                "title": "Study"
-            },
-            {
-                "cards": [],
-                "id": 4,
-                "title": "Work"
-            },
-            {
-                "cards": [],
+                "title": "Do summary sheet",
+                "isChecked": false
+              }
+            ],
+            "description": "Focus on calculus and algebra topics",
+            "id": 0,
+            "title": "Review Math Notes",
+            "labels": [
+              {
+                "id": 1,
+                "title": "Exam Prep",
+                "color": "0x007affff"
+              },
+              {
                 "id": 5,
-                "title": "Health"
-            }
+                "title": "Time Sensitive",
+                "color": "0xffcc00ff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-01",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "Kinematics",
+                "isChecked": false
+              },
+              {
+                "id": 1,
+                "title": "Forces",
+                "isChecked": false
+              },
+              {
+                "id": 2,
+                "title": "Energy",
+                "isChecked": false
+              }
+            ],
+            "description": "Solve 10 physics questions",
+            "id": 1,
+            "title": "Physics Practice",
+            "labels": [
+              {
+                "id": 1,
+                "title": "Exam Prep",
+                "color": "0x007affff"
+              },
+              {
+                "id": 6,
+                "title": "Self-Care",
+                "color": "0xff2d55ff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-02",
+            "checklists": [],
+            "description": "Review midterm content with classmates",
+            "id": 2,
+            "title": "Group Study",
+            "labels": [
+              {
+                "id": 1,
+                "title": "Exam Prep",
+                "color": "0x007affff"
+              },
+              {
+                "id": 2,
+                "title": "Group Task",
+                "color": "0x34c759ff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-02",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "Chapter 3",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Chapter 4",
+                "isChecked": false
+              }
+            ],
+            "description": "Make cards for memorization-heavy subjects",
+            "id": 3,
+            "title": "Create Flashcards",
+            "labels": [
+              {
+                "id": 1,
+                "title": "Exam Prep",
+                "color": "0x007affff"
+              },
+              {
+                "id": 7,
+                "title": "To Review",
+                "color": "0x5ac8faff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-03",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "WWI",
+                "isChecked": false
+              },
+              {
+                "id": 1,
+                "title": "WWII",
+                "isChecked": false
+              },
+              {
+                "id": 2,
+                "title": "Cold War",
+                "isChecked": false
+              }
+            ],
+            "description": "Create bullet summaries for key events",
+            "id": 4,
+            "title": "Summarize History",
+            "labels": [
+              {
+                "id": 1,
+                "title": "Exam Prep",
+                "color": "0x007affff"
+              },
+              {
+                "id": 8,
+                "title": "Resources Needed",
+                "color": "0x8e8e93ff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-03",
+            "checklists": [],
+            "description": "Catch up on missed economics lectures",
+            "id": 5,
+            "title": "Watch Lecture Videos",
+            "labels": [
+              {
+                "id": 3,
+                "title": "Digital",
+                "color": "0xaf52deff"
+              },
+              {
+                "id": 9,
+                "title": "Low Priority",
+                "color": "0xd1d1d6ff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-04",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "Photosynthesis",
+                "isChecked": false
+              },
+              {
+                "id": 1,
+                "title": "Cell structure",
+                "isChecked": true
+              }
+            ],
+            "description": "Visualize biology chapters",
+            "id": 6,
+            "title": "Make Mind Map",
+            "labels": [
+              {
+                "id": 5,
+                "title": "Time Sensitive",
+                "color": "0xffcc00ff"
+              }
+            ]
+          }
         ],
-        "name": "Personal"
-    }
+        "id": 0,
+        "title": "Study"
+      },
+      {
+        "cards": [
+          {
+            "date": "2025-05-01",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "Sort by subject",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Rename files",
+                "isChecked": false
+              }
+            ],
+            "description": "Sort and rename digital files",
+            "id": 0,
+            "title": "Organize Notes Folder",
+            "labels": [
+              {
+                "id": 1,
+                "title": "Exam Prep",
+                "color": "0x007affff"
+              },
+              {
+                "id": 3,
+                "title": "Digital",
+                "color": "0xaf52deff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-02",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "List topics",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Assign days",
+                "isChecked": true
+              },
+              {
+                "id": 2,
+                "title": "Block calendar",
+                "isChecked": false
+              }
+            ],
+            "description": "Create a daily study plan",
+            "id": 1,
+            "title": "Prepare Revision Schedule",
+            "labels": [
+              {
+                "id": 1,
+                "title": "Exam Prep",
+                "color": "0x007affff"
+              },
+              {
+                "id": 6,
+                "title": "Self-Care",
+                "color": "0xff2d55ff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-02",
+            "checklists": [],
+            "description": "Print notes, papers, and schedules",
+            "id": 2,
+            "title": "Print Study Materials",
+            "labels": [
+              {
+                "id": 1,
+                "title": "Exam Prep",
+                "color": "0x007affff"
+              },
+              {
+                "id": 4,
+                "title": "Printing",
+                "color": "0xff9500ff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-03",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "Use Google Drive",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Check sync",
+                "isChecked": false
+              }
+            ],
+            "description": "Save all exam material to cloud",
+            "id": 3,
+            "title": "Back Up Files",
+            "labels": [
+              {
+                "id": 7,
+                "title": "To Review",
+                "color": "0x5ac8faff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-03",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "Remove distractions",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Wipe desk",
+                "isChecked": false
+              },
+              {
+                "id": 2,
+                "title": "Arrange supplies",
+                "isChecked": false
+              }
+            ],
+            "description": "Clean and organize workspace",
+            "id": 4,
+            "title": "Declutter Study Space",
+            "labels": [
+              {
+                "id": 1,
+                "title": "Exam Prep",
+                "color": "0x007affff"
+              },
+              {
+                "id": 8,
+                "title": "Resources Needed",
+                "color": "0x8e8e93ff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-04",
+            "checklists": [],
+            "description": "Download Pomodoro app for study sessions",
+            "id": 5,
+            "title": "Install Exam Timer App",
+            "labels": [
+              {
+                "id": 1,
+                "title": "Exam Prep",
+                "color": "0x007affff"
+              },
+              {
+                "id": 3,
+                "title": "Digital",
+                "color": "0xaf52deff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-04",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "Check uni website",
+                "isChecked": false
+              },
+              {
+                "id": 1,
+                "title": "Mark location on map",
+                "isChecked": false
+              }
+            ],
+            "description": "Verify exam room and schedule",
+            "id": 6,
+            "title": "Check Exam Location",
+            "labels": [
+              {
+                "id": 1,
+                "title": "Exam Prep",
+                "color": "0x007affff"
+              },
+              {
+                "id": 9,
+                "title": "Low Priority",
+                "color": "0xd1d1d6ff"
+              }
+            ]
+          }
+        ],
+        "id": 1,
+        "title": "Work"
+      },
+      {
+        "cards": [
+          {
+            "date": "2025-05-01",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "No phone after 9 PM",
+                "isChecked": false
+              },
+              {
+                "id": 1,
+                "title": "Lights off",
+                "isChecked": false
+              }
+            ],
+            "description": "Fix bedtime to 10 PM for better focus",
+            "id": 0,
+            "title": "Sleep Routine",
+            "labels": [
+              {
+                "id": 5,
+                "title": "Time Sensitive",
+                "color": "0xffcc00ff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-02",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "Eat 3 full meals",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Drink 8 glasses of water",
+                "isChecked": false
+              }
+            ],
+            "description": "Focus on fruits, veggies, and hydration",
+            "id": 1,
+            "title": "Eat Healthy Meals",
+            "labels": [
+              {
+                "id": 6,
+                "title": "Self-Care",
+                "color": "0xff2d55ff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-03",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "Neck & shoulders",
+                "isChecked": true
+              },
+              {
+                "id": 1,
+                "title": "Back & legs",
+                "isChecked": false
+              },
+              {
+                "id": 2,
+                "title": "Arms",
+                "isChecked": false
+              }
+            ],
+            "description": "Stretch every morning before studying",
+            "id": 2,
+            "title": "Stretching",
+            "labels": [
+              {
+                "id": 7,
+                "title": "To Review",
+                "color": "0x5ac8faff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-04",
+            "checklists": [],
+            "description": "Take a 10-minute walk every hour",
+            "id": 3,
+            "title": "Walk Breaks",
+            "labels": [
+              {
+                "id": 8,
+                "title": "Resources Needed",
+                "color": "0x8e8e93ff"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-04",
+            "checklists": [
+              {
+                "id": 0,
+                "title": "Talk to a friend",
+                "isChecked": false
+              },
+              {
+                "id": 1,
+                "title": "Do 5 min breathing",
+                "isChecked": false
+              }
+            ],
+            "description": "Relax and stay balanced during exams",
+            "id": 4,
+            "title": "Mental Health Check",
+            "labels": [
+              {
+                "id": 9,
+                "title": "Low Priority",
+                "color": "0xd1d1d6ff"
+              }
+            ]
+          }
+        ],
+        "id": 2,
+        "title": "Health"
+      }
+    ],
+    "name": "Personal",
+    "labels": [
+      {
+        "id": 0,
+        "title": "Urgent",
+        "color": "0xff3b30ff"
+      },
+      {
+        "id": 1,
+        "title": "Exam Prep",
+        "color": "0x007affff"
+      },
+      {
+        "id": 2,
+        "title": "Group Task",
+        "color": "0x34c759ff"
+      },
+      {
+        "id": 3,
+        "title": "Digital",
+        "color": "0xaf52deff"
+      },
+      {
+        "id": 4,
+        "title": "Printing",
+        "color": "0xff9500ff"
+      },
+      {
+        "id": 5,
+        "title": "Time Sensitive",
+        "color": "0xffcc00ff"
+      },
+      {
+        "id": 6,
+        "title": "Self-Care",
+        "color": "0xff2d55ff"
+      },
+      {
+        "id": 7,
+        "title": "To Review",
+        "color": "0x5ac8faff"
+      },
+      {
+        "id": 8,
+        "title": "Resources Needed",
+        "color": "0x8e8e93ff"
+      },
+      {
+        "id": 9,
+        "title": "Low Priority",
+        "color": "0xd1d1d6ff"
+      }
+    ]
+  }
 }

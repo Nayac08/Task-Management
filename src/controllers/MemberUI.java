@@ -10,7 +10,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
+import models.Card;
 import models.Member;
+import models.NodeList;
 import models.TeamCard;
 
 public class MemberUI {
@@ -103,6 +105,8 @@ public class MemberUI {
 	// CRUD Member
 	public void handleDeleteMember() {
 		member.getTeamDisplayOwner().removeMember(member.getId());
+		modalPopupMemberUIOwner.getTeamDisplayOwner().syncMemberDisplayToCard();
+		Main.mainInterfaceUI.updateGUI();
 		modalPopupMemberUIOwner.updateGUI();
 	}
 

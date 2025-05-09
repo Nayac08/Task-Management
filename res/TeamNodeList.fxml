@@ -48,7 +48,7 @@
                               </TextField>
       								<HBox prefHeight="24.0" prefWidth="172.0">
       									<children>
-      										<Button mnemonicParsing="false" onAction="#handleAddCardToNodeList" prefHeight="29.0" prefWidth="89.0" style="-fx-background-color: lightblue;" text="Add card">
+      										<Button mnemonicParsing="false" onAction="#handleAddCardToNodeList" prefHeight="29.0" prefWidth="89.0" style="-fx-background-color: white;" text="Add card">
       											<font>
       												<Font name="Ekkamai New Bold" size="16.0" />
       											</font>

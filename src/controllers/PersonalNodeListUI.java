@@ -20,6 +20,7 @@ public class PersonalNodeListUI{
 	private NodeList nodeList;
 
 	@FXML private HBox personalNodeListGUI;
+	@FXML private StackPane header;
 	@FXML private Text nodeListTitle;
 	@FXML private HBox cardContainer;
 	@FXML private TextField titleArea;
@@ -39,6 +40,7 @@ public class PersonalNodeListUI{
             loader.setController(this);
             setPersonalNodeListGUI(loader.load());
             nodeListTitle.setText(nodeList.getTitle());
+            	
     		handleHideAddDetailButton();
 		} catch (IOException e) {
 			e.printStackTrace();

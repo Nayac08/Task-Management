@@ -7,10 +7,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleModalPopupCard" prefHeight="190.0" prefWidth="160.0" spacing="5.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleModalPopupCard" prefHeight="178.5" prefWidth="160.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 	<children>
       <StackPane prefHeight="38.0" prefWidth="140.0">
          <children>
@@ -28,6 +29,15 @@
       </StackPane>
       <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
          <children>
+            <HBox fx:id="labelContainer" alignment="BOTTOM_LEFT" prefHeight="10.0" prefWidth="140.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="70.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="70.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
             <StackPane alignment="CENTER_LEFT" prefHeight="12.0" prefWidth="140.0">
                <children>
                   <Text fx:id="date" strokeType="OUTSIDE" strokeWidth="0.0" text="Date 2025-1-3" wrappingWidth="131.35441207885742">
@@ -56,7 +66,7 @@
                   </Text>
                </children>
             </HBox>
-            <VBox prefHeight="98.0" prefWidth="140.0" spacing="5.0">
+            <VBox prefHeight="85.0" prefWidth="140.0">
                <children>
                   <StackPane alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="140.0">
                      <children>
@@ -67,13 +77,13 @@
                         </Text>
                      </children>
                   </StackPane>
-                  <StackPane alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0">
+                  <StackPane alignment="TOP_LEFT" prefHeight="65.0" prefWidth="140.0">
                      <children>
-                        <Text fx:id="description" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="139.82799911499023">
+                        <Label fx:id="description" alignment="TOP_LEFT" prefHeight="67.0" prefWidth="140.0" stylesheets="@styles.css" text="vdsnvdsklvndsklvndslkvndskvsdvdsnvdsklvndsklvndslkvndskvsdvdsnvdsklvndsklvndslkvndskvsdvdsnvdsklvndsklvndslkvndskvsdvdsnvdsklvndsklvndslkvndskvsd" wrapText="true">
                            <font>
                               <Font name="Ekkamai New Bold" size="10.0" />
                            </font>
-                        </Text>
+                        </Label>
                      </children>
                   </StackPane>
                </children>

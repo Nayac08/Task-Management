@@ -115,6 +115,24 @@ public class PersonalDisplay implements Displayable,Exportable{
     	}
     	return null;
     }
+    
+    public boolean isContainLabel(int id) {
+    	for (Label label : labels) {
+    		if (label.getId() == id) {
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+    
+    public void syncLabelDisplayToCard() {
+    	for (NodeList nodeList: nodeLists) {
+			for (Card card: nodeList.getCards()) {
+				PersonalCard personalCard = (PersonalCard) card;
+				personalCard.syncLabelDisplay();
+			}
+		}
+    }
 
     public List<Label> getLabels() {
 		return labels;

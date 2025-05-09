@@ -26,7 +26,7 @@
             </StackPane>
             <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="300.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#handleShowModalPopupMember" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: lightblue;" text="Manage Member">
+                  <Button mnemonicParsing="false" onAction="#handleShowModalPopupMember" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: white;" text="Manage Member">
                      <font>
                         <Font name="Ekkamai New Bold" size="18.0" />
                      </font>
@@ -58,12 +58,12 @@
                               </TextField>
 										<HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="172.0" VBox.vgrow="NEVER">
 											<children>
-												<Button mnemonicParsing="false" onAction="#handleAddNodeListToBoard" prefHeight="29.0" prefWidth="78.0" style="-fx-background-color: lightblue;" text="Add list">
+												<Button mnemonicParsing="false" onAction="#handleAddNodeListToBoard" prefHeight="29.0" prefWidth="78.0" style="-fx-background-color: white;" text="Add list">
 													<font>
 														<Font name="Ekkamai New Bold" size="16.0" />
 													</font>
 												</Button>
-												<Button mnemonicParsing="false" onAction="#handleHideAddListDetailButton" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: none;" text="X">
+												<Button mnemonicParsing="false" onAction="#handleHideAddListDetailButton" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: none;" text="X">
 													<font>
 														<Font name="Ekkamai New Bold" size="16.0" />
 													</font>

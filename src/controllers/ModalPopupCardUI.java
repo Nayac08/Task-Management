@@ -137,8 +137,7 @@ public class ModalPopupCardUI {
 				rectangle.setArcWidth(5.0);
 				rectangle.setArcHeight(5.0);
 				rectangle.setFill(label.getColor());
-				rectangle.setStroke(Color.BLACK);
-				rectangle.setStrokeType(StrokeType.INSIDE);
+				rectangle.setStrokeWidth(0);
 				labelContainer.getChildren().add(rectangle);
 			}	
 		}

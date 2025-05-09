@@ -11,14 +11,14 @@
 
 <VBox fx:id="mainVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="685.0" style="-fx-background-color: #ECEFF0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <StackPane alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="685.0">
+      <StackPane alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="685.0" style="-fx-background-color: #484D5B;">
          <children>
-            <Text fx:id="header" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Members">
+            <Text fx:id="header" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Members">
                <font>
                   <Font name="Ekkamai New Bold" size="24.0" />
                </font>
             </Text>
-            <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" style="-fx-background-color: lightblue;" text="Close" StackPane.alignment="CENTER_RIGHT">
+            <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" style="-fx-background-color: white;" text="Close" StackPane.alignment="CENTER_RIGHT">
                <font>
                   <Font name="Ekkamai New Bold" size="14.0" />
                </font>
@@ -33,7 +33,7 @@
       </StackPane>
       <ScrollPane hbarPolicy="NEVER" prefHeight="480.0" prefWidth="800.0" vbarPolicy="ALWAYS">
          <content>
-            <VBox fx:id="memberContainer" prefHeight="480.0" prefWidth="670.0" spacing="10.0">
+            <VBox fx:id="memberContainer" prefHeight="480.0" prefWidth="670.0" spacing="10.0" style="-fx-background-color: #ECEFF0;">
                <children>
                   <HBox prefHeight="45.0" prefWidth="765.0" spacing="10.0" style="-fx-background-color: lightyellow;">
                      <children>

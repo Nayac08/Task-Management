@@ -35,21 +35,21 @@ public class TeamCardUI{
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/TeamCard.fxml"));
             loader.setController(this);
             setTeamCardGUI(loader.load());
-            	title.setText(teamCard.getTitle());
-            	if (teamCard.getDate() != null) {
-                	dateText.setText("Date " + teamCard.getDate().toString());
-            	} else {
-            		dateText.setText("");
-            	}
-            	memberCount.setText(Integer.toString(teamCard.getMembers().size()));
-            	checklistStat.setText(teamCard.getNumberOfCheckedChecklist() + "/" + teamCard.getChecklists().size());
+            	updateGUI();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
     }
 
     public void updateGUI() {
-    	loadInitialFXML();
+    	title.setText(teamCard.getTitle());
+    	if (teamCard.getDate() != null) {
+        	dateText.setText("Date " + teamCard.getDate().toString());
+    	} else {
+    		dateText.setText("");
+    	}
+    	memberCount.setText(Integer.toString(teamCard.getMembers().size()));
+    	checklistStat.setText(teamCard.getNumberOfCheckedChecklist() + "/" + teamCard.getChecklists().size());
     }
 
     public void handleDeleteCard() {

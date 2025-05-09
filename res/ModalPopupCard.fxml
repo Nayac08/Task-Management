@@ -47,7 +47,7 @@
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="24.0" stroke="BLACK" strokeType="INSIDE" width="308.0" />
                            </children>
                         </HBox>
-                        <Button fx:id="editLabelButton" mnemonicParsing="false" onAction="#handleShowEditLabelPopup" prefHeight="24.0" prefWidth="65.0" style="-fx-background-color: lightblue;" text="Edit">
+                        <Button fx:id="editLabelButton" mnemonicParsing="false" onAction="#handleShowEditLabelPopup" prefHeight="24.0" prefWidth="65.0" style="-fx-background-color: white;" text="Edit">
                            <font>
                               <Font name="Ekkamai New Bold" size="12.0" />
                            </font>
@@ -62,17 +62,17 @@
                            </font>
                         </Text>
                         <DatePicker fx:id="datePicker" editable="false" focusTraversable="false" prefHeight="26.0" prefWidth="167.0" style="-fx-opacity: 1;" />
-                        <Button fx:id="saveDateButton" mnemonicParsing="false" onAction="#handleSaveDate" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Save">
+                        <Button fx:id="saveDateButton" mnemonicParsing="false" onAction="#handleSaveDate" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: white;" text="Save">
                            <font>
                               <Font name="Ekkamai New Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button fx:id="cancelDateButton" mnemonicParsing="false" onAction="#handleCancelEditDateMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Cancel">
+                        <Button fx:id="cancelDateButton" mnemonicParsing="false" onAction="#handleCancelEditDateMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: white;" text="Cancel">
                            <font>
                               <Font name="Ekkamai New Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button fx:id="editDateButton" mnemonicParsing="false" onAction="#handleEditDate" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Edit">
+                        <Button fx:id="editDateButton" mnemonicParsing="false" onAction="#handleEditDate" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: white;" text="Edit">
                            <font>
                               <Font name="Ekkamai New Bold" size="12.0" />
                            </font>
@@ -95,17 +95,17 @@
                               </TextArea>
                               <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                                  <children>
-                                    <Button fx:id="editDescriptionButton" mnemonicParsing="false" onAction="#handleEditDescriptionMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Edit">
+                                    <Button fx:id="editDescriptionButton" mnemonicParsing="false" onAction="#handleEditDescriptionMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: white;" text="Edit">
                                        <font>
                                           <Font name="Ekkamai New Bold" size="12.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="saveDescriptionButton" mnemonicParsing="false" onAction="#handleSaveDescription" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Save">
+                                    <Button fx:id="saveDescriptionButton" mnemonicParsing="false" onAction="#handleSaveDescription" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: white;" text="Save">
                                        <font>
                                           <Font name="Ekkamai New Bold" size="12.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="cancelDescriptionButton" mnemonicParsing="false" onAction="#handleCancelEditDescriptionMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Cancel">
+                                    <Button fx:id="cancelDescriptionButton" mnemonicParsing="false" onAction="#handleCancelEditDescriptionMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: white;" text="Cancel">
                                        <font>
                                           <Font name="Ekkamai New Bold" size="12.0" />
                                        </font>
@@ -135,55 +135,13 @@
                         </HBox>
                         <HBox prefHeight="90.0" prefWidth="459.0" style="-fx-background-color: #ECEFF0;">
                            <children>
-                              <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" maxHeight="98.0" pannable="true" prefHeight="98.0" prefWidth="365.0" style="-fx-background-color: #ECEFF0;" vbarPolicy="NEVER">
+                              <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" maxHeight="98.0" pannable="true" prefHeight="98.0" prefWidth="365.0" style="-fx-background-color: #ECEFF0; -fx-border-color: #ECEFF0;" vbarPolicy="NEVER">
                                  <content>
                                     <VBox fx:id="checkListContainer" minHeight="87.0" prefHeight="89.0" prefWidth="363.0" style="-fx-background-color: #ECEFF0;">
                                        <children>
                                           <HBox alignment="BOTTOM_LEFT" prefHeight="22.0" prefWidth="364.0">
                                              <children>
-                                                <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="339.0" text="CheckBox">
-                                                   <font>
-                                                      <Font name="Ekkamai New Bold" size="14.0" />
-                                                   </font>
-                                                </CheckBox>
-                                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: none;" text="X">
-                                                   <font>
-                                                      <Font name="Ekkamai New Bold" size="12.0" />
-                                                   </font>
-                                                </Button>
-                                             </children>
-                                          </HBox>
-                                          <HBox alignment="BOTTOM_LEFT" prefHeight="20.0" prefWidth="364.0">
-                                             <children>
-                                                <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="339.0" text="CheckBox">
-                                                   <font>
-                                                      <Font name="Ekkamai New Bold" size="14.0" />
-                                                   </font>
-                                                </CheckBox>
-                                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: none;" text="X">
-                                                   <font>
-                                                      <Font name="Ekkamai New Bold" size="12.0" />
-                                                   </font>
-                                                </Button>
-                                             </children>
-                                          </HBox>
-                                          <HBox alignment="BOTTOM_LEFT" prefHeight="20.0" prefWidth="364.0">
-                                             <children>
-                                                <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="339.0" text="CheckBox">
-                                                   <font>
-                                                      <Font name="Ekkamai New Bold" size="14.0" />
-                                                   </font>
-                                                </CheckBox>
-                                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" style="-fx-background-color: none;" text="X">
-                                                   <font>
-                                                      <Font name="Ekkamai New Bold" size="12.0" />
-                                                   </font>
-                                                </Button>
-                                             </children>
-                                          </HBox>
-                                          <HBox alignment="BOTTOM_LEFT" prefHeight="20.0" prefWidth="364.0">
-                                             <children>
-                                                <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="339.0" text="CheckBox">
+                                                <CheckBox mnemonicParsing="false" prefHeight="22.0" prefWidth="337.0" text="CheckBox">
                                                    <font>
                                                       <Font name="Ekkamai New Bold" size="14.0" />
                                                    </font>
@@ -212,9 +170,9 @@
                                        </children></VBox>
                                  </content>
                               </ScrollPane>
-                              <VBox alignment="TOP_CENTER" prefHeight="87.0" prefWidth="94.0" spacing="5.0">
+                              <VBox alignment="TOP_CENTER" prefHeight="87.0" prefWidth="94.0" spacing="5.0" style="-fx-background-color: #ECEFF0;">
                                  <children>
-                                    <Button fx:id="editCheckListButton" mnemonicParsing="false" onAction="#handleEditCheckListMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Edit">
+                                    <Button fx:id="editCheckListButton" mnemonicParsing="false" onAction="#handleEditCheckListMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: white;" text="Edit">
                                        <font>
                                           <Font name="Ekkamai New Bold" size="12.0" />
                                        </font>
@@ -230,12 +188,12 @@
                                     <Font name="Ekkamai New Bold" size="14.0" />
                                  </font>
                               </TextField>
-                              <Button fx:id="addCheckListButton" mnemonicParsing="false" onAction="#handleAddCheckList" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Add">
+                              <Button fx:id="addCheckListButton" mnemonicParsing="false" onAction="#handleAddCheckList" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: white;" text="Add">
                                  <font>
                                     <Font name="Ekkamai New Bold" size="12.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="cancelCheckListButton" mnemonicParsing="false" onAction="#handleCancelEditCheckListMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Cancel">
+                              <Button fx:id="cancelCheckListButton" mnemonicParsing="false" onAction="#handleCancelEditCheckListMode" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: white;" text="Cancel">
                                  <font>
                                     <Font name="Ekkamai New Bold" size="12.0" />
                                  </font>
@@ -265,7 +223,7 @@
                         </HBox>
                         <HBox prefHeight="110.0" prefWidth="459.0">
                            <children>
-                              <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" prefHeight="96.0" prefWidth="366.0" style="-fx-background-color: #ECEFF0;" vbarPolicy="NEVER">
+                              <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" pannable="true" prefHeight="96.0" prefWidth="366.0" style="-fx-background-color: #ECEFF0; -fx-border-color: #ECEFF0;" vbarPolicy="NEVER">
                                  <content>
                                     <VBox fx:id="memberContainer" prefHeight="110.0" prefWidth="363.0" spacing="5.0" style="-fx-background-color: #ECEFF0;">
                                        <children>
@@ -305,7 +263,7 @@
                               </ScrollPane>
                               <VBox alignment="TOP_CENTER" prefHeight="97.0" prefWidth="94.0" spacing="5.0">
                                  <children>
-                                    <Button mnemonicParsing="false" onAction="#handleShowEditMemberPopup" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: lightblue;" text="Edit">
+                                    <Button mnemonicParsing="false" onAction="#handleShowEditMemberPopup" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: white;" text="Edit">
                                        <font>
                                           <Font name="Ekkamai New Bold" size="12.0" />
                                        </font>

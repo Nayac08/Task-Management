@@ -34,17 +34,17 @@
       </StackPane>
       <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="221.0" spacing="5.0">
          <children>
-            <Button fx:id="selectButton" mnemonicParsing="false" onAction="#handleSelectLabel" prefHeight="19.0" prefWidth="66.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-border-radius: 3; -fx-background-radius: 3;" text="Select">
+            <Button fx:id="selectButton" mnemonicParsing="false" onAction="#handleSelectLabel" prefHeight="19.0" prefWidth="66.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-border-radius: 3; -fx-background-radius: 3; -fx-cursor: hand;" text="Select">
                <font>
                   <Font name="Ekkamai New Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="deselectedButton" mnemonicParsing="false" onAction="#handleDeselectLabel" prefHeight="17.0" prefWidth="73.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-background-radius: 3; -fx-border-radius: 3;" text="Deselect">
+            <Button fx:id="deselectedButton" mnemonicParsing="false" onAction="#handleDeselectLabel" prefHeight="17.0" prefWidth="73.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-background-radius: 3; -fx-border-radius: 3; -fx-cursor: hand;" text="Deselect">
                <font>
                   <Font name="Ekkamai New Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDeleteLabel" style="-fx-background-color: white; -fx-border-radius: 3; -fx-background-radius: 3; -fx-border-color: lightgray;" text="X">
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDeleteLabel" style="-fx-background-color: white; -fx-border-radius: 3; -fx-background-radius: 3; -fx-border-color: lightgray; -fx-cursor: hand;" text="X">
                <font>
                   <Font name="Ekkamai New Bold" size="12.0" />
                </font>

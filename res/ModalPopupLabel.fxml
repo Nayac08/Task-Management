@@ -63,12 +63,12 @@
                   <ColorPicker fx:id="colorPicker" prefHeight="22.0" prefWidth="109.0" style="-fx-background-color: white;" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#handleAddNewLabel" prefHeight="27.0" prefWidth="43.0" style="-fx-background-color: white;" text="Add">
+            <Button mnemonicParsing="false" onAction="#handleAddNewLabel" prefHeight="27.0" prefWidth="43.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Add">
                <font>
                   <Font name="Ekkamai New Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="50.0" style="-fx-background-color: white;" text="Close">
+            <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="50.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Close">
                <font>
                   <Font name="Ekkamai New Bold" size="12.0" />
                </font>

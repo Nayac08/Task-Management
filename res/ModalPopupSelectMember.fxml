@@ -18,7 +18,7 @@
                   <Font name="Ekkamai New Bold" size="24.0" />
                </font>
             </Text>
-            <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" style="-fx-background-color: white;" text="Close" StackPane.alignment="CENTER_RIGHT">
+            <Button fx:id="closePopupButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Close" StackPane.alignment="CENTER_RIGHT">
                <font>
                   <Font name="Ekkamai New Bold" size="14.0" />
                </font>

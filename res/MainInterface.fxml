@@ -19,7 +19,7 @@
 			<children>
 				<StackPane prefHeight="70.0" prefWidth="320.0" style="-fx-background-color: #484D5B;">
 					<children>
-						<Text fx:id="test" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Management" StackPane.alignment="CENTER">
+						<Text fx:id="test" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Developer Dashboard" StackPane.alignment="CENTER">
 							<font>
 								<Font name="Ekkamai New Bold" size="24.0" />
 							</font>
@@ -35,12 +35,12 @@
 						</Text>
 						<HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="300.0" spacing="10.0" StackPane.alignment="CENTER_RIGHT">
 							<children>
-								<Button mnemonicParsing="false" onAction="#handleShowAddFileZone" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-radius: 3;" text="New File">
+								<Button mnemonicParsing="false" onAction="#handleShowAddFileZone" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-radius: 3; -fx-cursor: hand;" text="New File">
 									<font>
 										<Font name="Ekkamai New Bold" size="14.0" />
 									</font>
 								</Button>
-								<Button mnemonicParsing="false" onAction="#handleImportFile" prefWidth="90.0" style="-fx-background-color: white; -fx-border-radius: 3; -fx-background-radius: 3;" text="Import File">
+								<Button mnemonicParsing="false" onAction="#handleImportFile" prefWidth="90.0" style="-fx-background-color: white; -fx-border-radius: 3; -fx-background-radius: 3; -fx-cursor: hand;" text="Import File">
 									<font>
 										<Font name="Ekkamai New Bold" size="14.0" />
 									</font>
@@ -79,12 +79,12 @@
 									      </FXCollections>
 									   </items>
 									</ComboBox>
-												<Button alignment="CENTER" mnemonicParsing="false" onAction="#handleAddFile" prefHeight="24.0" prefWidth="54.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-border-radius: 3; -fx-background-radius: 3;" text="Create" textAlignment="CENTER">
+												<Button alignment="CENTER" mnemonicParsing="false" onAction="#handleAddFile" prefHeight="24.0" prefWidth="54.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-border-radius: 3; -fx-background-radius: 3; -fx-cursor: hand;" text="Create" textAlignment="CENTER">
 													<font>
 														<Font name="Ekkamai New Bold" size="11.0" />
 													</font>
 												</Button>
-												<Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleHideAddFileZone" prefHeight="24.0" prefWidth="25.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-background-radius: 3; -fx-border-radius: 3;" text="X" textAlignment="CENTER">
+												<Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleHideAddFileZone" prefHeight="24.0" prefWidth="25.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-background-radius: 3; -fx-border-radius: 3; -fx-cursor: hand;" text="X" textAlignment="CENTER">
 													<font>
 														<Font name="Ekkamai New Bold" size="11.0" />
 													</font>

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="365.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleOpenFile" prefHeight="36.0" prefWidth="285.0" spacing="5.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-radius: 5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="365.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleOpenFile" prefHeight="36.0" prefWidth="285.0" spacing="5.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-radius: 5; -fx-cursor: hand;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 	<padding>
 		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
 	</padding>
@@ -19,12 +19,12 @@
       </Label>
 		<HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="88.0" spacing="5.0" StackPane.alignment="CENTER_RIGHT">
 			<children>
-				<Button mnemonicParsing="false" onAction="#handleExportFile" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-background-radius: 3; -fx-border-radius: 3;" text="Export">
+				<Button mnemonicParsing="false" onAction="#handleExportFile" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-background-radius: 3; -fx-border-radius: 3; -fx-cursor: hand;" text="Export">
 					<font>
 						<Font name="Ekkamai New Bold" size="12.0" />
 					</font>
 				</Button>
-				<Button mnemonicParsing="false" onAction="#handleDeleteFile" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-radius: 3; -fx-border-color: lightgray;" text="X">
+				<Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDeleteFile" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-radius: 3; -fx-border-color: lightgray; -fx-cursor: hand;" text="X">
 					<font>
 						<Font name="Ekkamai New Bold" size="10.0" />
 					</font>

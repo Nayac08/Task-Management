@@ -11,21 +11,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleModalPopupCard" prefHeight="188.5" prefWidth="160.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleModalPopupCard" prefHeight="188.5" prefWidth="160.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-cursor: hand;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 	<children>
       <StackPane prefHeight="38.0" prefWidth="140.0">
          <children>
             <Label fx:id="title" prefHeight="19.0" prefWidth="112.0" text="Personal Title" StackPane.alignment="CENTER_LEFT">
                <font>
-                  <Font name="Ekkamai New Bold" size="16.0" />
+                  <Font name="Ekkamai New Bold" size="15.0" />
                </font>
             </Label>
       		<Button mnemonicParsing="false" onAction="#handleDeleteCard" prefWidth="30.0" style="-fx-background-color: white;" text="X" StackPane.alignment="CENTER_RIGHT">
       			<font>
-      				<Font name="Ekkamai New Bold" size="14.0" />
+      				<Font name="Ekkamai New Bold" size="13.0" />
       			</font>
       		</Button>
          </children>
+         <VBox.margin>
+            <Insets bottom="3.0" />
+         </VBox.margin>
       </StackPane>
       <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
          <children>

@@ -26,12 +26,12 @@
             </StackPane>
             <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="300.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#handleShowModalPopupMember" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: white;" text="Manage Member">
+                  <Button mnemonicParsing="false" onAction="#handleShowModalPopupMember" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Manage Member">
                      <font>
                         <Font name="Ekkamai New Bold" size="18.0" />
                      </font>
                   </Button>
-      				<Button mnemonicParsing="false" onAction="#handleClearDisplay" style="-fx-background-color: none;" text="X" textFill="WHITE">
+      				<Button mnemonicParsing="false" onAction="#handleClearDisplay" style="-fx-background-color: none; -fx-cursor: hand;" text="X" textFill="WHITE">
       					<font>
       						<Font name="Ekkamai New Bold" size="24.0" />
       					</font>
@@ -58,7 +58,7 @@
                               </TextField>
 										<HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="172.0" VBox.vgrow="NEVER">
 											<children>
-												<Button mnemonicParsing="false" onAction="#handleAddNodeListToBoard" prefHeight="29.0" prefWidth="78.0" style="-fx-background-color: white;" text="Add list">
+												<Button mnemonicParsing="false" onAction="#handleAddNodeListToBoard" prefHeight="29.0" prefWidth="78.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Add list">
 													<font>
 														<Font name="Ekkamai New Bold" size="16.0" />
 													</font>
@@ -84,7 +84,7 @@
 										<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
 									</padding>
 								</VBox>
-								<Button fx:id="addListNodeButton" mnemonicParsing="false" onAction="#handleShowAddListDetailButton" prefHeight="32.0" prefWidth="240.0" style="-fx-background-color: #ECEFF0;" text="+ Add another list">
+								<Button fx:id="addListNodeButton" mnemonicParsing="false" onAction="#handleShowAddListDetailButton" prefHeight="32.0" prefWidth="240.0" style="-fx-background-color: #ECEFF0; -fx-cursor: hand;" text="+ Add another list">
 									<padding>
 										<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
 									</padding>

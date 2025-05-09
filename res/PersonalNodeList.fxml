@@ -24,9 +24,9 @@
 				<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
 			</padding>
 		</StackPane>
-      <ScrollPane fitToHeight="true" hbarPolicy="NEVER" pannable="true" prefHeight="218.0" prefWidth="875.0" stylesheets="@styles.css" vbarPolicy="NEVER">
+      <ScrollPane fitToHeight="true" hbarPolicy="NEVER" pannable="true" prefHeight="218.0" prefWidth="875.0" style="-fx-background-color: none;" vbarPolicy="NEVER">
          <content>
-      						<HBox fx:id="cardContainer" fillHeight="false" maxHeight="580.0" prefHeight="202.0" spacing="10.0">
+      						<HBox fx:id="cardContainer" fillHeight="false" maxHeight="580.0" prefHeight="202.0" spacing="10.0" style="-fx-background-color: none;">
                <children>
                   <VBox fx:id="addCardDetail" prefHeight="180.0" prefWidth="160.0" spacing="10.0">
                      <children>
@@ -37,12 +37,12 @@
                         </TextField>
 								<HBox prefHeight="24.0" prefWidth="172.0">
 									<children>
-										<Button mnemonicParsing="false" onAction="#handleAddCardToNodeList" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: white;" text="Add card">
+										<Button mnemonicParsing="false" onAction="#handleAddCardToNodeList" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Add card">
 											<font>
 												<Font name="Ekkamai New Bold" size="14.0" />
 											</font>
 										</Button>
-										<Button mnemonicParsing="false" onAction="#handleHideAddDetailButton" style="-fx-background-color: none;" text="X">
+										<Button mnemonicParsing="false" onAction="#handleHideAddDetailButton" style="-fx-background-color: none; -fx-cursor: hand;" text="X">
 											<font>
 												<Font name="Ekkamai New Bold" size="14.0" />
 											</font>
@@ -60,7 +60,7 @@
                         </StackPane>
                      </children>
                   </VBox>
-            				<Button mnemonicParsing="false" onAction="#handleShowAddDetailButton" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: none;" text="+ Add a card">
+            				<Button mnemonicParsing="false" onAction="#handleShowAddDetailButton" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: none; -fx-cursor: hand;" text="+ Add a card">
             					<font>
             						<Font name="Ekkamai New Bold" size="16.0" />
             					</font>

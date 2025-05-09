@@ -8,6 +8,7 @@ import enums.CheckListViewMode;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -156,6 +157,7 @@ public class ModalPopupCardUI {
     			updateGUI();
     			Main.mainInterfaceUI.updateGUI();
     		});
+            checkBox.setCursor(Cursor.HAND);
     		if (checklistItem.isChecked()) {
     			checkBox.setSelected(true);
     		}

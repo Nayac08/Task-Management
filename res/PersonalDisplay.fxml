@@ -24,12 +24,12 @@
             </StackPane>
             <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="300.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#handleShowModalPopupLabel" prefHeight="32.0" prefWidth="140.0" style="-fx-background-color: white;" text="Manage Label">
+                  <Button mnemonicParsing="false" onAction="#handleShowModalPopupLabel" prefHeight="32.0" prefWidth="140.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Manage Label">
                      <font>
                         <Font name="Ekkamai New Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#handleClearDisplay" style="-fx-background-color: none;" text="X" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#handleClearDisplay" style="-fx-background-color: none; -fx-cursor: hand;" text="X" textFill="WHITE">
                      <font>
                         <Font name="Ekkamai New Bold" size="24.0" />
                      </font>

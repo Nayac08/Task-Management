@@ -21,7 +21,7 @@
                   <Font name="Ekkamai New Bold" size="22.0" />
                </font>
             </Label>
-				<Button mnemonicParsing="false" onAction="#handleDeleteNodeList" style="-fx-background-color: none;" text="X" textFill="WHITE" StackPane.alignment="CENTER_RIGHT">
+				<Button mnemonicParsing="false" onAction="#handleDeleteNodeList" style="-fx-background-color: none; -fx-cursor: hand;" text="X" textFill="WHITE" StackPane.alignment="CENTER_RIGHT">
 					<font>
 						<Font name="Ekkamai New Bold" size="16.0" />
 					</font>
@@ -48,12 +48,12 @@
                               </TextField>
       								<HBox prefHeight="24.0" prefWidth="172.0">
       									<children>
-      										<Button mnemonicParsing="false" onAction="#handleAddCardToNodeList" prefHeight="29.0" prefWidth="89.0" style="-fx-background-color: white;" text="Add card">
+      										<Button mnemonicParsing="false" onAction="#handleAddCardToNodeList" prefHeight="29.0" prefWidth="89.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Add card">
       											<font>
       												<Font name="Ekkamai New Bold" size="16.0" />
       											</font>
       										</Button>
-      										<Button mnemonicParsing="false" onAction="#handleHideAddDetailButton" style="-fx-background-color: none;" text="X">
+      										<Button mnemonicParsing="false" onAction="#handleHideAddDetailButton" style="-fx-background-color: none; -fx-cursor: hand;" text="X">
       											<font>
       												<Font name="Ekkamai New Bold" size="16.0" />
       											</font>
@@ -73,7 +73,7 @@
       						</VBox>
       					</children>
       				</VBox>
-      				<Button fx:id="addACardButton" mnemonicParsing="false" onAction="#handleShowAddDetailButton" prefHeight="29.0" prefWidth="29.0" style="-fx-background-color: white; -fx-background-radius: 50%;" text="+" VBox.vgrow="NEVER">
+      				<Button fx:id="addACardButton" mnemonicParsing="false" onAction="#handleShowAddDetailButton" prefHeight="29.0" prefWidth="29.0" style="-fx-background-color: white; -fx-background-radius: 50%; -fx-cursor: hand;" text="+" VBox.vgrow="NEVER">
       					<font>
       						<Font name="Ekkamai New Bold" size="24.0" />
       					</font>

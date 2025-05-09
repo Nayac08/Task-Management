@@ -2,6 +2,11 @@
     -fx-pref-width: 1px; /* Change this value as needed */
 }
 
+.scroll-pane .scroll-bar:horizontal {
+    -fx-pref-height: 1px; /* change to your preferred size */
+}
+
+
 .combo-box .arrow-button {
     -fx-background-radius: 12;
 }
@@ -12,4 +17,8 @@
 
 .custom-label {
     -fx-line-spacing: 0.5px; /* Adjust the value as needed */
+}
+
+.scroll-pane {
+    -fx-faint-focus-color: transparent;
 }

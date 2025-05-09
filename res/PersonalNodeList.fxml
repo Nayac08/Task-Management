@@ -24,7 +24,7 @@
 				<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
 			</padding>
 		</StackPane>
-      <ScrollPane fitToHeight="true" hbarPolicy="ALWAYS" pannable="true" prefHeight="218.0" prefWidth="875.0" vbarPolicy="NEVER">
+      <ScrollPane fitToHeight="true" hbarPolicy="NEVER" pannable="true" prefHeight="218.0" prefWidth="875.0" stylesheets="@styles.css" vbarPolicy="NEVER">
          <content>
       						<HBox fx:id="cardContainer" fillHeight="false" maxHeight="580.0" prefHeight="202.0" spacing="10.0">
                <children>

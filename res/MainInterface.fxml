@@ -52,7 +52,7 @@
 						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
 					</padding>
 				</StackPane>
-				<ScrollPane hbarPolicy="NEVER" maxWidth="320.0" prefHeight="643.0" prefWidth="320.0" vbarPolicy="ALWAYS">
+				<ScrollPane focusTraversable="false" hbarPolicy="NEVER" maxWidth="320.0" prefHeight="643.0" prefWidth="320.0" styleClass="scroll-pane" stylesheets="@styles.css" vbarPolicy="ALWAYS">
 					<content>
 						<VBox fx:id="fileContainer" maxWidth="305.0" prefHeight="623.5" prefWidth="305.0" spacing="10.0" style="-fx-background-color: #E1E1E1;">
 							<padding>
@@ -71,7 +71,7 @@
 										</TextField>
 										<HBox alignment="CENTER" prefHeight="26.0" prefWidth="179.0" spacing="5.0">
 											<children>
-                                    <ComboBox fx:id="fileType" prefHeight="24.0" prefWidth="89.0" style="-fx-background-color: white; -fx-font-size: 12px; -fx-font-family: 'Ekkamai New'; -fx-font-weight: bold; -fx-padding: 0; -fx-border-color: lightgray;">
+                                    <ComboBox fx:id="fileType" prefHeight="24.0" prefWidth="93.0" style="-fx-background-color: white; -fx-font-size: 12px; -fx-font-family: 'Ekkamai New'; -fx-font-weight: bold; -fx-padding: 0; -fx-border-color: lightgray;">
 									   <items>
 									      <FXCollections fx:factory="observableArrayList">
 									         <String fx:value="Personal" />

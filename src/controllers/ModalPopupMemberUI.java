@@ -18,7 +18,6 @@ import models.TeamDisplay;
 public class ModalPopupMemberUI {
 	private TeamDisplay teamDisplayOwner;
 
-	@FXML private VBox mainVBox;
 	@FXML private Text header;
 	@FXML private TextField textFieldNewMember;
 	@FXML private ComboBox<String> roleNewMemberBox;

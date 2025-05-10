@@ -24,11 +24,6 @@
       </StackPane>
       <StackPane alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="176.0">
          <children>
-            <Text fx:id="memberRole" strokeType="OUTSIDE" strokeWidth="0.0" text="Role Admin">
-               <font>
-                  <Font name="Ekkamai New Bold" size="14.0" />
-               </font>
-            </Text>
             <Rectangle fx:id="labelColor" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="#aba7a7" strokeType="INSIDE" width="200.0" />
          </children>
       </StackPane>

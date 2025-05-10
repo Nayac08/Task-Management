@@ -6,13 +6,11 @@ import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import models.Card;
 import models.TeamCard;
 
 public class TeamCardUI{
@@ -23,7 +21,6 @@ public class TeamCardUI{
 	@FXML private Text dateText;
 	@FXML private Text checklistStat;
 	@FXML private Text memberCount;
-	@FXML private CheckBox checkBox;
 
 	public TeamCardUI(TeamCard teamCard) {
 		setTeamCard(teamCard);
@@ -53,13 +50,8 @@ public class TeamCardUI{
     }
 
     public void handleDeleteCard() {
-    	for (Card card: teamCard.getNodeListOwner().getCards()) {
-    		if (card.getId() == teamCard.getId()) {
-    			teamCard.getNodeListOwner().getCards().remove(card);
-    			Main.mainInterfaceUI.updateGUI();
-    			break;
-    		}
-    	}
+    	teamCard.getNodeListOwner().removeCard(teamCard.getId());
+    	Main.mainInterfaceUI.updateGUI();
     }
 
     public void handleModalPopupCard() {

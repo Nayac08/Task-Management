@@ -2,11 +2,11 @@ package controllers;
 
 import java.io.IOException;
 
-import app.Main;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -25,12 +25,12 @@ public class PersonalNodeListUI{
 	@FXML private HBox cardContainer;
 	@FXML private TextField titleArea;
 	@FXML private VBox addCardDetail;
+	@FXML private Button addACardButton;
 	@FXML private StackPane warningCardName;
 
 	public PersonalNodeListUI(NodeList nodeList){
 		setNodeList(nodeList);
 		loadInitialFXML();
-		handleHideWarningCardName();
 	}
 
     public void loadInitialFXML(){
@@ -40,8 +40,8 @@ public class PersonalNodeListUI{
             loader.setController(this);
             setPersonalNodeListGUI(loader.load());
             nodeListTitle.setText(nodeList.getTitle());
-            	
-    		handleHideAddDetailButton();
+            handleHideWarningCardName();
+    		handleHideAddDetail();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -79,31 +79,25 @@ public class PersonalNodeListUI{
     		handleHideWarningCardName();
     		nodeList.addCard(new PersonalCard(nodeList.getIdxCard(), nodeList, titleArea.getText().trim()));
         	titleArea.setText("");
-        	handleHideAddDetailButton();
+        	handleHideAddDetail();
         	updateGUI();
     	}
 
     }
 
-    public void handleShowAddDetailButton() {
+    public void handleShowAddDetail() {
     	addCardDetail.setVisible(true);
 		addCardDetail.setManaged(true);
+		addACardButton.setVisible(false);
+		addACardButton.setManaged(false);
     }
 
-    public void handleHideAddDetailButton() {
+    public void handleHideAddDetail() {
     	titleArea.setText("");
     	addCardDetail.setVisible(false);
 		addCardDetail.setManaged(false);
-    }
-
-    public void handleDeleteNodeList() {
-    	for (NodeList list :nodeList.getDisplayOwner().getNodeLists()) {
-    		if (list.getId() == nodeList.getId()) {
-    			nodeList.getDisplayOwner().getNodeLists().remove(list);
-    			Main.mainInterfaceUI.updateGUI();
-    			break;
-    		}
-    	}
+		addACardButton.setVisible(true);
+		addACardButton.setManaged(true);
     }
 
     public void handleHideWarningCardName() {

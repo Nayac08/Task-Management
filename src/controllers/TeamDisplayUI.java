@@ -26,7 +26,6 @@ public class TeamDisplayUI{
 	@FXML private VBox teamDisplayGUI;
 	@FXML private Label displayName;
 	@FXML private HBox displayZone;
-	@FXML private VBox addListZone;
 	@FXML private VBox addListNodeDetail;
 	@FXML private TextField titleArea;
 	@FXML private Button addListNodeButton;
@@ -35,8 +34,6 @@ public class TeamDisplayUI{
 	public TeamDisplayUI(TeamDisplay teamDisplay) {
 		setTeamDisplay(teamDisplay);
 		loadInitialFXML();
-		handleHideWarningNewListName();
-        displayName.setText(teamDisplay.getName());
 	}
 
     public void loadInitialFXML(){
@@ -44,7 +41,9 @@ public class TeamDisplayUI{
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/TeamDisplay.fxml"));
             loader.setController(this);
             setTeamDisplayGUI(loader.load());
-            handleHideAddListDetailButton();
+            handleHideAddListDetail();
+            handleHideWarningNewListName();
+            displayName.setText(teamDisplay.getName());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -56,19 +55,21 @@ public class TeamDisplayUI{
     	int i = 0;
     	for (NodeList nodeList: teamDisplay.getNodeLists()) {
     		TeamNodeListUI teamNodeListUI = null;
-    		if (i % 3 == 0) {
+    		if (i % 4 == 0) {
     			teamNodeListUI = new TeamNodeListUI(nodeList, Color.web("#A179F2"));
-    		} else if (i % 3 == 1) {
+    		} else if (i % 4 == 1) {
     			teamNodeListUI = new TeamNodeListUI(nodeList, Color.web("#4170FF"));
-    		} else if (i % 3 == 2) {
+    		} else if (i % 4 == 2) {
     			teamNodeListUI = new TeamNodeListUI(nodeList, Color.web("#01ABFE"));
+    		} else if (i % 4 == 3) {
+    			teamNodeListUI = new TeamNodeListUI(nodeList, Color.web("#97DB0B"));
     		}
 			i++;
 			teamNodeListUI.updateGUI();
 			displayZone.getChildren().add(teamNodeListUI.getTeamNodeListGUI());
     	}
     	displayZone.getChildren().add(addListNode);
-    	handleHideAddListDetailButton();
+    	handleHideAddListDetail();
     }
 
     public void handleAddNodeListToBoard() {
@@ -90,7 +91,7 @@ public class TeamDisplayUI{
     		handleHideWarningNewListName();
     		teamDisplay.addNodeList(new NodeList(teamDisplay.getIdxListNode(), teamDisplay, titleArea.getText().trim()));
         	titleArea.setText("");
-        	handleHideAddListDetailButton();
+        	handleHideAddListDetail();
         	updateGUI();
     	}
     }
@@ -105,14 +106,14 @@ public class TeamDisplayUI{
         popupStage.show();
     }
 
-    public void handleShowAddListDetailButton() {
+    public void handleShowAddListDetail() {
     	addListNodeDetail.setVisible(true);
     	addListNodeDetail.setManaged(true);
     	addListNodeButton.setVisible(false);
     	addListNodeButton.setManaged(false);
     }
 
-    public void handleHideAddListDetailButton() {
+    public void handleHideAddListDetail() {
     	titleArea.setText("");
     	addListNodeDetail.setVisible(false);
     	addListNodeDetail.setManaged(false);

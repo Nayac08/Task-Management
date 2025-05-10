@@ -45,7 +45,7 @@ public class TeamCard extends Card{
     	}
 		return null;
 	}
-	
+
 	public void syncMemberDisplay() {
 		TeamDisplay teamDisplayOwner = (TeamDisplay) getNodeListOwner().getDisplayOwner();
 		for (int i=members.size()-1; i>=0;i--) {

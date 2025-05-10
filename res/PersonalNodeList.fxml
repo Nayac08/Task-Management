@@ -42,7 +42,7 @@
 												<Font name="Ekkamai New Bold" size="14.0" />
 											</font>
 										</Button>
-										<Button mnemonicParsing="false" onAction="#handleHideAddDetailButton" style="-fx-background-color: none; -fx-cursor: hand;" text="X">
+										<Button mnemonicParsing="false" onAction="#handleHideAddDetail" style="-fx-background-color: none; -fx-cursor: hand;" text="X">
 											<font>
 												<Font name="Ekkamai New Bold" size="14.0" />
 											</font>
@@ -60,7 +60,7 @@
                         </StackPane>
                      </children>
                   </VBox>
-            				<Button mnemonicParsing="false" onAction="#handleShowAddDetailButton" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: none; -fx-cursor: hand;" text="+ Add a card">
+            				<Button fx:id="addACardButton" mnemonicParsing="false" onAction="#handleShowAddDetail" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: none; -fx-cursor: hand;" text="+ Add a card">
             					<font>
             						<Font name="Ekkamai New Bold" size="16.0" />
             					</font>

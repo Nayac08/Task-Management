@@ -95,7 +95,7 @@ public class TeamDisplay implements Displayable,Exportable{
     	}
     	return null;
     }
-    
+
     public boolean isContainMember(int id) {
     	for (Member member : members) {
     		if (member.getId() == id) {
@@ -104,7 +104,7 @@ public class TeamDisplay implements Displayable,Exportable{
     	}
     	return false;
     }
-    
+
     public void syncMemberDisplayToCard() {
     	for (NodeList nodeList: nodeLists) {
 			for (Card card: nodeList.getCards()) {

@@ -25,7 +25,6 @@ public class LabelUI {
 	@FXML private Button selectButton;
 	@FXML private Button deselectedButton;
 	@FXML private Button deleteButton;
-	@FXML private HBox labelBox;
 	@FXML private HBox labelGUI;
 
 	public LabelUI(Label label, ModalPopupLabelUI modalPopupLabelUI) {

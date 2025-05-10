@@ -21,9 +21,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -126,7 +124,7 @@ public class ModalPopupCardUI {
     	// for personal
     	updateGUILabel();
 	}
-	
+
 	public void updateGUILabel() {
 		if (cardOwner instanceof PersonalCard) {
 			labelContainer.getChildren().clear();
@@ -140,7 +138,7 @@ public class ModalPopupCardUI {
 				rectangle.setFill(label.getColor());
 				rectangle.setStrokeWidth(0);
 				labelContainer.getChildren().add(rectangle);
-			}	
+			}
 		}
 	}
 

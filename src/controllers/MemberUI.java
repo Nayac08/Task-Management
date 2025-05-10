@@ -10,9 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
-import models.Card;
 import models.Member;
-import models.NodeList;
 import models.TeamCard;
 
 public class MemberUI {
@@ -27,7 +25,7 @@ public class MemberUI {
 	@FXML private Button selectButton;
 	@FXML private Button deselectedButton;
 	@FXML private Button deleteButton;
-	@FXML private HBox MemberGUI;
+	@FXML private HBox memberGUI;
 
 	public MemberUI(Member member, ModalPopupMemberUI modalPopupMemberUI) {
 		setMember(member);
@@ -149,11 +147,11 @@ public class MemberUI {
 	}
 
 	public HBox getMemberGUI() {
-		return MemberGUI;
+		return memberGUI;
 	}
 
 	public void setMemberGUI(HBox memberGUI) {
-		MemberGUI = memberGUI;
+		this.memberGUI = memberGUI;
 	}
 
 	public ModalPopupMemberUI getModalPopupMemberUIOwner() {

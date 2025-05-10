@@ -17,7 +17,6 @@ import models.PersonalDisplay;
 public class ModalPopupLabelUI {
 	private PersonalDisplay personalDisplayOwner;
 
-	@FXML private VBox mainVBox;
 	@FXML private Text header;
 	@FXML private TextField textFieldNewLabel;
 	@FXML private ColorPicker colorPicker;

@@ -45,7 +45,7 @@ public class PersonalCard extends Card{
     	}
 		return null;
 	}
-	
+
 	public void syncLabelDisplay() {
 		PersonalDisplay personalDisplayOwner = (PersonalDisplay) getNodeListOwner().getDisplayOwner();
 		for (int i=labels.size()-1; i>=0;i--) {

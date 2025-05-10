@@ -6,21 +6,18 @@ import app.Main;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import models.Card;
 import models.NodeList;
 import models.TeamCard;
+import models.TeamDisplay;
 
 public class TeamNodeListUI{
 	private NodeList nodeList;
@@ -114,13 +111,8 @@ public class TeamNodeListUI{
     }
 
     public void handleDeleteNodeList() {
-    	for (NodeList list :nodeList.getDisplayOwner().getNodeLists()) {
-    		if (list.getId() == nodeList.getId()) {
-    			nodeList.getDisplayOwner().getNodeLists().remove(list);
-    			Main.mainInterfaceUI.updateGUI();
-    			break;
-    		}
-    	}
+    	((TeamDisplay)nodeList.getDisplayOwner()).removeNodeList(nodeList.getId());
+    	Main.mainInterfaceUI.updateGUI();
     }
 
     public void handleHideWarningCardName() {

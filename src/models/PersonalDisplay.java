@@ -115,7 +115,7 @@ public class PersonalDisplay implements Displayable,Exportable{
     	}
     	return null;
     }
-    
+
     public boolean isContainLabel(int id) {
     	for (Label label : labels) {
     		if (label.getId() == id) {
@@ -124,7 +124,7 @@ public class PersonalDisplay implements Displayable,Exportable{
     	}
     	return false;
     }
-    
+
     public void syncLabelDisplayToCard() {
     	for (NodeList nodeList: nodeLists) {
 			for (Card card: nodeList.getCards()) {

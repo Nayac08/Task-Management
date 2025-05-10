@@ -3,20 +3,14 @@ package controllers;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Optional;
 
 import app.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import models.PersonalDisplay;
 import models.TaskFile;
 import models.TeamDisplay;
@@ -31,7 +25,6 @@ public class TaskFileUI {
 	public TaskFileUI(TaskFile taskFile) {
 		setTaskFile(taskFile);
 		loadInitialFXML();
-		fileName.setText(taskFile.getDisplay().getName());
 	}
 
 	public void loadInitialFXML(){
@@ -39,14 +32,13 @@ public class TaskFileUI {
     		FXMLLoader loader = new FXMLLoader(getClass().getResource("/TaskFile.fxml"));
             loader.setController(this);
             setTaskFileGUI(loader.load());
-           
+            fileName.setText(taskFile.getDisplay().getName());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
     }
 
 	public void handleDeleteFile() {
-        
 		taskFile.getMainInterface().deleteTaskFile(taskFile.getId());
 		Main.mainInterfaceUI.updateGUI();
 	}

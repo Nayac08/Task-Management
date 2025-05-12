@@ -94,7 +94,7 @@ public class TaskFile implements Exportable{
 		            		Member member = new Member(memberJsonObject.getInt("id"), (TeamDisplay) display, memberJsonObject.getString("name"), roleEnum);
 		            		((TeamCard) card).addMember(member);
 		            }
-	            } else {
+	            } else if (display instanceof PersonalDisplay){
 	            		// Labels in card
 		            	for (Object o : cardObject.getJSONArray("labels")) {
 		            		JSONObject labelJsonObject = (JSONObject) o;

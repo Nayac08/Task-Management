@@ -137,7 +137,7 @@
                            <children>
                               <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" maxHeight="98.0" pannable="true" prefHeight="98.0" prefWidth="365.0" style="-fx-background-color: #ECEFF0; -fx-border-color: #ECEFF0;" vbarPolicy="NEVER">
                                  <content>
-                                    <VBox fx:id="checkListContainer" minHeight="87.0" prefHeight="89.0" prefWidth="363.0" style="-fx-background-color: #ECEFF0;">
+                                    <VBox fx:id="checkListContainer" minHeight="87.0" prefWidth="363.0" style="-fx-background-color: #ECEFF0;">
                                        <children>
                                           <HBox alignment="BOTTOM_LEFT" prefHeight="22.0" prefWidth="364.0">
                                              <children>

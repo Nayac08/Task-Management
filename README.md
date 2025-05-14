@@ -7,9 +7,10 @@ TaskManagement is an app for managing team and personal work schedules effective
 ```bash
 $ git clone git@github.com:Nayac08/Task-Management.git
 $ cd Task-Management
-$ java -jar --module-path /Users/npitayac/Desktop/JavaFX/lib --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.media Task_Management.jar
+$ java -jar --module-path "/path/to/javafx-sdk-XX/lib" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.media Task_Management.jar
 ```
 
 ## 🔨 Guildline
-- Read document [here](https://github.com/Nayac08/Task-Management/blob/main/Task%20Management%20Document.pdf)
+- Read Document [here](https://github.com/Nayac08/Task-Management/blob/main/Task%20Management%20Document.pdf)
+- Read Implementation Detail [here](https://github.com/Nayac08/Task-Management/blob/main/Implementation%20Detail.pdf)
 - Test JSON file in this folder [here](https://github.com/Nayac08/Task-Management/tree/main/testFile)

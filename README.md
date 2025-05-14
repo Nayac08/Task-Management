@@ -1,6 +1,6 @@
 # Task Management
 
-TaskManagement is an app for managing team and personal work schedules effectively. It can be used by a large group of individuals by clearly defining each person's responsibilities. It can also be applied in everyday management such as tracking your weight training program and your studying schedules.
+Task Management is an app for managing team and personal work schedules effectively. It can be used by a large group of individuals by clearly defining each person's responsibilities. It can also be applied in everyday management such as tracking your weight training program and your studying schedules.
 
 ## 📦 Installation and Run
 
